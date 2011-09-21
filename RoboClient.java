@@ -11,7 +11,7 @@ import java.net.*;
 import java.util.*;
 
 public class RoboClient {  
-	private DatagramSocket dsock;
+	public DatagramSocket dsock;
 	private String hostname = new String("127.0.0.1");
 	private int port = 6000;
 	private String command, reply;
