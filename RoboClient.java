@@ -20,6 +20,7 @@ public class RoboClient {
 	private static final String VERSION = "15";
 	
 	private byte[] buffer = new byte[SIZE];
+
 		
  /*
  * This function reads in a message string, and sends it to the RoboCup server.
@@ -59,6 +60,7 @@ public class RoboClient {
 		try {
 			dsock.receive(rpack);
 			message = new String(rpack.getData());
+			//message.substring(0,message.indexOf('\0',0)-1);
 			port = rpack.getPort();
 			}
 
