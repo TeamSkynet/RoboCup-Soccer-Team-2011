@@ -1,0 +1,8 @@
+Source code for skynet client for RoboCup Soccer Simulator server (v15).
+
+To compile:
+At the command line, enter
+	javac @complist.txt
+	
+To run, enter
+	java Game
