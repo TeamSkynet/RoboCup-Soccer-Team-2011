@@ -2,8 +2,19 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+/**
+ * @author Grant Hays
+ * The Memory class stores instances of ObjMemory and SenseMemory and supplies
+ * methods to access their innards.
+ */
 public class Memory {
-	
+	/**
+	 * The default constructor for the Memory.
+	 * 
+	 * This creates new, empty ArrayList for the ObjMemory and SenseMemory, initiates
+	 * the time at 0 for both, and creates an ObjMemory and SenseMemory with the new
+	 * ArrayLists and time as parameters.
+	 */
 	public Memory() {
 		ArrayList<ObjInfo> newObjArray = new ArrayList<ObjInfo>();
 		ArrayList<SenseInfo> newSenArray = new ArrayList<SenseInfo>();
@@ -12,232 +23,172 @@ public class Memory {
 		SenMem = new SenseMemory(newSenArray, time);
 	}
 	
+	/**
+	 * The ObjInfo getter
+	 * 
+	 * This fetches the ObjInfo at index i of the ArrayList ObjArray in ObjMemory, 
+	 * and returns it as an ObjInfo.
+	 * 
+	 * @param i the index number of the location of the desired ObjInfo in ObjArray
+	 * @return ObjInfo the ObjInfo at location i of the ObjArray
+	 */
 	// Get Object
 	public ObjInfo getObj(int i) {
 		return ObjMem.getObj(i);
 	}
 	
-	// Get flag at index
-	public ObjFlag getFlag(int i) {
-		ObjFlag newFlag = new ObjFlag();
-		if(getObj(i).getObjName().compareTo("flag") == 0) {
-			newFlag = (ObjFlag) ObjMem.getObj(i);
-		}
-		return newFlag;
+	/**
+	 * The ObjMemory size
+	 * 
+	 * A getter to quickly retrieve the number of ObjInfo in ObjMemory
+	 * 
+	 * @return size of ObjMemory
+	 */
+	public int getObjMemorySize() {
+		return ObjMem.getSize();
 	}
 	
-	// Get flag at index boolean (this is a better way to do things)
-	public boolean getFlag(ObjFlag newFlag, int i) {
-		if(i > ObjMem.getSize())
+	/**
+	 * The SenseMemory size
+	 * 
+	 * A getter to quickly retrieve the number of SenseInfo in SenseMemory.
+	 * 
+	 * @return size of ObjMemory
+	 */
+	public int getSenseMemorySize() {
+		return SenMem.getSize();
+	}
+	
+	/**
+	 * Is this ObjInfo visible?
+	 * 
+	 * @param name the ObjName of the ObjInfo we're detecting visibility of
+	 * @return true if the ball is in the ObjMemory, false if it is not or if the the ObjMemory is empty
+	 */
+	public boolean isObjVisible(String name) {
+		if(ObjMem.getSize() == 0)
 			return false;
-		else if(getObj(i).getObjName().compareTo("flag") == 0) {
-			newFlag = (ObjFlag) getObj(i);
-			return true;
-		}
 		else {
-			return false;
-		}
-	}
-	
-	// Get flag by FlagName boolean (this is also pretty good)
-	public boolean getFlag(ObjFlag newFlag, String name) {
-		int i = 0;
-		while(i < ObjMem.getSize()) {
-			if((getFlag(newFlag, i)) && (newFlag.getFlagName().compareTo(name) == 0)){
-				return true;
+			for(int i = 0; i < ObjMem.getSize(); i++) {
+				if(getObj(i).getObjName().compareTo(name) == 0)
+					return true;
 			}
-			i++;
-		}
-		return false;
-	}
-	
-	// Get index integer of Flag
-	// if flag isn't in array, returns -1
-	public int getFlagIndex(String name) {
-		ObjFlag newFlag = new ObjFlag();
-		int i = 0;
-		while(i < ObjMem.getSize()) {
-			if((getFlag(newFlag, i)) && (newFlag.getFlagName().compareTo(name) == 0))
-				return i;
-			i++;
-		}
-		return -1;
-	}
-	
-	// Return ball object
-	public ObjBall getBall() {
-		return ball;
-	}
-	
-	// If ball is visible, get ball, if not, get FALSE!
-	public boolean getBall(ObjBall newBall) {
-		if(isBallVisible) {
-			newBall = ball;
-			return true;
-		}
-		else
 			return false;
-	}
-	
-	// Get Player by index
-	public ObjPlayer getPlayer(int i) {
-		ObjPlayer newPlayer = new ObjPlayer();
-		if(getObj(i).getObjName().compareTo("player") == 0) {
-			newPlayer = (ObjPlayer) getObj(i);
 		}
-		return newPlayer;
 	}
 	
-	// Get line by index
-	public ObjLine getLine(int i) {
-		ObjLine newLine = new ObjLine();
-		if(getObj(i).getObjName().compareTo("Line") == 0) {
-			newLine = (ObjLine) getObj(i);
+	/**
+	 * The Ball Getter
+	 * 
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * @return ObjBall containing the ball
+	 */
+	public ObjBall getBall() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("ball") == 0)
+				return (ObjBall) getObj(i);
 		}
-		return newLine;
+		return null;
 	}
 	
-	// Get goal by index
-	public ObjGoal getGoal() {
-		ObjGoal newGoal = new ObjGoal();
-		int i = 0;
-		while(getObj(i).getObjName().compareTo("Goal") != 0) {
-			i++;
-		}
-		newGoal = (ObjGoal) getObj(i);
-		return newGoal;
-	}
-	
-	// print all flag information to screen
-	public void getAllFlags() {
+	/**
+	 * The Flag Getter
+	 * 
+	 * 
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * If you're looking for a specific flag, this is you're guy. You need to
+	 * pass in the FlagName (i.e. flb30) into it, and out pops the ObjFlag
+	 * with that FlagName attached to it.
+	 * 
+	 * @param name
+	 * @return ObjFlag containing the FlagName you input
+	 */
+	public ObjFlag getFlag(String name) {
 		ObjFlag newFlag = new ObjFlag();
 		for(int i = 0; i < ObjMem.getSize(); i++) {
-			if(getFlag(newFlag, i)) {
-				newFlag = (ObjFlag) ObjMem.getObj(i);
-				System.out.println("FlagName: " + newFlag.getFlagName());
-				if(newFlag.getFlagType().compareTo("b") == 0)
-					System.out.println("FlagType: boundary");
-				else if(newFlag.getFlagType().compareTo("g") == 0)
-					System.out.println("FlagType: goal line");
-				else if(newFlag.getFlagType().compareTo("c") == 0)
-					System.out.println("FlagType: center line");
-				else if(newFlag.getFlagType().compareTo("p") == 0)
-					System.out.println("FlagType: penalty box");
-				System.out.println("Distance: " + newFlag.getDistance());
-				System.out.println("Direction: " + newFlag.getDirection());
-				System.out.println("x_pos: " + newFlag.getX_pos());
-				System.out.println("y_pos: " + newFlag.getY_pos());
-				if(newFlag.getFlagType().compareTo("b") == 0)
-					System.out.println("Yard: " + newFlag.getYard());
-				if(isClose(i))
-					System.out.println(newFlag.getFlagName() + " is close.");
-				else
-					System.out.println(newFlag.getFlagName() + " is not close.");
-				System.out.println("");
-			}
+			if(getObj(i).getObjName().compareTo("flag") == 0)
+				newFlag = (ObjFlag) getObj(i);
+				if(newFlag.getFlagName().compareTo(name) == 0)
+					return newFlag;
 		}
+		return null;
 	}
 	
-	// tell whether an object is close by index
-	public boolean isClose(int i) {
-		if(getObj(i).getDistance() < 5.0)
-			return true;
-		else
-			return false;
-	}
-	
-	// get distance by index
-	public double getDistance(int i) {
-		return getObj(i).getDistance();
-	}
-	
-	
-	public double getDistance(String name) {
-		int i = 0;
-		if(name.charAt(0) == 'f') {
-			ObjFlag newFlag = new ObjFlag();
-			while((newFlag.getFlagName().compareTo(name) != 0) && i < ObjMem.getSize()) {
-				getFlag(newFlag, i);
-				i++;
-			}
-			return newFlag.getDistance();
+	/**
+	 * The Goal Getter
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjGoal closest to you.
+	 * 
+	 * @return ObjGoal containing the goal closest to you
+	 */
+	public ObjGoal getGoal() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("goal") == 0)
+				return (ObjGoal) getObj(i);
 		}
-		else {
-			while(getObj(i).getObjName().compareTo(name) != 0) {
-				i++;
-			}
-			return getObj(i).getDistance();
-		}
+		return null;
 	}
 	
-	public double getDirection(int i) {
-		return getObj(i).getDirection();
+	/**
+	 * The Player Getter
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjPlayer of the first player you see.
+	 * 
+	 * @return ObjPlayer
+	 */
+	public ObjPlayer getPlayer() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("player") == 0)
+				return (ObjPlayer) getObj(i);
+		}
+		return null;
 	}
 	
-	public double getDirection(String name) {
-		int i = 0;
-		if(name.charAt(0) == 'f') {
-			ObjFlag newFlag = new ObjFlag();
-			while(newFlag.getFlagName().compareTo(name) != 0) {
-				getFlag(newFlag, i);
-				i++;
-			}
-			return newFlag.getDirection();
+	/**
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjLine of the first line you see.
+	 * 
+	 * @return ObjLine
+	 */
+	public ObjLine getLine() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("line") == 0)
+				return (ObjLine) getObj(i);
 		}
-		else {
-			while(getObj(i).getObjName().compareTo(name) != 0) {
-				i++;
-			}
-			return getObj(i).getDirection();
-		}
+		return null;
 	}
 	
-	public double getDistChng(int i) {
-		return getObj(i).getDistChng();
-	}
+
 	
-	public double getDistChng(String name) {
-		int i = 0;
-		if(name.charAt(0) == 'f') {
-			ObjFlag newFlag = new ObjFlag();
-			while(newFlag.getFlagName().compareTo(name) != 0) {
-				getFlag(newFlag, i);
-				i++;
-			}
-			return newFlag.getDistChng();
-		}
-		else {
-			while(getObj(i).getObjName().compareTo(name) != 0) {
-				i++;
-			}
-			return getObj(i).getDistChng();
-		}
-	}
 	
-	public double getDirChng(int i) {
-		return getObj(i).getDirChng();
-	}
 	
-	public double getDirChng(String name) {
-		int i = 0;
-		if(name.charAt(0) == 'f') {
-			ObjFlag newFlag = new ObjFlag();
-			while(newFlag.getFlagName().compareTo(name) != 0) {
-				getFlag(newFlag, i);
-				i++;
-			}
-			return newFlag.getDirChng();
-		}
-		else {
-			while(getObj(i).getObjName().compareTo(name) != 0) {
-				i++;
-			}
-			return getObj(i).getDirChng();
-		}
-	}
 	
-	public ObjBall ball;
-	public boolean isBallVisible;
+	
+	
+// ***************** Class Variables *****************
+	
+	
+	/**
+	 * The memory that stores all parsed ObjInfo
+	 */
 	public ObjMemory ObjMem;
+	/**
+	 * The memory that stores all parsed SenseInfo
+	 */
 	public SenseMemory SenMem;
 }
+
+
+
