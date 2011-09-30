@@ -1,6 +1,10 @@
 import java.net.*;
 import java.util.*;
+<<<<<<< HEAD
 import java.io.*;
+=======
+
+>>>>>>> 8f7dfe5c8b9eb29cbdde644ef0f548f448dec07b
 /**
  * @author Grant Hays
  * The Memory class stores instances of ObjMemory and SenseMemory and supplies
@@ -108,6 +112,49 @@ public class Memory {
 	 */
 	public ObjFlag getFlag(String name) {
 		ObjFlag newFlag = new ObjFlag();
+<<<<<<< HEAD
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("flag") == 0)
+				newFlag = (ObjFlag) getObj(i);
+				if(newFlag.getFlagName().compareTo(name) == 0)
+					return newFlag;
+		}
+		return null;
+	}
+	
+	/**
+	 * The Goal Getter
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjGoal closest to you.
+	 * 
+	 * @return ObjGoal containing the goal closest to you
+	 */
+	public ObjGoal getGoal() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("goal") == 0)
+				return (ObjGoal) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	 * The Player Getter
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjPlayer of the first player you see.
+	 * 
+	 * @return ObjPlayer
+	 */
+	public ObjPlayer getPlayer() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("player") == 0)
+				return (ObjPlayer) getObj(i);
+=======
 		for(int i = 0; i < ObjMem.getSize(); i++) {
 			if(getObj(i).getObjName().compareTo("flag") == 0)
 				newFlag = (ObjFlag) getObj(i);
@@ -165,6 +212,24 @@ public class Memory {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
 			if(getObj(i).getObjName().compareTo("line") == 0)
 				return (ObjLine) getObj(i);
+>>>>>>> 8f7dfe5c8b9eb29cbdde644ef0f548f448dec07b
+		}
+		return null;
+	}
+	
+<<<<<<< HEAD
+	/**
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjLine of the first line you see.
+	 * 
+	 * @return ObjLine
+	 */
+	public ObjLine getLine() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("line") == 0)
+				return (ObjLine) getObj(i);
 		}
 		return null;
 	}
@@ -178,6 +243,18 @@ public class Memory {
 // ***************** Class Variables *****************
 	
 	
+=======
+
+	
+	
+	
+	
+	
+	
+// ***************** Class Variables *****************
+	
+	
+>>>>>>> 8f7dfe5c8b9eb29cbdde644ef0f548f448dec07b
 	/**
 	 * The memory that stores all parsed ObjInfo
 	 */
