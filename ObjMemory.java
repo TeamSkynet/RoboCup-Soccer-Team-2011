@@ -1,7 +1,6 @@
-import java.io.*;
 import java.net.*;
 import java.util.*;
-
+import java.io.*;
 //*******************************************
 // 			- ObjMemory Class -				*
 // 											*
@@ -83,6 +82,7 @@ class ObjMemory {
 		return foundObj;
 	}
 
+	public ArrayList<ObjFlag> FlagArray;
 	// ArrayList to store ObjInfo
 	public ArrayList<ObjInfo> ObjArray;
 	// The time integer

@@ -1,6 +1,6 @@
-import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.io.*;
 public class SenseInfo {
 	
 	public SenseInfo() {
@@ -29,12 +29,13 @@ public class SenseInfo {
 }
 
 class Stamina extends SenseInfo {
-	public Stamina(int C, double E) {
+	public Stamina(Double stamina, double E) {
 		super("Stamina");
-		this.setCount(C);
+		this.stamina = stamina;
 		this.effort = E;
 	}
 	
+	private double stamina;
 	private double effort;
 }
 

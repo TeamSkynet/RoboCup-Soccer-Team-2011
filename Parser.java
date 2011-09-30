@@ -1,6 +1,6 @@
-import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.io.*;
 //*******************************************
 //			- Parser Class -				*
 //											*
@@ -32,12 +32,10 @@ public class Parser {
 		// Call parse method based on packet type in position [0] (either see or sense_body)
 		if(seeOrSense[0].compareTo("see") == 0) { 
 			ArrayList<ObjInfo> seeArray = new ArrayList<ObjInfo>();
-			ObjBall ball = new ObjBall();
 			// Input time (at [1] position)
 			int time = Integer.parseInt(seeOrSense[1]);
-			seeParse(seeArray, splitPacket, ball, InfoMem.isBallVisible);
+			seeParse(seeArray, splitPacket);
 			ObjMemory newObjMem = new ObjMemory(seeArray, time);
-			InfoMem.ball = ball;
 			InfoMem.ObjMem = newObjMem;
 		}
 		else if(seeOrSense[0].compareTo("sense_body") == 0) {
@@ -54,7 +52,7 @@ public class Parser {
 	
 
 	// The (see) packet type parser
-	private void seeParse(ArrayList<ObjInfo> seeArray, String[] splitPacket, ObjBall ball, boolean ballVisible) {
+	private void seeParse(ArrayList<ObjInfo> seeArray, String[] splitPacket) {
 		
 		for(int i = 2; i < splitPacket.length; i += 4)
 		{
@@ -73,9 +71,9 @@ public class Parser {
 			}
 			// - Ball -
 			else if(splitName[0].compareTo("b") == 0) {
-				ballVisible = true;
-				seeBallParse(splitInfo, ball);
-				seeArray.add(ball);
+				ObjBall newBall = new ObjBall();
+				seeBallParse(splitInfo, newBall);
+				seeArray.add(newBall);
 			}
 			
 			// - Player -
@@ -265,7 +263,7 @@ public class Parser {
 	private void senseParse(ArrayList<SenseInfo> senseArray, String[] splitPacket) {
 		// input Stamina
 		String[] splitStamina = splitPacket[3].split(" ");
-		Stamina newStamina = new Stamina(Integer.parseInt(splitStamina[1]), Double.valueOf(splitStamina[2]));
+		Stamina newStamina = new Stamina(Double.valueOf(splitStamina[1]), Double.valueOf(splitStamina[2]));
 		senseArray.add(newStamina);
 		
 		// input Speed

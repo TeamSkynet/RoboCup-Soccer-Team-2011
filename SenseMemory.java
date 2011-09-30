@@ -1,6 +1,6 @@
-import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.io.*;
 
 public class SenseMemory {
 	public SenseMemory(ArrayList<SenseInfo> newSenseArray, int t) {
@@ -29,7 +29,7 @@ public class SenseMemory {
 		return SenseArray.size();
 	}
 	
-	public SenseInfo getObj(int index) {
+	public SenseInfo getSense(int index) {
 		return SenseArray.get(index);
 	}
 

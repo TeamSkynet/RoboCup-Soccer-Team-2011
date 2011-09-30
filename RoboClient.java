@@ -1,14 +1,6 @@
-/**
- * @file
- * This file contains the implementation of the RoboClient class.
- * @author Joel Tanzi
- * @date September 18, 2011
- * @version 1.0
- */
-
-import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.io.*;
 
 public class RoboClient {  
 	public DatagramSocket dsock;
@@ -20,7 +12,6 @@ public class RoboClient {
 	private static final String VERSION = "15";
 	
 	private byte[] buffer = new byte[SIZE];
-
 		
  /*
  * This function reads in a message string, and sends it to the RoboCup server.
@@ -60,7 +51,6 @@ public class RoboClient {
 		try {
 			dsock.receive(rpack);
 			message = new String(rpack.getData());
-			//message.substring(0,message.indexOf('\0',0)-1);
 			port = rpack.getPort();
 			}
 

@@ -1,26 +1,136 @@
-//package parser;
+import java.io.*;
+import java.net.*;
+import java.util.*;
 
 public class ParserTest {
 
-	public static void main(String[] args) {
+	BufferedReader readin = new BufferedReader(new InputStreamReader(System.in));
+	String command = new String();
+	
+	public static void main(String args[]) throws Exception
+	{
+		//Instantiate each player client
+		RoboClient rc1 = new RoboClient();
+		RoboClient rc2 = new RoboClient();
+		RoboClient rc3 = new RoboClient();
 
-		String input = "(see 0 ((f c) 44.7 23) ((f c t) 44.7 -22) ((f r t) 95.6 -10) ((f r b) 106.7 29) ((f g r b) 96.5 14) ((g r) 95.6 10) ((f g r t) 94.6 6) ((f p r b) 85.6 26) ((f p r c) 79 13) ((f p r t) 77.5 -2) ((f p l t) 6.2 -29 0 0) ((f t 0) 47 -28) ((f t r 10) 55.7 -23) ((f t r 20) 65.4 -20) ((f t r 30) 74.4 -17) ((f t r 40) 83.9 -15) ((f t r 50) 93.7 -13) ((f t l 10) 38.1 -35) ((f b r 20) 83.1 42) ((f b r 30) 90.9 38) ((f b r 40) 98.5 35) ((f b r 50) 107.8 32) ((f r 0) 100.5 10) ((f r t 10) 99.5 4) ((f r t 20) 98.5 -2) ((f r t 30) 99.5 -7) ((f r b 10) 102.5 15) ((f r b 20) 105.6 21) ((f r b 30) 109.9 25) ((b) 44.7 23) ((p) 49.4 39) ((l r) 93.7 90))";
+		Memory mem1 = new Memory();
+		Memory mem2 = new Memory();
+		Memory mem3 = new Memory();
+		Parser p = new Parser();
+		
 
-		Memory newMem = new Memory();
-		ObjInfo newInfo = new ObjInfo();
-		Parser p = new Parser(input, newMem);
+		//Set up connection to RoboCup server
+		rc1.dsock = new DatagramSocket();
+		rc2.dsock = new DatagramSocket();
+		rc3.dsock = new DatagramSocket();
 		
+		//Instantiate test class
 		
-		
-		for(int i = 0; i < newMem.ObjMem.getSize(); i++) {
-			newInfo = newMem.ObjMem.getObj(i);
-			System.out.println("Name: " + newInfo.getObjName());
-			System.out.println("Distance: " + newInfo.getDistance());
-			System.out.println("");
-		}
-		
-		System.out.println(newMem.ObjMem.getObj("ball").getDirection());
-		
+		rc1.init();
+		rc2.init();
+		rc3.init();
+		rc1.move(-10, 0);
+		rc2.move(-10, 10);
+		rc3.move(-10, -10);
+
+		while(true) {
+			p.Parse(rc1.receive(), mem1);
+			p.Parse(rc2.receive(), mem2);
+			p.Parse(rc3.receive(), mem3);
+			
+			
+			rc1.dash(50);
+			if(mem1.isObjVisible("ball")) {
+				ObjBall ball = mem1.getBall();
+				
+				if(ball.getDirection() != 0)
+					rc1.turn(ball.getDirection());
+				else if((ball.getDistance() <= 0.7) && (mem1.isObjVisible("player"))) {
+					ObjPlayer teammate = mem1.getPlayer();
+					rc1.kick(50.0, teammate.getDirection());
+					rc1.turn(ball.getDirection());
+				}
+				else if((ball.getDistance() <= 0.7) && (mem1.isObjVisible("goal"))) {
+					ObjGoal goal = mem1.getGoal();
+					rc1.kick(50.0, goal.getDirection());
+					rc1.turn(ball.getDirection());
+				}
+				else if(ball.getDistance() <= 0.7) {
+					rc1.kick(50.0, 0);
+					rc1.turn(ball.getDirection());
+				}
+				else
+					rc1.dash(30);
+			}
+			else {
+				rc1.turn(20);
+				rc1.dash(30);
+			}
+
+			
+			rc2.dash(50);
+			if(mem2.isObjVisible("ball")) {
+				ObjBall ball = mem2.getBall();
+				
+				if(ball.getDirection() != 0)
+					rc2.turn(ball.getDirection());
+				else if((ball.getDistance() <= 0.7) && (mem2.isObjVisible("player"))) {
+					ObjPlayer teammate = mem2.getPlayer();
+					rc2.kick(50.0, teammate.getDirection());
+					rc2.turn(ball.getDirection());
+				}
+				else if((ball.getDistance() <= 0.7) && (mem2.isObjVisible("goal"))) {
+					ObjGoal goal = mem2.getGoal();
+					rc2.kick(50.0, goal.getDirection());
+					rc2.turn(ball.getDirection());
+				}
+				else if(ball.getDistance() <= 0.7) {
+					rc2.kick(50.0, 0);
+					rc2.turn(ball.getDirection());
+				}
+				else
+					rc2.dash(30);
+			}
+			else {
+				rc2.turn(20);
+				rc2.dash(30);
+			}
+			
+			rc3.dash(50);
+			if(mem3.isObjVisible("ball")) {
+				ObjBall ball = mem3.getBall();
+				
+				if(ball.getDirection() != 0)
+					rc3.turn(ball.getDirection());
+				else if((ball.getDistance() <= 0.7) && (mem3.isObjVisible("player"))) {
+					ObjPlayer teammate = mem3.getPlayer();
+					rc3.kick(50.0, teammate.getDirection());
+					rc3.turn(ball.getDirection());
+				}
+				else if((ball.getDistance() <= 0.7) && (mem3.isObjVisible("goal"))) {
+					ObjGoal goal = mem3.getGoal();
+					rc3.kick(50.0, goal.getDirection());
+					rc3.turn(ball.getDirection());
+				}
+				else if(ball.getDistance() <= 0.7) {
+					rc3.kick(50.0, 0);
+					rc3.turn(ball.getDirection());
+				}
+				else
+					rc3.dash(30);
+			}
+			else {
+				rc3.turn(20);
+				rc3.dash(30);
+			}
+				
+				
+				
+			
+
+		}	
+
+	
 	}
-
 }

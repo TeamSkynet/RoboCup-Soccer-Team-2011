@@ -1,8 +1,6 @@
-package parser;
-
+import java.net.*;
 import java.util.*;
 import java.io.*;
-import java.net.*;
 
 public class Action {
 	
@@ -31,18 +29,15 @@ public class Action {
 		if(mem.isObjVisible("ball")) {
 			if(mem.getBall().getDirection() > 10 || mem.getBall().getDirection() < -10) {
 				rc.turn(mem.getBall().getDirection());
-				Thread.sleep(150);
 				rc.dash(mem.getBall().getDistance()*2);
 			}
 			if(!isBallInKickRange()) {
 				rc.turn(mem.getBall().getDirection());
-				Thread.sleep(150);
 				rc.dash(mem.getBall().getDistance()*2);
 			}
 		}
 		else {
 			rc.turn(90);
-			Thread.sleep(150);
 			rc.dash(30);
 		}
 	}

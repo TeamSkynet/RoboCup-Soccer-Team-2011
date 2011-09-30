@@ -1,8 +1,11 @@
+Action.java
 Game.java
-RoboClient.java
 Memory.java
 ObjInfo.java
 ObjMemory.java
 Parser.java
+ParserTest.java
+ParserTest2.java
+RoboClient.java
 SenseInfo.java
 SenseMemory.java
