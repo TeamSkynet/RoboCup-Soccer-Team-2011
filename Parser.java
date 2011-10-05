@@ -23,33 +23,44 @@ public class Parser {
 		
 		// Split inputPacket into tokens by "(" and ")" delimiters
 		String[] splitPacket = (inputPacket.split("[()]"));
-		
 		// Parse the first element into packet type and time
-		String[] seeOrSense = (splitPacket[0].split(" "));
+		String[] packetType = (splitPacket[0].split(" "));
 		
-
+		if((packetType[0].compareTo("see") == 0) || (packetType[0].compareTo("sense_body") == 0) || (packetType[0].compareTo("hear") == 0)) {
+		int time = Integer.parseInt(packetType[1]);
 		
-		// Call parse method based on packet type in position [0] (either see or sense_body)
-		if(seeOrSense[0].compareTo("see") == 0) { 
-			ArrayList<ObjInfo> seeArray = new ArrayList<ObjInfo>();
-			// Input time (at [1] position)
-			int time = Integer.parseInt(seeOrSense[1]);
-			seeParse(seeArray, splitPacket);
-			ObjMemory newObjMem = new ObjMemory(seeArray, time);
-			InfoMem.ObjMem = newObjMem;
-		}
-		else if(seeOrSense[0].compareTo("sense_body") == 0) {
-			ArrayList<SenseInfo> senArray = new ArrayList<SenseInfo>();
-			// Input time (at [1] position)
-			int time = Integer.parseInt(seeOrSense[1]);
-			senseParse(senArray, splitPacket);
-			SenseMemory newSenMem = new SenseMemory(senArray, time);
-			InfoMem.SenMem = newSenMem;
+			// Call parse method based on packet type in position [0] (either see or sense_body)
+			if(packetType[0].compareTo("see") == 0) { 
+				ArrayList<ObjInfo> seeArray = new ArrayList<ObjInfo>();
+				seeParse(seeArray, splitPacket);
+				ObjMemory newObjMem = new ObjMemory(seeArray, time);
+				InfoMem.ObjMem = newObjMem;
+			}
+			else if(packetType[0].compareTo("sense_body") == 0) {
+				
+				SenseMemory newSenMem = new SenseMemory();
+				senseParse(newSenMem, splitPacket);
+				InfoMem.SenMem = newSenMem;
+			}
+			else if(packetType[0].compareTo("hear") == 0) {
+				hearParse(InfoMem, splitPacket);
+			}
+			
 		}
 		
 }
 	
 	
+
+	private void hearParse(Memory InfoMem, String[] splitPacket) {
+		String splitInfo[] = (splitPacket[0].split(" "));
+		
+		if(splitInfo[2].compareTo("referee") == 0) {
+			InfoMem.playMode = splitInfo[3];
+		}
+	}
+
+
 
 	// The (see) packet type parser
 	private void seeParse(ArrayList<ObjInfo> seeArray, String[] splitPacket) {
@@ -260,34 +271,20 @@ public class Parser {
 		
 	}
 	
-	private void senseParse(ArrayList<SenseInfo> senseArray, String[] splitPacket) {
-		// input Stamina
+	private void senseParse(SenseMemory newSenMem, String[] splitPacket) {
+		
 		String[] splitStamina = splitPacket[3].split(" ");
-		Stamina newStamina = new Stamina(Double.valueOf(splitStamina[1]), Double.valueOf(splitStamina[2]));
-		senseArray.add(newStamina);
-		
-		// input Speed
 		String[] splitSpeed = splitPacket[5].split(" ");
-		Speed newSpeed = new Speed(Double.valueOf(splitSpeed[1]), Double.valueOf(splitSpeed[2]));
-		senseArray.add(newSpeed);
+		String[] splitHeadAngle = splitPacket[7].split(" ");
 		
-		for(int i = 7; i < 24; i += 2) {
-			String[] splitSense = splitPacket[i].split(" ");
-			SenseInfo newSense = new SenseInfo(splitSense[0], Integer.parseInt(splitSense[1]));
-			senseArray.add(newSense);
-		}
+		newSenMem.stamina = Double.valueOf(splitStamina[1]);
+		newSenMem.recovery = Double.valueOf(splitStamina[2]);
+		newSenMem.effort = Double.valueOf(splitStamina[3]);
 		
-		String[] splitFocusTarget = splitPacket[36].split(" ");
-		String[] splitFocusCount = splitPacket[38].split(" ");
-		if(splitFocusTarget[1].compareTo("none") != 0){
-			Focus newFocus = new Focus(splitFocusTarget[1], Integer.parseInt(splitFocusTarget[2]), Integer.parseInt(splitFocusCount[1]));
-			senseArray.add(newFocus);
-		}
+		newSenMem.amountOfSpeed = Double.valueOf(splitSpeed[1]);
+		newSenMem.directionOfSpeed = Double.valueOf(splitSpeed[2]);
 		
-		String[] splitTackleExpires = splitPacket[42].split(" ");
-		String[] splitTackleCount = splitPacket[44].split(" ");
-		Tackles newTackles = new Tackles(Integer.parseInt(splitTackleExpires[1]), Integer.parseInt(splitTackleCount[1]));
-		senseArray.add(newTackles);
+		newSenMem.headDirection = Double.valueOf(splitHeadAngle[1]);
 		
 	}
 	
