@@ -38,7 +38,7 @@ public class Parser {
 			}
 			else if(packetType[0].compareTo("sense_body") == 0) {
 				
-				SenseMemory newSenMem = new SenseMemory();
+				SenseMemory newSenMem = new SenseMemory(time);
 				senseParse(newSenMem, splitPacket);
 				InfoMem.SenMem = newSenMem;
 			}

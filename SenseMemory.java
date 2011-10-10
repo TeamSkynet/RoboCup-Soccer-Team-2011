@@ -3,13 +3,14 @@ import java.util.*;
 import java.io.*;
 
 public class SenseMemory {
-	public SenseMemory(ArrayList<SenseInfo> newSenseArray, int t) {
-		this.SenseArray = newSenseArray;
-		this.time = t;
+	
+	
+	public SenseMemory() {
+		time = 0;
 	}
 	
-	public void addInfo(SenseInfo newInfo) {
-		SenseArray.add(newInfo);
+	public SenseMemory(int time) {
+		this.time = time;
 	}
 	
 	
@@ -25,15 +26,15 @@ public class SenseMemory {
 		this.time = Integer.parseInt(seeOrSense[1]);
 	}
 	
-	public int getSize() {
-		return SenseArray.size();
-	}
+	public double stamina;
+	public double recovery;
+	public double effort;
 	
-	public SenseInfo getSense(int index) {
-		return SenseArray.get(index);
-	}
-
-	public ArrayList<SenseInfo> SenseArray;
+	public double amountOfSpeed;
+	public double directionOfSpeed;
+	
+	public double headDirection;
+	
 	private int time;
 	
 	
