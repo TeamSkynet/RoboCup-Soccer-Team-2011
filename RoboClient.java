@@ -81,6 +81,17 @@ public class RoboClient {
 
 	}
 	
+	public void initgoalie() throws UnknownHostException {
+		send("(init " + TEAM + " (version " + VERSION + ") (goalie))");
+		
+		try {
+			receive();	
+		} catch(Exception ex) {
+			System.out.println(ex);
+		}
+
+
+	}
 /*
  * This function causes the active player to dash.
  * @param power: a double representing the power of the dash.

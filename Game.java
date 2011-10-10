@@ -69,7 +69,7 @@ public class Game {
 		rc8.init();
 		rc8.move(-30, 25);
 		Thread.sleep(100);
-		rc9.init();
+		rc9.initgoalie();
 		rc9.move(-40, 0);
 		Thread.sleep(100);
 		rc10.init();
