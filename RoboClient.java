@@ -2,6 +2,18 @@ import java.net.*;
 import java.util.*;
 import java.io.*;
 
+/** @file RoboClient.java
+* Class file for RoboClient class
+* @author Joel Tanzi
+* @date September 20, 2011
+* @version 1.2 
+*/
+
+/** @class RoboClient
+* The RoboClient class operates as a client for the RoboCup session.
+* It is mainly designed to be used by the Player class to handle all 
+* client-server communication.  The connection protocol is UDP.
+*/
 public class RoboClient {  
 	public DatagramSocket dsock;
 	private String hostname = new String("127.0.0.1");
@@ -13,7 +25,7 @@ public class RoboClient {
 	
 	private byte[] buffer = new byte[SIZE];
 		
- /*
+ /**
  * This function reads in a message string, and sends it to the RoboCup server.
  * It primarily serves as a method to send commands to the server to control server and player actions.
  * @param message: A String.
@@ -36,9 +48,8 @@ public class RoboClient {
 			
 	}
 	
-/*
+/**
  * This function receives a UDP packet from the RoboCup server, and converts it to a String.
- * @param none
  * @pre The RoboCup server is available.
  * @post The packet from the RoboCup server has been processed.
  * @return String
@@ -62,12 +73,10 @@ public class RoboClient {
 	}
 	
 
-/*
- * This function initializes the soccer team.
- * @param message: none
- * @pre The RoboCup server is available.
- * @post The team has been initialized.
- * @return None
+/**
+ * This function initializes the client with the RoboCup server.
+ * @pre The RoboCup server is hosting connections.
+ * @post The client has been initialized.
  */
 	public void init() throws UnknownHostException {
 		send("(init " + TEAM + " (version " + VERSION + "))");
@@ -80,8 +89,15 @@ public class RoboClient {
 
 
 	}
-	
-	public void initgoalie() throws UnknownHostException {
+
+/**
+ * This function initializes the client as a goalie with the RoboCup server.
+ * @param message: none
+ * @pre The RoboCup server is hosting connections.
+ * @post The goalie has been initialized.
+ * @return None
+ */
+	public void initGoalie() throws UnknownHostException {
 		send("(init " + TEAM + " (version " + VERSION + ") (goalie))");
 		
 		try {
@@ -92,10 +108,11 @@ public class RoboClient {
 
 
 	}
-/*
- * This function causes the active player to dash.
+	
+/**
+ * This function sends the dash command to the server.
  * @param power: a double representing the power of the dash.
- * @pre The RoboCup server is available, team has been initialized.
+ * @pre The RoboCup server is available, client has been initialized.
  * @post The player has dashed according to the given power.
  * @return None
  */
@@ -103,7 +120,7 @@ public class RoboClient {
 		send("(dash " + Double.toString(power) + ")");
 	}
 	
-/*
+/**
  * This function causes the active player to kick.
  * @param power: a double representing the power of the kick.
  * @param dir: a double representing the direction of the kick.
@@ -116,7 +133,7 @@ public class RoboClient {
 		send("(kick " + Double.toString(power) +  Double.toString(dir) + ")");
 	}
 	
-/*
+/**
  * This function causes the active player to turn.
  * @param moment: a double representing the turning angle in degrees.
  * @pre The RoboCup server is available, team has been initialized.
@@ -128,7 +145,7 @@ public class RoboClient {
 		send("(turn " + Double.toString(moment) + ")");
 	}
 	
-/*
+/**
  * This function causes the active player to be teleported to a given set of coordinates within the
  * soccer field.
  * @param x: an integer value for the x-coordinate to move to.
@@ -140,5 +157,18 @@ public class RoboClient {
 	public void move(int x, int y) throws UnknownHostException {
 		send("(move " + Integer.toString(x) + " " + Integer.toString(y) + ")");
 	}
-//end of class	
-}
+
+	/**
+	 * This function causes the active player to catch the ball.  It can only be used
+	 * by a Goalie type player.
+	 * @param dir An integer value representing the direction from which to catch the ball.
+	 * @pre Playmode is play_on or goal_kick, ball is in catchable area.
+	 * @post The player has caught the ball.
+	 * @return None
+	 * @throws UnknownHostException 
+	 */
+	public void catchball(int dir) throws UnknownHostException{
+		send("(catch " + Integer.toString(dir) + ")");
+	}
+	
+}//end of class	

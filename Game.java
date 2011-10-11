@@ -1,95 +1,81 @@
-import java.io.*;
-import java.net.*;
-import java.util.*;
 
 
 public class Game {
-
-	BufferedReader readin = new BufferedReader(new InputStreamReader(System.in));
-	String command = new String();
 	
 	public static void main(String args[]) throws Exception
 	{
-		//Instantiate each player client
-		//RoboClient[] rc = new Roboclient[9];
-		RoboClient rc1 = new RoboClient();
-		RoboClient rc2 = new RoboClient();
-		RoboClient rc3 = new RoboClient();
-		RoboClient rc4 = new RoboClient();
-		RoboClient rc5 = new RoboClient();
-		RoboClient rc6 = new RoboClient();
-		RoboClient rc7 = new RoboClient();
-		RoboClient rc8 = new RoboClient();
-		RoboClient rc9 = new RoboClient();
-		RoboClient rc10 = new RoboClient();
-		RoboClient rc11 = new RoboClient();
 		
-		Memory newMem = new Memory();
-		ObjInfo newInfo = new ObjInfo();
-		Parser p = new Parser();
+		
+		//Instantiate each player client
+		Player p1 = new Player();
+		Player p2 = new Player();
+		Player p3 = new Player();
+		Player p4 = new Player();
+		Player p5 = new Player();
+		Player p6 = new Player();
+		Player p7 = new Player();
+		Player p8 = new Player();
+		Goalie g9 = new Goalie();
+		Player p10 = new Player();
+		Player p11 = new Player();
+
 
 		//Set up connection to RoboCup server
-		rc1.dsock = new DatagramSocket();
-		rc2.dsock = new DatagramSocket();
-		rc3.dsock = new DatagramSocket();
-		rc4.dsock = new DatagramSocket();
-		rc5.dsock = new DatagramSocket();
-		rc6.dsock = new DatagramSocket();
-		rc7.dsock = new DatagramSocket();
-		rc8.dsock = new DatagramSocket();
-		rc9.dsock = new DatagramSocket();
-		rc10.dsock = new DatagramSocket();
-		rc11.dsock = new DatagramSocket();
+		p1.initPlayer();
+		p2.initPlayer();
+		p3.initPlayer();
+		p4.initPlayer();
+		p5.initPlayer();
+		p6.initPlayer();
+		p7.initPlayer();
+		p8.initPlayer();
+		g9.initGoalie();
+		p10.initPlayer();
+		p11.initPlayer();		
 		
-		//Instantiate Game class
-		Game g = new Game();
+		//Instantiate Action class
 		
 		//Initialize all players, and move to correct positions
-		rc1.init();
-		rc1.move(-5, -25);
+		p1.move(-5, -25);
 		Thread.sleep(100);
-		rc2.init();
-		rc2.move(-5, -10);
-		Thread.sleep(100);
-		rc3.init();
-		rc3.move(-5, 10);
-		Thread.sleep(100);
-		rc4.init();
-		rc4.move(-5, 25);
-		Thread.sleep(100);
-		rc5.init();
-		rc5.move(-15, 0);
-		Thread.sleep(100);
-		rc6.init();
-		rc6.move(-30, -25);
-		Thread.sleep(100);
-		rc7.init();
-		rc7.move(-30, 0);
-		Thread.sleep(100);
-		rc8.init();
-		rc8.move(-30, 25);
-		Thread.sleep(100);
-		rc9.initgoalie();
-		rc9.move(-40, 0);
-		Thread.sleep(100);
-		rc10.init();
-		//rc10.move(10, -10);
-		Thread.sleep(100);
-		rc11.init();
-		//rc11.move(-40, 0);
 		
+		p2.move(-5, -10);
+		Thread.sleep(100);
 
+		p3.move(-5, 10);
+		Thread.sleep(100);
+		p4.move(-5, 25);
+		Thread.sleep(100);
+		
+		p5.move(-15, 0);
+		Thread.sleep(100);
+		
+		p6.move(-30, -25);
+		Thread.sleep(100);
+		
+		p7.move(-30, 0);
+		Thread.sleep(100);
+
+		p8.move(-30, 25);
+		Thread.sleep(100);
+
+		g9.move(-40, 0);
+		Thread.sleep(100);
+
+		//Continuous loop during program execution
 		while(true) {
-			p.Parse(rc1.receive(), newMem);
-			p.Parse(rc2.receive(), newMem);
-			p.Parse(rc3.receive(), newMem);
-			p.Parse(rc4.receive(), newMem);
-			p.Parse(rc5.receive(), newMem);
-			p.Parse(rc6.receive(), newMem);
-			p.Parse(rc7.receive(), newMem);
-			p.Parse(rc8.receive(), newMem);
-			p.Parse(rc9.receive(), newMem);
-		}
+			p1.receiveInput();
+			p2.receiveInput();
+			p3.receiveInput();
+			p4.receiveInput();
+			p5.receiveInput();
+			p6.receiveInput();
+			p7.receiveInput();
+			p8.receiveInput();
+			g9.receiveInput();
+			p10.receiveInput();
+			p11.receiveInput();
+		} //end while
 		
 	}
 

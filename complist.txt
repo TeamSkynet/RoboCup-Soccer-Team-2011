@@ -1,10 +1,12 @@
 Action.java
 Game.java
+Goalie.java
 Memory.java
 ObjInfo.java
 ObjMemory.java
 Parser.java
 ParserTest.java
+Player.java
 RoboClient.java
 SenseInfo.java
 SenseMemory.java
