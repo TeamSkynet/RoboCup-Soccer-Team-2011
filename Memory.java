@@ -16,10 +16,9 @@ public class Memory {
 	 */
 	public Memory() {
 		ArrayList<ObjInfo> newObjArray = new ArrayList<ObjInfo>();
-		ArrayList<SenseInfo> newSenArray = new ArrayList<SenseInfo>();
 		int time = 0;
 		ObjMem = new ObjMemory(newObjArray, time);
-		SenMem = new SenseMemory(newSenArray, time);
+		SenMem = new SenseMemory();
 	}
 	
 	/**
@@ -45,17 +44,6 @@ public class Memory {
 	 */
 	public int getObjMemorySize() {
 		return ObjMem.getSize();
-	}
-	
-	/**
-	 * The SenseMemory size
-	 * 
-	 * A getter to quickly retrieve the number of SenseInfo in SenseMemory.
-	 * 
-	 * @return size of ObjMemory
-	 */
-	public int getSenseMemorySize() {
-		return SenMem.getSize();
 	}
 	
 	/**
@@ -169,11 +157,44 @@ public class Memory {
 		return null;
 	}
 	
-
+	public boolean timeCheck(int t) {
+		if(t < ObjMem.getTime())
+			return true;
+		else
+			return false;
+	}
 	
 	
 // ******************* SenseMemory *******************
+	public double getStamina(){
+		return SenMem.stamina;
+	}
 	
+	public double getRecovery(){
+		return SenMem.recovery;
+	}
+	
+	public double getEffort() {
+		return SenMem.effort;
+	}
+	
+	public double getAmountOfSpeed() {
+		return SenMem.amountOfSpeed;
+	}
+	
+	public double getDirectionOfSpeed() {
+		return SenMem.directionOfSpeed;
+	}
+	
+	public double getHeadDirection() {
+		return SenMem.headDirection;
+	}
+	
+// ****************** Hear Memory ********************
+	
+	public String getPlayMode() {
+		return playMode;
+	}
 	
 // ***************** Class Variables *****************
 	
@@ -186,6 +207,10 @@ public class Memory {
 	 * The memory that stores all parsed SenseInfo
 	 */
 	public SenseMemory SenMem;
+	/**
+	 * The play mode as told by the referee
+	 */
+	public String playMode;
 }
 
 

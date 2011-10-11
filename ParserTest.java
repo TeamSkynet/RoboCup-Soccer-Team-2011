@@ -1,3 +1,13 @@
+//********************
+//*
+//* This is an example of how to use the Parser and Memory classes
+//*
+//*
+//* - 10/04/11 - Added a method to check the Memory time against a local time  to fix the over-command-sending problem
+//*
+//********************
+
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -11,126 +21,70 @@ public class ParserTest {
 	{
 		//Instantiate each player client
 		RoboClient rc1 = new RoboClient();
-		RoboClient rc2 = new RoboClient();
-		RoboClient rc3 = new RoboClient();
-
+		//Instantiate new Memory for player 1
 		Memory mem1 = new Memory();
-		Memory mem2 = new Memory();
-		Memory mem3 = new Memory();
+		//Instantiated Parser
 		Parser p = new Parser();
 		
 
 		//Set up connection to RoboCup server
 		rc1.dsock = new DatagramSocket();
-		rc2.dsock = new DatagramSocket();
-		rc3.dsock = new DatagramSocket();
 		
-		//Instantiate test class
-		
+		//Initiate the player into the field
 		rc1.init();
-		rc2.init();
-		rc3.init();
+		//Move the player onto the field (right next to the ball, mind you)
 		rc1.move(-10, 0);
-		rc2.move(-10, 10);
-		rc3.move(-10, -10);
 
+		
+		
+		// Set initial local time at 0
+		int time = 0;
+		
+		// Main loop
 		while(true) {
+			// Call the Parser with the packets from the client and the memory
 			p.Parse(rc1.receive(), mem1);
-			p.Parse(rc2.receive(), mem2);
-			p.Parse(rc3.receive(), mem3);
 			
-			
-			rc1.dash(50);
-			if(mem1.isObjVisible("ball")) {
-				ObjBall ball = mem1.getBall();
+			//**********************************************************************************
+			// - Test the local time against the Memory's time -
+			// 
+			// The timeCheck compares the local time to the time parsed into the ObjMemory. It 
+			// returns true if the local time is smaller than the time in the memory. This will 
+			// make sure that actions are made once per Simulation Step.
+			//
+			// Every time a timeCheck returns true, the local time needs to be updated with the 
+			// Memory's time.
+			//**********************************************************************************
+			if(mem1.timeCheck(time)) {
+				// this is where the local time is updated with the Memory time
+				time = mem1.ObjMem.getTime();
 				
-				if(ball.getDirection() != 0)
-					rc1.turn(ball.getDirection());
-				else if((ball.getDistance() <= 0.7) && (mem1.isObjVisible("player"))) {
-					ObjPlayer teammate = mem1.getPlayer();
-					rc1.kick(50.0, teammate.getDirection());
-					rc1.turn(ball.getDirection());
-				}
-				else if((ball.getDistance() <= 0.7) && (mem1.isObjVisible("goal"))) {
-					ObjGoal goal = mem1.getGoal();
-					rc1.kick(50.0, goal.getDirection());
-					rc1.turn(ball.getDirection());
-				}
-				else if(ball.getDistance() <= 0.7) {
-					rc1.kick(50.0, 0);
-					rc1.turn(ball.getDirection());
-				}
-				else
-					rc1.dash(30);
-			}
-			else {
-				rc1.turn(20);
-				rc1.dash(30);
-			}
-
-			
-			rc2.dash(50);
-			if(mem2.isObjVisible("ball")) {
-				ObjBall ball = mem2.getBall();
+				// This just shows how the getPlayMode() works.
+				System.out.println(mem1.getPlayMode());
 				
-				if(ball.getDirection() != 0)
-					rc2.turn(ball.getDirection());
-				else if((ball.getDistance() <= 0.7) && (mem2.isObjVisible("player"))) {
-					ObjPlayer teammate = mem2.getPlayer();
-					rc2.kick(50.0, teammate.getDirection());
-					rc2.turn(ball.getDirection());
+				// Checking the visibility of the ball
+				if(mem1.isObjVisible("ball")) {
+					ObjBall ball = mem1.getBall();
+					
+					// Theoretically, this would turn the player toward the ball, if it's
+					// not already facing it. It doesn't really work very well because I
+					// haven't completely figured out directions and turning accurately 
+					// yet. It sort of works though.
+					if(ball.getDirection() != 0) {
+						rc1.turn(ball.getDirection());
+					}
+					// Again, this doesn't really work very well, but it sort of shows how
+					// the distance and dash could work. If the player isn't 0.5 meter of
+					// the ball, this would run at it. 
+					else if (ball.getDistance() > 0.5) {
+						rc1.dash(ball.getDistance() * 5.0);
+					}
+					// At least he kicks it!
+					else 
+						rc1.kick(100, 0);
 				}
-				else if((ball.getDistance() <= 0.7) && (mem2.isObjVisible("goal"))) {
-					ObjGoal goal = mem2.getGoal();
-					rc2.kick(50.0, goal.getDirection());
-					rc2.turn(ball.getDirection());
-				}
-				else if(ball.getDistance() <= 0.7) {
-					rc2.kick(50.0, 0);
-					rc2.turn(ball.getDirection());
-				}
-				else
-					rc2.dash(30);
-			}
-			else {
-				rc2.turn(20);
-				rc2.dash(30);
 			}
 			
-			rc3.dash(50);
-			if(mem3.isObjVisible("ball")) {
-				ObjBall ball = mem3.getBall();
-				
-				if(ball.getDirection() != 0)
-					rc3.turn(ball.getDirection());
-				else if((ball.getDistance() <= 0.7) && (mem3.isObjVisible("player"))) {
-					ObjPlayer teammate = mem3.getPlayer();
-					rc3.kick(50.0, teammate.getDirection());
-					rc3.turn(ball.getDirection());
-				}
-				else if((ball.getDistance() <= 0.7) && (mem3.isObjVisible("goal"))) {
-					ObjGoal goal = mem3.getGoal();
-					rc3.kick(50.0, goal.getDirection());
-					rc3.turn(ball.getDirection());
-				}
-				else if(ball.getDistance() <= 0.7) {
-					rc3.kick(50.0, 0);
-					rc3.turn(ball.getDirection());
-				}
-				else
-					rc3.dash(30);
-			}
-			else {
-				rc3.turn(20);
-				rc3.dash(30);
-			}
-				
-				
-				
-			
-
-		}	
-
-	
+		}
 	}
 }
