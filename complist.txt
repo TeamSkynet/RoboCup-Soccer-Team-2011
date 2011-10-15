@@ -8,5 +8,4 @@ Parser.java
 ParserTest.java
 Player.java
 RoboClient.java
-SenseInfo.java
 SenseMemory.java
