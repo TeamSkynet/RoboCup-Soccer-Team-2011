@@ -1,219 +1,183 @@
+/**
+ * @file Field.java
+ * 
+ * A container for fixed points.
+ * 
+ * @author Grant Hays
+ * @date 10/13/11
+ * @version 1
+ */
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
+/**@class Field
+ * 
+ * This creates an ArrayList that holds all the coordinates for the fixed 
+ * points on the field. As the orientation of the axes depends on the side 
+ * of the field the starts on, there are two sets of coordinates, each with 
+ * opposite signs. 
+ * 
+ * @author Grant Hays
+ *
+ */
 public class Field {
 	
 
+	/**
+	 * Field constructor
+	 * @param side	The side of the field the player's team starts on
+	 * @pre The side needs to be parsed from the server's (init) message and 
+	 * passed as the argument
+	 * @post A new Field will be created with access to an array list of all 
+	 * the field's fixed points
+	 * 
+	 */
 	public Field(String side) {
 		
+		// The coordinates for the team starting on the left side
 		if(side.compareTo("l") == 0) {
-			this.ftl50 = new Pos(-50, -39);
-			this.ftl40 = new Pos(-40, -39);
-			this.ftl30 = new Pos(-30, -39);
-			this.ftl20 = new Pos(-20, -39);
-			this.ftl10 = new Pos(-10, -39);
-			this.ft0 = new Pos(0, -39);
-			this.ftr10 = new Pos(10, -39);
-			this.ftr20 = new Pos(20, -39);
-			this.ftr30 = new Pos(30, -39);
-			this.ftr40 = new Pos(40, -39);
-			this.ftr50 = new Pos(50, -39);
+			posList.add(new Pos("ftl50", -50, -39));
+			posList.add(new Pos("ftl40", -40, -39));
+			posList.add(new Pos("ftl30",-30, -39));
+			posList.add(new Pos("ftl20", -20, -39));
+			posList.add(new Pos("ftl10", -10, -39));
+			posList.add(new Pos("ft0", 0, -39));
+			posList.add(new Pos("ftr10", 10, -39));
+			posList.add(new Pos("ftr20", 20, -39));
+			posList.add(new Pos("ftr30", 30, -39));
+			posList.add(new Pos("ftr40", 40, -39));
+			posList.add(new Pos("ftr50", 50, -39));
 			
-			this.frt30 = new Pos(57.5, -30);
-			this.frt20 = new Pos(57.5, -20);
-			this.frt10 = new Pos(57.5, -10);
-			this.fr0 = new Pos(57.5, 0);
-			this.frb10 = new Pos(57.5, 10);
-			this.frt20 = new Pos(57.5, 20);
-			this.frt30 = new Pos(57.5, 30);
+			posList.add(new Pos("frt30", 57.5, -30));
+			posList.add(new Pos("frt20", 57.5, -20));
+			posList.add(new Pos("frt10", 57.5, -10));
+			posList.add(new Pos("fr0", 57.5, 0));
+			posList.add(new Pos("frb10", 57.5, 10));
+			posList.add(new Pos("frt20", 57.5, 20));
+			posList.add(new Pos("frt30", 57.5, 30));
 			
-			this.fbl50 = new Pos(-50, 39);
-			this.fbl40 = new Pos(-40, 39);
-			this.fbl30 = new Pos(-30, 39);
-			this.fbl20 = new Pos(-20, 39);
-			this.fbl10 = new Pos(-10, 39);
-			this.fb0 = new Pos(0, 39);
-			this.fbr10 = new Pos(10, 39);
-			this.fbr20 = new Pos(20, 39);
-			this.fbr30 = new Pos(30, 39);
-			this.fbr40 = new Pos(40, 39);
-			this.fbr50 = new Pos(50, 39);
+			posList.add(new Pos("fbl50", -50, 39));
+			posList.add(new Pos("fbl40", -40, 39));
+			posList.add(new Pos("fbl30", -30, 39));
+			posList.add(new Pos("fbl20", -20, 39));
+			posList.add(new Pos("fbl10", -10, 39));
+			posList.add(new Pos("fb0", 0, 39));
+			posList.add(new Pos("fbr10", 10, 39));
+			posList.add(new Pos("fbr20", 20, 39));
+			posList.add(new Pos("fbr30", 30, 39));
+			posList.add(new Pos("fbr40", 40, 39));
+			posList.add(new Pos("fbr50", 50, 39));
 			
-			this.flt30 = new Pos(-57.5, 30);
-			this.flt20 = new Pos(-57.5, 20);
-			this.flt10 = new Pos(-57.5, 10);
-			this.fl0 = new Pos(-57.5, 0);
-			this.flb10 = new Pos(-57.5, -10);
-			this.flt20 = new Pos(-57.5, -20);
-			this.flt30 = new Pos(-57.5, -30);
-			
-			
-			this.flt = new Pos(-52.5, -34);
-			this.fct = new Pos(0, -34);
-			this.frt = new Pos(52.5, -34);
-			this.flb = new Pos(-52.5, 34);
-			this.fcb = new Pos(0, 34);
-			this.frb = new Pos(52.5, 34);
-			
-			this.fplt = new Pos(-36, -20.16);
-			this.fplc = new Pos(-36, 0);
-			this.fplb = new Pos(-36, 20.16);
-			this.fglt = new Pos(-52.5, -7.01);
-			this.fglb = new Pos(-52.5, 7.01);
-			
-			this.fprt = new Pos(36, -20.16);
-			this.fprc = new Pos(36, 0);
-			this.fprb = new Pos(36, 20.16);
-			this.fgrt = new Pos(52.5, -7.01);
-			this.fgrb = new Pos(52.5, 7.01);
-			
-			this.fc = new Pos(0, 0);
-			
-			this.gl = new Pos(-52.5, 0);
-			this.gr = new Pos(52.5, 0);
+			posList.add(new Pos("flt30", -57.5, 30));
+			posList.add(new Pos("flt20", -57.5, 20));
+			posList.add(new Pos("flt10", -57.5, 10));
+			posList.add(new Pos("fl0", -57.5, 0));
+			posList.add(new Pos("flb10", -57.5, -10));
+			posList.add(new Pos("flt20", -57.5, -20));
+			posList.add(new Pos("flt30", -57.5, -30));
 			
 			
+			posList.add(new Pos("flt", -52.5, -34));
+			posList.add(new Pos("fct", 0, -34));
+			posList.add(new Pos("frt", 52.5, -34));
+			posList.add(new Pos("flb", -52.5, 34));
+			posList.add(new Pos("fcb", 0, 34));
+			posList.add(new Pos("frb", 52.5, 34));
+			
+			posList.add(new Pos("fplt", -36, -20.16));
+			posList.add(new Pos("fplc", -36, 0));
+			posList.add(new Pos("fplb", -36, 20.16));
+			posList.add(new Pos("fglt", -52.5, -7.01));
+			posList.add(new Pos("fglb", -52.5, 7.01));
+			
+			posList.add(new Pos("fprt", 36, -20.16));
+			posList.add(new Pos("fprc", 36, 0));
+			posList.add(new Pos("fprb", 36, 20.16));
+			posList.add(new Pos("fgrt", 52.5, -7.01));
+			posList.add(new Pos("fgrb", 52.5, 7.01));
+			
+			posList.add(new Pos("fc", 0, 0));
+			
+			posList.add(new Pos("gl", -52.5, 0));
+			posList.add(new Pos("gr", 52.5, 0));
 			
 		}
+		// The coordinates for the team starting on the right side
 		else {
-			this.ftl50 = new Pos(50, 39);
-			this.ftl40 = new Pos(40, 39);
-			this.ftl30 = new Pos(30, 39);
-			this.ftl20 = new Pos(20, 39);
-			this.ftl10 = new Pos(10, 39);
-			this.ft0 = new Pos(0, 39);
-			this.ftr10 = new Pos(-10, 39);
-			this.ftr20 = new Pos(-20, 39);
-			this.ftr30 = new Pos(-30, 39);
-			this.ftr40 = new Pos(-40, 39);
-			this.ftr50 = new Pos(-50, 39);
+			posList.add(new Pos("ftl50", 50, 39));
+			posList.add(new Pos("ftl40", 40, 39));
+			posList.add(new Pos("ftl30", 30, 39));
+			posList.add(new Pos("ftl20", 20, 39));
+			posList.add(new Pos("ftl10", 10, 39));
+			posList.add(new Pos("ft0", 0, 39));
+			posList.add(new Pos("ftr10", -10, 39));
+			posList.add(new Pos("ftr20", -20, 39));
+			posList.add(new Pos("ftr30", -30, 39));
+			posList.add(new Pos("ftr40", -40, 39));
+			posList.add(new Pos("ftr50", -50, 39));
 			
-			this.frt30 = new Pos(-57.5, 30);
-			this.frt20 = new Pos(-57.5, 20);
-			this.frt10 = new Pos(-57.5, 10);
-			this.fr0 = new Pos(-57.5, 0);
-			this.frb10 = new Pos(-57.5, -10);
-			this.frt20 = new Pos(-57.5, -20);
-			this.frt30 = new Pos(-57.5, -30);
+			posList.add(new Pos("frt30", -57.5, 30));
+			posList.add(new Pos("frt20", -57.5, 20));
+			posList.add(new Pos("frt10", -57.5, 10));
+			posList.add(new Pos("fr0", -57.5, 0));
+			posList.add(new Pos("frb10", -57.5, -10));
+			posList.add(new Pos("frt20", -57.5, -20));
+			posList.add(new Pos("frt30", -57.5, -30));
 			
-			this.fbl50 = new Pos(50, -39);
-			this.fbl40 = new Pos(40, -39);
-			this.fbl30 = new Pos(30, -39);
-			this.fbl20 = new Pos(20, -39);
-			this.fbl10 = new Pos(10, -39);
-			this.fb0 = new Pos(0, -39);
-			this.fbr10 = new Pos(-10, -39);
-			this.fbr20 = new Pos(-20, -39);
-			this.fbr30 = new Pos(-30, -39);
-			this.fbr40 = new Pos(-40, -39);
-			this.fbr50 = new Pos(-50, -39);
+			posList.add(new Pos("fbl50", 50, -39));
+			posList.add(new Pos("fbl40", 40, -39));
+			posList.add(new Pos("fbl30", 30, -39));
+			posList.add(new Pos("fbl20", 20, -39));
+			posList.add(new Pos("fbl10", 10, -39));
+			posList.add(new Pos("fb0", 0, -39));
+			posList.add(new Pos("fbr10", -10, -39));
+			posList.add(new Pos("fbr20", -20, -39));
+			posList.add(new Pos("fbr30", -30, -39));
+			posList.add(new Pos("fbr40", -40, -39));
+			posList.add(new Pos("fbr50", -50, -39));
 			
-			this.flt30 = new Pos(57.5, -30);
-			this.flt20 = new Pos(57.5, -20);
-			this.flt10 = new Pos(57.5, -10);
-			this.fl0 = new Pos(57.5, 0);
-			this.flb10 = new Pos(57.5, 10);
-			this.flt20 = new Pos(57.5, 20);
-			this.flt30 = new Pos(57.5, 30);
+			posList.add(new Pos("flt30", 57.5, -30));
+			posList.add(new Pos("flt20", 57.5, -20));
+			posList.add(new Pos("flt10", 57.5, -10));
+			posList.add(new Pos("fl0", 57.5, 0));
+			posList.add(new Pos("flb10", 57.5, 10));
+			posList.add(new Pos("flt20", 57.5, 20));
+			posList.add(new Pos("flt30", 57.5, 30));
 			
 			
-			this.flt = new Pos(52.5, 34);
-			this.fct = new Pos(0, 34);
-			this.frt = new Pos(-52.5, -34);
-			this.flb = new Pos(52.5, -34);
-			this.fcb = new Pos(0, -34);
-			this.frb = new Pos(-52.5, -34);
+			posList.add(new Pos("flt", 52.5, 34));
+			posList.add(new Pos("fct", 0, 34));
+			posList.add(new Pos("frt", -52.5, 34));
+			posList.add(new Pos("flb", 52.5, -34));
+			posList.add(new Pos("fcb", 0, -34));
+			posList.add(new Pos("frb", -52.5, -34));
 			
-			this.fplt = new Pos(36, 20.16);
-			this.fplc = new Pos(36, 0);
-			this.fplb = new Pos(36, -20.16);
-			this.fglt = new Pos(52.5, 7.01);
-			this.fglb = new Pos(52.5, -7.01);
+			posList.add(new Pos("fplt", 36, 20.16));
+			posList.add(new Pos("fplc", 36, 0));
+			posList.add(new Pos("fplb", 36, -20.16));
+			posList.add(new Pos("fglt", 52.5, 7.01));
+			posList.add(new Pos("fglb", 52.5, -7.01));
 			
-			this.fprt = new Pos(-36, 20.16);
-			this.fprc = new Pos(-36, 0);
-			this.fprb = new Pos(-36, -20.16);
-			this.fgrt = new Pos(-52.5, 7.01);
-			this.fgrb = new Pos(-52.5, -7.01);
+			posList.add(new Pos("fprt", -36, 20.16));
+			posList.add(new Pos("fprc", -36, 0));
+			posList.add(new Pos("fprb", -36, -20.16));
+			posList.add(new Pos("fgrt", -52.5, 7.01));
+			posList.add(new Pos("fgrb", -52.5, -7.01));
 			
-			this.fc = new Pos(0, 0);
+			posList.add(new Pos("fc", 0, 0));
 			
-			this.gl = new Pos(52.5, 0);
-			this.gr = new Pos(-52.5, 0);
+			posList.add(new Pos("gl", 52.5, 0));
+			posList.add(new Pos("gr", -52.5, 0));
 		}
 		
 		
 		
 	}
 	
-	
-	public Pos ftl50;
-	public Pos ftl40;
-	public Pos ftl30;
-	public Pos ftl20;
-	public Pos ftl10;
-	public Pos ft0;
-	public Pos ftr10;
-	public Pos ftr20;
-	public Pos ftr30;
-	public Pos ftr40;
-	public Pos ftr50;
-	
-	public Pos fbl50;
-	public Pos fbl40;
-	public Pos fbl30;
-	public Pos fbl20;
-	public Pos fbl10;
-	public Pos fb0;
-	public Pos fbr10;
-	public Pos fbr20;
-	public Pos fbr30;
-	public Pos fbr40;
-	public Pos fbr50;
-	
-	public Pos frt30;
-	public Pos frt20;
-	public Pos frt10;
-	public Pos fr0;
-	public Pos frb10;
-	public Pos frb20;
-	public Pos frb30;
-	
-	public Pos flt30;
-	public Pos flt20;
-	public Pos flt10;
-	public Pos fl0;
-	public Pos flb10;
-	public Pos flb20;
-	public Pos flb30;
-
-	
-	public Pos flt;
-	public Pos fct;
-	public Pos frt;
-	public Pos flb;
-	public Pos fcb;
-	public Pos frb;
-	
-	public Pos fplt;
-	public Pos fplc;
-	public Pos fplb;
-	public Pos fglt;
-	public Pos fglb;
-	
-	public Pos fprt;
-	public Pos fprc;
-	public Pos fprb;
-	public Pos fgrt;
-	public Pos fgrb;
-	
-	public Pos fc;
-	
-	public Pos gl;
-	public Pos gr;
-	
-	
+	// The Array list that contains all the positions
+	public ArrayList<Pos> posList = new ArrayList();
 	
 	
 }
