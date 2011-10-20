@@ -1,4 +1,13 @@
+/**
+ * @file Game.java
+ * @author Joel Tanzi*
+ */
 
+/**@class Game
+ * This serves as a main class to assemble the RoboCup team and 
+ * set them into action for the match.
+ * 
+ */
 
 public class Game {
 	
@@ -33,7 +42,6 @@ public class Game {
 		p10.initPlayer();
 		p11.initPlayer();		
 		
-		//Instantiate Action class
 		
 		//Initialize all players, and move to correct positions
 		p1.move(-5, -25);

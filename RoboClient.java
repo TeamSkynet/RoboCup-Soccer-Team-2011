@@ -164,11 +164,20 @@ public class RoboClient {
 	 * @param dir An integer value representing the direction from which to catch the ball.
 	 * @pre Playmode is play_on or goal_kick, ball is in catchable area.
 	 * @post The player has caught the ball.
-	 * @return None
 	 * @throws UnknownHostException 
 	 */
 	public void catchball(int dir) throws UnknownHostException{
 		send("(catch " + Integer.toString(dir) + ")");
 	}
 	
+	/**
+	 * This function causes the active player to speak the given message.
+	 * @param message A string representing the message to be spoken by the player.
+	 * @pre None
+	 * @post The player has spoken the message.
+	 * @throws UnknownHostException 
+	 */	
+	public void say(String message)throws UnknownHostException{
+		send("(say \"" + message + "\")");		
+	}
 }//end of class	

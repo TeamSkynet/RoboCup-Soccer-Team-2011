@@ -1,4 +1,11 @@
+/**
+ * @file Mode.java
+ * @author Joel Tanzi*
+ */
 
+/**@class Mode
+ * The Mode class is a basic data structure to store the parameters for the player modes. 
+ */
 public class Mode {
 	
 	private String modename = new String();
@@ -8,7 +15,7 @@ public class Mode {
 		this.modename = "";
 		this.timeinmode = 0.0;
 	}
-	}
+	
 	/**
 	 * @param modename
 	 * @param timeinmode
