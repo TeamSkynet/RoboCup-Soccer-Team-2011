@@ -293,7 +293,7 @@ class ObjFlag extends ObjInfo {
 class ObjPlayer extends ObjInfo {
 
 	public ObjPlayer() {
-		super("Player");
+		super("player");
 	}
 	
 	/**
