@@ -1,5 +1,4 @@
 import java.net.*;
-import java.util.*;
 import java.io.*;
 
 /** @file RoboClient.java
@@ -18,11 +17,13 @@ public class RoboClient {
 	public DatagramSocket dsock;
 	private String hostname = new String("127.0.0.1");
 	private int port = 6000;
+	@SuppressWarnings("unused")
 	private String command, reply;
 	private static final int SIZE = 1024;
 	private static final String TEAM = "Team_Skynet";
 	private static final String VERSION = "15";
 	
+	@SuppressWarnings("unused")
 	private byte[] buffer = new byte[SIZE];
 		
  /**
@@ -57,6 +58,7 @@ public class RoboClient {
 	public String receive(){
 		byte[] buf = new byte[SIZE];
 		DatagramPacket rpack = new DatagramPacket(buf, SIZE);
+		@SuppressWarnings("unused")
 		String message;
 		
 		try {
@@ -78,11 +80,12 @@ public class RoboClient {
  * @pre The RoboCup server is hosting connections.
  * @post The client has been initialized.
  */
-	public void init() throws UnknownHostException {
+	public void init(Parser p, Memory m) throws UnknownHostException {
 		send("(init " + TEAM + " (version " + VERSION + "))");
 		
 		try {
-			receive();	
+			p.initParse(receive(), m);
+			
 		} catch(Exception ex) {
 			System.out.println(ex);
 		}

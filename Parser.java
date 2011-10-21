@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @file Parser.java
  * 
@@ -8,9 +10,6 @@
  *@version 2
  */
 
-import java.net.*;
-import java.util.*;
-import java.io.*;
 
 /**
  * @class Parser
@@ -395,8 +394,8 @@ public class Parser {
 		
 		//the parsed Stamina information
 		newSenMem.stamina = Double.valueOf(splitStamina[1]);
-		newSenMem.recovery = Double.valueOf(splitStamina[2]);
-		newSenMem.effort = Double.valueOf(splitStamina[3]);
+		newSenMem.effort = Double.valueOf(splitStamina[2]);
+		newSenMem.recovery = Double.valueOf(splitStamina[3]);
 		
 		// the parsed Speed information
 		newSenMem.amountOfSpeed = Double.valueOf(splitSpeed[1]);

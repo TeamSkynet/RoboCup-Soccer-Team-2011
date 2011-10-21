@@ -31,7 +31,7 @@ public class ParserTest {
 		rc1.dsock = new DatagramSocket();
 		
 		//Initiate the player into the field
-		rc1.init();
+		rc1.init(p, mem1);
 		//Move the player onto the field (right next to the ball, mind you)
 		rc1.move(-10, 0);
 

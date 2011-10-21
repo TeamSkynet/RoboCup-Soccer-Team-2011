@@ -22,7 +22,7 @@ public class ParserTest2 {
 		//Instantiate test class
 		ParserTest2 tc = new ParserTest2();
 		
-		rc1.init();
+		rc1.init(p, mem1);
 		rc1.move(-10, 0);
 
 		while(true) {

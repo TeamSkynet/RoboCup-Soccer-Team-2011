@@ -1,7 +1,5 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
-
 
 public class TestRoboClient {
 
@@ -14,16 +12,13 @@ public class TestRoboClient {
 		RoboClient rc1 = new RoboClient();
 
 		Memory newMem = new Memory();
-		ObjInfo newInfo = new ObjInfo();
 		Parser p = new Parser();
 
 		//Set up connection to RoboCup server
 		rc1.dsock = new DatagramSocket();
 		
-		//Instantiate test class
-		TestRoboClient tc = new TestRoboClient();
 		
-		rc1.init();
+		rc1.init(p, newMem);
 		rc1.move(10, -10);
 
 		while(true) {

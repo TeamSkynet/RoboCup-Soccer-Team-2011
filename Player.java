@@ -12,12 +12,12 @@ import java.net.UnknownHostException;
 
 /** @class Player
 * The Player class defines all objects and methods used for the 
-* player within the RoboCup match.  The Player establishes a connection
+* Player within the RoboCup match.  The Player establishes a connection
 * to the server, initializes itself on the team, and 
 * performs all actions related to a RoboCup soccer player such as
 * (but not limited to) kicking, dashing, dribbling, passing and scoring. 
 * The Player class has a Memory for storing the current RoboCup worldstate.
-* It reacts to stimuli based on strategies provided by the Brain. 
+* It reacts to stimuli based on strategies provided by the Brain (TBD). 
 */
 public class Player {
 
@@ -28,16 +28,13 @@ public class Player {
 	private Brain b = new Brain();
 	private int time = 0;
 	
-	/**
-	 * Default constructor
-	 */
+	
 	public Player() {
 		
 	}
 	
 
 	/**
-	 * Constructor for Player class with arguments for setting parameters
 	 * @param rc
 	 * @param m
 	 * @param i
@@ -150,7 +147,7 @@ public class Player {
 	public void initPlayer() throws SocketException, UnknownHostException {
 		
 		rc.dsock = new DatagramSocket();
-		rc.init();
+		rc.init(getParser(), getMem());
 	}
 	
 	
@@ -188,14 +185,6 @@ public class Player {
 		rc.kick(power, dir);
 	}
 	
-	 /**
-	 * Causes Player to dash in the direction faced.
-	 * @param power The power with which to dash.  The greater the power, the more stamina used.  A negative
-	 * value here will cause the player to dash backward (uses twice as much stamina).
-	 * @throws Exception 
-	 * @pre The Player has been initialized.
-	 * @post The player has dashed with the given power.
-	 */
 	public void dash(double power) throws Exception {
 		rc.dash(power);
 	}
@@ -203,9 +192,9 @@ public class Player {
 	 /**
 	 * Causes Player to turn according to a specified turn moment.
 	 * @param moment The turn angle in degrees. 
-	 * @throws UnknownHostException, InterruptedException 
-	 * @pre The Player has been initialized.
-	 * @post The Player has turned in the direction passed.
+	 * @throws InterruptedException 
+	 * @pre Playmode is play_on, ball is in kickable range.
+	 * @post The ball has been kicked in the specified direction and power.
 	 */
 	public void turn(double moment) throws UnknownHostException, InterruptedException {
 		rc.turn(moment);
@@ -214,46 +203,25 @@ public class Player {
 	 /**
 	 * Causes Player to say the given message.  It has a limitation of 512 characters by default.
 	 * @param message The string to be spoken by the player. 
-	 * @throws UnknownHostException, InterruptedException 
-	 * @pre The player has been initialized.
+	 * @throws InterruptedException 
+	 * @pre None
 	 * @post The player has spoken the message.
 	 */	
 	public void say(String message) throws UnknownHostException, InterruptedException {
 		rc.say(message);
 	}
 	
-	/**
-	 *  Marks opponents for defense, by storing the opposing player's team and uniform number
-	 *  in the Brain.
-	 * @param team The marked player's team
-	 * @param number The marked player's uniform number.
-	 */
+	
 	public void markOpponent(String team, String number) {
 		b.setMarked_team(team);
 		b.setMarked_unum(number);
 	}
 	
-	/**
-	 * Sets action for defensive mode: player should look for opponents and mark the closest to defend
-	 * against.
-	 * @pre Opposing player is visible, and can be identifed by team and uniform number.
-	 * @post Opposing player has been marked, and is actively defended against by player.
-	 */
 	public void runDefense() {
-		
-		//Toggle defensive mode
 		b.setDefensive();
-		
-		//Check to see that player object is visible, and is on the opposing team
-		//If so mark that player for defense
-		if (m.isObjVisible("player") && (m.getPlayer().getTeam() != "Team_Skynet")) {
+		if (m.isObjVisible("player")) {
 			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));
-			
-			//For debugging:
-			//System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
-			
-			//dash to marked player and follow
-			
+			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
 		}		
 	}
 	

@@ -1,6 +1,6 @@
-import java.net.*;
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+
+
 /**
  * @author Grant Hays
  * The Memory class stores instances of ObjMemory and SenseMemory and supplies
@@ -21,6 +21,12 @@ public class Memory {
 		SenMem = new SenseMemory();
 	}
 	
+	public void setField(String side) {
+		f = new Field(side);
+		OppGoal = getFlagPos("g" + side);
+	}
+	
+	
 	/**
 	 * The ObjInfo getter
 	 * 
@@ -28,8 +34,6 @@ public class Memory {
 	 * and returns it as an ObjInfo.
 	 * 
 	 * @param i the index number of the location of the desired ObjInfo in ObjArray
-	 * @pre An index needs to be supplied when calling this
-	 * @post A basic ObjInfo will be given.
 	 * @return ObjInfo the ObjInfo at location i of the ObjArray
 	 */
 	// Get Object
@@ -52,8 +56,7 @@ public class Memory {
 	 * Is this ObjInfo visible?
 	 * 
 	 * @param name the ObjName of the ObjInfo we're detecting visibility of
-	 * @return true if the ball is in the ObjMemory, false if it is not or 
-	 * if the the ObjMemory is empty
+	 * @return true if the ball is in the ObjMemory, false if it is not or if the the ObjMemory is empty
 	 */
 	public boolean isObjVisible(String name) {
 		if(ObjMem.getSize() == 0)
@@ -70,9 +73,9 @@ public class Memory {
 	/**
 	 * The Ball Getter
 	 * 
-	 * @pre Make sure you either check visibility first
-	 * @post If the ball is in the Memory, it will be returned. Otherwise
-	 * a Null ObjBall will be sent.
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
 	 * @return ObjBall containing the ball
 	 */
 	public ObjBall getBall() {
@@ -86,14 +89,16 @@ public class Memory {
 	/**
 	 * The Flag Getter
 	 * 
+	 * 
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
 	 * If you're looking for a specific flag, this is you're guy. You need to
 	 * pass in the FlagName (i.e. flb30) into it, and out pops the ObjFlag
 	 * with that FlagName attached to it.
 	 * 
-	 * @pre Make sure you either check visibility first
-	 * @post If the flag is in the Memory, it will be returned. Otherwise
-	 * a Null ObjFlag will be sent.
-	 * @return ObjFlag containing the flag with specified name
+	 * @param name
+	 * @return ObjFlag containing the FlagName you input
 	 */
 	public ObjFlag getFlag(String name) {
 		ObjFlag newFlag = new ObjFlag();
@@ -108,12 +113,13 @@ public class Memory {
 	
 	/**
 	 * The Goal Getter
-	 *  
-	 * This will get the ObjGoal in your field of vision.
-	 *
-	 * @post If you're facing a goal, an ObjGoal with it's information will
-	 * be returned. Otherwise a null ObjGoal will be sent
-	 * @return ObjGoal containing the goal in your vision
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjGoal closest to you.
+	 * 
+	 * @return ObjGoal containing the goal closest to you
 	 */
 	public ObjGoal getGoal() {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
@@ -125,6 +131,9 @@ public class Memory {
 	
 	/**
 	 * The Player Getter
+	 * 
+	 * ****** Make sure you check visibility first! ******* 
+	 * If you don't, you will get a null object, and nobody wants that.
 	 * 
 	 * This will get the ObjPlayer of the first player you see.
 	 * 
@@ -138,32 +147,43 @@ public class Memory {
 		return null;
 	}
 	
+	public ArrayList<ObjPlayer> getPlayers() {
+		ArrayList<ObjPlayer> players = new ArrayList<ObjPlayer>();
+		for(int i = 0; i< ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("player") == 0) {
+				players.add((ObjPlayer) getObj(i));
+			}				
+		}
+		return players;
+	}
+	
+	
 	/**
-	 * The Line getter
-	 * This will get the ObjLine of the first line you see.
+	 * ****** Make sure you check visibility first! *******
+	 * If you don't, you will get a null object, and nobody wants that.
+	 * 
+	 * This will get the ObjLine closest to the player.
 	 * 
 	 * @return ObjLine
 	 */
-	public ObjLine getLine() {
-		for(int i = 0; i < ObjMem.getSize(); i++) {
-			if(getObj(i).getObjName().compareTo("line") == 0)
-				return (ObjLine) getObj(i);
+	public ObjLine getClosestLine() {
+		ObjLine line = new ObjLine();
+		ObjLine closestLine = null;
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			if(getObj(i).getObjName().compareTo("line") == 0) {
+				line = (ObjLine) getObj(i);
+				if(line.getDistance() < dist) {
+					closestLine = line;
+				}
+			}
 		}
-		return null;
+		
+		return closestLine;
 	}
+
 	
-	/**
-	 * This will test a players local time against the ObjMemory's time. This
-	 * can be used to ensure that more than one action will not be attempted
-	 * during a single simulation step.
-	 * 
-	 * @param t	the Player's local time
-	 * @pre A player's local time must be initialized and passed in
-	 * @post The player's local time needs to be set to the Memory's time after
-	 * a true is returned.
-	 * @return true if the newly parsed Memory's time is greater than the players
-	 * local time. False if the memory time is <= the local time.
-	 */
 	public boolean timeCheck(int t) {
 		if(t < ObjMem.getTime())
 			return true;
@@ -171,63 +191,98 @@ public class Memory {
 			return false;
 	}
 	
+	public void setLocation(double x, double y) {
+		this.pos.x = x;
+		this.pos.y = y;
+	}
+	
+	public ObjFlag getClosestFlag() {
+		boolean first = false;
+		ObjFlag flag = new ObjFlag();
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				
+				if(!first)
+					flag = (ObjFlag) getObj(i);
+				else {
+					if(getObj(i).getDistance() < flag.getDistance())
+						flag = (ObjFlag) getObj(i);
+				}
+				
+			}
+		}
+		
+		return flag;
+	}
+	
+	public ObjFlag getClosestBoundary() {
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("b") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+		}
+		
+		return closestFlag;
+	}
+	
+	public Pos getFlagPos(String flagName) {
+		for(int i = 0; i < f.posList.size(); i++) {
+			if(f.posList.get(i).name.compareTo(flagName) == 0)
+				return f.posList.get(i);
+		}
+		
+		return null;
+		
+	}
+	
+
 	
 // ******************* SenseMemory *******************
-	/**
-	 * The getter for the Player's stamina
-	 */
 	public double getStamina(){
 		return SenMem.stamina;
 	}
 	
-	/**
-	 * The getter for the Player's stamina recovery
-	 */
 	public double getRecovery(){
 		return SenMem.recovery;
 	}
 	
-	/**
-	 * The getter for the Player's stamina effort
-	 */
 	public double getEffort() {
 		return SenMem.effort;
 	}
 	
-	/**
-	 * The getter for the magnitude of the Player's velocity
-	 */
 	public double getAmountOfSpeed() {
 		return SenMem.amountOfSpeed;
 	}
 	
-	/**
-	 * The getter for the direction of the Player's velocity
-	 */
 	public double getDirectionOfSpeed() {
-		return SenMem.directionOfSpeed;
+		if(SenMem.directionOfSpeed == 0.0)
+			return 0.0;
+		else
+			return (-1 * SenMem.directionOfSpeed);
 	}
 	
-	/**
-	 * The getter for the angle of the Player's head relative to
-	 * the orientation of the Player's positive y-axis (up-field)
-	 */
 	public double getHeadDirection() {
 		return SenMem.headDirection;
 	}
 	
 // ****************** Hear Memory ********************
 	
-	/**
-	 * The getter for the game's current play mode
-	 */
 	public String getPlayMode() {
 		return playMode;
 	}
 	
 // ***************** Class Variables *****************
 	
-	
+	public Field f;
+	public Pos pos;
 	/**
 	 * The memory that stores all parsed ObjInfo
 	 */
@@ -240,6 +295,11 @@ public class Memory {
 	 * The play mode as told by the referee
 	 */
 	public String playMode;
+	public String side;
+	public Double uNum;
+	public Pos OppGoal;
+
+	
 }
 
 
