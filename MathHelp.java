@@ -4,14 +4,11 @@
  * This has functions of the math I need for calculations.
  * 
  * @author granthays
- * @date 10/09/11
- * @version 135`
+ * @date 10/20/11
+ * @version 2
  *
  */
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
 
 
 public class MathHelp {
@@ -23,7 +20,7 @@ public class MathHelp {
 	 * @param t the angle, in degrees, of the arm from the x-axis
 	 * @return A new Cartesian Pos converted from the r and t of a Polar vector
 	 */
-	public Pos getCartesian(double r, double t) {
+	public Pos getPos(double r, double t) {
 		
 		double x = r * Math.cos(Math.toRadians(t));
 		double y = r * Math.sin(Math.toRadians(t));
@@ -42,7 +39,7 @@ public class MathHelp {
 	 * @return A new Pos with the Cartesian version of your Polar vector
 	 */
 	public Pos getPos(Polar p) {
-		return(getCartesian(p.r, p.t));
+		return(getPos(p.r, p.t));
 	}
 	
 	/**
@@ -96,6 +93,26 @@ public class MathHelp {
 	}
 	
 	/**
+	 * Multiply vector by scalar
+	 * @param p the vector
+	 * @param n the scalar
+	 * @return A Pos vector multiplied by a scalar value
+	 */
+	public Pos vMul(Pos p, double n) {
+		return(new Pos((p.x*n), (p.y*n)));
+	}
+	
+	/**
+	 * Divide vector by scalar
+	 * @param p the vector
+	 * @param n the scalar
+	 * @return A Pos vector divided by a scalar value
+	 */
+	public Pos vDiv(Pos p, double n) {
+		return(new Pos((p.x/n), (p.y/n)));
+	}
+	
+	/**
 	 * Magnitude
 	 * Calculates the Magnitude of a vector, same as r in a Polar vector
 	 * @param p the Pos of the vector
@@ -124,5 +141,65 @@ public class MathHelp {
 	public Pos norm(double dist, Pos a) {
 		return(new Pos((a.x/dist),(a.y/dist)));
 	}
+	
+	/**
+	 * The Effective Dash Power
+	 * 
+	 * @param effort From the stamina in the SenseMemory
+	 * @param power The Power of the dash
+	 * @return the product of effort x power x dash_power_rate (0.006)
+	 */
+	public double edp(double effort, double power) {
+		return(effort * power * .006);
+	}
+	
+	/**
+	 * A calculator for power needed to get to a position on the field. This is derived from
+	 * the Movement Model equations in the Server Manual: section 4.4
+	 * 
+	 * @param p the position to go to
+	 * @param vel_r the magnitude of the player's velocity
+	 * @param vel_t the direction of the player's velocity
+	 * @return The power needed to accelerate the player to the desired location
+	 */
+	public double getPower(Pos p, double vel_r, double vel_t, double effort) {
+		
+		if(mag(p) > 20)
+			return(50);
+		else {
+			Pos v = getPos(vel_r, vel_t);
+			Pos a_dp = vSub(p, v);
+			Pos a_d = vDiv(a_dp, 0.1 * effort);
+			return(mag(a_d));
+		}
+	}
+	
+	/*
+	public Pos getAccel(double edp, double t) {
+		Pos a = new Pos(edp*Math.cos(Math.toRadians(t)), edp*Math.sin(Math.toRadians(t)));
+		return(norm(a));
+	}
+	*/
+	
+	
+	/**
+	 * A method to find the ball's next point given it's velocity and position relative
+	 * to player.
+	 * 
+	 * @param ball
+	 * @return A Polar coordinate with the theoretical position of the ball at time t+1
+	 */
+	public Polar getNextBallPoint(ObjBall ball) {
+		
+		Pos pb = getPos(new Polar(ball.getDistance(), ball.getDirection()));
+		Pos pb2 = getPos(new Polar(ball.getDistChng(), ball.getDirChng()));
+		
+		return(getPolar(vAdd(pb, pb2)));
+		
+	}
+	
+	
+	
+	
 	
 }
