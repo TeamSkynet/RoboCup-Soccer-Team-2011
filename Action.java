@@ -73,7 +73,7 @@ public class Action {
 			}
 			
 			
-			rc.dash(m.getPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirectionOfSpeed(), mem.getStamina(), mem.getEffort()));
+			rc.dash(m.getPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirectionOfSpeed(), mem.getEffort()));
 			Thread.sleep(100);
 			
 		} catch (UnknownHostException e) {
