@@ -4,8 +4,8 @@
  * This has functions of the math I need for calculations.
  * 
  * @author granthays
- * @date 10/20/11
- * @version 2
+ * @date 10/09/11
+ * @version 1
  *
  */
 
@@ -149,8 +149,8 @@ public class MathHelp {
 	 * @param power The Power of the dash
 	 * @return the product of effort x power x dash_power_rate (0.006)
 	 */
-	public double edp(double effort, double power) {
-		return(effort * power * .006);
+	public double edp(double effort, double stamina) {
+		return(Math.min(100, stamina) * effort * .006);
 	}
 	
 	/**
@@ -162,15 +162,14 @@ public class MathHelp {
 	 * @param vel_t the direction of the player's velocity
 	 * @return The power needed to accelerate the player to the desired location
 	 */
-	public double getPower(Pos p, double vel_r, double vel_t, double effort) {
+	public double getPower(Pos p, double vel_r, double vel_t, double effort, double stamina) {
 		
 		if(mag(p) > 20)
 			return(50);
 		else {
 			Pos v = getPos(vel_r, vel_t);
-			Pos a_dp = vSub(p, v);
-			Pos a_d = vDiv(a_dp, 0.1 * effort);
-			return(mag(a_d));
+			Pos a = vSub(p, v);;
+			return(mag(a) * edp(effort, stamina) * 10);
 		}
 	}
 	
