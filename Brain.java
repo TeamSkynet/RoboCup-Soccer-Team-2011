@@ -10,6 +10,7 @@
 public class Brain {
 
 	private Mode currentMode = new Mode();	
+	private Action actions = new Action();
 	private String marked_team;
 	private String marked_unum;
 
@@ -20,6 +21,20 @@ public class Brain {
 		super();
 	}
 	
+	/**
+	 * @return the actions
+	 */
+	public Action getActions() {
+		return actions;
+	}
+
+	/**
+	 * @param actions the actions to set
+	 */
+	public void setActions(Action actions) {
+		this.actions = actions;
+	}
+
 	/**
 	 * Constructor
 	 * @param currentMode

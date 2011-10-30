@@ -43,5 +43,24 @@ public class Goalie extends Player {
 	public void catchball(int dir) throws UnknownHostException{
 		rc.catchball(dir);
 	}
+	
+	public boolean ballInGoalzone() {
+		//TO DO
+		return false;
+	}
+	
+	public void defendGoal() {
+		//If ball in goal zone
+		
+		//Determine ball position in relation to goalie
+		
+		
+		//Move if needed
+		
+		//If ball is in catchable area
+		
+		//Catch ball
+		
+	}
 
 } //end class
