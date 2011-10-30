@@ -13,10 +13,6 @@ public class TestAction {
 		RoboClient rc = new RoboClient();
 		Memory mem = new Memory();
 		Parser p = new Parser();
-		//@SuppressWarnings("unused")
-		
-		@SuppressWarnings("unused")
-		MathHelp m = new MathHelp();
 		
 
 		rc.dsock = new DatagramSocket();
@@ -25,9 +21,6 @@ public class TestAction {
 		Action a = new Action(mem, rc, p);
 		rc.move(-10, 0);
 
-		@SuppressWarnings("unused")
-		Pos local = new Pos(-10, 0);
-		
 		int time = 0;
 		
 		
@@ -37,9 +30,9 @@ public class TestAction {
 			
 			if(mem.timeCheck(time)) {
 				time = mem.ObjMem.getTime();
-					
+				
 				a.findBall();
-			
+				
 			
 			}
 			

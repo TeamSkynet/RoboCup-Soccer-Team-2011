@@ -150,7 +150,7 @@ public class MathHelp {
 	 * @return the product of effort x power x dash_power_rate (0.006)
 	 */
 	public double edp(double effort, double stamina) {
-		return(Math.min(100, stamina) * effort * .006);
+		return(Math.min(100, stamina) * effort * .006 * 100);
 	}
 	
 	/**
@@ -162,23 +162,18 @@ public class MathHelp {
 	 * @param vel_t the direction of the player's velocity
 	 * @return The power needed to accelerate the player to the desired location
 	 */
-	public double getPower(Pos p, double vel_r, double vel_t, double effort, double stamina) {
+	public double getDashPower(Pos p, double vel_r, double vel_t, double effort, double stamina) {
 		
 		if(mag(p) > 20)
 			return(50);
 		else {
 			Pos v = getPos(vel_r, vel_t);
-			Pos a = vSub(p, v);;
-			return(mag(a) * edp(effort, stamina) * 10);
+			Pos a = vSub(p, v);
+			double power = mag(a) / (0.06 * effort);
+			return(Math.min(edp(effort, stamina), power));
 		}
 	}
 	
-	/*
-	public Pos getAccel(double edp, double t) {
-		Pos a = new Pos(edp*Math.cos(Math.toRadians(t)), edp*Math.sin(Math.toRadians(t)));
-		return(norm(a));
-	}
-	*/
 	
 	
 	/**
