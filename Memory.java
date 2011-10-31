@@ -259,6 +259,28 @@ public class Memory {
 		return closestFlag;
 	}
 	
+	public ObjFlag getClosestPenaltyFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("p") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+			
+		}
+		
+		return closestFlag;
+	}
+	
 	public Pos getFlagPos(String flagName) {
 		for(int i = 0; i < f.posList.size(); i++) {
 			if(f.posList.get(i).name.compareTo(flagName) == 0)
