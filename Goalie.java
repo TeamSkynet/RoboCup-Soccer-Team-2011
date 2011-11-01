@@ -85,7 +85,7 @@ public class Goalie extends Player {
 		
 	}
 	
-	/*
+	/**
 	 * Turns goalie toward ball
 	 * 
 	 * @post The goalie will turn in the direction of the ball
@@ -122,7 +122,7 @@ public class Goalie extends Player {
 		}
 	}
 	
-	/*
+	/**
 	 * A method to determine whether the ball is in the penalty box
 	 * 
 	 * @param ball the ObjBall to follow
