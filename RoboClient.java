@@ -20,7 +20,7 @@ public class RoboClient {
 	@SuppressWarnings("unused")
 	private String command, reply;
 	private static final int SIZE = 1024;
-	private static final String TEAM = "Team_Skynet";
+	protected static final String TEAM = "Team_Skynet";
 	private static final String VERSION = "15";
 	
 	@SuppressWarnings("unused")
@@ -100,11 +100,11 @@ public class RoboClient {
  * @post The goalie has been initialized.
  * @return None
  */
-	public void initGoalie() throws UnknownHostException {
+	public void initGoalie(Parser p, Memory m) throws UnknownHostException {
 		send("(init " + TEAM + " (version " + VERSION + ") (goalie))");
 		
 		try {
-			receive();	
+			p.initParse(receive(), m);	
 		} catch(Exception ex) {
 			System.out.println(ex);
 		}
@@ -157,20 +157,20 @@ public class RoboClient {
  * @post The player has moved to the given coordinates.
  * @return None
  */
-	public void move(int x, int y) throws UnknownHostException {
-		send("(move " + Integer.toString(x) + " " + Integer.toString(y) + ")");
+	public void move(double x, double y) throws UnknownHostException {
+		send("(move " + Double.toString(x) + " " + Double.toString(y) + ")");
 	}
 
 	/**
 	 * This function causes the active player to catch the ball.  It can only be used
 	 * by a Goalie type player.
-	 * @param dir An integer value representing the direction from which to catch the ball.
+	 * @param d An integer value representing the direction from which to catch the ball.
 	 * @pre Playmode is play_on or goal_kick, ball is in catchable area.
 	 * @post The player has caught the ball.
 	 * @throws UnknownHostException 
 	 */
-	public void catchball(int dir) throws UnknownHostException{
-		send("(catch " + Integer.toString(dir) + ")");
+	public void catchball(double d) throws UnknownHostException{
+		send("(catch " + Double.toString(d) + ")");
 	}
 	
 	/**

@@ -32,7 +32,7 @@ public class Goalie extends Player {
 	public void initGoalie() throws SocketException, UnknownHostException {
 		
 		rc.dsock = new DatagramSocket();
-		rc.initGoalie();		
+		rc.initGoalie(getParser(), getMem());		
 	}
 	
 	 /**
@@ -40,8 +40,8 @@ public class Goalie extends Player {
 	 * @pre Playmode is play-on, ball is within goalkeeper zone and in the catchable area.
 	 * @post The Goalie has caught the ball.
 	 */
-	public void catchball(int dir) throws UnknownHostException{
-		rc.catchball(dir);
+	public void catchball(double d) throws UnknownHostException{
+		rc.catchball(d);
 	}
 	
 	public void followBall() {
@@ -65,12 +65,14 @@ public class Goalie extends Player {
 				}
 					
 				if(ballInGoalzone(ball)) {
+					
+					defendGoal(ball);
 					//
 					// I think you'd probably go to defendGoal() after this. I was thinking
 					// you should probably pass in the ball to defendGoal, too, so you can use
 					// something like getNextBallPoint(ObjBall ball) in MathHelp
 					//
-					System.out.println("I see you BALL");
+					//System.out.println("I see you BALL");
 				}
 			}
 			
@@ -106,31 +108,90 @@ public class Goalie extends Player {
 		} catch (UnknownHostException e) {
 			System.out.println("Error in Goalie.ballInGoalZone()");
 			e.printStackTrace();
-		}
-		
-		
+		}		
 		
 		return false;
 	}
 	
-	public void defendGoal(ObjBall ball) {
+	/**
+	 * Causes the goalie to act to intercept the ball as it approaches the goal.
+	 * @param ObjBall representing the ball in play.
+	 * @throws UnknownHostException 
+	 * @pre The ball has entered the goal zone.
+	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
+	 */
+	public void defendGoal(ObjBall ball) throws UnknownHostException {				
+
+		//Move to catchable range of ball
+		getAction().gotoPoint(mh.getNextBallPoint(ball));
 		
+		//If ball is in catchable area, catch it
+		if (catchable()){
+			catchball(getMem().getBall().getDirection());
+		}		
+	}
+
+	/**
+	 * Returns the closest player to the goalie as an ObjPlayer object from the memory
+	 * of the current worldstate.
+	 * @pre Players are in sight of the goalie.
+	 * @post The closest player to the goalie has been determined.
+	 * @return ObjPlayer
+	 */
+	public ObjPlayer closestPlayer() {
+		ObjPlayer closestPlayer = new ObjPlayer();
+		double distance = 0;
 		
+		//Loop through arraylist of ObjPlayers
+		for (int i = 0; i < getMem().getPlayers().size(); ++i) {
+			
+			if (!getMem().getPlayers().isEmpty()) {  
+				if (distance == 0) {
+					distance = getMem().getPlayers().get(i).getDistance();
+				}
+				else {
+					
+					//Test if this player is closer than the previous one
+					if (distance > getMem().getPlayers().get(i).getDistance()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestPlayer = getMem().getPlayers().get(i);
+					}
+				}
+			}
+		}		
+		return closestPlayer;
+	}
+	
+	/**
+	 * Returns true or false depending on whether the ball is within the catchable range
+	 * of the goalie.
+	 * @pre The ball is visible to the goalie
+	 * @post The ball is determined to catchable or not.
+	 * @return boolean True if catchable, false if not.
+	 */
+	public boolean catchable() {
 		
-		//If ball in goal zone
+		boolean catchable = false;
 		
-		//Determine ball position in relation to goalie
+		//Test for visibility
+		if (getMem().isObjVisible("ball")) {
+			
+			//Test for moment range
+			if (getMem().getBall().getDirection()> -180 && getMem().getBall().getDirection() < 180) {
+				
+				//Test for catchable distance
+				if (getMem().getBall().getDistance() < 2.0) {
+					catchable = true;
+				}
+			}
+		}
 		
-		
-		//Move if needed
-		
-		//If ball is in catchable area
-		
-		//Catch ball
-		
+		return catchable;
 	}
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();
 
+
 } //end class
+
