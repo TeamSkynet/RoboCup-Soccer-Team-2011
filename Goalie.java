@@ -44,6 +44,48 @@ public class Goalie extends Player {
 		rc.catchball(d);
 	}
 	
+	/**
+	 * Gets absolute position of Goalie on field
+	 * @post Pos with x and y coordinates of Goalie on field
+	 * @return Pos coordinates of position
+	 */
+	public Pos getPosition() {
+		
+		ObjFlag flag = getMem().getClosestPenaltyFlag();
+		ObjGoal goal = getMem().getOwnGoal();
+		
+		
+		if(flag != null) {
+			
+			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
+			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
+			Pos self = mh.vSub(flagCoord, toFlag);
+			
+			return(self);
+			
+		}
+		else if(goal != null) {
+			
+			Pos goalCoord = getMem().getOwnGoalPos();
+			Pos toGoal = mh.getPos(goal.getDistance(), getMem().getDirectionOfSpeed() + goal.getDirection());
+			Pos self = mh.vSub(goalCoord, toGoal);
+
+			return(self);
+		}
+		else {
+			flag = getMem().getClosestBoundary();
+			
+			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
+			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
+			Pos self = mh.vSub(flagCoord, toFlag);
+			
+			return(self);
+			
+		}
+		
+	}
+	
+	
 	public void followBall() {
 		
 		
@@ -67,12 +109,6 @@ public class Goalie extends Player {
 				if(ballInGoalzone(ball)) {
 					
 					defendGoal(ball);
-					//
-					// I think you'd probably go to defendGoal() after this. I was thinking
-					// you should probably pass in the ball to defendGoal, too, so you can use
-					// something like getNextBallPoint(ObjBall ball) in MathHelp
-					//
-					//System.out.println("I see you BALL");
 				}
 			}
 			
@@ -83,34 +119,20 @@ public class Goalie extends Player {
 	}
 	
 	public boolean ballInGoalzone(ObjBall ball) {
-		try {
-			
-			ObjFlag PFlag = getMem().getClosestPenaltyFlag();
-			
-			if(PFlag == null) {
-				getRoboClient().turn(-1 * getMem().getDirectionOfSpeed());
-				System.out.println("No Penalty flag in sight");
-				return false;
-			}
-			else {
-				
-				Pos toFlag = mh.getPos(PFlag.getDistance(), PFlag.getDirection());
-				Pos ballPos = mh.getPos(ball.getDistance(), ball.getDirection());
-				
-				if(toFlag.x >= ballPos.x)
-					return true;
-				else
-					return false;
-				
-				
-			}
-			
-		} catch (UnknownHostException e) {
-			System.out.println("Error in Goalie.ballInGoalZone()");
-			e.printStackTrace();
-		}		
 		
-		return false;
+		if(ball == null)
+			return false;
+		
+		
+		Pos ballPos = mh.getPos(ball.getDistance(), getMem().getDirectionOfSpeed());
+		ballPos = mh.vAdd(getPosition(), ballPos);
+		
+		if((ballPos.x <= -36) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
+			return true;
+		else
+			return false;
+		
+			
 	}
 	
 	/**
