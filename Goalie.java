@@ -210,13 +210,24 @@ public class Goalie extends Player {
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {				
-
+		boolean ballCaught = false;
+		
 		//Move to catchable range of ball
-		getAction().gotoPoint(mh.getNextBallPoint(ball));
-
-		//If ball is in catchable area, catch it
-		if (catchable()){
-			catchball(getMem().getBall().getDirection());
+		if (!ballCaught) {
+			getAction().gotoPoint(mh.getNextBallPoint(ball));
+			Thread.sleep(100);
+			
+			//If ball is in catchable area, catch it
+			if (catchable()){
+				catchball(getMem().getBall().getDirection());
+				ballCaught = true;
+				Thread.sleep(100);
+			}
+		}
+		
+		//If the ball has been caught, kick it out of bounds
+		if (ballCaught) {
+			System.out.println("ball caught!");
 			Thread.sleep(100);
 			kickBallOutOfBounds();
 		}
@@ -253,19 +264,35 @@ public class Goalie extends Player {
 		return closestPlayer;
 	}
 
+	/*
+	 * Kicks the ball out of bounds
+	 * @pre Goalie has control of the ball
+	 * @post Ball has been kicked out of bounds
+	 */
 	public void kickBallOutOfBounds() {
 		try {
+			//Locate closest flag on a boundary line
 			ObjFlag kickFlag = new ObjFlag();
 			kickFlag = getMem().getClosestBoundary();
-			//System.out.println("Flag name: " + getMem().getClosestBoundary().getFlagName());
-			if (!(kickFlag.getFlagName() == "flb10" || kickFlag.getFlagName() == "fl0" || kickFlag.getFlagName() == "flt10")) {
+			//System.out.println("Flag name: " + kickFlag.getFlagName());
+			
+			//Test to ensure the flag is within a kickable range and kick it if it is
+			if (kickFlag.getDistance() < 25 && kickFlag.getFlagName() != "flt10" && kickFlag.getFlagName() != "fl0"
+				&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
+					&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
 				kick(100,kickFlag.getDirection());
-			}else {
+			}			
+			else {  //Turn and dash to a new position and check flag again
 				turn(-110);
 				Thread.sleep(100);
-				dash(50);
-				Thread.sleep(100);
-				kick(100,getMem().getClosestBoundary().getDirection());
+				
+				//Kick if the boundary flag is now reachable
+				kickFlag = getMem().getClosestBoundary();
+				if (kickFlag.getDistance() < 25 && kickFlag.getFlagName() != "flt10" && kickFlag.getFlagName() != "fl0"
+					&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
+						&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
+					kick(100,kickFlag.getDirection());
+				}	
 			}
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
@@ -278,6 +305,7 @@ public class Goalie extends Player {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();

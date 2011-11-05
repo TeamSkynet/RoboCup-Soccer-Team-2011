@@ -133,7 +133,7 @@ public class RoboClient {
  */
 	public void kick(double power, double dir) throws UnknownHostException {
 		
-		send("(kick " + Double.toString(power) +  Double.toString(dir) + ")");
+		send("(kick " + Double.toString(power) +  " " + Double.toString(dir) + ")");
 	}
 	
 /**
