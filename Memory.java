@@ -1,4 +1,3 @@
-
 import java.util.*;
 /**
 * @author Grant Hays
@@ -135,6 +134,28 @@ public class Memory {
 		return null;
 	}
 	
+	public Pos getOppGoalPos() {
+		if(side.compareTo("l") == 0) 
+			return(getFlagPos("gr"));
+		else
+			return(getFlagPos("gl"));
+	}
+	
+	public ObjGoal getOwnGoal() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if((getObj(i).getObjName().compareTo("goal") == 0) && (getObj(i).getSide().compareTo(side) == 0))
+				return (ObjGoal) getObj(i);
+		}
+		return null;
+	}
+	
+	public Pos getOwnGoalPos() {
+		if(side.compareTo("l") == 0) 
+			return(getFlagPos("gl"));
+		else
+			return(getFlagPos("gr"));
+	}
+	
 	/**
 	* The Player Getter
 	*
@@ -259,6 +280,28 @@ public class Memory {
 		return closestFlag;
 	}
 	
+	public ObjFlag getClosestPenaltyFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("p") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+			
+		}
+		
+		return closestFlag;
+	}
+	
 	public Pos getFlagPos(String flagName) {
 		for(int i = 0; i < f.posList.size(); i++) {
 			if(f.posList.get(i).name.compareTo(flagName) == 0)
@@ -303,7 +346,10 @@ public class Memory {
 	* The getter for the direction of the Player's velocity
 	*/
 	public double getDirectionOfSpeed() {
-		return (-1 * SenMem.directionOfSpeed);
+		if(SenMem.directionOfSpeed == 0)
+			return 0.0;
+		else
+			return (-1 * SenMem.directionOfSpeed);
 	}
 	
 	/**
