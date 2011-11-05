@@ -26,7 +26,11 @@ public class Player {
 	private ObjInfo i = new ObjInfo();
 	private Parser p = new Parser();
 	private Brain b = new Brain();
+<<<<<<< HEAD
 	private Action a = new Action(m, rc, p);
+=======
+	private Action a = new Action(m, rc);
+>>>>>>> 1bbb2ad4d3dae0e42c891a5cc61d5c0d6e86ef60
 	private int time = 0;
 	
 	
