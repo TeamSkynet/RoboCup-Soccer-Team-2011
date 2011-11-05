@@ -436,6 +436,7 @@ public class Memory {
 	
 	// ***************** Class Variables *****************
 	
+	public MathHelp m = new MathHelp();
 	public Field f;
 	public Pos pos;
 	
