@@ -59,7 +59,7 @@ public class Goalie extends Player {
 			
 			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
 			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
-			Pos self = mh.vAdd(flagCoord, toFlag);
+			Pos self = mh.vSub(flagCoord, toFlag);
 			/*
 			System.out.println("****************************************");
 			System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
@@ -75,7 +75,7 @@ public class Goalie extends Player {
 			
 			Pos goalCoord = getMem().getOwnGoalPos();
 			Pos toGoal = mh.getPos(goal.getDistance(), getMem().getDirectionOfSpeed() + goal.getDirection());
-			Pos self = mh.vAdd(goalCoord, toGoal);
+			Pos self = mh.vSub(goalCoord, toGoal);
 			/*
 			System.out.println("****************************************");
 			System.out.println("Goal (g" + goal.getSide() + "): (" + goalCoord.x + ", " + goalCoord.y + ")");
@@ -91,7 +91,7 @@ public class Goalie extends Player {
 			
 			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
 			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
-			Pos self = mh.vAdd(flagCoord, toFlag);
+			Pos self = mh.vSub(flagCoord, toFlag);
 			/*
 			System.out.println("****************************************");
 			System.out.println("Boundary Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
