@@ -8,10 +8,9 @@ public class Action {
 		
 	}
 	
-	public Action(Memory mem, RoboClient rc, Parser p) {
+	public Action(Memory mem, RoboClient rc) {
 		this.mem = mem;
 		this.rc = rc;
-		this.p = p;
 	}
 	
 	public void setMem(Memory mem) {
@@ -80,10 +79,11 @@ public class Action {
 	private void stayInBounds() {
 		ObjLine line = mem.getClosestLine();
 		if((line.getDistance() < 1.0) && ((line.getDirection() < 5.0) && (line.getDirection() > -5.0))) {
+			
 			try {
-				rc.turn(90);
-			} catch (UnknownHostException e) {
-				System.out.println("Error at action.stayInBounds() turn");
+				rc.dash(-100);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -95,7 +95,7 @@ public class Action {
 		ObjGoal goal = mem.getOppGoal();
 		if(goal != null) {
 			try {
-				rc.kick(50, goal.getDirection());
+				rc.kick(50, mem.getDirectionOfSpeed() + goal.getDirection());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() kick 1");
 				e.printStackTrace();
@@ -120,10 +120,33 @@ public class Action {
 		
 	}
 
-
+public Pos getPosition() {
+		
+		ObjFlag flag = mem.getClosestFlag();
+		
+		
+		if(flag != null) {
+			
+			Pos flagCoord = mem.getFlagPos(flag.getFlagName());
+			Pos toFlag = m.getPos(flag.getDistance(), mem.getDirectionOfSpeed() + flag.getDirection());
+			Pos self = m.vSub(flagCoord, toFlag);
+			
+			return(self);
+		}
+		else {
+			flag = mem.getClosestBoundary();
+			
+			Pos flagCoord = mem.getFlagPos(flag.getFlagName());
+			Pos toFlag = m.getPos(flag.getDistance(), mem.getDirectionOfSpeed() + flag.getDirection());
+			Pos self = m.vSub(flagCoord, toFlag);
+			
+			return(self);
+			
+		}
+		
+	}
 	
 	
-	public Parser p;
 	public MathHelp m = new MathHelp();
 	public Memory mem;
 	public RoboClient rc;

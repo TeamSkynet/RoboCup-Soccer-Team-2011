@@ -45,66 +45,6 @@ public class Goalie extends Player {
 	}
 
 
-	/**
-	 * Gets absolute position of Goalie on field
-	 * @post Pos with x and y coordinates of Goalie on field
-	 * @return Pos coordinates of position
-	 */
-	public Pos getPosition() {
-		
-		ObjFlag flag = getMem().getClosestPenaltyFlag();
-		ObjGoal goal = getMem().getOwnGoal();
-		
-		
-		if(flag != null) {
-			
-			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
-			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
-			Pos self = mh.vSub(flagCoord, toFlag);
-			/*
-			System.out.println("****************************************");
-			System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
-			System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
-			System.out.println("DirectionOfSpeed: " + getMem().getDirectionOfSpeed());
-			System.out.println("My Position: (" + self.x + ", " + self.y + ")");
-			*/
-			
-			return(self);
-			
-		}
-		else if(goal != null) {
-			
-			Pos goalCoord = getMem().getOwnGoalPos();
-			Pos toGoal = mh.getPos(goal.getDistance(), getMem().getDirectionOfSpeed() + goal.getDirection());
-			Pos self = mh.vSub(goalCoord, toGoal);
-			/*
-			System.out.println("****************************************");
-			System.out.println("Goal (g" + goal.getSide() + "): (" + goalCoord.x + ", " + goalCoord.y + ")");
-			System.out.println("Goal Polar: (" + goal.getDistance() + ", " + goal.getDirection() + ")");
-			System.out.println("DirectionOfSpeed: " + getMem().getDirectionOfSpeed());
-			System.out.println("My Position: (" + self.x + ", " + self.y + ")");
-			*/
-
-			return(self);
-		}
-		else {
-			flag = getMem().getClosestBoundary();
-			
-			Pos flagCoord = getMem().getFlagPos(flag.getFlagName());
-			Pos toFlag = mh.getPos(flag.getDistance(), getMem().getDirectionOfSpeed() + flag.getDirection());
-			Pos self = mh.vSub(flagCoord, toFlag);
-			/*
-			System.out.println("****************************************");
-			System.out.println("Boundary Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
-			System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
-			System.out.println("DirectionOfSpeed: " + getMem().getDirectionOfSpeed());
-			System.out.println("My Position: (" + self.x + ", " + self.y + ")");
-			*/
-			return(self);
-			
-		}
-		
-	}
 	
 	/**
 	 * Turns goalie toward ball
@@ -117,6 +57,7 @@ public class Goalie extends Player {
 		try {
 			if(!getMem().isObjVisible("ball")) {
 				getRoboClient().turn(45);
+				return;
 			}
 			if(getMem().isObjVisible("ball")) {
 				ObjBall ball = getMem().getBall();
@@ -154,7 +95,7 @@ public class Goalie extends Player {
 			return false;
 		
 		
-		Pos ballPos = mh.getPos(ball.getDistance(), getMem().getDirectionOfSpeed());
+		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
 		ballPos = mh.vAdd(getPosition(), ballPos);
 		/*
 		System.out.println("Ball polar: (" + ball.getDistance() + ", " + ball.getDirection() + ")");
@@ -164,7 +105,7 @@ public class Goalie extends Player {
 		System.out.println("");
 		*/
 		
-		if((ballPos.x <= -36) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
+		if(((ballPos.x <= -36) && (ballPos.x >= -52.5)) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
 			return true;
 		else
 			return false;

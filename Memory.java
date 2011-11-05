@@ -241,22 +241,24 @@ public class Memory {
 	}
 	
 	public ObjFlag getClosestFlag() {
-		boolean first = false;
+		
 		ObjFlag flag = new ObjFlag();
-		for(int i = 0; i < ObjMem.getSize(); i++) {
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
 			if(getObj(i).getObjName().compareTo("flag") == 0) {
-				
-				if(!first)
-					flag = (ObjFlag) getObj(i);
-				else {
-					if(getObj(i).getDistance() < flag.getDistance())
-						flag = (ObjFlag) getObj(i);
+				flag = (ObjFlag) getObj(i);
+				if(flag.getDistance() < dist) {
+					closestFlag = flag;
+					dist = flag.getDistance();
 				}
-				
 			}
 		}
 		
-		return flag;
+		return closestFlag;
 	}
 	
 	public ObjFlag getClosestBoundary() {
@@ -310,6 +312,69 @@ public class Memory {
 		
 		return null;
 		
+	}
+	
+	public double getDirection() {
+		ObjLine line = getClosestLine();
+		
+		if(line.getSide().compareTo("t") == 0) {
+			if(line.getDirection() > 0)
+				return(-1 * line.getDirection());
+			else
+				return(-180 - line.getDirection());
+		}
+		
+		else if(line.getSide().compareTo("b") == 0) {
+			if(line.getDirection() < 0)
+				return(-1 * line.getDirection());
+			else
+				return(180 - line.getDirection());
+		}		
+		
+		else if(line.getSide().compareTo(side) == 0) {
+			if(Math.abs(line.getDirection()) == 90.0)
+				return(180.0);
+			else if(line.getDirection() > 0)
+				return(-90 - line.getDirection());
+			else if(line.getDirection() < 0)
+				return(90 - line.getDirection());
+		}
+		
+		else if(line.getSide().compareTo(oppSide) == 0){
+			if(Math.abs(line.getDirection()) == 90.0)
+				return(0.0);
+			else if(line.getDirection() > 0)
+				return(90 - line.getDirection());
+			else if(line.getDirection() < 0)
+				return(-90 - line.getDirection());
+		}
+		
+		return(0.0);
+	}
+	
+	public Pos getPosition() {
+			
+			ObjFlag flag = getClosestFlag();
+			
+			
+			//System.out.println("getPosition flag: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
+			{
+				
+				Pos flagCoord = getFlagPos(flag.getFlagName());
+				Pos toFlag = m.getPos(flag.getDistance(), getDirection() + flag.getDirection());
+				Pos self = m.vSub(flagCoord, toFlag);
+				/*
+				System.out.println("****************************************");
+				System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
+				System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
+				System.out.println("DirectionOfSpeed: " + getDirection());
+				System.out.println("My Position: (" + self.x + ", " + self.y + ")");
+				*/
+				
+				return(self);
+				
+			}
+			
 	}
 	
 	
