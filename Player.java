@@ -26,7 +26,7 @@ public class Player {
 	private ObjInfo i = new ObjInfo();
 	private Parser p = new Parser();
 	private Brain b = new Brain();
-	private Action a = new Action(m, rc, p);
+	private Action a = new Action(m, rc);
 	private int time = 0;
 	
 	
@@ -148,6 +148,14 @@ public class Player {
 	}
 
 
+	public double getDirection() {
+		return(getMem().getDirection());
+	}
+	
+	public Pos getPosition() {
+		return(getMem().getPosition());
+	}
+	
 	/**
 	 * Initializes the Player with the RoboCup server.
 	 * @pre A RoboCup server is available.
