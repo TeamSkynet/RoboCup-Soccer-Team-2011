@@ -95,7 +95,7 @@ public class Action {
 		ObjGoal goal = mem.getOppGoal();
 		if(goal != null) {
 			try {
-				rc.kick(50, mem.getDirectionOfSpeed() + goal.getDirection());
+				rc.kick(50, mem.getDirection() + goal.getDirection());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() kick 1");
 				e.printStackTrace();
@@ -103,7 +103,7 @@ public class Action {
 		}
 		else {
 			try {
-				rc.kick(50, mem.getDirectionOfSpeed());
+				rc.kick(50, mem.getDirection());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() turn");
 				e.printStackTrace();
@@ -119,34 +119,31 @@ public class Action {
 			}
 		
 	}
+	
+	
+	public void kickToPoint(ObjBall ball, Polar p) {
+		
+		if(ball.getDistance() < 1.885) {
+			try {
+				rc.kick(m.getKickPower(p, mem.getAmountOfSpeed(), mem.getDirection(), ball.getDistance(), ball.getDirection()), p.t);
+			} catch (UnknownHostException e) {
+				System.out.println("Error in Action.kickToPoint");
+				e.printStackTrace();
+			}
+		}
 
-public Pos getPosition() {
-		
-		ObjFlag flag = mem.getClosestFlag();
-		
-		
-		if(flag != null) {
-			
-			Pos flagCoord = mem.getFlagPos(flag.getFlagName());
-			Pos toFlag = m.getPos(flag.getDistance(), mem.getDirectionOfSpeed() + flag.getDirection());
-			Pos self = m.vSub(flagCoord, toFlag);
-			
-			return(self);
-		}
-		else {
-			flag = mem.getClosestBoundary();
-			
-			Pos flagCoord = mem.getFlagPos(flag.getFlagName());
-			Pos toFlag = m.getPos(flag.getDistance(), mem.getDirectionOfSpeed() + flag.getDirection());
-			Pos self = m.vSub(flagCoord, toFlag);
-			
-			return(self);
-			
-		}
 		
 	}
 	
+	public void kickToPoint(ObjBall ball, Pos p) {
+		kickToPoint(ball, m.getPolar(p));
+	}
 	
+	/*
+	public void dribbleToPoint(ObjBall ball, Pos p) {
+		
+	}
+	*/
 	public MathHelp m = new MathHelp();
 	public Memory mem;
 	public RoboClient rc;
