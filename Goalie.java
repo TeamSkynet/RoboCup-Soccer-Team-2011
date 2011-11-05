@@ -220,7 +220,6 @@ public class Goalie extends Player {
 			Thread.sleep(100);
 			kickBallOutOfBounds();
 		}
-
 	}
 
 	/**
@@ -256,9 +255,11 @@ public class Goalie extends Player {
 
 	public void kickBallOutOfBounds() {
 		try {
+			ObjFlag kickFlag = new ObjFlag();
+			kickFlag = getMem().getClosestBoundary();
 			//System.out.println("Flag name: " + getMem().getClosestBoundary().getFlagName());
-			if (!(getMem().getClosestBoundary().getFlagName() == "flb10")) {
-				kick(100,getMem().getClosestBoundary().getDirection());
+			if (!(kickFlag.getFlagName() == "flb10" || kickFlag.getFlagName() == "fl0" || kickFlag.getFlagName() == "flt10")) {
+				kick(100,kickFlag.getDirection());
 			}else {
 				turn(-110);
 				Thread.sleep(100);
