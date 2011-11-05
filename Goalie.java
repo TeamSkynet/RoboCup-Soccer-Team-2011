@@ -232,6 +232,13 @@ public class Goalie extends Player {
 			kickBallOutOfBounds();
 		}
 	}
+	
+	public void getBtwBallAndGoal() {
+		System.out.println("Ball distance: " + getMem().getBall().getDistance());
+		System.out.println("Ball direction: " + getMem().getBall().getDirection());
+		System.out.println("Goal distance: " + getMem().getOwnGoal().getDistance());
+		System.out.println("Goal direction: " + getMem().getOwnGoal().getDirection());
+	}
 
 	/**
 	 * Returns the closest player to the goalie as an ObjPlayer object from the memory
@@ -276,13 +283,14 @@ public class Goalie extends Player {
 			kickFlag = getMem().getClosestBoundary();
 			//System.out.println("Flag name: " + kickFlag.getFlagName());
 			
-			//Test to ensure the flag is within a kickable range and kick it if it is
+			//Test to ensure the flag is within a kickable range, and
+			// is not dangerously close to the goal, and kick it if allowable
 			if (kickFlag.getDistance() < 25 && kickFlag.getFlagName() != "flt10" && kickFlag.getFlagName() != "fl0"
 				&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
 					&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
 				kick(100,kickFlag.getDirection());
 			}			
-			else {  //Turn and dash to a new position and check flag again
+			else {  //Turn to a new position and check flag again
 				turn(-110);
 				Thread.sleep(100);
 				
