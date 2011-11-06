@@ -81,6 +81,10 @@ public class MathHelp {
 		return(new Pos((p1.x + p2.x), (p1.y + p2.y)));
 	}
 	
+	public Pos rcsAdd(Pos p1, Pos p2) {
+		return(new Pos((p1.x + p2.x), p1.y - p2.y));
+	}
+	
 	/**
 	 * Vector Subtraction
 	 * 
@@ -192,8 +196,16 @@ public class MathHelp {
 		
 	}
 	
+	public double getKickPower(Polar p, double vel_r, double vel_t, double ball_r, double ball_t) {
+		if(ball_r > 0.7)
+			ball_r = 0.7;
+		
+		double ep = (1 - 0.25 * ((ball_t/180) + (ball_r/ball_r)));
+		return(Math.min(((p.r - vel_r) * ep), 100));
+	}
 	
-	
-	
+	public double getKickPower(Pos p, double vel_r, double vel_t, double ball_r, double ball_t) {
+		return(getKickPower(getPolar(p), vel_r, vel_t, ball_r, ball_t));
+	}
 	
 }
