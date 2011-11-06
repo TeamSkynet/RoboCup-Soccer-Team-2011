@@ -20,7 +20,7 @@ import java.net.UnknownHostException;
 * It reacts to stimuli based on strategies provided by the Brain (TBD). 
 */
 public class Player {
-
+	
 	protected RoboClient rc = new RoboClient();
 	private Memory m = new Memory();
 	private ObjInfo i = new ObjInfo();
@@ -34,6 +34,9 @@ public class Player {
 		
 	}
 	
+	public Player(String team){
+		this.rc.setTeam(team);
+	}
 
 	/**
 	 * @param rc
