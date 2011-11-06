@@ -50,8 +50,12 @@ public class Action {
 			if((ball.getDistance() > 20) && (ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
 				rc.turn(ball.getDirection());
 			}
-			else if(ball.getDistance() < 20) {
+			else if((ball.getDistance() < 20.0) && (ball.getDistance() > 0.7)){
 				interceptBall(ball);
+			}
+			else if(ball.getDistance() <= 0.7)  {
+				dribbleToGoal(ball);
+				
 			}
 			
 		}
@@ -63,20 +67,28 @@ public class Action {
 	
 	
 	private void interceptBall(ObjBall ball) throws UnknownHostException, InterruptedException {
-		
-		
 		Polar p = m.getNextBallPoint(ball);
-		stayInBounds();
-		gotoPoint(p);
-		if(ball.getDistance() <= 0.7) {
-			kickToGoal();
-			//Thread.sleep(100);
-		}
-			
-		
+		if(stayInBounds())
+			gotoPoint(p);
 	}
 	
-	private void stayInBounds() {
+	private boolean stayInBounds() {
+		if(mem.side.compareTo("l") == 0) {
+			if((mem.getPlayMode().compareTo("play_on") != 0) && (mem.getPlayMode().compareTo("kick_off_l") != 0)) {
+				return false;
+			}
+			else
+				return true;
+		}
+		else {
+			if((mem.getPlayMode().compareTo("play_on") != 0) && (mem.getPlayMode().compareTo("kick_off_r") != 0)) {
+				return false;
+			}
+			else
+				return true;
+		}
+		
+		/*
 		ObjLine line = mem.getClosestLine();
 		if((line.getDistance() < 1.0) && ((line.getDirection() < 5.0) && (line.getDirection() > -5.0))) {
 			
@@ -87,6 +99,7 @@ public class Action {
 				e.printStackTrace();
 			}
 		}
+		*/
 	}
 	
 	
@@ -123,7 +136,7 @@ public class Action {
 	
 	public void kickToPoint(ObjBall ball, Polar p) {
 		
-		if(ball.getDistance() < 1.885) {
+		if(ball.getDistance() <= 0.7) {
 			try {
 				rc.kick(m.getKickPower(p, mem.getAmountOfSpeed(), mem.getDirection(), ball.getDistance(), ball.getDirection()), p.t);
 			} catch (UnknownHostException e) {
@@ -139,13 +152,27 @@ public class Action {
 		kickToPoint(ball, m.getPolar(p));
 	}
 	
-	/*
-	public void dribbleToPoint(ObjBall ball, Pos p) {
-		
+	
+	
+	public void dribbleToGoal(ObjBall ball) {
+		if(stayInBounds()) {
+			ObjGoal goal = mem.getOppGoal();
+			
+			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
+				kickToPoint(ball, m.getPolar(20.0, goal.getDirection() + ball.getDirection()));
+			}
+			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {
+				kickToGoal();
+			}
+			else if(goal == null) {
+				kickToPoint(ball, m.getPolar(10, (mem.getDirection() + ball.getDirection())));
+			}
+		}
 	}
-	*/
+	
 	public MathHelp m = new MathHelp();
 	public Memory mem;
 	public RoboClient rc;
 	public Polar OppGoal;
+	public boolean atGoal;
 }

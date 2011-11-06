@@ -157,8 +157,6 @@ public class Goalie extends Player {
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {				
 
 		
-
-		
 		//Move to catchable range of ball
 		if (!ballCaught) {
 			getAction().gotoPoint(mh.getNextBallPoint(ball));

@@ -28,6 +28,7 @@ public class Player {
 	private Brain b = new Brain();
 	private Action a = new Action(m, rc);
 	private int time = 0;
+	public boolean wait = true;
 	
 	
 	public Player() {
@@ -150,7 +151,6 @@ public class Player {
 		this.time = time;
 	}
 
-
 	public double getDirection() {
 		return(getMem().getDirection());
 	}
@@ -158,7 +158,7 @@ public class Player {
 	public Pos getPosition() {
 		return(getMem().getPosition());
 	}
-	
+
 	/**
 	 * Initializes the Player with the RoboCup server.
 	 * @pre A RoboCup server is available.
@@ -244,5 +244,6 @@ public class Player {
 			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
 		}		
 	}
+	
 	
 }

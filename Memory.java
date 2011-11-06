@@ -1,3 +1,4 @@
+
 import java.util.*;
 /**
 * @author Grant Hays
@@ -19,6 +20,11 @@ public class Memory {
 		SenMem = new SenseMemory();
 	}
 	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public void setField(String side) {
 		f = new Field(side);
 		if(side.compareTo("l") == 0) {
@@ -134,6 +140,11 @@ public class Memory {
 		return null;
 	}
 	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public Pos getOppGoalPos() {
 		if(side.compareTo("l") == 0) 
 			return(getFlagPos("gr"));
@@ -141,6 +152,11 @@ public class Memory {
 			return(getFlagPos("gl"));
 	}
 	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public ObjGoal getOwnGoal() {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
 			if((getObj(i).getObjName().compareTo("goal") == 0) && (getObj(i).getSide().compareTo(side) == 0))
@@ -149,6 +165,11 @@ public class Memory {
 		return null;
 	}
 	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public Pos getOwnGoalPos() {
 		if(side.compareTo("l") == 0) 
 			return(getFlagPos("gl"));
@@ -217,7 +238,11 @@ public class Memory {
 	}
 	
 	
-	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public ObjLine getClosestLine() {
 		ObjLine line = new ObjLine();
 		ObjLine closestLine = null;
@@ -235,85 +260,11 @@ public class Memory {
 		return closestLine;
 	}
 	
-	public void setLocation(double x, double y) {
-		this.pos.x = x;
-		this.pos.y = y;
-	}
-	
-	public ObjFlag getClosestFlag() {
-		
-		ObjFlag flag = new ObjFlag();
-		ObjFlag closestFlag = null;
-		
-		double dist = 100.0;
-		
-		for(int i = 0; i < getObjMemorySize(); i++) {
-			
-			if(getObj(i).getObjName().compareTo("flag") == 0) {
-				flag = (ObjFlag) getObj(i);
-				if(flag.getDistance() < dist) {
-					closestFlag = flag;
-					dist = flag.getDistance();
-				}
-			}
-		}
-		
-		return closestFlag;
-	}
-	
-	public ObjFlag getClosestBoundary() {
-		
-		ObjFlag flag = new ObjFlag();
-		ObjFlag closestFlag = null;
-		
-		double dist = 100.0;
-		
-		for(int i = 0; i < getObjMemorySize(); i++) {
-			
-			if(getObj(i).getObjName().compareTo("flag") == 0) {
-				flag = (ObjFlag) getObj(i);
-				if((flag.getFlagType().compareTo("b") == 0) && (flag.getDistance() < dist)) {
-					closestFlag = flag;
-					dist = flag.getDistance();
-				}
-			}
-		}
-		
-		return closestFlag;
-	}
-	
-	public ObjFlag getClosestPenaltyFlag() {
-		
-		ObjFlag flag = new ObjFlag();
-		ObjFlag closestFlag = null;
-		
-		double dist = 100.0;
-		
-		for(int i = 0; i < getObjMemorySize(); i++) {
-			
-			if(getObj(i).getObjName().compareTo("flag") == 0) {
-				flag = (ObjFlag) getObj(i);
-				if((flag.getFlagType().compareTo("p") == 0) && (flag.getDistance() < dist)) {
-					closestFlag = flag;
-					dist = flag.getDistance();
-				}
-			}
-			
-		}
-		
-		return closestFlag;
-	}
-	
-	public Pos getFlagPos(String flagName) {
-		for(int i = 0; i < f.posList.size(); i++) {
-			if(f.posList.get(i).name.compareTo(flagName) == 0)
-				return f.posList.get(i);
-		}
-		
-		return null;
-		
-	}
-	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public double getDirection() {
 		ObjLine line = getClosestLine();
 		
@@ -352,30 +303,136 @@ public class Memory {
 		return(0.0);
 	}
 	
-	public Pos getPosition() {
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
+	public void setLocation(double x, double y) {
+		this.pos.x = x;
+		this.pos.y = y;
+	}
+	
+	//TODO Write Javadoc
+	/**
+	 *
+	 * @return
+	 */
+	public ObjFlag getClosestFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
 			
-			ObjFlag flag = getClosestFlag();
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if(flag.getDistance() < dist) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+		}
+		
+		return closestFlag;
+	}
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
+	public ObjFlag getClosestBoundary() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
 			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("b") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+		}
+		
+		return closestFlag;
+	}
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
+	public ObjFlag getClosestPenaltyFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
 			
-			//System.out.println("getPosition flag: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
-			{
-				
-				Pos flagCoord = getFlagPos(flag.getFlagName());
-				Pos toFlag = m.getPos(flag.getDistance(), getDirection() + flag.getDirection());
-				Pos self = m.vSub(flagCoord, toFlag);
-				/*
-				System.out.println("****************************************");
-				System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
-				System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
-				System.out.println("DirectionOfSpeed: " + getDirection());
-				System.out.println("My Position: (" + self.x + ", " + self.y + ")");
-				*/
-				
-				return(self);
-				
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("p") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
 			}
 			
+		}
+		
+		return closestFlag;
 	}
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
+	public Pos getFlagPos(String flagName) {
+		for(int i = 0; i < f.posList.size(); i++) {
+			if(f.posList.get(i).name.compareTo(flagName) == 0)
+				return f.posList.get(i);
+		}
+		
+		return null;
+		
+	}
+	
+public Pos getPosition() {
+		
+		ObjFlag flag = getClosestFlag();
+		
+		
+		//System.out.println("getPosition flag: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
+		{
+			
+			Pos flagCoord = getFlagPos(flag.getFlagName());
+			Pos toFlag = m.getPos(flag.getDistance(), getDirection() + flag.getDirection());
+			Pos self = m.vSub(flagCoord, toFlag);
+			/*
+			System.out.println("****************************************");
+			System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
+			System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
+			System.out.println("DirectionOfSpeed: " + getDirection());
+			System.out.println("My Position: (" + self.x + ", " + self.y + ")");
+			*/
+			
+			return(self);
+			
+		}
+		
+}
+	
+	
 	
 	
 	// ******************* SenseMemory *******************
@@ -453,9 +510,32 @@ public class Memory {
 	*/
 	public String playMode;
 	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public String oppSide;
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public String side;
-	public Double uNum;
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
+	public int uNum;
+	
+	//TODO Write Javadoc
+		/**
+		 *
+		 * @return
+		 */
 	public Pos oppGoal;
 
 }

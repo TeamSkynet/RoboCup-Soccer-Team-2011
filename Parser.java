@@ -49,7 +49,7 @@ public class Parser {
 		// make sure this is, in fact, the init message from the server
 		if(splitPacket[0].compareTo("init") == 0) {
 			mem.side = splitPacket[1];
-			mem.uNum = Double.valueOf(splitPacket[2]);
+			mem.uNum = Integer.valueOf(splitPacket[2]);
 			mem.playMode = splitPacket[3];
 			mem.setField(mem.side);
 		}

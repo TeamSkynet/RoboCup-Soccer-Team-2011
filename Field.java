@@ -177,7 +177,7 @@ public class Field {
 	}
 	
 	// The Array list that contains all the positions
-	public ArrayList<Pos> posList = new ArrayList();
+	public ArrayList<Pos> posList = new ArrayList<Pos>();
 	
 	
 }

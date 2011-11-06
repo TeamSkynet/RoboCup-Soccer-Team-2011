@@ -20,13 +20,53 @@ public class RoboClient {
 	@SuppressWarnings("unused")
 	private String command, reply;
 	private static final int SIZE = 1024;
-	protected static final String TEAM = "Team_Skynet";
+	private String team = "Team_Skynet";
 	private static final String VERSION = "15";
 	
 	@SuppressWarnings("unused")
 	private byte[] buffer = new byte[SIZE];
-		
+	
+	
  /**
+	 * 
+	 */
+	public RoboClient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+/**
+	 * @param port
+	 */
+	public RoboClient(int port) {
+		super();
+		this.port = port;
+	}
+	
+
+/**
+ * @param team
+ */
+public RoboClient(String team) {
+	super();
+	this.team = team;
+}
+
+/**
+ * @return the team
+ */
+public String getTeam() {
+	return team;
+}
+
+/**
+ * @param team the team to set
+ */
+public void setTeam(String team) {
+	this.team = team;
+}
+
+/**
  * This function reads in a message string, and sends it to the RoboCup server.
  * It primarily serves as a method to send commands to the server to control server and player actions.
  * @param message: A String.
@@ -81,7 +121,7 @@ public class RoboClient {
  * @post The client has been initialized.
  */
 	public void init(Parser p, Memory m) throws UnknownHostException {
-		send("(init " + TEAM + " (version " + VERSION + "))");
+		send("(init " + team + " (version " + VERSION + "))");
 		
 		try {
 			p.initParse(receive(), m);
@@ -93,6 +133,13 @@ public class RoboClient {
 
 	}
 
+	public void initTrainer() throws UnknownHostException {
+		send("(init (version " + VERSION + "))");
+	}
+	
+	public void changePlayMode(String playmode) throws UnknownHostException {
+		send("(change mode " + playmode + ")");
+	}
 /**
  * This function initializes the client as a goalie with the RoboCup server.
  * @param message: none
@@ -101,7 +148,7 @@ public class RoboClient {
  * @return None
  */
 	public void initGoalie(Parser p, Memory m) throws UnknownHostException {
-		send("(init " + TEAM + " (version " + VERSION + ") (goalie))");
+		send("(init " + team + " (version " + VERSION + ") (goalie))");
 		
 		try {
 			p.initParse(receive(), m);	
