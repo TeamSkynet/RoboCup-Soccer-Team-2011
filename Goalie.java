@@ -61,6 +61,8 @@ public class Goalie extends Player {
 			}
 			if(getMem().isObjVisible("ball")) {
 				ObjBall ball = getMem().getBall();
+				
+					//getBtwBallAndGoal(ball);
 
 				if((ball.getDirection() > 5.0) || (ball.getDirection() < -5.0)) {
 					getRoboClient().turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
@@ -70,6 +72,9 @@ public class Goalie extends Player {
 
 					defendGoal(ball);
 				}
+				/*else {
+					kickBallOutOfBounds();
+				}*/
 			}
 
 		} catch (UnknownHostException e) {
@@ -150,31 +155,33 @@ public class Goalie extends Player {
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {				
-		boolean ballCaught = false;
+
 		
-		/*if (getMem().isObjVisible("ball")) {
-			getBtwBallAndGoal(ball);
-		}*/
+
 		
 		//Move to catchable range of ball
 		if (!ballCaught) {
 			getAction().gotoPoint(mh.getNextBallPoint(ball));
 			Thread.sleep(100);
+			System.out.println("flag1");
 			
 			//If ball is in catchable area, catch it
 			if (catchable()){
 				catchball(getMem().getBall().getDirection());
 				ballCaught = true;
 				Thread.sleep(100);
+				System.out.println("flag2");
 			}
+		
 		}
 		
 		//If the ball has been caught, kick it out of bounds
-		if (ballCaught) {
+		/*if (ballCaught) {
 			System.out.println("ball caught!");
 			Thread.sleep(100);
 			kickBallOutOfBounds();
-		}
+			System.out.println("flag3");
+		}*/
 	}
 	
 	public void getBtwBallAndGoal(ObjBall ball) {
@@ -271,6 +278,7 @@ public class Goalie extends Player {
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();
+	boolean ballCaught = false;
 	//public Field f = new Field(getMem().side);
 
 
