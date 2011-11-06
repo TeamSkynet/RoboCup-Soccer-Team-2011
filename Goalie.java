@@ -108,10 +108,9 @@ public class Goalie extends Player {
 		if(((ballPos.x <= -36) && (ballPos.x >= -52.5)) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
 			return true;
 		else
-			return false;
-		
-			
+			return false;			
 	}
+	
 	
 	/**
 	 * Returns true or false depending on whether the ball is within the catchable range
@@ -153,6 +152,10 @@ public class Goalie extends Player {
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {				
 		boolean ballCaught = false;
 		
+		/*if (getMem().isObjVisible("ball")) {
+			getBtwBallAndGoal(ball);
+		}*/
+		
 		//Move to catchable range of ball
 		if (!ballCaught) {
 			getAction().gotoPoint(mh.getNextBallPoint(ball));
@@ -174,11 +177,21 @@ public class Goalie extends Player {
 		}
 	}
 	
-	public void getBtwBallAndGoal() {
-		System.out.println("Ball distance: " + getMem().getBall().getDistance());
-		System.out.println("Ball direction: " + getMem().getBall().getDirection());
-		System.out.println("Goal distance: " + getMem().getOwnGoal().getDistance());
-		System.out.println("Goal direction: " + getMem().getOwnGoal().getDirection());
+	public void getBtwBallAndGoal(ObjBall ball) {
+		
+		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
+		ballPos = mh.vAdd(getPosition(), ballPos);
+		Pos goalPos = getMem().getOwnGoalPos();
+		Pos newPos = new Pos();
+		
+		double slope = (goalPos.y - ballPos.y)/(goalPos.x - ballPos.x);
+		double x_p = 0.66 * (goalPos.x - ballPos.x) + ballPos.x;
+		double y_int = ballPos.y - ballPos.x * slope;
+		double y_p = slope * x_p + y_int;
+		newPos.x = x_p;
+		newPos.y = y_p;
+		
+		getAction().gotoPoint(newPos);
 	}
 
 	/**
@@ -258,6 +271,7 @@ public class Goalie extends Player {
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();
+	//public Field f = new Field(getMem().side);
 
 
 } //end class

@@ -13,8 +13,10 @@ public class GoalieTest {
 		
 		Goalie g9 = new Goalie();
 		g9.initGoalie();
-		//g9.move(-40, 0);
-		g9.move(-40, 30);
+		g9.move(-40, 0);
+		//g9.move(-40, 35);
+		//Thread.sleep(100);
+		//g9.turn(-90);
 		Thread.sleep(100);
 		
 		while(true) {
@@ -23,8 +25,8 @@ public class GoalieTest {
 			if(g9.getMem().timeCheck(g9.getTime())) {
 				g9.setTime(g9.getMem().SenMem.getTime());
 				
-				//g9.followBall();
-				g9.getBtwBallAndGoal();
+				g9.followBall();
+				//g9.getBtwBallAndGoal();
 			
 			
 			}

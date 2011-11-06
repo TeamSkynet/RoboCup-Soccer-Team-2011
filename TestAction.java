@@ -18,7 +18,7 @@ public class TestAction {
 		rc.dsock = new DatagramSocket();
 		rc.init(p, mem);
 		p.initParse(rc.receive(), mem);
-		Action a = new Action(mem, rc, p);
+		Action a = new Action(mem, rc);
 		rc.move(-10, 0);
 
 		int time = 0;
