@@ -102,13 +102,13 @@ public class Goalie extends Player {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
 		ballPos = mh.vAdd(getPosition(), ballPos);
-		/*
+		
 		System.out.println("Ball polar: (" + ball.getDistance() + ", " + ball.getDirection() + ")");
 		System.out.println("Ball position: (" + ballPos.x + ", " + ballPos.y + ")");
 		System.out.println("****************************************");
 		System.out.println("");
 		System.out.println("");
-		*/
+		
 		
 		if(((ballPos.x <= -36) && (ballPos.x >= -52.5)) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
 			return true;
@@ -154,33 +154,33 @@ public class Goalie extends Player {
 	 * @pre The ball has entered the goal zone.
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
-	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {				
-
+	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {
+		
+		ballCaught = false;
 		
 		//Move to catchable range of ball
-		if (!ballCaught) {
+		if (!catchable()) {
+			System.out.println("not catchable");
+			System.out.println("NextBallPoint: " + mh.getPos(mh.getNextBallPoint(ball)).x + " " + mh.getPos(mh.getNextBallPoint(ball)).y);
 			getAction().gotoPoint(mh.getNextBallPoint(ball));
-			Thread.sleep(100);
-			System.out.println("flag1");
 			
-			//If ball is in catchable area, catch it
-			if (catchable()){
-				catchball(getMem().getBall().getDirection());
-				ballCaught = true;
-				Thread.sleep(100);
-				System.out.println("flag2");
-			}
-		
 		}
-		
-		//If the ball has been caught, kick it out of bounds
-		/*if (ballCaught) {
-			System.out.println("ball caught!");
+		else {
+			//If ball is in catchable area, catch it
+			System.out.println("catchable");
+			catchball(getMem().getBall().getDirection());
+			ballCaught = true;
 			Thread.sleep(100);
-			kickBallOutOfBounds();
-			System.out.println("flag3");
-		}*/
+			
+			while (ballCaught) {
+				kickBallOutOfBounds();
+				Thread.sleep(100);
+			}
+
+		}
 	}
+		 //end method
+		
 	
 	public void getBtwBallAndGoal(ObjBall ball) {
 		
@@ -205,8 +205,10 @@ public class Goalie extends Player {
 	 * @pre Players are in sight of the goalie.
 	 * @post The closest player to the goalie has been determined.
 	 * @return ObjPlayer
+	 * @throws InterruptedException 
+	 * @throws UnknownHostException 
 	 */
-	public ObjPlayer closestPlayer() {
+	public ObjPlayer closestPlayer() throws UnknownHostException, InterruptedException {
 		ObjPlayer closestPlayer = new ObjPlayer();
 		double distance = 0;
 
@@ -225,6 +227,23 @@ public class Goalie extends Player {
 						closestPlayer = getMem().getPlayers().get(i);
 					}
 				}
+			}
+			else {  //No players in goalie's sight, so turn to another point to check again
+				turn(30);
+				
+				if (!getMem().getPlayers().isEmpty()) {  
+					if (distance == 0) {
+						distance = getMem().getPlayers().get(i).getDistance();
+					}
+					else {
+						//Test if this player is closer than the previous one
+						if (distance > getMem().getPlayers().get(i).getDistance()) {
+							distance = getMem().getPlayers().get(i).getDistance();
+							closestPlayer = getMem().getPlayers().get(i);
+						}
+					}
+				}
+				
 			}
 		}		
 		return closestPlayer;
@@ -248,6 +267,8 @@ public class Goalie extends Player {
 				&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
 					&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
 				kick(100,kickFlag.getDirection());
+				ballCaught = false;
+				Thread.sleep(100);
 			}			
 			else {  //Turn to a new position and check flag again
 				turn(-110);
@@ -259,6 +280,8 @@ public class Goalie extends Player {
 					&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
 						&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
 					kick(100,kickFlag.getDirection());
+					ballCaught = false;
+					Thread.sleep(100);
 				}	
 			}
 		} catch (UnknownHostException e) {

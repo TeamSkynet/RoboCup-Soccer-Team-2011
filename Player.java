@@ -19,7 +19,7 @@ import java.net.UnknownHostException;
 * The Player class has a Memory for storing the current RoboCup worldstate.
 * It reacts to stimuli based on strategies provided by the Brain (TBD). 
 */
-public class Player {
+public class Player extends Thread {
 	
 	protected RoboClient rc = new RoboClient();
 	private Memory m = new Memory();
@@ -188,7 +188,7 @@ public class Player {
 	 * @pre Playmode is before-kickoff, goal-scored, free-kick.
 	 * @post The Player has been moved to the correct position.
 	 */
-	public void move(int x, int y) throws UnknownHostException, InterruptedException {
+	public void move(double x, double y) throws UnknownHostException, InterruptedException {
 		rc.move(x, y);
 	}
 	
@@ -205,6 +205,13 @@ public class Player {
 		rc.kick(power, dir);
 	}
 	
+	 /**
+	 * Causes Player to dash.
+	 * @param power The power with which to dash in the form of a decimal value.
+	 * @throws Exception 
+	 * @pre Play mode is play_on.
+	 * @post The player has dashed at the given power.
+	 */	
 	public void dash(double power) throws Exception {
 		rc.dash(power);
 	}
@@ -231,12 +238,17 @@ public class Player {
 		rc.say(message);
 	}
 	
-	
+	/*
+	 * Marks opposing players for defense
+	 */
 	public void markOpponent(String team, String number) {
 		b.setMarked_team(team);
 		b.setMarked_unum(number);
 	}
 	
+	/*
+	 * Follows opposing players on defense
+	 */
 	public void runDefense() {
 		b.setDefensive();
 		if (m.isObjVisible("player")) {
@@ -245,5 +257,25 @@ public class Player {
 		}		
 	}
 	
+	//Run method for Player's individual thread (not yet complete)
+	public void run() {
+		try {			
+			while (true) {
+				//System.out.println("In while");
+				if (getMem().timeCheck(getTime())) {
+					setTime(getMem().ObjMem.getTime());
+					receiveInput();
+					getAction().findBall();
+				}
+			}
+
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }

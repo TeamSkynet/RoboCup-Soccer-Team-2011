@@ -70,8 +70,13 @@ public static void main(String args[]) throws Exception
 	g9.move(-40, 0);
 	Thread.sleep(100);
 	
+	p1.start();
+	p2.start();
+	p3.start();
+	g9.start();
+	
 		//Continuous loop during program execution
-		while(true) {
+		//while(true) {
 		/*p1.receiveInput();		
 		p2.receiveInput();
 		p3.receiveInput();
@@ -83,7 +88,8 @@ public static void main(String args[]) throws Exception
 		g9.receiveInput();
 		p10.receiveInput();
 		p11.receiveInput();*/
-			
+		
+		
 		/*p1.play();
 		p2.play();
 		p3.play();
@@ -96,7 +102,7 @@ public static void main(String args[]) throws Exception
 		p10.play();
 		p11.play();	*/		
 		
-		} //end while
+		//} //end while
 	
 	}
 
