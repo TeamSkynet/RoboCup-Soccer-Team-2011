@@ -55,8 +55,8 @@ public class Field {
 			posList.add(new Pos("frt10", 57.5, -10));
 			posList.add(new Pos("fr0", 57.5, 0));
 			posList.add(new Pos("frb10", 57.5, 10));
-			posList.add(new Pos("frt20", 57.5, 20));
-			posList.add(new Pos("frt30", 57.5, 30));
+			posList.add(new Pos("frb20", 57.5, 20));
+			posList.add(new Pos("frb30", 57.5, 30));
 			
 			posList.add(new Pos("fbl50", -50, 39));
 			posList.add(new Pos("fbl40", -40, 39));
@@ -123,8 +123,8 @@ public class Field {
 			posList.add(new Pos("frt10", -57.5, 10));
 			posList.add(new Pos("fr0", -57.5, 0));
 			posList.add(new Pos("frb10", -57.5, -10));
-			posList.add(new Pos("frt20", -57.5, -20));
-			posList.add(new Pos("frt30", -57.5, -30));
+			posList.add(new Pos("frb20", -57.5, -20));
+			posList.add(new Pos("frb30", -57.5, -30));
 			
 			posList.add(new Pos("fbl50", 50, -39));
 			posList.add(new Pos("fbl40", 40, -39));
