@@ -196,6 +196,21 @@ public class MathHelp {
 		
 	}
 	
+	
+	/**
+	 * A method to find an opponent's next point given his velocity and position relative
+	 * to the player. 
+	 * @param opponent An ObjPlayer object representing the opponent to track
+	 * @return A Polar coordinate with the predicted position of the opponent at time t+1
+	 */
+	public Polar getNextOpponentPoint(ObjPlayer opponent) {
+		Pos po = getPos(new Polar(opponent.getDistance(), opponent.getDirection()));
+		Pos po2 = getPos(new Polar(opponent.getDistChng(), opponent.getDirChng()));
+		
+		return (getPolar(vAdd(po,po2)));
+	}
+	
+	
 	public double getKickPower(Polar p, double vel_r, double vel_t, double ball_r, double ball_t) {
 		if(ball_r > 0.7)
 			ball_r = 0.7;

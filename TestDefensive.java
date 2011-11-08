@@ -28,8 +28,13 @@ public class TestDefensive {
 			p2.receiveInput();
 			g3.receiveInput();
 			
-			if (g3.getMem().timeCheck(g3.getTime())) {
-				g3.setTime(g3.getMem().ObjMem.getTime());
+			if (p1.getMem().timeCheck(p1.getTime())) {
+				p1.setTime(p1.getMem().ObjMem.getTime());
+				
+				//p1.turn(180);
+				p1.runDefense();
+				
+				
 				//System.out.println("No players?: " + g3.getMem().getPlayers().isEmpty());
 				//System.out.println("Closest Player: " + g3.closestPlayer().getuNum());
 				

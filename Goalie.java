@@ -44,11 +44,9 @@ public class Goalie extends Player {
 		rc.catchball(d);
 	}
 
-
 	
 	/**
-	 * Turns goalie toward ball
-	 * 
+	 * Turns goalie toward the ball
 	 * @post The goalie will turn in the direction of the ball
 	 */
 	public void followBall() {
@@ -62,7 +60,7 @@ public class Goalie extends Player {
 			if(getMem().isObjVisible("ball")) {
 				ObjBall ball = getMem().getBall();
 				
-					//getBtwBallAndGoal(ball);
+				getBtwBallAndGoal(ball);
 
 				if((ball.getDirection() > 5.0) || (ball.getDirection() < -5.0)) {
 					getRoboClient().turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
@@ -181,7 +179,12 @@ public class Goalie extends Player {
 	}
 		 //end method
 		
-	
+	/*
+	 * Moves goalie between the ball and the goal (under construction)
+	 * @param ball An ObjBall.
+	 * @pre Ball is visible to the goalie.
+	 * @post The goalie has moved to a point on the line between the ball and the goal.
+	 */
 	public void getBtwBallAndGoal(ObjBall ball) {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
@@ -197,6 +200,7 @@ public class Goalie extends Player {
 		newPos.y = y_p;
 		
 		getAction().gotoPoint(newPos);
+		
 	}
 
 	/**
@@ -250,7 +254,7 @@ public class Goalie extends Player {
 	}
 
 	/*
-	 * Kicks the ball out of bounds
+	 * Causes the goalie to kick the ball out of bounds
 	 * @pre Goalie has control of the ball
 	 * @post Ball has been kicked out of bounds
 	 */

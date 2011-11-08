@@ -130,6 +130,7 @@ public class Player extends Thread {
 	}
 
 	/**
+	 * Sets the parser for the player.
 	 * @param p The Parser to set.
 	 */
 	public void setParser(Parser p) {
@@ -137,6 +138,7 @@ public class Player extends Thread {
 	}
 
 	/**
+	 * Returns the current player time.
 	 * @return the time
 	 */
 	public int getTime() {
@@ -145,16 +147,23 @@ public class Player extends Thread {
 
 
 	/**
+	 * Sets the current time for the player.
 	 * @param time the time to set
 	 */
 	public void setTime(int time) {
 		this.time = time;
 	}
-
+	/**
+	 * Returns the direction of the player
+	 */
 	public double getDirection() {
 		return(getMem().getDirection());
 	}
 	
+	/**
+	 * Returns the current absolute coordinates of the player.
+	 * @return Pos
+	 */
 	public Pos getPosition() {
 		return(getMem().getPosition());
 	}
@@ -248,13 +257,72 @@ public class Player extends Thread {
 	
 	/*
 	 * Follows opposing players on defense
+	 * 
 	 */
-	public void runDefense() {
+	public void runDefense() throws UnknownHostException, InterruptedException {
 		b.setDefensive();
-		if (m.isObjVisible("player")) {
+		
+		while (closestOpponent() == null){
+			turn(30);
+		}
+		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
+		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
+		
+		/*if (m.isObjVisible("player")) {
 			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));
 			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
+		}		*/
+	}
+	
+	/**
+	 * Returns the closest opponent to the player
+	 * @pre Players are in sight of the goalie.
+	 * @post The closest opponent to the player has been determined.
+	 * @return ObjPlayer
+	 * @throws InterruptedException 
+	 * @throws UnknownHostException 
+	 */
+	public ObjPlayer closestOpponent() throws UnknownHostException, InterruptedException {
+		ObjPlayer closestOpponent = new ObjPlayer();
+		double distance = 0;
+
+		//Loop through arraylist of ObjPlayers
+		for (int i = 0; i < getMem().getPlayers().size(); ++i) {
+
+			if (!getMem().getPlayers().isEmpty()) {  
+				if (distance == 0 && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+					distance = getMem().getPlayers().get(i).getDistance();
+					closestOpponent = getMem().getPlayers().get(i);
+				}
+				else {
+
+					//Test if this player is closer than the previous one
+					if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestOpponent = getMem().getPlayers().get(i);
+					}
+				}
+			}
+			else {  //No other players in player's sight, so turn to another point to check again
+				turn(30);
+				
+				if (!getMem().getPlayers().isEmpty()) {  
+					if (distance == 0 && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestOpponent = getMem().getPlayers().get(i);
+					}
+					else {
+						//Test if this player is closer than the previous one
+						if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+							distance = getMem().getPlayers().get(i).getDistance();
+							closestOpponent = getMem().getPlayers().get(i);
+						}
+					}
+				}
+				
+			}
 		}		
+		return closestOpponent;
 	}
 	
 	//Run method for Player's individual thread (not yet complete)
