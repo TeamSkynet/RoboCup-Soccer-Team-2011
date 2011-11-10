@@ -22,11 +22,9 @@ public class Action {
 		try {
 			if(go.t > 5.0 || go.t < -5.0) {
 				rc.turn(go.t * (1+(5*mem.getAmountOfSpeed())));
-				Thread.sleep(100);
 			}
 			rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirectionOfSpeed(), mem.getEffort(), mem.getStamina()));
 		
-			Thread.sleep(100);
 			
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
@@ -42,6 +40,7 @@ public class Action {
 	public void gotoPoint(Pos p) {
 		gotoPoint(m.getPolar(p));
 	}
+	
 	
 	
 	public void findBall() throws UnknownHostException, InterruptedException {
@@ -61,7 +60,6 @@ public class Action {
 		}
 		else
 			rc.turn(30);
-			//Thread.sleep(100);
 	}
 		
 	
@@ -88,27 +86,15 @@ public class Action {
 				return true;
 		}
 		
-		/*
-		ObjLine line = mem.getClosestLine();
-		if((line.getDistance() < 1.0) && ((line.getDirection() < 5.0) && (line.getDirection() > -5.0))) {
-			
-			try {
-				rc.dash(-100);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		*/
 	}
 	
 	
 	
-	private void kickToGoal() {
+	private void kickToGoal(ObjBall ball) {
 		ObjGoal goal = mem.getOppGoal();
 		if(goal != null) {
 			try {
-				rc.kick(50, mem.getDirection() + goal.getDirection());
+				rc.kick(100, goal.getDirection() - mem.getDirection());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() kick 1");
 				e.printStackTrace();
@@ -116,21 +102,13 @@ public class Action {
 		}
 		else {
 			try {
-				rc.kick(50, mem.getDirection());
+				rc.kick(100, mem.getDirection());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() turn");
 				e.printStackTrace();
 			}
 			
 		}
-		
-		try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				System.out.println("Error at action.kickToGoal() Thread.sleep() 2");
-				e.printStackTrace();
-			}
-		
 	}
 	
 	
@@ -159,13 +137,19 @@ public class Action {
 			ObjGoal goal = mem.getOppGoal();
 			
 			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
-				kickToPoint(ball, m.getPolar(20.0, goal.getDirection() + ball.getDirection()));
+					kickToPoint(ball, new Polar(20.0, (goal.getDirection() - ball.getDirection())));
+				
 			}
 			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {
-				kickToGoal();
+				kickToGoal(ball);
 			}
 			else if(goal == null) {
-				kickToPoint(ball, m.getPolar(10, (mem.getDirection() + ball.getDirection())));
+				try {
+					rc.kick(10.0, mem.getNullGoalAngle());
+				} catch (UnknownHostException e) {
+					System.out.println("Error in Action.dribbleToGoal() at null goal turn");
+					e.printStackTrace();
+				}
 			}
 		}
 	}

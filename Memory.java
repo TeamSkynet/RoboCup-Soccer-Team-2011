@@ -260,6 +260,12 @@ public class Memory {
 		return closestLine;
 	}
 	
+	/*
+	public double getDirectionFromFlags() {
+		
+	}
+	*/
+	
 	//TODO Write Javadoc
 		/**
 		 *
@@ -268,7 +274,10 @@ public class Memory {
 	public double getDirection() {
 		ObjLine line = getClosestLine();
 		
-		if(line.getSide().compareTo("t") == 0) {
+		if(line == null) {
+			
+		}
+		else if(line.getSide().compareTo("t") == 0) {
 			if(line.getDirection() > 0)
 				return(-1 * line.getDirection());
 			else
@@ -407,7 +416,7 @@ public class Memory {
 		
 	}
 	
-public Pos getPosition() {
+	public Pos getPosition() {
 		
 		ObjFlag flag = getClosestFlag();
 		
@@ -430,10 +439,14 @@ public Pos getPosition() {
 			
 		}
 		
-}
+	}
 	
 	
-	
+	public double getNullGoalAngle() {
+		Pos g = m.vSub(getPosition(), new Pos(50.5, 0));
+		double ga = Math.atan(g.y/g.x);
+		return(ga - getDirection());
+	}
 	
 	// ******************* SenseMemory *******************
 	/**
