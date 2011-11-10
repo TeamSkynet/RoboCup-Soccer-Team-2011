@@ -20,11 +20,15 @@ public class Memory {
 		SenMem = new SenseMemory();
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * This sets the orientation of the Field positions depending on side the
+	 * player starts on.
+	 * 
+	 * @param side
+	 * 
+	 * @pre The side String should not be null
+	 * @post The Field orientation will be set
+	 */
 	public void setField(String side) {
 		f = new Field(side);
 		if(side.compareTo("l") == 0) {
@@ -124,13 +128,13 @@ public class Memory {
 	}
 	
 	/**
-	* The Goal Getter
+	* The Goal Opponent Getter
 	*
-	* This will get the ObjGoal in your field of vision.
+	* This will get the Opponent's ObjGoal if it's in your field of vision.
 	*
-	* @post If you're facing a goal, an ObjGoal with it's information will
+	* @post If you're facing the opponenet's goal, an ObjGoal with it's information will
 	* be returned. Otherwise a null ObjGoal will be sent
-	* @return ObjGoal containing the goal in your vision
+	* @return ObjGoal containing the goal if it's in your vision, null if not
 	*/
 	public ObjGoal getOppGoal() {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
@@ -140,11 +144,12 @@ public class Memory {
 		return null;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * This returns the Pos with the coordinate to the goal you're trying to
+	 * score on.
+	 * 
+	 * @return the Pos in the Field of your oppenent's goal
+	 */
 	public Pos getOppGoalPos() {
 		if(side.compareTo("l") == 0) 
 			return(getFlagPos("gr"));
@@ -152,11 +157,15 @@ public class Memory {
 			return(getFlagPos("gl"));
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	* The Goal Own Getter
+	*
+	* This will get your own ObjGoal if it's in your field of vision.
+	*
+	* @post If you're facing your goal, an ObjGoal with it's information will
+	* be returned. Otherwise a null ObjGoal will be sent
+	* @return ObjGoal containing the goal if it's in your vision, null if not
+	*/
 	public ObjGoal getOwnGoal() {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
 			if((getObj(i).getObjName().compareTo("goal") == 0) && (getObj(i).getSide().compareTo(side) == 0))
@@ -165,11 +174,12 @@ public class Memory {
 		return null;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * This returns the Pos with the coordinate to the goal you're trying to
+	 * guard.
+	 * 
+	 * @return the Pos in the Field of your goal
+	 */
 	public Pos getOwnGoalPos() {
 		if(side.compareTo("l") == 0) 
 			return(getFlagPos("gl"));
@@ -226,7 +236,11 @@ public class Memory {
 	}
 	
 	
-	
+	/**
+	 * Gets an ArrayList with all of the Players in your sight
+	 * 
+	 * @return players
+	 */
 	public ArrayList<ObjPlayer> getPlayers() {
 		ArrayList<ObjPlayer> players = new ArrayList<ObjPlayer>();
 		for(int i = 0; i< ObjMem.getSize(); i++) {
@@ -238,11 +252,11 @@ public class Memory {
 	}
 	
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * This gets the closest line in your sight
+	 * 
+	 * @return line
+	 */
 	public ObjLine getClosestLine() {
 		ObjLine line = new ObjLine();
 		ObjLine closestLine = null;
@@ -260,15 +274,22 @@ public class Memory {
 		return closestLine;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	
+	/**
+	 * Calculates the direction your facing from the closest line in your vision. The 
+	 * direction returned from a line is the angle made by your line of sight and the 
+	 * point that it crosses the line. This will will allow the facing direction to
+	 * be calculated with some arithmetic.
+	 * 
+	 * @return the absolute direction you're facing
+	 */
 	public double getDirection() {
 		ObjLine line = getClosestLine();
 		
-		if(line.getSide().compareTo("t") == 0) {
+		if(line == null) {
+			
+		}
+		else if(line.getSide().compareTo("t") == 0) {
 			if(line.getDirection() > 0)
 				return(-1 * line.getDirection());
 			else
@@ -303,20 +324,21 @@ public class Memory {
 		return(0.0);
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * Sets the Pos of the originating point.
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	public void setLocation(double x, double y) {
-		this.pos.x = x;
-		this.pos.y = y;
+		this.home.x = x;
+		this.home.y = y;
 	}
 	
-	//TODO Write Javadoc
 	/**
-	 *
-	 * @return
+	 * Finds the closest flag in your sight
+	 * 
+	 * @return ObjFlag containing closest flag
 	 */
 	public ObjFlag getClosestFlag() {
 		
@@ -339,11 +361,11 @@ public class Memory {
 		return closestFlag;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * Finds ObjFlag of the closest boundary flag in players sight.
+	 * 
+	 * @return closest boundary
+	 */
 	public ObjFlag getClosestBoundary() {
 		
 		ObjFlag flag = new ObjFlag();
@@ -365,11 +387,11 @@ public class Memory {
 		return closestFlag;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * Finds ObjFlag of the closest penalty box flag in players sight.
+	 * 
+	 * @return closest penalty box flag
+	 */
 	public ObjFlag getClosestPenaltyFlag() {
 		
 		ObjFlag flag = new ObjFlag();
@@ -392,11 +414,13 @@ public class Memory {
 		return closestFlag;
 	}
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * Returns the Pos of the coordinate of any flag on the field by name
+	 * 
+	 * @param flagName 
+	 * 
+	 * @return Pos with coordinate of flag
+	 */
 	public Pos getFlagPos(String flagName) {
 		for(int i = 0; i < f.posList.size(); i++) {
 			if(f.posList.get(i).name.compareTo(flagName) == 0)
@@ -407,7 +431,14 @@ public class Memory {
 		
 	}
 	
-public Pos getPosition() {
+	/**
+	 * This finds the absolute position of a player using vector arithmetic and trigonometry
+	 * and the closest flag to the player and the facing direction found from the closest
+	 * line.
+	 * 
+	 * @return Pos containing the coordinate on the field of the player's absolute position
+	 */
+	public Pos getPosition() {
 		
 		ObjFlag flag = getClosestFlag();
 		
@@ -418,22 +449,25 @@ public Pos getPosition() {
 			Pos flagCoord = getFlagPos(flag.getFlagName());
 			Pos toFlag = m.getPos(flag.getDistance(), getDirection() + flag.getDirection());
 			Pos self = m.vSub(flagCoord, toFlag);
-			/*
-			System.out.println("****************************************");
-			System.out.println("Penalty Flag (" + flag.getFlagName() + "): (" + flagCoord.x + ", " + flagCoord.y + ")");
-			System.out.println("Flag Polar: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
-			System.out.println("DirectionOfSpeed: " + getDirection());
-			System.out.println("My Position: (" + self.x + ", " + self.y + ")");
-			*/
 			
 			return(self);
 			
 		}
 		
-}
+	}
 	
-	
-	
+	/**
+	 * Calculates the angle of goal you're trying to score on when the goal is not in your 
+	 * sight. This is allows the player to kick or dribble to the goal, even when it's
+	 * information isn't available.
+	 * 
+	 * @return double containing the angle of the goal
+	 */
+	public double getNullGoalAngle() {
+		Pos g = m.vSub(getPosition(), new Pos(50.5, 0));
+		double ga = Math.atan(g.y/g.x);
+		return(ga - getDirection());
+	}
 	
 	// ******************* SenseMemory *******************
 	/**
@@ -495,7 +529,7 @@ public Pos getPosition() {
 	
 	public MathHelp m = new MathHelp();
 	public Field f;
-	public Pos pos;
+	public Pos home;
 	
 	/**
 	* The memory that stores all parsed ObjInfo
@@ -510,32 +544,24 @@ public Pos getPosition() {
 	*/
 	public String playMode;
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * The string of the opponents side
+	 */
 	public String oppSide;
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * The String of the player's side
+	 */
 	public String side;
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * The player's uniform number
+	 */
 	public int uNum;
 	
-	//TODO Write Javadoc
-		/**
-		 *
-		 * @return
-		 */
+	/**
+	 * The Pos of the coordinates of the opponents goal
+	 */
 	public Pos oppGoal;
 
 }
