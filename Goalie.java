@@ -54,25 +54,20 @@ public class Goalie extends Player {
 
 		try {
 			if(!getMem().isObjVisible("ball")) {
-				getRoboClient().turn(45);
+				turn(45);
 				return;
 			}
 			if(getMem().isObjVisible("ball")) {
 				ObjBall ball = getMem().getBall();
 				
-				getBtwBallAndGoal(ball);
+				//getBtwBallAndGoal(ball);
 
 				if((ball.getDirection() > 5.0) || (ball.getDirection() < -5.0)) {
-					getRoboClient().turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
+					turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
 				}
-
-				if(ballInGoalzone(ball)) {
-
+				if(ballInGoalzone(ball)){
 					defendGoal(ball);
 				}
-				/*else {
-					kickBallOutOfBounds();
-				}*/
 			}
 
 		} catch (UnknownHostException e) {
@@ -100,13 +95,13 @@ public class Goalie extends Player {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
 		ballPos = mh.vAdd(getPosition(), ballPos);
-		
+		/*
 		System.out.println("Ball polar: (" + ball.getDistance() + ", " + ball.getDirection() + ")");
 		System.out.println("Ball position: (" + ballPos.x + ", " + ballPos.y + ")");
 		System.out.println("****************************************");
 		System.out.println("");
 		System.out.println("");
-		
+		*/
 		
 		if(((ballPos.x <= -36) && (ballPos.x >= -52.5)) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
 			return true;
@@ -127,7 +122,7 @@ public class Goalie extends Player {
 		boolean catchable = false;
 		
 		//Test for visibility
-		if (getMem().isObjVisible("ball")) {
+		if (getMem().isObjVisible("ball") && ballInGoalzone(getMem().getBall())) {
 			
 			//Test for moment range
 			if (getMem().getBall().getDirection()> -180 && getMem().getBall().getDirection() < 180) {
@@ -153,31 +148,29 @@ public class Goalie extends Player {
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {
-		
-		ballCaught = false;
-		
+
 		//Move to catchable range of ball
 		if (!catchable()) {
-			System.out.println("not catchable");
-			System.out.println("NextBallPoint: " + mh.getPos(mh.getNextBallPoint(ball)).x + " " + mh.getPos(mh.getNextBallPoint(ball)).y);
-			getAction().gotoPoint(mh.getNextBallPoint(ball));
-			
+			//ballCaught = false;
+			//System.out.println("not catchable");
+			//System.out.println("NextBallPoint: " + mh.getPos(mh.getNextBallPoint(ball)).x + " " + mh.getPos(mh.getNextBallPoint(ball)).y);
+			getAction().gotoPoint(mh.getNextBallPoint(ball));			
 		}
 		else {
 			//If ball is in catchable area, catch it
-			System.out.println("catchable");
+			//System.out.println("catchable");
 			catchball(getMem().getBall().getDirection());
-			ballCaught = true;
+			//ballCaught = true;
 			Thread.sleep(100);
 			
-			while (ballCaught) {
-				kickBallOutOfBounds();
+			//if (ballCaught) {
+				//kickBallOutOfBounds();
+				kickToPlayer(closestPlayer());
 				Thread.sleep(100);
-			}
-
+			//}
 		}
-	}
-		 //end method
+	} //end method
+	
 		
 	/*
 	 * Moves goalie between the ball and the goal (under construction)
@@ -191,6 +184,7 @@ public class Goalie extends Player {
 		ballPos = mh.vAdd(getPosition(), ballPos);
 		Pos goalPos = getMem().getOwnGoalPos();
 		Pos newPos = new Pos();
+		boolean between = false;
 		
 		double slope = (goalPos.y - ballPos.y)/(goalPos.x - ballPos.x);
 		double x_p = 0.66 * (goalPos.x - ballPos.x) + ballPos.x;
@@ -199,14 +193,14 @@ public class Goalie extends Player {
 		newPos.x = x_p;
 		newPos.y = y_p;
 		
-		getAction().gotoPoint(newPos);
-		
+		if (ball.getDirChng() > 20 & !between) {
+			getAction().gotoPoint(newPos);
+			between = true;
+		}		
 	}
 
 	/**
-	 * Returns the closest player to the goalie as an ObjPlayer object from the memory
-	 * of the current worldstate.
-	 * @pre Players are in sight of the goalie.
+	 * Returns the closest player to the goalie on the same team.
 	 * @post The closest player to the goalie has been determined.
 	 * @return ObjPlayer
 	 * @throws InterruptedException 
@@ -220,13 +214,13 @@ public class Goalie extends Player {
 		for (int i = 0; i < getMem().getPlayers().size(); ++i) {
 
 			if (!getMem().getPlayers().isEmpty()) {  
-				if (distance == 0) {
+				if (distance == 0 && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
 					distance = getMem().getPlayers().get(i).getDistance();
 				}
 				else {
 
 					//Test if this player is closer than the previous one
-					if (distance > getMem().getPlayers().get(i).getDistance()) {
+					if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
 						distance = getMem().getPlayers().get(i).getDistance();
 						closestPlayer = getMem().getPlayers().get(i);
 					}
@@ -236,12 +230,12 @@ public class Goalie extends Player {
 				turn(30);
 				
 				if (!getMem().getPlayers().isEmpty()) {  
-					if (distance == 0) {
+					if (distance == 0 && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
 						distance = getMem().getPlayers().get(i).getDistance();
 					}
 					else {
 						//Test if this player is closer than the previous one
-						if (distance > getMem().getPlayers().get(i).getDistance()) {
+						if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
 							distance = getMem().getPlayers().get(i).getDistance();
 							closestPlayer = getMem().getPlayers().get(i);
 						}
@@ -253,6 +247,20 @@ public class Goalie extends Player {
 		return closestPlayer;
 	}
 
+	/*
+	 * Causes goalie to kick the ball to a specific player.
+	 * @pre A player is in sight of the goalie.
+	 * @post The goalie has kicked the ball to the player passed to the function.
+	 * @param player An ObjPlayer representing the player to receive the ball.
+	 */
+	public void kickToPlayer(ObjPlayer player) {
+		
+		if(getMem().isObjVisible("ball")) {
+			ObjBall ball = getMem().getBall();
+		getAction().kickToPoint(ball, mh.getPos(new Polar(player.getDistance(), player.getDirection())));
+		}
+	}
+	
 	/*
 	 * Causes the goalie to kick the ball out of bounds
 	 * @pre Goalie has control of the ball
@@ -270,12 +278,12 @@ public class Goalie extends Player {
 			if (kickFlag.getDistance() < 25 && kickFlag.getFlagName() != "flt10" && kickFlag.getFlagName() != "fl0"
 				&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
 					&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
-				kick(100,kickFlag.getDirection());
-				ballCaught = false;
+				kick(90,kickFlag.getDirection());
+				//ballCaught = false;
 				Thread.sleep(100);
 			}			
 			else {  //Turn to a new position and check flag again
-				turn(-110);
+				turn(-30);
 				Thread.sleep(100);
 				
 				//Kick if the boundary flag is now reachable
@@ -283,8 +291,8 @@ public class Goalie extends Player {
 				if (kickFlag.getDistance() < 25 && kickFlag.getFlagName() != "flt10" && kickFlag.getFlagName() != "fl0"
 					&& kickFlag.getFlagName() != "flb10" && kickFlag.getFlagName() != "frt10" 
 						&& kickFlag.getFlagName() != "fr0" && kickFlag.getFlagName() != "frb10") {
-					kick(100,kickFlag.getDirection());
-					ballCaught = false;
+					kick(90,kickFlag.getDirection());
+					//ballCaught = false;
 					Thread.sleep(100);
 				}	
 			}
@@ -300,11 +308,31 @@ public class Goalie extends Player {
 		}
 	}
 	
+	//Run method for Goalie's individual thread
+	public void run() {
+		
+		System.out.println("Goalie");
+		
+		while(true) {
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			if(getMem().timeCheck(getTime())) {
+				setTime(getMem().ObjMem.getTime());
+				
+				followBall();			
+			}			
+		} 		
+	}	
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();
 	boolean ballCaught = false;
-	//public Field f = new Field(getMem().side);
 
 
 } //end class

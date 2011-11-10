@@ -60,6 +60,13 @@ public String getTeam() {
 }
 
 /**
+ * @return the port
+ */
+public int getPort() {
+	return port;
+}
+
+/**
  * @param team the team to set
  */
 public void setTeam(String team) {
@@ -85,8 +92,7 @@ public void setTeam(String team) {
 		} catch(IOException ioex) {
 			System.out.println(ioex);
 			System.exit(-1);
-		} 	
-			
+		}			
 	}
 	
 /**
@@ -133,13 +139,6 @@ public void setTeam(String team) {
 
 	}
 
-	public void initTrainer() throws UnknownHostException {
-		send("(init (version " + VERSION + "))");
-	}
-	
-	public void changePlayMode(String playmode) throws UnknownHostException {
-		send("(change mode " + playmode + ")");
-	}
 /**
  * This function initializes the client as a goalie with the RoboCup server.
  * @param message: none
@@ -155,8 +154,6 @@ public void setTeam(String team) {
 		} catch(Exception ex) {
 			System.out.println(ex);
 		}
-
-
 	}
 	
 /**

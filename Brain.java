@@ -7,18 +7,25 @@
  * The brain serves as a place to store the Player modes, marked players for
  * various functions, and a set of strategies for player actions.
  */
-public class Brain {
+public class Brain extends Thread {
 
 	private Mode currentMode = new Mode();	
 	private Action actions = new Action();
 	private String marked_team;
 	private String marked_unum;
-
+	public Player p;
+	public Memory m;
+	
 	/**
 	 * Default constructor
 	 */
 	public Brain() {
 		super();
+	}
+	
+	public Brain(Player p) {
+		this.p = p;
+		start();
 	}
 	
 	/**
@@ -92,4 +99,21 @@ public class Brain {
 	public void setMarked_unum(String marked_unum) {
 		this.marked_unum = marked_unum;
 	}
+
+	//Run method for Brain class to operate in its own thread.
+	public void run() {
+
+		while (true) {
+
+			//System.out.println("brain");
+
+			try {
+				p.receiveInput();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 }
+

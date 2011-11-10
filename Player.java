@@ -25,7 +25,7 @@ public class Player extends Thread {
 	private Memory m = new Memory();
 	private ObjInfo i = new ObjInfo();
 	private Parser p = new Parser();
-	private Brain b = new Brain();
+	//private Brain b = new Brain();
 	private Action a = new Action(m, rc);
 	private int time = 0;
 	public boolean wait = true;
@@ -54,22 +54,16 @@ public class Player extends Thread {
 		this.m = m;
 		this.i = i;
 		this.p = p;
-		this.b = b;
+		//this.b = b;
 		this.time = time;
 	}
 
-	/**
-	 * @return the b
-	 */
-	public Brain getBrain() {
-		return b;
-	}
 
 	/**
 	 * @param b the b to set
 	 */
 	public void setBrain(Brain b) {
-		this.b = b;
+		//this.b = b;
 	}
 
 	public Action getAction() {
@@ -177,6 +171,15 @@ public class Player extends Thread {
 		
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
+		
+		try {
+			move(-10, 0);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		@SuppressWarnings("unused")
+		Brain b = new Brain(this);
 	}
 	
 	
@@ -251,8 +254,8 @@ public class Player extends Thread {
 	 * Marks opposing players for defense
 	 */
 	public void markOpponent(String team, String number) {
-		b.setMarked_team(team);
-		b.setMarked_unum(number);
+		//b.setMarked_team(team);
+		//b.setMarked_unum(number);
 	}
 	
 	/*
@@ -260,7 +263,7 @@ public class Player extends Thread {
 	 * 
 	 */
 	public void runDefense() throws UnknownHostException, InterruptedException {
-		b.setDefensive();
+		//b.setDefensive();
 		
 		while (closestOpponent() == null){
 			turn(30);
@@ -327,23 +330,31 @@ public class Player extends Thread {
 	
 	//Run method for Player's individual thread (not yet complete)
 	public void run() {
-		try {			
-			while (true) {
-				//System.out.println("In while");
-				if (getMem().timeCheck(getTime())) {
-					setTime(getMem().ObjMem.getTime());
-					receiveInput();
-					getAction().findBall();
-				}
+		
+		System.out.println("Player");
+		
+		while(true) {
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
-
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
+			
+			if(getMem().timeCheck(getTime())) {
+				setTime(getMem().ObjMem.getTime());
+				
+				try {
+					getAction().findBall();
+				} catch (UnknownHostException e) {
+					System.out.println("Error in Brain.run findBall");
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}			
+			}			
+		} 		
+	}	
 }

@@ -1,6 +1,8 @@
 /**
  * @file Mode.java
  * @author Joel Tanzi*
+ * @date 18 October 2011
+ * @version 1.0
  */
 
 /**@class Mode
