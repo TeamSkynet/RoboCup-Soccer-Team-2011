@@ -81,9 +81,6 @@ public class MathHelp {
 		return(new Pos((p1.x + p2.x), (p1.y + p2.y)));
 	}
 	
-	public Pos rcsAdd(Pos p1, Pos p2) {
-		return(new Pos((p1.x + p2.x), p1.y - p2.y));
-	}
 	
 	/**
 	 * Vector Subtraction
@@ -210,7 +207,18 @@ public class MathHelp {
 		return (getPolar(vAdd(po,po2)));
 	}
 	
-	
+	/**
+	 * Calculates the power needed to kick the ball to a specified place on the field, using
+	 * the equation from the manual
+	 * 
+	 * @param p A polar coordinate to kick the ball to
+	 * @param vel_r The magnitude of the player's velocity
+	 * @param vel_t the direction of the player's velocity
+	 * @param ball_r the distance of the ball to the player
+	 * @param ball_t the direction of the ball to the player
+	 * 
+	 * @return power of kick
+	 */
 	public double getKickPower(Polar p, double vel_r, double vel_t, double ball_r, double ball_t) {
 		if(ball_r > 0.7)
 			ball_r = 0.7;
@@ -219,6 +227,17 @@ public class MathHelp {
 		return(Math.min(((p.r - vel_r) * ep), 100));
 	}
 	
+	/**
+	 * A wrapper of the getKickPower with a Pos instead of Polar
+	 * 
+	 * @param p A polar coordinate to kick the ball to
+	 * @param vel_r The magnitude of the player's velocity
+	 * @param vel_t the direction of the player's velocity
+	 * @param ball_r the distance of the ball to the player
+	 * @param ball_t the direction of the ball to the player
+	 * 
+	 * @return power of kick
+	 */
 	public double getKickPower(Pos p, double vel_r, double vel_t, double ball_r, double ball_t) {
 		return(getKickPower(getPolar(p), vel_r, vel_t, ball_r, ball_t));
 	}
