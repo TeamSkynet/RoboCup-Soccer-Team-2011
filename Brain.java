@@ -100,17 +100,19 @@ public class Brain extends Thread {
 		this.marked_unum = marked_unum;
 	}
 
-	//Run method for Brain class to operate in its own thread.
+	/**
+	 * The Brain thread run method. It updates the Memory for the Player
+	 * 
+	 * @post Memory will continuously update 
+	 */
 	public void run() {
 
 		while (true) {
 
-			//System.out.println("brain");
-
 			try {
 				p.receiveInput();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Error in Brain.run()");
 				e.printStackTrace();
 			}
 		}

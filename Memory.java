@@ -1,9 +1,18 @@
-
-import java.util.*;
 /**
-* @author Grant Hays
-* The Memory class stores instances of ObjMemory and SenseMemory and supplies
-* methods to access their innards.
+ * @file Memory.java
+ * 
+ * The Memory class stores instances of ObjMemory and SenseMemory and supplies
+ * methods to access their innards.
+ * 
+ * @author granthays
+ * @date 11/10/11
+ * @version 3.0
+ * 
+ */
+import java.util.*;
+
+/**
+* @class Memory
 */
 public class Memory {
 	/**

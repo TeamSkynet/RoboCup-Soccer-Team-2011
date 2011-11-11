@@ -328,7 +328,11 @@ public class Player extends Thread {
 		return closestOpponent;
 	}
 	
-	//Run method for Player's individual thread (not yet complete)
+	/**
+	 * The Player thread run method. It makes decisions for the player.
+	 * 
+	 * @post Player will act on decisions made.
+	 */
 	public void run() {
 		
 		System.out.println("Player");
