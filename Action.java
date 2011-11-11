@@ -100,6 +100,8 @@ public class Action {
 		gotoPoint(m.getPolar(p));
 	}
 	
+	
+	
 	public boolean goHome() {
 		Pos pt = mem.getPosition();
 		

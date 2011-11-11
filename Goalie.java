@@ -6,7 +6,7 @@ import java.net.UnknownHostException;
 * Class file for Goalie class
 * @author Joel Tanzi
 * @date 11 October 2011
-* @version 1.0 
+* @version 1.3 
 */
 
 /** @class Goalie
@@ -42,6 +42,7 @@ public class Goalie extends Player {
 	 */
 	public void catchball(double d) throws UnknownHostException{
 		rc.catchball(d);
+		ballCaught = true;
 	}
 
 	
@@ -151,23 +152,17 @@ public class Goalie extends Player {
 
 		//Move to catchable range of ball
 		if (!catchable()) {
-			//ballCaught = false;
-			//System.out.println("not catchable");
-			//System.out.println("NextBallPoint: " + mh.getPos(mh.getNextBallPoint(ball)).x + " " + mh.getPos(mh.getNextBallPoint(ball)).y);
 			getAction().gotoPoint(mh.getNextBallPoint(ball));			
 		}
 		else {
 			//If ball is in catchable area, catch it
 			//System.out.println("catchable");
-			catchball(getMem().getBall().getDirection());
-			//ballCaught = true;
-			Thread.sleep(100);
-			
-			//if (ballCaught) {
-				//kickBallOutOfBounds();
-				kickToPlayer(closestPlayer());
+			if (!ballCaught) {
+				catchball(getMem().getBall().getDirection());
 				Thread.sleep(100);
-			//}
+				kickToPlayer(closestPlayer());
+				Thread.sleep(100);		
+			}
 		}
 	} //end method
 	
@@ -254,10 +249,11 @@ public class Goalie extends Player {
 	 * @param player An ObjPlayer representing the player to receive the ball.
 	 */
 	public void kickToPlayer(ObjPlayer player) {
-		
+
 		if(getMem().isObjVisible("ball")) {
 			ObjBall ball = getMem().getBall();
-		getAction().kickToPoint(ball, mh.getPos(new Polar(player.getDistance(), player.getDirection())));
+			getAction().kickToPoint(ball, mh.getPos(new Polar(player.getDistance(), player.getDirection())));
+			ballCaught = false;
 		}
 	}
 	

@@ -1,6 +1,8 @@
 Action.java
 Brain.java
 Field.java
+Forward.java
+FullBack.java
 Game.java
 Goalie.java
 MathHelp.java
@@ -10,10 +12,11 @@ ObjInfo.java
 ObjMemory.java
 Parser.java
 Player.java
+PlayerTest.java
 Polar.java
 Pos.java
 RoboClient.java
 SenseMemory.java
+TestAction.java
 TestDefensive.java
 TestSay.java
-
