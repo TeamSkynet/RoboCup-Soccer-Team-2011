@@ -99,7 +99,14 @@ public class Action {
 	public void gotoPoint(Pos p) {
 		gotoPoint(m.getPolar(p));
 	}
-	
+	/**
+	 * Take the Player back to his home
+	 * 
+	 * @pre The player's home should be set at initialization
+	 * @post The player will be at his home point 
+	 * 
+	 * @return true if the player is in the near vicinity of his home, false if he's not there yet
+	 */
 	public boolean goHome() {
 		Pos pt = mem.getPosition();
 		

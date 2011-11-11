@@ -172,7 +172,7 @@ public class Goalie extends Player {
 	} //end method
 	
 		
-	/*
+	/**
 	 * Moves goalie between the ball and the goal (under construction)
 	 * @param ball An ObjBall.
 	 * @pre Ball is visible to the goalie.
@@ -247,7 +247,7 @@ public class Goalie extends Player {
 		return closestPlayer;
 	}
 
-	/*
+	/**
 	 * Causes goalie to kick the ball to a specific player.
 	 * @pre A player is in sight of the goalie.
 	 * @post The goalie has kicked the ball to the player passed to the function.
@@ -261,7 +261,7 @@ public class Goalie extends Player {
 		}
 	}
 	
-	/*
+	/**
 	 * Causes the goalie to kick the ball out of bounds
 	 * @pre Goalie has control of the ball
 	 * @post Ball has been kicked out of bounds
