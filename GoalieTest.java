@@ -26,22 +26,8 @@ public class GoalieTest {
 		p2.move(-30, 5);
 		
 		
-		while(true) {
-			g9.receiveInput();
-			
-			if(g9.getMem().timeCheck(g9.getTime())) {
-				g9.setTime(g9.getMem().SenMem.getTime());
-				
-				g9.followBall();
-				//g9.getBtwBallAndGoal();
-			
-			
-			}
-			
-		} 
-		
+		g9.start();
+		p1.start();
+		p2.start();		
 	}
-
-	
-
 }

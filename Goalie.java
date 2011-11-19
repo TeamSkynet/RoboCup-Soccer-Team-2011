@@ -160,9 +160,11 @@ public class Goalie extends Player {
 			if (!ballCaught) {
 				catchball(getMem().getBall().getDirection());
 				Thread.sleep(100);
-				kickToPlayer(closestPlayer());
-				Thread.sleep(100);		
+				ballCaught = true;	
 			}
+			
+			kickToPlayer(closestPlayer());
+			Thread.sleep(100);	
 		}
 	} //end method
 	
@@ -253,7 +255,7 @@ public class Goalie extends Player {
 		if(getMem().isObjVisible("ball")) {
 			ObjBall ball = getMem().getBall();
 			getAction().kickToPoint(ball, mh.getPos(new Polar(player.getDistance(), player.getDirection())));
-			ballCaught = false;
+			//ballCaught = false;
 		}
 	}
 	
@@ -307,7 +309,7 @@ public class Goalie extends Player {
 	//Run method for Goalie's individual thread
 	public void run() {
 		
-		System.out.println("Goalie");
+		//System.out.println("Goalie");
 		
 		while(true) {
 			
@@ -320,7 +322,7 @@ public class Goalie extends Player {
 			
 			if(getMem().timeCheck(getTime())) {
 				setTime(getMem().ObjMem.getTime());
-				
+				System.out.println("in time check");
 				followBall();			
 			}			
 		} 		
