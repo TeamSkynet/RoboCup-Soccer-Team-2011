@@ -19,15 +19,16 @@ public class GoalieTest {
 		g9.move(-40, 0);		
 		Thread.sleep(100);
 		
-		p1.initPlayer();
-		p1.move(-25, -10);
+		//p1.initPlayer();
+		//p1.move(-25, -10);
 		
-		p2.initPlayer();
-		p2.move(-30, 5);
+		//p2.initPlayer();
+		//p2.move(-30, 5);
 		
 		
-		g9.start();
-		p1.start();
-		p2.start();		
+		//g9.start();
+		g9.followBall();
+		//p1.start();
+		//p2.start();		
 	}
 }

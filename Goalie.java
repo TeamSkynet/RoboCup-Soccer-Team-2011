@@ -60,14 +60,16 @@ public class Goalie extends Player {
 			}
 			if(getMem().isObjVisible("ball")) {
 				ObjBall ball = getMem().getBall();
-				
-				//getBtwBallAndGoal(ball);
 
 				if((ball.getDirection() > 5.0) || (ball.getDirection() < -5.0)) {
 					turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
 				}
 				if(ballInGoalzone(ball)){
+					System.out.println("flag in defendGoal");
 					defendGoal(ball);
+				} else {
+					System.out.println("flag in positionGoalie");
+					positionGoalie(ball);
 				}
 			}
 
@@ -96,14 +98,7 @@ public class Goalie extends Player {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
 		ballPos = mh.vAdd(getPosition(), ballPos);
-		/*
-		System.out.println("Ball polar: (" + ball.getDistance() + ", " + ball.getDirection() + ")");
-		System.out.println("Ball position: (" + ballPos.x + ", " + ballPos.y + ")");
-		System.out.println("****************************************");
-		System.out.println("");
-		System.out.println("");
-		*/
-		
+
 		if(((ballPos.x <= -36) && (ballPos.x >= -52.5)) && ((-20.16 <= ballPos.y) && (ballPos.y <= 20.16)))
 			return true;
 		else
@@ -133,8 +128,7 @@ public class Goalie extends Player {
 					catchable = true;
 				}
 			}
-		}
-		
+		}		
 		return catchable;
 	}
 	
@@ -168,7 +162,38 @@ public class Goalie extends Player {
 		}
 	} //end method
 	
+	
+	/**
+	 * Moves goalie to specific points within the goalbox dependent upon where the ball is on the field.
+	 * @param ball An ObjBall representing the ball in play.
+	 * @pre The ball is visible.
+	 * @post The goalie has moved to a strategic position to get between the ball and the goal.
+	 */
+	public void positionGoalie(ObjBall ball) {
 		
+		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
+		ballPos = mh.vAdd(getPosition(), ballPos);
+		Pos upper = new Pos(-49, -6);
+		Pos middle = new Pos(-49, 0);
+		Pos lower = new Pos (-49, 6);		
+
+		if (!ballInGoalzone(ball)) {
+			if (ballPos.y < -18) {  //If ball is in upper portion of field
+				System.out.println("flag1");
+				getAction().gotoPoint(upper);
+			}
+			else if (ballPos.y > -18 && ballPos.y < 18) { //If ball is midfield vertically
+				System.out.println("flag2");
+				getAction().gotoPoint(middle);
+			}
+			else {  //If ball is in lower portion of field
+				System.out.println("flag3");
+				getAction().gotoPoint(lower);
+			}
+		}
+	}
+	
+	
 	/**
 	 * Moves goalie between the ball and the goal (under construction)
 	 * @param ball An ObjBall.
