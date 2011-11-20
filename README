@@ -14,6 +14,12 @@ Using the client:
    The client will initialize a team of 11 players, and position them throughout the field.  The worldstate from the perspective
    of each player will be stored in memory during each server heartbeat.
 
-Please note that you must restart the RoboCup Soccer Simulation Server in order to run the client (Game) again.  If you run the
+To run additional tests, restart the soccer server and run one of the following from the command line:
+	GoalieTest
+	StrikerAgent
+	TestDefensive
+	TestAction
+
+Please note that you must restart the RoboCup Soccer Simulation Server in order to run any of these clients again.  If you run the
 client a second time without restarting the server, the server will not be able to initialize any new players because the limit 
 for a single team will have already been reached.
