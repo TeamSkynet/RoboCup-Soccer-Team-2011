@@ -3,8 +3,8 @@ public class TestAction {
 	public static void main(String args[]) throws Exception
 	{
 		Player p = new Player();
-		p.initPlayer();
-		p.move(-10, 0);
+		p.initPlayer(-10,0);
+
 		
 		
 		while(true) {

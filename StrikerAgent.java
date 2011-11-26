@@ -12,6 +12,7 @@ public class StrikerAgent {
 	 */
 	public static void main(String[] args) throws UnknownHostException, InterruptedException, SocketException {
 		Player p = new Player();
+		Pos origin = new Pos(0,0);
 		
 		p.initPlayer(-5, -10);
 		

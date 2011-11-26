@@ -72,10 +72,10 @@ public class Goalie extends Player {
 					turn(ball.getDirection() * (1 + (5 * getMem().getAmountOfSpeed())));
 				}
 				if(ballInGoalzone(ball)){
-					System.out.println("flag in defendGoal");
+					//System.out.println("flag in defendGoal");
 					defendGoal(ball);
 				} else {
-					System.out.println("flag in positionGoalie");
+					//System.out.println("flag in positionGoalie");
 					positionGoalie(ball);
 				}
 			}
@@ -150,21 +150,24 @@ public class Goalie extends Player {
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {
-
+		Pos ridBallPoint = new Pos(0,0);
+		
 		//Move to catchable range of ball
 		if (!catchable()) {
-			getAction().gotoPoint(mh.getNextBallPoint(ball));			
+			getAction().gotoPoint(mh.getNextBallPoint(ball));
+			Thread.sleep(100);
 		}
 		else {
 			//If ball is in catchable area, catch it
-			//System.out.println("catchable");
+			System.out.println("catchable");
 			if (!ballCaught) {
 				catchball(getMem().getBall().getDirection());
 				Thread.sleep(100);
 				ballCaught = true;	
 			}
 			
-			kickToPlayer(closestPlayer());
+			//kickToPlayer(closestPlayer());
+			getAction().kickToPoint(ball, ridBallPoint);
 			Thread.sleep(100);	
 		}
 	} //end method
@@ -173,33 +176,41 @@ public class Goalie extends Player {
 	/**
 	 * Moves goalie to specific points within the goalbox dependent upon where the ball is on the field.
 	 * @param ball An ObjBall representing the ball in play.
+	 * @throws InterruptedException 
 	 * @pre The ball is visible.
 	 * @post The goalie has moved to a strategic position to get between the ball and the goal.
 	 */
-	public void positionGoalie(ObjBall ball) {
+	public void positionGoalie(ObjBall ball) throws InterruptedException {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
-		ballPos = mh.vAdd(getPosition(), ballPos);
+		//ballPos = mh.vAdd(getPosition(), ballPos);
 		Pos upper = new Pos(-49, -6);
 		Pos middle = new Pos(-49, 0);
 		Pos lower = new Pos (-49, 6);		
 
 		if (!ballInGoalzone(ball)) {
 			if (ballPos.y < -18) {  //If ball is in upper portion of field
-				System.out.println("flag1");
+				//System.out.println("flag1");
 				getAction().gotoPoint(upper);
+				Thread.sleep(100);
 			}
 			else if (ballPos.y > -18 && ballPos.y < 18) { //If ball is midfield vertically
-				System.out.println("flag2");
+				//System.out.println("flag2");
 				getAction().gotoPoint(middle);
+				Thread.sleep(100);
 			}
 			else {  //If ball is in lower portion of field
-				System.out.println("flag3");
+				//System.out.println("flag3");
 				getAction().gotoPoint(lower);
+				Thread.sleep(100);
 			}
 		}
 	}
 	
+	public void testgotoPoint(){
+		Pos origin = new Pos(0,0);
+		getAction().gotoPoint(origin);
+	}
 	
 	/**
 	 * Moves goalie between the ball and the goal (under construction)
