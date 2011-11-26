@@ -270,11 +270,6 @@ public class Player extends Thread {
 		}
 		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
 		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
-		
-		/*if (m.isObjVisible("player")) {
-			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));
-			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
-		}		*/
 	}
 	
 	/**
