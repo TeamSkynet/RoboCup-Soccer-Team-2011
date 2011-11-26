@@ -54,6 +54,18 @@ public class Action {
 		this.mem = mem;
 	}
 	
+	public double getTurn(Polar go) {
+		double angle = go.t - mem.getDirection();
+		if(angle > 180)
+			angle -= 360;
+		else if(angle < -180)
+			angle += 360;
+		else if(Math.abs(angle) == 180)
+			angle = 180;
+		
+		return(angle  * (1 + (5*mem.getAmountOfSpeed())));
+	}
+	
 	/**
 	* This tells the player to turn and run to a point
 	*
@@ -68,10 +80,10 @@ public class Action {
 	public void gotoPoint(Polar go) {
 		
 		try {
-			if(go.t > 5.0 || go.t < -5.0) {
-				rc.turn(go.t * (1+(5*mem.getAmountOfSpeed())));
+			if((go.t - mem.getDirection()) > 5.0 || (go.t - mem.getDirection()) < -5.0) {
+				rc.turn(getTurn(go));
 			}
-			rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirectionOfSpeed(), mem.getEffort(), mem.getStamina()));
+			rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
 		
 			
 		} catch (UnknownHostException e) {
@@ -97,7 +109,9 @@ public class Action {
 	* direction of the position.
 	*/
 	public void gotoPoint(Pos p) {
-		gotoPoint(m.getPolar(p));
+		if((Math.abs(p.x - mem.getPosition().x) >= 1.0) && (Math.abs(p.y - mem.getPosition().y) >= 1.0)) {
+			gotoPoint(mem.getAbsPolar(p));
+		}
 	}
 
 	/**

@@ -333,6 +333,15 @@ public class Memory {
 		return(0.0);
 	}
 	
+	Polar getAbsPolar(Pos pt) {
+		Pos p = (m.vSub(pt, getPosition()));
+		double r = Math.sqrt(Math.pow(p.x, 2) + Math.pow(p.y, 2));
+		double t = Math.toDegrees(Math.atan2(p.y, p.x));
+		Polar n = new Polar(r, t);
+		//n.print("AbsPolar: ");
+		return(n);
+	}
+	
 	/**
 	 * Sets the Pos of the originating point.
 	 * 
