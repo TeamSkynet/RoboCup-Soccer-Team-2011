@@ -71,7 +71,7 @@ public class Game {
 		p7.start();
 		p8.start();
 		g9.start();
-		p10.start();
-		p11.start();
+		//p10.start();
+		//p11.start();
 	}
 }
