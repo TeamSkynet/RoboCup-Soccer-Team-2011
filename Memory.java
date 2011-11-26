@@ -474,6 +474,10 @@ public class Memory {
 		
 	}
 	
+	public void setCurrent() {
+		current = getPosition();
+	}
+	
 	/**
 	 * Calculates the angle of goal you're trying to score on when the goal is not in your 
 	 * sight. This is allows the player to kick or dribble to the goal, even when it's
@@ -548,6 +552,7 @@ public class Memory {
 	public MathHelp m = new MathHelp();
 	public Field f;
 	public Pos home;
+	public Pos current = new Pos();
 	
 	/**
 	* The memory that stores all parsed ObjInfo

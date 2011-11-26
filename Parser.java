@@ -1,414 +1,368 @@
-import java.util.ArrayList;
-
-/**
- * @file Parser.java
- * 
- * The server message parser.
- * 
- *@author Grant Hays
- *@date 10/1/11
- *@version 2
- */
+import java.net.DatagramSocket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 
-/**
- * @class Parser
- *
- * This class takes in the the messages sent by the parser and parses them into
- * information that can be stored in Memory and used by Players.
- * 
- *
- */
-public class Parser {
+/** @file Player.java
+* Class file for Player class
+* @author Joel Tanzi
+* @date 11 October 2011
+* @version 1.0 
+*/
 
-	/**
-	 * Default constructor
-	 */
-	public Parser() {
+/** @class Player
+* The Player class defines all objects and methods used for the 
+* Player within the RoboCup match.  The Player establishes a connection
+* to the server, initializes itself on the team, and 
+* performs all actions related to a RoboCup soccer player such as
+* (but not limited to) kicking, dashing, dribbling, passing and scoring. 
+* The Player class has a Memory for storing the current RoboCup worldstate.
+* It reacts to stimuli based on strategies provided by the Brain (TBD). 
+*/
+public class Player extends Thread {
 	
+	protected RoboClient rc = new RoboClient();
+	private Memory m = new Memory();
+	private ObjInfo i = new ObjInfo();
+	private Parser p = new Parser();
+	private Action a = new Action(m, rc);
+	private int time = 0;
+	public MathHelp mh = new MathHelp();
+	public boolean wait = true;
+	
+	public Player() {
+		
+	}
+	
+	public Player(String team){
+		this.rc.setTeam(team);
 	}
 
 	/**
-	 * This parses the (init) message, the first message sent by the server, directly
-	 * after a new Player is initialized.
-	 * 
-	 * @param inputPacket The init message from the server
-	 * @param mem the player's memory
-	 * @pre A memory must be created for the information to be stored in, and 
-	 * this must be called directly after an (init) is sent to the server.
-	 * @post Vital information about the Player will be saved, such as the
-	 * side of the field the player starts on, the Player's uniform number
-	 * and the play mode, which is "before_kickoff."
+	 * @param rc
+	 * @param m
+	 * @param i
+	 * @param p
+	 * @param b
+	 * @param time
 	 */
-	public void initParse(String inputPacket, Memory mem) {
-		// Remove outer parantheses
-		inputPacket = inputPacket.substring(1, inputPacket.length() - 1);
-		//split into tokens by spaces
-		String[] splitPacket = (inputPacket.split(" "));
-		
-		// make sure this is, in fact, the init message from the server
-		if(splitPacket[0].compareTo("init") == 0) {
-			mem.side = splitPacket[1];
-			mem.uNum = Integer.valueOf(splitPacket[2]);
-			mem.playMode = splitPacket[3];
-			mem.setField(mem.side);
-		}
+	public Player(RoboClient rc, Memory m, ObjInfo i, Parser p, int time) {
+		super();
+		this.rc = rc;
+		this.m = m;
+		this.i = i;
+		this.p = p;
+		this.time = time;
+	}
+
+	public Action getAction() {
+		return a;
+	}
+	
+	public void setAction(Action a) {
+		this.a = a;
+	}
+	
+	public void setHome(Pos home) {
+		getMem().home = home;
+	}
+	
+	public Pos getHome() {
+		return getMem().home;
 	}
 	
 	/**
-	 * The actual message Parsing method
-	 * 
-	 * @param inputPacket the incoming String message from the server
-	 * @param InfoMem the Memory to store all the information in
-	 * @pre A Memory must be created and passed in, along with the message
-	 * from the server
-	 * @post The message will be parsed and stored either as SenseInfos from the
-	 * (sense_body) message, or ObjInfos from the (see) message, or the playMode from the
-	 * referee (hear) message
+	 * @return The RoboClient object for this Player.
 	 */
-	public void Parse(String inputPacket, Memory InfoMem) {
-		// Remove outer parentheses
-		inputPacket = inputPacket.substring(1, inputPacket.length() - 1);
+	public RoboClient getRoboClient() {
+		return rc;
+	}
+
+	/**
+	 * @param rc The RoboClient to set.
+	 */
+	public void setRoboclient(RoboClient rc) {
+		this.rc = rc;
+	}
+
+	/**
+	 * @return The Memory for this Player.
+	 */
+	public Memory getMem() {
+		return m;
+	}
+
+	/**
+	 * @param m The Memory to set.
+	 */
+	public void setMem(Memory m) {
+		this.m = m;
+	}
+
+	/**
+	 * @return The ObjInfo for this Player.
+	 */
+	public ObjInfo getObjInfo() {
+		return i;
+	}
+
+	/**
+	 * @param i The ObjInfo to set.
+	 */
+	public void setObjInfo(ObjInfo i) {
+		this.i = i;
+	}
+
+	/**
+	 * @return The Parser for this Player.
+	 */
+	public Parser getParser() {
+		return p;
+	}
+
+	/**
+	 * Sets the parser for the player.
+	 * @param p The Parser to set.
+	 */
+	public void setParser(Parser p) {
+		this.p = p;
+	}
+	
+	public int getMemTime() {
+		return getMem().ObjMem.getTime();
+	}
+
+	/**
+	 * Returns the current player time.
+	 * @return the time
+	 */
+	public int getTime() {
+		return time;
+	}
+
+
+	/**
+	 * Sets the current time for the player.
+	 * @param time the time to set
+	 */
+	public void setTime(int time) {
+		this.time = time;
+	}
+	/**
+	 * Returns the direction of the player
+	 */
+	public double getDirection() {
+		return(getMem().getDirection());
+	}
+	
+	/**
+	 * Returns the current absolute coordinates of the player.
+	 * @return Pos
+	 */
+	public Pos getPosition() {
+		return(getMem().getPosition());
+	}
+
+	/**
+	 * Initializes the Player with the RoboCup server.
+	 * @pre A RoboCup server is available.
+	 * @post The Player has been initialized to the correct team.
+	 */
+	public void initPlayer(double x, double y) throws SocketException, UnknownHostException {
 		
-		// Split inputPacket into tokens by "(" and ")" delimiters
-		String[] splitPacket = (inputPacket.split("[()]"));
-		// Parse the first element into packet type and time
-		String[] packetType = (splitPacket[0].split(" "));
+		rc.dsock = new DatagramSocket();
+		rc.init(getParser(), getMem());
+		getMem().home = new Pos(x, y);
 		
-		// We only proceed if it is a (see), (sense_body), or (hear) message
-		if((packetType[0].compareTo("see") == 0) || (packetType[0].compareTo("sense_body") == 0) || (packetType[0].compareTo("hear") == 0)) {
-			// the time from the message
-			int time = Integer.parseInt(packetType[1]);
 		
-			// Call parse method based on packet type in position [0] (either see, sense_body, or hear)
-			if(packetType[0].compareTo("see") == 0) { 
-				ArrayList<ObjInfo> seeArray = new ArrayList<ObjInfo>();
-				seeParse(seeArray, splitPacket);
-				ObjMemory newObjMem = new ObjMemory(seeArray, time);
-				InfoMem.ObjMem = newObjMem;
+		try {
+			move(x, y);
+			Thread.sleep(100);
+			if(getMem().side == "r") {
+				turn(180);
 			}
-			else if(packetType[0].compareTo("sense_body") == 0) {
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		@SuppressWarnings("unused")
+		
+		
+		Brain b = new Brain(this);
+	}
+	
+	
+	 /**
+	 * Receives worldstate data from the RoboCup server.
+	 * @pre A RoboCup server is available.
+	 * @post The current worldstate has been stored in the Memory.
+	 */
+	public void receiveInput() throws InterruptedException  {		
+		p.Parse(rc.receive(), m);
+	}
+	
+	 /**
+	 * Teleports the Player to the specified coordinates.
+	 * @param x x-coordinate of the point to move the player to.
+	 * @param y y-coordinate of the point to move the player to.
+	 * @throws InterruptedException 
+	 * @pre Playmode is before-kickoff, goal-scored, free-kick.
+	 * @post The Player has been moved to the correct position.
+	 */
+	public void move(double x, double y) throws UnknownHostException, InterruptedException {
+		rc.move(x, y);
+	}
+	
+	 /**
+	 * Causes Player to kick the ball.
+	 * @param dir The direction in which to kick the ball in the form of a decimal value. 
+	 * representing the angle in degrees in relation go the player.
+	 * @param power The power with which to kick the ball in the form of a decimal value.
+	 * @throws InterruptedException 
+	 * @pre Playmode is play_on, ball is in kickable range.
+	 * @post The ball has been kicked in the specified direction and power.
+	 */
+	public void kick(double power, double dir) throws UnknownHostException, InterruptedException {
+		rc.kick(power, dir);
+	}
+	
+	 /**
+	 * Causes Player to dash.
+	 * @param power The power with which to dash in the form of a decimal value.
+	 * @throws Exception 
+	 * @pre Play mode is play_on.
+	 * @post The player has dashed at the given power.
+	 */	
+	public void dash(double power) throws Exception {
+		rc.dash(power);
+	}
+	
+	 /**
+	 * Causes Player to turn according to a specified turn moment.
+	 * @param moment The turn angle in degrees. 
+	 * @throws InterruptedException 
+	 * @pre Playmode is play_on, ball is in kickable range.
+	 * @post The ball has been kicked in the specified direction and power.
+	 */
+	public void turn(double moment) throws UnknownHostException, InterruptedException {
+		rc.turn(moment);
+	}
+	
+	 /**
+	 * Causes Player to say the given message.  It has a limitation of 512 characters by default.
+	 * @param message The string to be spoken by the player. 
+	 * @throws InterruptedException 
+	 * @pre None
+	 * @post The player has spoken the message.
+	 */	
+	public void say(String message) throws UnknownHostException, InterruptedException {
+		rc.say(message);
+	}
+	
+	/*
+	 * Marks opposing players for defense
+	 */
+	public void markOpponent(String team, String number) {
+		//b.setMarked_team(team);
+		//b.setMarked_unum(number);
+	}
+	
+	/*
+	 * Follows opposing players on defense
+	 * 
+	 */
+	public void runDefense() throws UnknownHostException, InterruptedException {
+		//b.setDefensive();
+		
+		while (closestOpponent() == null){
+			turn(30);
+		}
+		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
+		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
+		
+		/*if (m.isObjVisible("player")) {
+			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));
+			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
+		}		*/
+	}
+	
+	/**
+	 * Returns the closest opponent to the player
+	 * @pre Players are in sight of the goalie.
+	 * @post The closest opponent to the player has been determined.
+	 * @return ObjPlayer
+	 * @throws InterruptedException 
+	 * @throws UnknownHostException 
+	 */
+	public ObjPlayer closestOpponent() throws UnknownHostException, InterruptedException {
+		ObjPlayer closestOpponent = new ObjPlayer();
+		double distance = 0;
+
+		//Loop through arraylist of ObjPlayers
+		for (int i = 0; i < getMem().getPlayers().size(); ++i) {
+
+			if (!getMem().getPlayers().isEmpty()) {  
+				if (distance == 0 && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+					distance = getMem().getPlayers().get(i).getDistance();
+					closestOpponent = getMem().getPlayers().get(i);
+				}
+				else {
+
+					//Test if this player is closer than the previous one
+					if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestOpponent = getMem().getPlayers().get(i);
+					}
+				}
+			}
+			else {  //No other players in player's sight, so turn to another point to check again
+				turn(30);
 				
-				SenseMemory newSenMem = new SenseMemory(time);
-				senseParse(newSenMem, splitPacket);
-				InfoMem.SenMem = newSenMem;
+				if (!getMem().getPlayers().isEmpty()) {  
+					if (distance == 0 && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestOpponent = getMem().getPlayers().get(i);
+					}
+					else {
+						//Test if this player is closer than the previous one
+						if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
+							distance = getMem().getPlayers().get(i).getDistance();
+							closestOpponent = getMem().getPlayers().get(i);
+						}
+					}
+				}
+				
 			}
-			else if(packetType[0].compareTo("hear") == 0) {
-				hearParse(InfoMem, splitPacket);
-			}
-			
-		}
-		
+		}		
+		return closestOpponent;
 	}
 	
+	//Run method for Player's individual thread (not yet complete)
+	public void run() {
 	
-	/**
-	 * This parses the play mode out of the referee hear message
-	 * @param InfoMem the Memory to store the play mode in
-	 * @param splitPacket the split up message from the server
-	 */
-	private void hearParse(Memory InfoMem, String[] splitPacket) {
-		String splitInfo[] = (splitPacket[0].split(" "));
-		
-		if(splitInfo[2].compareTo("referee") == 0) {
-			InfoMem.playMode = splitInfo[3];
-		}
-	}
-
-
-
-	/**
-	 * This parses the information from the (see) server message
-	 * 
-	 * @param seeArray The ArrayList that stores all the ObjInfos from the message. This
-	 * will be saved in the Memory
-	 * @param splitPacket The message String split up by parentheses
-	 * @post The (see) message will be parsed and the ObjInfos will be stored in an ArrayList
-	 */
-	private void seeParse(ArrayList<ObjInfo> seeArray, String[] splitPacket) {
-		
-		for(int i = 2; i < splitPacket.length; i += 4)
-		{
+		while (true) {
 			
-			// Split up the ObjName
-			String[] splitName = (splitPacket[i].split(" "));
-			String[] splitInfo = (splitPacket[i+1].split(" "));
 			
-			// Determine type of object:
-			// - Flag -
-			if(splitName[0].compareTo("f") == 0) {
-				ObjFlag newFlag = new ObjFlag(splitPacket[i].replaceAll(" ", ""));
-				seeFlagParse(splitName, splitInfo, newFlag);
-				seeArray.add(newFlag);
+			try {
+				receiveInput();
+			} catch (InterruptedException e) {
+				System.out.println("Interrupt error at Player.run");
+				e.printStackTrace();
 			}
-			// - Ball -
-			else if(splitName[0].compareTo("b") == 0) {
-				ObjBall newBall = new ObjBall();
-				seeBallParse(splitInfo, newBall);
-				seeArray.add(newBall);
+			/*
+			if(getMem().current != null) {
+				Pos pt = mh.vSub(getMem().current, getMem().home);
+				
+				if((Math.abs(pt.x) > 1.0) || (Math.abs(pt.y) > 1.0))
+					getMem().isHome = false;
+				else
+					getMem().isHome = true;
 			}
-			
-			// - Player -
-			else if(splitName[0].compareTo("p") == 0) {
-				ObjPlayer newPlayer = new ObjPlayer();
-				seePlayerParse(splitName, splitInfo, newPlayer);
-				seeArray.add(newPlayer);
-			}
-			
-			// - Goal -
-			else if(splitName[0].compareTo("g") == 0) {
-				ObjGoal newGoal = new ObjGoal();
-				seeGoalParse(splitName, splitInfo, newGoal);
-				seeArray.add(newGoal);
-			}
-			
-			// - Line -
-			else if(splitName[0].compareTo("l") == 0) {
-				ObjLine newLine = new ObjLine();
-				seeLineParse(splitName, splitInfo, newLine);
-				seeArray.add(newLine);
-			}
+			else 
+				System.out.println("Current is null");
+			*/
 		}
-		
-	}
-	
-	
 
-
-	/**
-	 * This parses the ObjLine info from the (see) message
-	 * 
-	 * @param splitName this is the split up ObjName and side
-	 * @param splitInfo The rest of the information to store in the ObjLine
-	 * @param newLine The ObjLine to store the data in
-	 * @post A new ObjLine will be created and stored in the ObjInfo ArrayList
-	 */
-	private void seeLineParse(String[] splitName, String[] splitInfo, ObjLine newLine) {
-		// Set line's side of field
-		newLine.setSide(splitName[1]);
-		
-		// Set line's Distance, Direction, DistChng, and DirChng
-		if(splitInfo.length == 3) {
-			newLine.setDistance(Double.valueOf(splitInfo[1]));
-			newLine.setDirection(Double.valueOf(splitInfo[2]));
-		}
-		else {
-			newLine.setDistance(Double.valueOf(splitInfo[1]));
-			newLine.setDirection(Double.valueOf(splitInfo[2]));
-			newLine.setDistChng(Double.valueOf(splitInfo[3]));
-			newLine.setDirChng(Double.valueOf(splitInfo[4]));
-		}
-		
 	}
-
-	/**
-	 * This parses the ObjFlag info from the (see) message
-	 * 
-	 * @param splitName this is the split up ObjName with flagName, flagType, side, x_pos, y_pos, and yard
-	 * @param splitInfo The rest of the information to store in the ObjLine
-	 * @param newFlag The ObjFlag to store the data in
-	 * @post A new ObjFlag will be created and stored in the ObjInfo ArrayList
-	 */
-	private void seeFlagParse(String[] splitName, String[] splitInfo, ObjFlag newFlag) {
-		
-		// The center flags
-		if(splitName[1].compareTo("c") == 0) {
-			newFlag.setFlagType("c");
-			newFlag.setX_pos("c");
-			if(splitName.length == 3)
-				newFlag.setY_pos(splitName[2]);
-			else
-				newFlag.setY_pos("c");
-		}
-		// Penalty box flags
-		else if(splitName[1].compareTo("p") == 0) {
-			newFlag.setFlagType("p");
-			newFlag.setX_pos(splitName[2]);
-			newFlag.setY_pos(splitName[3]);
-		}
-		// Goal post flags
-		else if(splitName[1].compareTo("g") == 0) {
-			newFlag.setFlagType("g");
-			newFlag.setX_pos(splitName[2]);
-			newFlag.setY_pos(splitName[3]);
-		}
-		// Line flags
-		else if((splitName.length == 3) && (splitName[2].compareTo("0") != 0)) {
-			newFlag.setFlagType("l");
-			newFlag.setX_pos(splitName[1]);
-			newFlag.setY_pos(splitName[2]);
-		}
-		//
-		else if((splitName.length == 3) && (splitName[2].compareTo("0") == 0)) {
-			newFlag.setFlagType("b");
-			
-			if((splitName[1].compareTo("l") == 0) || (splitName[1].compareTo("r") == 0)) {
-				newFlag.setX_pos(splitName[1]);
-				newFlag.setY_pos("c");
-				newFlag.setYard(splitName[2]);
-			}
-			else {
-				newFlag.setX_pos(splitName[1]);
-				newFlag.setY_pos("c");
-				newFlag.setYard(splitName[2]);
-			}
-		}
-		// Boundary flags
-		else {
-			newFlag.setFlagType("b");
-			
-			if((splitName[1].compareTo("l") == 0) || (splitName[1].compareTo("r") == 0)) {
-				newFlag.setX_pos(splitName[1]);
-				newFlag.setY_pos(splitName[2]);
-				newFlag.setYard(splitName[3]);
-			}
-			else {
-				newFlag.setY_pos(splitName[1]);
-				newFlag.setX_pos(splitName[2]);
-				newFlag.setYard(splitName[3]);
-			}
-		}
-		
-		// Input info by determining how much info is available
-			if(splitInfo.length == 3) {
-				newFlag.setDistance(Double.valueOf(splitInfo[1]));
-				newFlag.setDirection(Double.valueOf(splitInfo[2]));
-			}
-			else {
-				newFlag.setDistance(Double.valueOf(splitInfo[1]));
-				newFlag.setDirection(Double.valueOf(splitInfo[2]));
-				newFlag.setDistChng(Double.valueOf(splitInfo[3]));
-				newFlag.setDirChng(Double.valueOf(splitInfo[4]));
-			}
-	}
-	
-	/**
-	 * This parses the ObjBall info from the (see) message
-	 * 
-	 * @param splitName this is the split up ObjName and side
-	 * @param splitInfo The rest of the information to store in the ObjBall
-	 * @param newBall The ObjBall to store the data in
-	 * @post A new ObjBall will be created and stored in the ObjInfo ArrayList
-	 */
-	private void seeBallParse(String[] splitInfo, ObjBall newBall) {
-		
-		// Input info by determining how much info is available
-		if(splitInfo.length == 3) {
-			newBall.setDistance(Double.valueOf(splitInfo[1]));
-			newBall.setDirection(Double.valueOf(splitInfo[2]));
-		}
-		else {
-			newBall.setDistance(Double.valueOf(splitInfo[1]));
-			newBall.setDirection(Double.valueOf(splitInfo[2]));
-			newBall.setDistChng(Double.valueOf(splitInfo[3]));
-			newBall.setDirChng(Double.valueOf(splitInfo[4]));
-		}
-	}
-
-	/**
-	 * This parses the ObjPlayer info from the (see) message
-	 * 
-	 * @param splitName this is the split up ObjName, team name, uniform number (if visible),
-	 * and goalie boolean (if visible).
-	 * @param splitInfo The rest of the information to store in the ObjPlayer
-	 * @param newPlayer The ObjPlayer to store the data in
-	 * @post A new ObjPlayer will be created and stored in the ObjInfo ArrayList
-	 */
-	private void seePlayerParse(String[] splitName, String[] splitInfo, ObjPlayer newPlayer) {
-		
-		if(splitName.length == 2) {
-			newPlayer.setTeam(splitName[1]);
-		}
-		else if(splitName.length == 3) {
-			newPlayer.setTeam(splitName[1]);
-			newPlayer.setuNum(Integer.parseInt(splitName[2]));
-		}
-		else if(splitName.length == 4) {
-			newPlayer.setTeam(splitName[1]);
-			newPlayer.setuNum(Integer.parseInt(splitName[2]));
-			newPlayer.setGoalie(true);
-		}
-		
-		if(splitInfo.length == 3) {
-			newPlayer.setDistance(Double.valueOf(splitInfo[1]));
-			newPlayer.setDirection(Double.valueOf(splitInfo[2]));
-		}
-		else if(splitInfo.length == 5) {
-			newPlayer.setDistance(Double.valueOf(splitInfo[1]));
-			newPlayer.setDirection(Double.valueOf(splitInfo[2]));
-			newPlayer.setDistChng(Double.valueOf(splitInfo[3]));
-			newPlayer.setDirChng(Double.valueOf(splitInfo[4]));
-		}
-		else if(splitInfo.length == 7) {
-			newPlayer.setDistance(Double.valueOf(splitInfo[1]));
-			newPlayer.setDirection(Double.valueOf(splitInfo[2]));
-			newPlayer.setDistChng(Double.valueOf(splitInfo[3]));
-			newPlayer.setDirChng(Double.valueOf(splitInfo[4]));
-			newPlayer.setHeadDir((Double.valueOf(splitInfo[5])));
-			newPlayer.setBodyDir((Double.valueOf(splitInfo[6])));
-		}
-		
-	}
-
-	/**
-	 * This parses the ObjGoal info from the (see) message
-	 * 
-	 * @param splitName this is the split up ObjName and side
-	 * @param splitInfo The rest of the information to store in the ObjGoal
-	 * @param newGoal The ObjGoal to store the data in
-	 * @post A new ObjGoal will be created and stored in the ObjInfo ArrayList
-	 */
-	private void seeGoalParse(String[] splitName, String[] splitInfo, ObjGoal newGoal) {
-		
-		// Set goal's side of field
-		newGoal.setSide(splitName[1]);
-		
-		// Set goal's Distance, Direction, DistChng, and DirChng
-		if(splitInfo.length == 3) {
-			newGoal.setDistance(Double.valueOf(splitInfo[1]));
-			newGoal.setDirection(Double.valueOf(splitInfo[2]));
-		}
-		else {
-			newGoal.setDistance(Double.valueOf(splitInfo[1]));
-			newGoal.setDirection(Double.valueOf(splitInfo[2]));
-			newGoal.setDistChng(Double.valueOf(splitInfo[3]));
-			newGoal.setDirChng(Double.valueOf(splitInfo[4]));
-		}
-		
-	}
-	
-	/**
-	 * This parses the information from the (sense_body) server message
-	 * 
-	 * @param newSenMem this is the SenseMemory to store all the information in
-	 * @param splitPacket The message String split up by parentheses
-	 * @post The (sense_body) message will be parsed and the information will be
-	 * stored in the SenseMemory of the Memory
-	 */
-	private void senseParse(SenseMemory newSenMem, String[] splitPacket) {
-		
-		// The split up Strings of useful information
-		String[] splitStamina = splitPacket[3].split(" ");
-		String[] splitSpeed = splitPacket[5].split(" ");
-		String[] splitHeadAngle = splitPacket[7].split(" ");
-		
-		//the parsed Stamina information
-		newSenMem.stamina = Double.valueOf(splitStamina[1]);
-		newSenMem.effort = Double.valueOf(splitStamina[2]);
-		newSenMem.recovery = Double.valueOf(splitStamina[3]);
-		
-		// the parsed Speed information
-		newSenMem.amountOfSpeed = Double.valueOf(splitSpeed[1]);
-		newSenMem.directionOfSpeed = Double.valueOf(splitSpeed[2]);
-		
-		// the parsed head direction angle
-		newSenMem.headDirection = Double.valueOf(splitHeadAngle[1]);
-		
-	}
-	
-	/**
-	 * The String of the incoming message
-	 */
-	public String input;
 	
 }

@@ -1,3 +1,7 @@
+import java.net.UnknownHostException;
+
+
+
 /**
  * @file Brain.java
  * @author Joel *
@@ -9,46 +13,23 @@
  */
 public class Brain extends Thread {
 
-	private Mode currentMode = new Mode();	
-	private Action actions = new Action();
+	private Mode currentMode = new Mode();
 	private String marked_team;
 	private String marked_unum;
 	public Player p;
 	public Memory m;
 	
+
 	/**
 	 * Default constructor
 	 */
 	public Brain() {
-		super();
+		
 	}
-	
+
 	public Brain(Player p) {
 		this.p = p;
 		start();
-	}
-	
-	/**
-	 * @return the actions
-	 */
-	public Action getActions() {
-		return actions;
-	}
-
-	/**
-	 * @param actions the actions to set
-	 */
-	public void setActions(Action actions) {
-		this.actions = actions;
-	}
-
-	/**
-	 * Constructor
-	 * @param currentMode
-	 */
-	public Brain(Mode currentMode) {
-		super();
-		this.currentMode = currentMode;
 	}
 	
 	/**
@@ -99,23 +80,39 @@ public class Brain extends Thread {
 	public void setMarked_unum(String marked_unum) {
 		this.marked_unum = marked_unum;
 	}
-
-	/**
-	 * The Brain thread run method. It updates the Memory for the Player
-	 * 
-	 * @post Memory will continuously update 
-	 */
+	
 	public void run() {
-
-		while (true) {
-
+		
+		while(true) {
+			
 			try {
-				p.receiveInput();
-			} catch (InterruptedException e) {
-				System.out.println("Error in Brain.run()");
-				e.printStackTrace();
+				Thread.sleep(100);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
-		}
+			//System.out.println("Brain");
+			if(p.getMem().timeCheck(p.getTime())) {
+				p.setTime(p.getMem().ObjMem.getTime());
+				
+				try {
+					
+					
+					p.getAction().findBall();
+					
+					
+				} catch (UnknownHostException e) {
+					System.out.println("Error in Brain.run findBall");
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					System.out.println("Interrupt Error in Brain.run");
+					e.printStackTrace();
+				}
+				
+			
+			}
+			
+		} 
+		
 	}
 }
-

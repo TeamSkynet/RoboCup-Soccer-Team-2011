@@ -25,11 +25,10 @@ public class Player extends Thread {
 	private Memory m = new Memory();
 	private ObjInfo i = new ObjInfo();
 	private Parser p = new Parser();
-	//private Brain b = new Brain();
 	private Action a = new Action(m, rc);
 	private int time = 0;
+	public MathHelp mh = new MathHelp();
 	public boolean wait = true;
-	
 	
 	public Player() {
 		
@@ -47,23 +46,13 @@ public class Player extends Thread {
 	 * @param b
 	 * @param time
 	 */
-	public Player(RoboClient rc, Memory m, ObjInfo i, Parser p, Brain b,
-			int time) {
+	public Player(RoboClient rc, Memory m, ObjInfo i, Parser p, int time) {
 		super();
 		this.rc = rc;
 		this.m = m;
 		this.i = i;
 		this.p = p;
-		//this.b = b;
 		this.time = time;
-	}
-
-
-	/**
-	 * @param b the b to set
-	 */
-	public void setBrain(Brain b) {
-		//this.b = b;
 	}
 
 	public Action getAction() {
@@ -72,6 +61,14 @@ public class Player extends Thread {
 	
 	public void setAction(Action a) {
 		this.a = a;
+	}
+	
+	public void setHome(Pos home) {
+		getMem().home = home;
+	}
+	
+	public Pos getHome() {
+		return getMem().home;
 	}
 	
 	/**
@@ -129,6 +126,10 @@ public class Player extends Thread {
 	 */
 	public void setParser(Parser p) {
 		this.p = p;
+	}
+	
+	public int getMemTime() {
+		return getMem().ObjMem.getTime();
 	}
 
 	/**
@@ -276,8 +277,13 @@ public class Player extends Thread {
 		while (closestOpponent() == null){
 			turn(30);
 		}
-		//System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
+		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
 		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
+		
+		/*if (m.isObjVisible("player")) {
+			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));
+			System.out.println("Marked Player " + b.getMarked_team() + " " + b.getMarked_unum());
+		}		*/
 	}
 	
 	/**
@@ -331,35 +337,32 @@ public class Player extends Thread {
 		return closestOpponent;
 	}
 	
-	/**
-	 * The Player thread run method. It makes decisions for the player.
-	 * 
-	 * @post Player will act on decisions made.
-	 */
+	//Run method for Player's individual thread (not yet complete)
 	public void run() {
-		
-		System.out.println("Player");
-		
-		Pos go = new Pos(-20, -10);
-		
-		while(true) {
+	
+		while (true) {
+			
 			
 			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				receiveInput();
+			} catch (InterruptedException e) {
+				System.out.println("Interrupt error at Player.run");
+				e.printStackTrace();
 			}
-			
-			
-			
-			if(getMem().timeCheck(getTime())) {
-				setTime(getMem().ObjMem.getTime());
+			/*
+			if(getMem().current != null) {
+				Pos pt = mh.vSub(getMem().current, getMem().home);
 				
-				getAction().gotoPoint(go);	
-				
-				getMem().getPosition().print("Current:");
-			}			
-		} 		
-	}	
+				if((Math.abs(pt.x) > 1.0) || (Math.abs(pt.y) > 1.0))
+					getMem().isHome = false;
+				else
+					getMem().isHome = true;
+			}
+			else 
+				System.out.println("Current is null");
+			*/
+		}
+
+	}
+	
 }
