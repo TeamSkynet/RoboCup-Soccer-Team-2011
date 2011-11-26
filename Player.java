@@ -269,7 +269,7 @@ public class Player extends Thread {
 		while (closestOpponent() == null){
 			turn(30);
 		}
-		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
+		//System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
 		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
 	}
 	

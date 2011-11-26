@@ -33,7 +33,7 @@ public class Game {
 		
 		
 		//Position players on field, and orient them accordingly based on what side they are on
-		if(p1.getMem().side.compareTo("r") == 0) {
+		/*if(p1.getMem().side.compareTo("r") == 0) {
 
 			p1.initPlayer(-5, -25);
 			Thread.sleep(100);
@@ -78,8 +78,8 @@ public class Game {
 			g9.initPlayer(-40, 0);
 			Thread.sleep(100);
 
-		}
-		else {
+		}*/
+		//else {
 
 			p1.initPlayer(-5, -25);
 			Thread.sleep(100);
@@ -108,7 +108,7 @@ public class Game {
 			g9.initPlayer(-40, 0);
 			Thread.sleep(100);
 
-		}
+		//}
 		
 		//Begin soccer match behaviors
 		p1.start();

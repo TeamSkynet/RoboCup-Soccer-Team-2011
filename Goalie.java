@@ -23,6 +23,10 @@ public class Goalie extends Player {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Goalie(String team){
+		super.getRoboClient().setTeam(team);
+	}
 
 	 /**
 	 * Initializes the Player with the RoboCup server as a goalie.
@@ -205,11 +209,6 @@ public class Goalie extends Player {
 				Thread.sleep(100);
 			}
 		}
-	}
-	
-	public void testgotoPoint(){
-		Pos origin = new Pos(0,0);
-		getAction().gotoPoint(origin);
 	}
 	
 	/**
