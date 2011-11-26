@@ -13,10 +13,7 @@ public class StrikerAgent {
 	public static void main(String[] args) throws UnknownHostException, InterruptedException, SocketException {
 		Player p = new Player();
 		
-		p.initPlayer();
-		
-		p.move(-5, -10);
-		Thread.sleep(100);
+		p.initPlayer(-5, -10);
 		
 		while (true) {
 			p.receiveInput();

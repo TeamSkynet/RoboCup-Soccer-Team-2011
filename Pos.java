@@ -64,6 +64,14 @@ public class Pos {
 		name = " ";
 	}
 	
+	public void print(String a) {
+		System.out.println(a + " (" + x + ", " + y + ")");
+	}
+	
+	public void print() {
+		System.out.println("(" + x + ", " + y + ")");
+	}
+	
 	public String name;
 	public double x;
 	public double y;

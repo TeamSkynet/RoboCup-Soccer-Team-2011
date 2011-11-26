@@ -32,6 +32,14 @@ public class Polar {
 		this.t = t;
 	}
 	
+	public void print(String a) {
+		System.out.println(a + " (" + r + ", " + t + ")");
+	}
+	
+	public void print() {
+		System.out.println("(" + r + ", " + t + ")");
+	}
+	
 
 	public double r;
 	public double t;
