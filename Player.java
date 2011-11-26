@@ -171,15 +171,22 @@ public class Player extends Thread {
 		
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
+		getMem().home = new Pos(x, y);
+		
 		
 		try {
 			move(x, y);
 			Thread.sleep(100);
+			if(getMem().side == "r") {
+				turn(180);
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		@SuppressWarnings("unused")
+		
+		
 		Brain b = new Brain(this);
 	}
 	

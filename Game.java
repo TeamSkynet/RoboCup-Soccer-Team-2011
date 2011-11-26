@@ -31,85 +31,36 @@ public class Game {
 		Player p10 = new Player();
 		Player p11 = new Player();
 		
-		
-		//Position players on field, and orient them accordingly based on what side they are on
-		/*if(p1.getMem().side.compareTo("r") == 0) {
 
-			p1.initPlayer(-5, -25);
-			Thread.sleep(100);
-			p1.turn(180);
-			Thread.sleep(100);
+		p1.initPlayer(-5, -25);
+		Thread.sleep(100);
 
-			p2.initPlayer(-5, -10);
-			Thread.sleep(100);
-			p2.turn(180);
-			Thread.sleep(100);
+		p2.initPlayer(-5, -10);
+		Thread.sleep(100);
 
-			p3.initPlayer(-5, 10);
-			Thread.sleep(100);
-			p3.turn(180);
-			Thread.sleep(100);
+		p3.initPlayer(-5, 10);
+		Thread.sleep(100);
 
-			p4.initPlayer(-5, 25);
-			Thread.sleep(100);
-			p4.turn(180);
-			Thread.sleep(100);
+		p4.initPlayer(-5, 25);
+		Thread.sleep(100);
 
-			p5.initPlayer(-15, 0);
-			Thread.sleep(100);
-			p5.turn(180);
-			Thread.sleep(100);
+		p5.initPlayer(-15, 0);
+		Thread.sleep(100);
 
-			p6.initPlayer(-30, -25);
-			Thread.sleep(100);
-			p6.turn(180);
-			Thread.sleep(100);
+		p6.initPlayer(-30, -25);
+		Thread.sleep(100);
 
-			p7.initPlayer(-30, 0);
-			Thread.sleep(100);
-			p7.turn(180);
-			Thread.sleep(100);
+		p7.initPlayer(-30, 0);
+		Thread.sleep(100);
 
-			p8.initPlayer(-30, 25);
-			Thread.sleep(100);
-			p8.turn(180);
-			Thread.sleep(100);
+		p8.initPlayer(-30, 25);
+		Thread.sleep(100);
 
-			g9.initPlayer(-40, 0);
-			Thread.sleep(100);
+		g9.initPlayer(-40, 0);
+		Thread.sleep(100);
 
-		}*/
-		//else {
-
-			p1.initPlayer(-5, -25);
-			Thread.sleep(100);
-
-			p2.initPlayer(-5, -10);
-			Thread.sleep(100);
-
-			p3.initPlayer(-5, 10);
-			Thread.sleep(100);
-
-			p4.initPlayer(-5, 25);
-			Thread.sleep(100);
-
-			p5.initPlayer(-15, 0);
-			Thread.sleep(100);
-
-			p6.initPlayer(-30, -25);
-			Thread.sleep(100);
-
-			p7.initPlayer(-30, 0);
-			Thread.sleep(100);
-
-			p8.initPlayer(-30, 25);
-			Thread.sleep(100);
-
-			g9.initPlayer(-40, 0);
-			Thread.sleep(100);
-
-		//}
-		
+	
+	
 		//Begin soccer match behaviors
 		p1.start();
 		p2.start();
