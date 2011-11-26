@@ -15,15 +15,10 @@ public class GoalieTest {
 		Player p1 = new Player();
 		Player p2 = new Player();
 		
-		g9.initGoalie();
-		g9.move(-40, 0);		
-		Thread.sleep(100);
+		g9.initGoalie(-40, 0);
 		
-		//p1.initPlayer();
-		//p1.move(-25, -10);
-		
-		//p2.initPlayer();
-		//p2.move(-30, 5);
+		//p1.initPlayer(-25, -10);
+		//p2.initPlayer(-30, 5);
 		
 		
 		//g9.start();

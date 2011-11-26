@@ -29,10 +29,17 @@ public class Goalie extends Player {
 	 * @pre A RoboCup server is available.
 	 * @post The Player has been initialized to the correct team as a goalie.
 	 */
-	public void initGoalie() throws SocketException, UnknownHostException {
+	public void initGoalie(double x, double y) throws SocketException, UnknownHostException {
 
 		rc.dsock = new DatagramSocket();
-		rc.initGoalie(getParser(), getMem());		
+		rc.initGoalie(getParser(), getMem());
+		try {
+			move(x,y);
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	 /**

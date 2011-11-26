@@ -167,13 +167,14 @@ public class Player extends Thread {
 	 * @pre A RoboCup server is available.
 	 * @post The Player has been initialized to the correct team.
 	 */
-	public void initPlayer() throws SocketException, UnknownHostException {
+	public void initPlayer(double x, double y) throws SocketException, UnknownHostException {
 		
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
 		
 		try {
-			move(-10, 0);
+			move(x, y);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -337,6 +338,8 @@ public class Player extends Thread {
 		
 		System.out.println("Player");
 		
+		Pos go = new Pos(-20, -10);
+		
 		while(true) {
 			
 			try {
@@ -346,18 +349,14 @@ public class Player extends Thread {
 				e1.printStackTrace();
 			}
 			
+			
+			
 			if(getMem().timeCheck(getTime())) {
 				setTime(getMem().ObjMem.getTime());
 				
-				try {
-					getAction().findBall();
-				} catch (UnknownHostException e) {
-					System.out.println("Error in Brain.run findBall");
-					e.printStackTrace();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}			
+				getAction().gotoPoint(go);	
+				
+				getMem().getPosition().print("Current:");
 			}			
 		} 		
 	}	

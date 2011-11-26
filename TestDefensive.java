@@ -10,18 +10,10 @@ public class TestDefensive {
 		Player p2 = new Player();
 		Goalie g3 = new Goalie();
 		
-		p1.initPlayer();
-		p2.initPlayer();
-		g3.initGoalie();
+		p1.initPlayer(-45, -15);
+		p2.initPlayer(-35, 30);
+		g3.initGoalie(-50, 0);
 		
-		p1.move(-45, -15);
-		Thread.sleep(100);
-		
-		p2.move(-35, 30);
-		Thread.sleep(100);
-		
-		g3.move(-50, 0);
-		Thread.sleep(100);
 
 		while(true) {
 			p1.receiveInput();

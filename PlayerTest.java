@@ -4,7 +4,6 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 //Note: The Soccer Server must be started PRIOR to running these tests
@@ -17,9 +16,7 @@ public class PlayerTest {
 	@Before 
 	public void setUp() {
 		try {
-			p1.initPlayer();
-			Thread.sleep(100);
-			p1.move(-5, -25);
+			p1.initPlayer(-5, -25);
 			Thread.sleep(100);
 			p1.turn(35);
 			Thread.sleep(100);

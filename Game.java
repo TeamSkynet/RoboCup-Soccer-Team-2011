@@ -1,5 +1,4 @@
-import java.net.SocketException;
-import java.net.UnknownHostException;
+
 
 /**
 * @file Game.java
@@ -32,93 +31,81 @@ public class Game {
 		Player p10 = new Player();
 		Player p11 = new Player();
 		
-		//Initialize each player
-		p1.initPlayer();
-		p2.initPlayer();
-		p3.initPlayer();
-		p4.initPlayer();
-		p5.initPlayer();
-		p6.initPlayer();
-		p7.initPlayer();
-		p8.initPlayer();
-		g9.initGoalie();
-		p10.initPlayer();
-		p11.initPlayer();
 		
 		//Position players on field, and orient them accordingly based on what side they are on
 		if(p1.getMem().side.compareTo("r") == 0) {
 
-			p1.move(-5, -25);
+			p1.initPlayer(-5, -25);
 			Thread.sleep(100);
 			p1.turn(180);
 			Thread.sleep(100);
 
-			p2.move(-5, -10);
+			p2.initPlayer(-5, -10);
 			Thread.sleep(100);
 			p2.turn(180);
 			Thread.sleep(100);
 
-			p3.move(-5, 10);
+			p3.initPlayer(-5, 10);
 			Thread.sleep(100);
 			p3.turn(180);
 			Thread.sleep(100);
 
-			p4.move(-5, 25);
+			p4.initPlayer(-5, 25);
 			Thread.sleep(100);
 			p4.turn(180);
 			Thread.sleep(100);
 
-			p5.move(-15, 0);
+			p5.initPlayer(-15, 0);
 			Thread.sleep(100);
 			p5.turn(180);
 			Thread.sleep(100);
 
-			p6.move(-30, -25);
+			p6.initPlayer(-30, -25);
 			Thread.sleep(100);
 			p6.turn(180);
 			Thread.sleep(100);
 
-			p7.move(-30, 0);
+			p7.initPlayer(-30, 0);
 			Thread.sleep(100);
 			p7.turn(180);
 			Thread.sleep(100);
 
-			p8.move(-30, 25);
+			p8.initPlayer(-30, 25);
 			Thread.sleep(100);
 			p8.turn(180);
 			Thread.sleep(100);
 
-			g9.move(-40, 0);
+			g9.initPlayer(-40, 0);
 			Thread.sleep(100);
 
 		}
 		else {
 
-			p1.move(-5, -25);
+			p1.initPlayer(-5, -25);
 			Thread.sleep(100);
 
-			p2.move(-5, -10);
+			p2.initPlayer(-5, -10);
 			Thread.sleep(100);
 
-			p3.move(-5, 10);
+			p3.initPlayer(-5, 10);
 			Thread.sleep(100);
 
-			p4.move(-5, 25);
+			p4.initPlayer(-5, 25);
 			Thread.sleep(100);
 
-			p5.move(-15, 0);
+			p5.initPlayer(-15, 0);
 			Thread.sleep(100);
 
-			p6.move(-30, -25);
+			p6.initPlayer(-30, -25);
 			Thread.sleep(100);
 
-			p7.move(-30, 0);
+			p7.initPlayer(-30, 0);
 			Thread.sleep(100);
 
-			p8.move(-30, 25);
+			p8.initPlayer(-30, 25);
 			Thread.sleep(100);
 
-			g9.move(-40, 0);
+			g9.initPlayer(-40, 0);
 			Thread.sleep(100);
 
 		}
