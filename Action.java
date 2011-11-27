@@ -96,6 +96,26 @@ public class Action {
 		
 	}
 	
+	
+	public void gotoSidePoint(Pos p) {
+		Polar go = mem.getAbsPolar(p);
+		//go.print("gotoSidePoint: ");
+		if(go.r >= 0.5) {
+			try {
+				
+				rc.dash(2 * m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()), (go.t - mem.getDirection()));
+			
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
 	/**
 	* A cartesian wrapper for the gotoPoint with Polar coordinate
 	*
@@ -133,6 +153,8 @@ public class Action {
 		}
 	}
 
+	
+	
 	/**
 	 * Take the Player back to his home
 	 * 
@@ -141,7 +163,8 @@ public class Action {
 	 * 
 	 * @return true if the player is in the near vicinity of his home, false if he's not there yet
 	 */
-	public boolean goHome() {
+	/*
+	public void goHome() {
 		Pos pt = mem.getPosition();
 		
 		if(((pt.x - mem.home.x) < 1.0) && ((pt.x - mem.home.x) > -1) && ((pt.y - mem.home.y) < 1) && ((pt.y - mem.home.y) > -1))
@@ -151,6 +174,7 @@ public class Action {
 			return false;
 		}
 	}
+	*/
 	
 	/**
 	* A method to find the ball on the field. If it's not in view, the player turns
@@ -326,4 +350,5 @@ public class Action {
 	public RoboClient rc;
 	public Polar OppGoal;
 	public boolean atGoal;
+	
 }
