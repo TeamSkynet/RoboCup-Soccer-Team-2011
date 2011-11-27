@@ -10,8 +10,8 @@ public class TestDefensive {
 		Player p2 = new Player();
 		Goalie g3 = new Goalie();
 		
-		p1.initPlayer(-45, -15);
-		p2.initPlayer(-35, 30);
+		p1.initPlayer(-20, -15);
+		p2.initPlayer(-20, 15);
 		g3.initGoalie(-50, 0);
 		
 

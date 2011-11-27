@@ -274,9 +274,10 @@ public class Player extends Thread {
 	public void runDefense() throws UnknownHostException, InterruptedException {
 		//b.setDefensive();
 		
-		while (closestOpponent() == null){
-			turn(30);
-		}
+		/*while (closestOpponent() == null){
+			turn(15);
+			Thread.sleep(100);
+		}*/
 		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
 		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
 		
@@ -307,7 +308,6 @@ public class Player extends Thread {
 					closestOpponent = getMem().getPlayers().get(i);
 				}
 				else {
-
 					//Test if this player is closer than the previous one
 					if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
 						distance = getMem().getPlayers().get(i).getDistance();
@@ -316,7 +316,7 @@ public class Player extends Thread {
 				}
 			}
 			else {  //No other players in player's sight, so turn to another point to check again
-				turn(30);
+				turn(15);
 				
 				if (!getMem().getPlayers().isEmpty()) {  
 					if (distance == 0 && getMem().getPlayers().get(i).getTeam() != rc.getTeam()) {
@@ -330,8 +330,7 @@ public class Player extends Thread {
 							closestOpponent = getMem().getPlayers().get(i);
 						}
 					}
-				}
-				
+				}				
 			}
 		}		
 		return closestOpponent;

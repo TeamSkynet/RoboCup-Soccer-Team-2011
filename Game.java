@@ -56,10 +56,8 @@ public class Game {
 		p8.initPlayer(-30, 25);
 		Thread.sleep(100);
 
-		g9.initPlayer(-40, 0);
-		Thread.sleep(100);
-
-	
+		g9.initGoalie(-40, 0);
+		Thread.sleep(100);	
 	
 		//Begin soccer match behaviors
 		p1.start();
