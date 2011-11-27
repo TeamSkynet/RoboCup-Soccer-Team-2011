@@ -1,245 +1,590 @@
 /**
- * @file MathHelp.java
+ * @file Memory.java
  * 
- * This has functions of the math I need for calculations.
+ * The Memory class stores instances of ObjMemory and SenseMemory and supplies
+ * methods to access their innards.
  * 
  * @author granthays
- * @date 10/09/11
- * @version 1
- *
+ * @date 11/10/11
+ * @version 3.0
+ * 
  */
+import java.util.*;
 
-
-
-public class MathHelp {
-
+/**
+* @class Memory
+*/
+public class Memory {
 	/**
-	 * Polar to Cartesian converter
+	* The default constructor for the Memory.
+	*
+	* This creates new, empty ArrayList for the ObjMemory and SenseMemory, initiates
+	* the time at 0 for both, and creates an ObjMemory and SenseMemory with the new
+	* ArrayLists and time as parameters.
+	*/
+	public Memory() {
+		ArrayList<ObjInfo> newObjArray = new ArrayList<ObjInfo>();
+		int time = 0;
+		ObjMem = new ObjMemory(newObjArray, time);
+		SenMem = new SenseMemory();
+	}
+	
+	/**
+	 * This sets the orientation of the Field positions depending on side the
+	 * player starts on.
 	 * 
-	 * @param r the length of the Polar arm
-	 * @param t the angle, in degrees, of the arm from the x-axis
-	 * @return A new Cartesian Pos converted from the r and t of a Polar vector
-	 */
-	public Pos getPos(double r, double t) {
-		
-		double x = r * Math.cos(Math.toRadians(t));
-		double y = r * Math.sin(Math.toRadians(t));
-		
-		return(new Pos(x, y));
-		
-	}
-	
-	/**
-	 * Polar to Cartesian wrapper
+	 * @param side
 	 * 
-	 * This allows you to pass a whole polar in, instead of extracting it's r
-	 * and t variables and passing them in
-	 * 
-	 * @param p The polar coordinates you want to convert
-	 * @return A new Pos with the Cartesian version of your Polar vector
+	 * @pre The side String should not be null
+	 * @post The Field orientation will be set
 	 */
-	public Pos getPos(Polar p) {
-		return(getPos(p.r, p.t));
-	}
-	
-	/**
-	 * Cartesian to polar converter
-	 * 
-	 * @param x the x coordinate of the Cartesian vector
-	 * @param y the y coordinate of the Cartesian vector
-	 * @return A new Polar vector converted from the Cartesian vector
-	 */
-	public Polar getPolar(double x, double y) {
-		
-		double r = Math.sqrt(x*x + y*y);
-		double t = Math.toDegrees(Math.atan(y/x));
-		
-		return(new Polar(r, t));
-	}
-	
-	/**
-	 * Cartesian to polar wrapper
-	 * 
-	 * This is just a wrapper, so you can pass in a Pos
-	 * instead of extracting it's x and y and passing them in.
-	 * 
-	 * @param p the Cartesian vector
-	 * @return A new Polar vector converted from the Cartesian vector
-	 */
-	public Polar getPolar(Pos p) {
-		return(getPolar(p.x, p.y));
-	}
-	
-	/**
-	 * Vector Addition
-	 * 
-	 * @param p1 first position
-	 * @param p2 second position
-	 * @return New position with the sum of the two arguments
-	 */
-	public Pos vAdd(Pos p1, Pos p2) {
-		return(new Pos((p1.x + p2.x), (p1.y + p2.y)));
-	}
-	
-	
-	/**
-	 * Vector Subtraction
-	 * 
-	 * @param p2 final position
-	 * @param p1 initial position
-	 * @return new Pos with the difference between p2 and p1
-	 */
-	public Pos vSub(Pos p2, Pos p1) {
-		return(new Pos((p2.x - p1.x), (p2.y - p1.y)));
-	}
-	
-	/**
-	 * Multiply vector by scalar
-	 * @param p the vector
-	 * @param n the scalar
-	 * @return A Pos vector multiplied by a scalar value
-	 */
-	public Pos vMul(Pos p, double n) {
-		return(new Pos((p.x*n), (p.y*n)));
-	}
-	
-	/**
-	 * Divide vector by scalar
-	 * @param p the vector
-	 * @param n the scalar
-	 * @return A Pos vector divided by a scalar value
-	 */
-	public Pos vDiv(Pos p, double n) {
-		return(new Pos((p.x/n), (p.y/n)));
-	}
-	
-	/**
-	 * Magnitude
-	 * Calculates the Magnitude of a vector, same as r in a Polar vector
-	 * @param p the Pos of the vector
-	 * @return A double containing the magnitude of the vector
-	 */
-	public double mag(Pos p) {
-		return(Math.sqrt(p.x*p.x + p.y*p.y));
-	}
-
-	/**
-	 * A normalizer
-	 * @param p the vector to find the normal of
-	 * @return a Pos of the unit vector of p
-	 */
-	public Pos norm(Pos p) {
-		return(norm(mag(p), p));
-	}
-	
-
-	/**
-	 * A normalizer
-	 * @param dist the magnitude of the vector
-	 * @param a the vector to be normalized
-	 * @return a Pos of the unit vector of p
-	 */
-	public Pos norm(double dist, Pos a) {
-		return(new Pos((a.x/dist),(a.y/dist)));
-	}
-	
-	/**
-	 * The Effective Dash Power
-	 * 
-	 * @param effort From the stamina in the SenseMemory
-	 * @param power The Power of the dash
-	 * @return the product of effort x power x dash_power_rate (0.006)
-	 */
-	public double edp(double effort, double stamina) {
-		return(Math.min(100, stamina) * effort * .006 * 100);
-	}
-	
-	/**
-	 * A calculator for power needed to get to a position on the field. This is derived from
-	 * the Movement Model equations in the Server Manual: section 4.4
-	 * 
-	 * @param p the position to go to
-	 * @param vel_r the magnitude of the player's velocity
-	 * @param vel_t the direction of the player's velocity
-	 * @return The power needed to accelerate the player to the desired location
-	 */
-	public double getDashPower(Pos p, double vel_r, double vel_t, double effort, double stamina) {
-		
-		if(mag(p) > 20)
-			return(50);
+	public void setField(String side) {
+		f = new Field(side);
+		if(side.compareTo("l") == 0) {
+			oppGoal = getFlagPos("gr");
+			oppSide = "r";
+		}
 		else {
-			Pos v = getPos(vel_r, vel_t);
-			Pos a = vSub(p, v);
-			double power = mag(a) / (0.06 * effort);
-			return(Math.min(edp(effort, stamina), power));
+			oppGoal = getFlagPos("gl");
+			oppSide = "l";
 		}
 	}
 	
 	
+	/**
+	* The ObjInfo getter
+	*
+	* This fetches the ObjInfo at index i of the ArrayList ObjArray in ObjMemory,
+	* and returns it as an ObjInfo.
+	*
+	* @param i the index number of the location of the desired ObjInfo in ObjArray
+	* @pre An index needs to be supplied when calling this
+	* @post A basic ObjInfo will be given.
+	* @return ObjInfo the ObjInfo at location i of the ObjArray
+	*/
+	// Get Object
+	public ObjInfo getObj(int i) {
+		return ObjMem.getObj(i);
+	}
 	
 	/**
-	 * A method to find the ball's next point given it's velocity and position relative
-	 * to player.
+	* The ObjMemory size
+	*
+	* A getter to quickly retrieve the number of ObjInfo in ObjMemory
+	*
+	* @return size of ObjMemory
+	*/
+	public int getObjMemorySize() {
+		return ObjMem.getSize();
+	}
+	
+	/**
+	* Is this ObjInfo visible?
+	*
+	* @param name the ObjName of the ObjInfo we're detecting visibility of
+	* @return true if the ball is in the ObjMemory, false if it is not or
+	* if the the ObjMemory is empty
+	*/
+	public boolean isObjVisible(String name) {
+		if(ObjMem.getSize() == 0)
+			return false;
+		else {
+			for(int i = 0; i < ObjMem.getSize(); i++) {
+				if(getObj(i).getObjName().compareTo(name) == 0)
+					return true;
+			}
+			return false;
+		}
+	}
+	
+	/**
+	* The Ball Getter
+	*
+	* @pre Make sure you either check visibility first
+	* @post If the ball is in the Memory, it will be returned. Otherwise
+	* a Null ObjBall will be sent.
+	* @return ObjBall containing the ball
+	*/
+	public ObjBall getBall() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("ball") == 0)
+				return (ObjBall) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	* The Flag Getter
+	*
+	* If you're looking for a specific flag, this is you're guy. You need to
+	* pass in the FlagName (i.e. flb30) into it, and out pops the ObjFlag
+	* with that FlagName attached to it.
+	*
+	* @pre Make sure you either check visibility first
+	* @post If the flag is in the Memory, it will be returned. Otherwise
+	* a Null ObjFlag will be sent.
+	* @return ObjFlag containing the flag with specified name
+	*/
+	public ObjFlag getFlag(String name) {
+		ObjFlag newFlag = new ObjFlag();
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("flag") == 0)
+				newFlag = (ObjFlag) getObj(i);
+			if(newFlag.getFlagName().compareTo(name) == 0)
+				return newFlag;
+		}
+		return null;
+	}
+	
+	/**
+	* The Goal Opponent Getter
+	*
+	* This will get the Opponent's ObjGoal if it's in your field of vision.
+	*
+	* @post If you're facing the opponenet's goal, an ObjGoal with it's information will
+	* be returned. Otherwise a null ObjGoal will be sent
+	* @return ObjGoal containing the goal if it's in your vision, null if not
+	*/
+	public ObjGoal getOppGoal() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if((getObj(i).getObjName().compareTo("goal") == 0) && (getObj(i).getSide().compareTo(oppSide) == 0))
+				return (ObjGoal) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	 * This returns the Pos with the coordinate to the goal you're trying to
+	 * score on.
 	 * 
-	 * @param ball
-	 * @return A Polar coordinate with the theoretical position of the ball at time t+1
+	 * @return the Pos in the Field of your oppenent's goal
 	 */
-	public Polar getNextBallPoint(ObjBall ball) {
-		
-		Pos pb = getPos(new Polar(ball.getDistance(), ball.getDirection()));
-		Pos pb2 = getPos(new Polar(ball.getDistChng(), ball.getDirChng()));
-		
-		return(getPolar(vAdd(pb, pb2)));
-		
+	public Pos getOppGoalPos() {
+		if(side.compareTo("l") == 0) 
+			return(getFlagPos("gr"));
+		else
+			return(getFlagPos("gl"));
+	}
+	
+	/**
+	* The Goal Own Getter
+	*
+	* This will get your own ObjGoal if it's in your field of vision.
+	*
+	* @post If you're facing your goal, an ObjGoal with it's information will
+	* be returned. Otherwise a null ObjGoal will be sent
+	* @return ObjGoal containing the goal if it's in your vision, null if not
+	*/
+	public ObjGoal getOwnGoal() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if((getObj(i).getObjName().compareTo("goal") == 0) && (getObj(i).getSide().compareTo(side) == 0))
+				return (ObjGoal) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	 * This returns the Pos with the coordinate to the goal you're trying to
+	 * guard.
+	 * 
+	 * @return the Pos in the Field of your goal
+	 */
+	public Pos getOwnGoalPos() {
+		if(side.compareTo("l") == 0) 
+			return(getFlagPos("gl"));
+		else
+			return(getFlagPos("gr"));
+	}
+	
+	/**
+	* The Player Getter
+	*
+	* This will get the ObjPlayer of the first player you see.
+	*
+	* @return ObjPlayer
+	*/
+	public ObjPlayer getPlayer() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("player") == 0)
+				return (ObjPlayer) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	* The Line getter
+	* This will get the ObjLine of the first line you see.
+	*
+	* @return ObjLine
+	*/
+	public ObjLine getLine() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("line") == 0)
+				return (ObjLine) getObj(i);
+		}
+		return null;
+	}
+	
+	/**
+	* This will test a players local time against the ObjMemory's time. This
+	* can be used to ensure that more than one action will not be attempted
+	* during a single simulation step.
+	*
+	* @param t the Player's local time
+	* @pre A player's local time must be initialized and passed in
+	* @post The player's local time needs to be set to the Memory's time after
+	* a true is returned.
+	* @return true if the newly parsed Memory's time is greater than the players
+	* local time. False if the memory time is <= the local time.
+	*/
+	public boolean timeCheck(int t) {
+		if(t < ObjMem.getTime())
+			return true;
+		else
+			return false;
 	}
 	
 	
 	/**
-	 * A method to find an opponent's next point given his velocity and position relative
-	 * to the player. 
-	 * @param opponent An ObjPlayer object representing the opponent to track
-	 * @return A Polar coordinate with the predicted position of the opponent at time t+1
+	 * Gets an ArrayList with all of the Players in your sight
+	 * 
+	 * @return players
 	 */
-	public Polar getNextOpponentPoint(ObjPlayer opponent) {
-		Pos po = getPos(new Polar(opponent.getDistance(), opponent.getDirection()));
-		Pos po2 = getPos(new Polar(opponent.getDistChng(), opponent.getDirChng()));
+	public ArrayList<ObjPlayer> getPlayers() {
+		ArrayList<ObjPlayer> players = new ArrayList<ObjPlayer>();
+		for(int i = 0; i< ObjMem.getSize(); i++) {
+			if(getObj(i).getObjName().compareTo("player") == 0) {
+				players.add((ObjPlayer) getObj(i));
+			}				
+		}
+		return players;
+	}
+	
+	
+	/**
+	 * This gets the closest line in your sight
+	 * 
+	 * @return line
+	 */
+	public ObjLine getClosestLine() {
+		ObjLine line = new ObjLine();
+		ObjLine closestLine = null;
+		double dist = 100.0;
 		
-		return (getPolar(vAdd(po,po2)));
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			if(getObj(i).getObjName().compareTo("line") == 0) {
+				line = (ObjLine) getObj(i);
+				if(line.getDistance() < dist) {
+					closestLine = line;
+				}
+			}
+		}
+		
+		return closestLine;
+	}
+	
+	
+	/**
+	 * Calculates the direction your facing from the closest line in your vision. The 
+	 * direction returned from a line is the angle made by your line of sight and the 
+	 * point that it crosses the line. This will will allow the facing direction to
+	 * be calculated with some arithmetic.
+	 * 
+	 * @return the absolute direction you're facing
+	 */
+	public double getDirection() {
+		ObjLine line = getClosestLine();
+		
+		if(line == null) {
+			
+		}
+		else if(line.getSide().compareTo("t") == 0) {
+			if(line.getDirection() > 0)
+				return(-1 * line.getDirection());
+			else
+				return(-180 - line.getDirection());
+		}
+		
+		else if(line.getSide().compareTo("b") == 0) {
+			if(line.getDirection() < 0)
+				return(-1 * line.getDirection());
+			else
+				return(180 - line.getDirection());
+		}		
+		
+		else if(line.getSide().compareTo(side) == 0) {
+			if(Math.abs(line.getDirection()) == 90.0)
+				return(180.0);
+			else if(line.getDirection() > 0)
+				return(-90 - line.getDirection());
+			else if(line.getDirection() < 0)
+				return(90 - line.getDirection());
+		}
+		
+		else if(line.getSide().compareTo(oppSide) == 0){
+			if(Math.abs(line.getDirection()) == 90.0)
+				return(0.0);
+			else if(line.getDirection() > 0)
+				return(90 - line.getDirection());
+			else if(line.getDirection() < 0)
+				return(-90 - line.getDirection());
+		}
+		
+		return(0.0);
+	}
+	
+	Polar getAbsPolar(Pos pt) {
+		Pos p = (m.vSub(pt, getPosition()));
+		double r = Math.sqrt(Math.pow(p.x, 2) + Math.pow(p.y, 2));
+		double t = Math.toDegrees(Math.atan2(p.y, p.x));
+		Polar n = new Polar(r, t);
+		//n.print("AbsPolar: ");
+		return(n);
 	}
 	
 	/**
-	 * Calculates the power needed to kick the ball to a specified place on the field, using
-	 * the equation from the manual
+	 * Sets the Pos of the originating point.
 	 * 
-	 * @param p A polar coordinate to kick the ball to
-	 * @param vel_r The magnitude of the player's velocity
-	 * @param vel_t the direction of the player's velocity
-	 * @param ball_r the distance of the ball to the player
-	 * @param ball_t the direction of the ball to the player
-	 * 
-	 * @return power of kick
+	 * @param x
+	 * @param y
 	 */
-	public double getKickPower(Polar p, double vel_r, double vel_t, double ball_r, double ball_t) {
-		if(ball_r > 0.7)
-			ball_r = 0.7;
-		
-		double ep = (1 - 0.25 * ((ball_t/180) + (ball_r/ball_r)));
-		return(Math.min(((p.r - vel_r) * ep), 100));
+	public void setLocation(double x, double y) {
+		this.home.x = x;
+		this.home.y = y;
 	}
 	
 	/**
-	 * A wrapper of the getKickPower with a Pos instead of Polar
+	 * Finds the closest flag in your sight
 	 * 
-	 * @param p A polar coordinate to kick the ball to
-	 * @param vel_r The magnitude of the player's velocity
-	 * @param vel_t the direction of the player's velocity
-	 * @param ball_r the distance of the ball to the player
-	 * @param ball_t the direction of the ball to the player
-	 * 
-	 * @return power of kick
+	 * @return ObjFlag containing closest flag
 	 */
-	public double getKickPower(Pos p, double vel_r, double vel_t, double ball_r, double ball_t) {
-		return(getKickPower(getPolar(p), vel_r, vel_t, ball_r, ball_t));
+	public ObjFlag getClosestFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if(flag.getDistance() < dist) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+		}
+		
+		return closestFlag;
 	}
 	
+	/**
+	 * Finds ObjFlag of the closest boundary flag in players sight.
+	 * 
+	 * @return closest boundary
+	 */
+	public ObjFlag getClosestBoundary() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("b") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+		}
+		
+		return closestFlag;
+	}
+	
+	/**
+	 * Finds ObjFlag of the closest penalty box flag in players sight.
+	 * 
+	 * @return closest penalty box flag
+	 */
+	public ObjFlag getClosestPenaltyFlag() {
+		
+		ObjFlag flag = new ObjFlag();
+		ObjFlag closestFlag = null;
+		
+		double dist = 100.0;
+		
+		for(int i = 0; i < getObjMemorySize(); i++) {
+			
+			if(getObj(i).getObjName().compareTo("flag") == 0) {
+				flag = (ObjFlag) getObj(i);
+				if((flag.getFlagType().compareTo("p") == 0) && (flag.getDistance() < dist)) {
+					closestFlag = flag;
+					dist = flag.getDistance();
+				}
+			}
+			
+		}
+		
+		return closestFlag;
+	}
+	
+	/**
+	 * Returns the Pos of the coordinate of any flag on the field by name
+	 * 
+	 * @param flagName 
+	 * 
+	 * @return Pos with coordinate of flag
+	 */
+	public Pos getFlagPos(String flagName) {
+		for(int i = 0; i < f.posList.size(); i++) {
+			if(f.posList.get(i).name.compareTo(flagName) == 0)
+				return f.posList.get(i);
+		}
+		
+		return null;
+		
+	}
+	
+	/**
+	 * This finds the absolute position of a player using vector arithmetic and trigonometry
+	 * and the closest flag to the player and the facing direction found from the closest
+	 * line.
+	 * 
+	 * @return Pos containing the coordinate on the field of the player's absolute position
+	 */
+	public Pos getPosition() {
+		
+		ObjFlag flag = getClosestFlag();
+		
+		
+		//System.out.println("getPosition flag: (" + flag.getDistance() + ", " + flag.getDirection() + ")");
+		{
+			
+			Pos flagCoord = getFlagPos(flag.getFlagName());
+			Pos toFlag = m.getPos(flag.getDistance(), getDirection() + flag.getDirection());
+			Pos self = m.vSub(flagCoord, toFlag);
+			
+			return(self);
+			
+		}
+		
+	}
+	
+	public void setCurrent() {
+		current = getPosition();
+	}
+	
+	/**
+	 * Calculates the angle of goal you're trying to score on when the goal is not in your 
+	 * sight. This is allows the player to kick or dribble to the goal, even when it's
+	 * information isn't available.
+	 * 
+	 * @return double containing the angle of the goal
+	 */
+	public double getNullGoalAngle() {
+		Pos g = m.vSub(getPosition(), new Pos(50.5, 0));
+		double ga = Math.atan(g.y/g.x);
+		return(ga - getDirection());
+	}
+	
+	// ******************* SenseMemory *******************
+	/**
+	* The getter for the Player's stamina
+	*/
+	public double getStamina(){
+		return SenMem.stamina;
+	}
+	
+	/**
+	* The getter for the Player's stamina recovery
+	*/
+	public double getRecovery(){
+		return SenMem.recovery;
+	}
+	
+	/**
+	* The getter for the Player's stamina effort
+	*/
+	public double getEffort() {
+		return SenMem.effort;
+	}
+	
+	/**
+	* The getter for the magnitude of the Player's velocity
+	*/
+	public double getAmountOfSpeed() {
+		return SenMem.amountOfSpeed;
+	}
+	
+	/**
+	* The getter for the direction of the Player's velocity
+	*/
+	public double getDirectionOfSpeed() {
+		if(SenMem.directionOfSpeed == 0)
+			return 0.0;
+		else
+			return (-1 * SenMem.directionOfSpeed);
+	}
+	
+	/**
+	* The getter for the angle of the Player's head relative to
+	* the orientation of the Player's positive y-axis (up-field)
+	*/
+	public double getHeadDirection() {
+		return SenMem.headDirection;
+	}
+	
+	// ****************** Hear Memory ********************
+	
+	/**
+	* The getter for the game's current play mode
+	*/
+	public String getPlayMode() {
+		return playMode;
+	}
+	
+	// ***************** Class Variables *****************
+	
+	public MathHelp m = new MathHelp();
+	public Field f;
+	public Pos home;
+	public Pos current = new Pos();
+	
+	/**
+	* The memory that stores all parsed ObjInfo
+	*/
+	public ObjMemory ObjMem;
+	/**
+	* The memory that stores all parsed SenseInfo
+	*/
+	public SenseMemory SenMem;
+	/**
+	* The play mode as told by the referee
+	*/
+	public String playMode;
+	
+	/**
+	 * The string of the opponents side
+	 */
+	public String oppSide;
+	
+	/**
+	 * The String of the player's side
+	 */
+	public String side;
+	
+	/**
+	 * The player's uniform number
+	 */
+	public int uNum;
+	
+	/**
+	 * The Pos of the coordinates of the opponents goal
+	 */
+	public Pos oppGoal;
+
 }
