@@ -238,6 +238,18 @@ public class Player extends Thread {
 	}
 	
 	 /**
+	 * Causes Player to dash.
+	 * @param power The power with which to dash in the form of a decimal value.
+	 * @param direction: The direction to dash in.
+	 * @throws Exception 
+	 * @pre Play mode is play_on.
+	 * @post The player has dashed at the given power.
+	 */	
+	public void dash(double power, double direction) throws Exception {
+		rc.dash(power, direction);
+	}
+	
+	 /**
 	 * Causes Player to turn according to a specified turn moment.
 	 * @param moment The turn angle in degrees. 
 	 * @throws InterruptedException 
@@ -246,6 +258,10 @@ public class Player extends Thread {
 	 */
 	public void turn(double moment) throws UnknownHostException, InterruptedException {
 		rc.turn(moment);
+	}
+	
+	public void turn_neck(double moment) throws UnknownHostException, InterruptedException {
+		rc.turn_neck(moment);
 	}
 	
 	 /**
@@ -348,18 +364,19 @@ public class Player extends Thread {
 				System.out.println("Interrupt error at Player.run");
 				e.printStackTrace();
 			}
-			/*
+			
 			if(getMem().current != null) {
 				Pos pt = mh.vSub(getMem().current, getMem().home);
 				
-				if((Math.abs(pt.x) > 1.0) || (Math.abs(pt.y) > 1.0))
+				if(mh.mag(pt) > 0.5) {
 					getMem().isHome = false;
+				}
 				else
 					getMem().isHome = true;
 			}
 			else 
 				System.out.println("Current is null");
-			*/
+			
 		}
 
 	}

@@ -44,6 +44,9 @@ public class Goalie extends Player {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		@SuppressWarnings("unused")
+		GoalieBrain b = new GoalieBrain(this);
 	}
 
 	 /**
@@ -187,25 +190,26 @@ public class Goalie extends Player {
 	public void positionGoalie(ObjBall ball) throws InterruptedException {
 		
 		Pos ballPos = mh.getPos(ball.getDistance(), getDirection() + ball.getDirection());
-		//ballPos = mh.vAdd(getPosition(), ballPos);
+		ballPos = mh.vAdd(getPosition(), ballPos);
 		Pos upper = new Pos(-49, -6);
 		Pos middle = new Pos(-49, 0);
 		Pos lower = new Pos (-49, 6);		
+		//ballPos.print("ballPos: ");
 
 		if (!ballInGoalzone(ball)) {
 			if (ballPos.y < -18) {  //If ball is in upper portion of field
 				//System.out.println("flag1");
-				getAction().gotoPoint(upper);
+				getAction().gotoSidePoint(upper);
 				Thread.sleep(100);
 			}
 			else if (ballPos.y > -18 && ballPos.y < 18) { //If ball is midfield vertically
 				//System.out.println("flag2");
-				getAction().gotoPoint(middle);
+				getAction().gotoSidePoint(middle);
 				Thread.sleep(100);
 			}
 			else {  //If ball is in lower portion of field
 				//System.out.println("flag3");
-				getAction().gotoPoint(lower);
+				getAction().gotoSidePoint(lower);
 				Thread.sleep(100);
 			}
 		}
@@ -350,25 +354,17 @@ public class Goalie extends Player {
 	
 	//Run method for Goalie's individual thread
 	public void run() {
-		
-		//System.out.println("Goalie");
-		
 		while(true) {
-			
 			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				receiveInput();
+			} catch (InterruptedException e) {
+				System.out.println("Interrupt error at Player.run");
+				e.printStackTrace();
 			}
-			
-			if(getMem().timeCheck(getTime())) {
-				setTime(getMem().ObjMem.getTime());
-				System.out.println("in time check");
-				followBall();			
-			}			
-		} 		
+			//System.out.println(getTime());
+		}
 	}	
+	
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();

@@ -1,5 +1,3 @@
-import java.net.UnknownHostException;
-
 
 
 /**
@@ -11,25 +9,48 @@ import java.net.UnknownHostException;
  * The brain serves as a place to store the Player modes, marked players for
  * various functions, and a set of strategies for player actions.
  */
-public class Brain extends Thread {
+public class GoalieBrain extends Thread {
 
-	private Mode currentMode = new Mode();
+	private Mode currentMode = new Mode();	
+	private Action actions = new Action();
 	private String marked_team;
 	private String marked_unum;
-	public Player p;
+	public Goalie g;
 	public Memory m;
 	
-
 	/**
 	 * Default constructor
 	 */
-	public Brain() {
-		
+	public GoalieBrain() {
+		super();
+	}
+	
+	public GoalieBrain(Goalie g) {
+		this.g = g;
+		start();
+	}
+	
+	/**
+	 * @return the actions
+	 */
+	public Action getActions() {
+		return actions;
 	}
 
-	public Brain(Player p) {
-		this.p = p;
-		start();
+	/**
+	 * @param actions the actions to set
+	 */
+	public void setActions(Action actions) {
+		this.actions = actions;
+	}
+
+	/**
+	 * Constructor
+	 * @param currentMode
+	 */
+	public GoalieBrain(Mode currentMode) {
+		super();
+		this.currentMode = currentMode;
 	}
 	
 	/**
@@ -80,50 +101,33 @@ public class Brain extends Thread {
 	public void setMarked_unum(String marked_unum) {
 		this.marked_unum = marked_unum;
 	}
-	
+
+	/**
+	 * The Brain thread run method. It updates the Memory for the Player
+	 * 
+	 * @post Memory will continuously update 
+	 */
 	public void run() {
-		if(p.getMem().side.compareTo("l") == 0) {
 		
-			while(true) {
-				
-				try {
-					Thread.sleep(100);
-					if(p.getMem().timeCheck(p.getTime())) {
-						p.setTime(p.getMem().ObjMem.getTime());
-						
-						/*
-						if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
-							p.move(p.getHome().x, p.getHome().y);
-						}
-						else if(p.getMem().playMode.compareTo("kick_off_l") == 0) {
-						*/
-							p.getAction().findBall();
-						/*
-						}
-						else if(p.getMem().playMode.compareTo("play_on") == 0) {
-							p.getAction().findBall();
-						}
-						*/
-						
-						
-						
-					}
-						
-				} catch (InterruptedException e) {
-					System.out.println("Interrupt Error in Brain.run");
-					e.printStackTrace();
-				} catch (UnknownHostException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-					
-				
+		//Pos p = new Pos(-49, -6);
+
+		while (true) {
+
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
-				
-		} 
+			//System.out.println("Brain");
+			if(g.getMem().timeCheck(g.getTime())) {
+				g.setTime(g.getMemTime());
+				g.followBall();
+				//g.getAction().gotoPoint(p);
 			
+			}
 			
+		}
 	}
-		
-	
 }
+
