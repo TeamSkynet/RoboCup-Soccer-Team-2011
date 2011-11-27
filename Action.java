@@ -163,18 +163,13 @@ public class Action {
 	 * 
 	 * @return true if the player is in the near vicinity of his home, false if he's not there yet
 	 */
-	/*
+	
 	public void goHome() {
-		Pos pt = mem.getPosition();
-		
-		if(((pt.x - mem.home.x) < 1.0) && ((pt.x - mem.home.x) > -1) && ((pt.y - mem.home.y) < 1) && ((pt.y - mem.home.y) > -1))
-			return true;
-		else {
-			gotoPoint(mem.home);
-			return false;
+		if(!mem.isHome) {
+			gotoSidePoint(mem.home);
 		}
 	}
-	*/
+	
 	
 	/**
 	* A method to find the ball on the field. If it's not in view, the player turns
@@ -187,15 +182,19 @@ public class Action {
 	public void findBall() throws UnknownHostException, InterruptedException {
 		if(mem.isObjVisible("ball")) {
 			ObjBall ball = mem.getBall();
-			if((ball.getDistance() > 20) && (ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
+			if((ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
 				rc.turn(ball.getDirection());
+				Thread.sleep(100);
 			}
-			else if((ball.getDistance() < 20.0) && (ball.getDistance() > 0.7)){
+			
+			if((ball.getDistance() > 15) && (mem.isHome == false)) {
+				goHome();
+			}
+			else if((ball.getDistance() <= 15.0) && (ball.getDistance() > 0.7)){
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
 				dribbleToGoal(ball);
-				
 			}
 			
 		}
@@ -216,9 +215,10 @@ public class Action {
 	*/
 	private void interceptBall(ObjBall ball) throws UnknownHostException, InterruptedException {
 		Polar p = m.getNextBallPoint(ball);
-		//m.getNextBallPoint(ball).print("GetNextBall Polar: ");
-		//m.getPos(m.getNextBallPoint(ball)).print("GetNextBall Pos: ");
-		if(stayInBounds())
+		Pos p2 = m.getPos(p);
+		if((Math.abs(p2.x) >= 52.5) || (Math.abs(p2.y) >= 36))
+			return;
+		else
 			gotoPoint(p);
 	}
 	

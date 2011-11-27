@@ -369,8 +369,9 @@ public class Player extends Thread {
 			if(getMem().current != null) {
 				Pos pt = mh.vSub(getMem().current, getMem().home);
 				
-				if((Math.abs(pt.x) > 1.0) || (Math.abs(pt.y) > 1.0))
+				if(mh.mag(pt) > 0.5) {
 					getMem().isHome = false;
+				}
 				else
 					getMem().isHome = true;
 			}

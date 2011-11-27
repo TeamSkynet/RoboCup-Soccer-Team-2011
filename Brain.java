@@ -82,37 +82,48 @@ public class Brain extends Thread {
 	}
 	
 	public void run() {
+		if(p.getMem().side.compareTo("l") == 0) {
 		
-		while(true) {
-			
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			//System.out.println("Brain");
-			if(p.getMem().timeCheck(p.getTime())) {
-				p.setTime(p.getMem().ObjMem.getTime());
+			while(true) {
 				
 				try {
-					
-					
-					p.getAction().findBall();
-					
-					
-				} catch (UnknownHostException e) {
-					System.out.println("Error in Brain.run findBall");
-					e.printStackTrace();
+					Thread.sleep(100);
+					if(p.getMem().timeCheck(p.getTime())) {
+						p.setTime(p.getMem().ObjMem.getTime());
+						
+						/*
+						if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
+							p.move(p.getHome().x, p.getHome().y);
+						}
+						else if(p.getMem().playMode.compareTo("kick_off_l") == 0) {
+						*/
+							p.getAction().findBall();
+						/*
+						}
+						else if(p.getMem().playMode.compareTo("play_on") == 0) {
+							p.getAction().findBall();
+						}
+						*/
+						
+						
+						
+					}
+						
 				} catch (InterruptedException e) {
 					System.out.println("Interrupt Error in Brain.run");
 					e.printStackTrace();
+				} catch (UnknownHostException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
+					
 				
-			
 			}
-			
+				
 		} 
-		
+			
+			
 	}
+		
+	
 }
