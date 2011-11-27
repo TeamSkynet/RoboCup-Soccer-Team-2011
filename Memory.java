@@ -553,6 +553,7 @@ public class Memory {
 	public Field f;
 	public Pos home;
 	public Pos current = new Pos();
+	public boolean isHome = true;
 	
 	/**
 	* The memory that stores all parsed ObjInfo
