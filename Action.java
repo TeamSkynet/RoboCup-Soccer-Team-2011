@@ -202,6 +202,38 @@ public class Action {
 			rc.turn(30);
 	}
 		
+	/**
+	* A method to find the ball on the field for FullBacks. If it's not in view, the FullBack turns
+	* until he finds it. If the ball is out of kickable range, he dashes to get to it. If the ball
+	* is within 15 distance, he intercepts the ball, and kicks it away.
+	*
+	* @throws UnknownHostException
+	* @throws InterruptedException
+	*/
+	public void FullBack_findBall() throws UnknownHostException, InterruptedException {
+		Pos origin = new Pos(0,0);
+		
+		if(mem.isObjVisible("ball")) {
+			ObjBall ball = mem.getBall();
+			if((ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
+				rc.turn(ball.getDirection());
+				Thread.sleep(100);
+			}
+			
+			if((ball.getDistance() > 15) && (mem.isHome == false)) {
+				goHome();
+			}
+			else if((ball.getDistance() <= 15.0) && (ball.getDistance() > 0.7)){
+				interceptBall(ball);
+			}
+			else if(ball.getDistance() <= 0.7)  {
+				kickToPoint(ball, origin);
+			}			
+		}
+		else
+			rc.turn(30);
+	}
+
 	
 	/**
 	* This method goes to the position that the ball will be in at time t+1 and kicks
@@ -293,6 +325,7 @@ public class Action {
 	 */
 	public void kickToPoint(ObjBall ball, Polar p) {
 		
+		System.out.println("in kickToPoint");
 		if(ball.getDistance() <= 0.7) {
 			try {
 				rc.kick(m.getKickPower(p, mem.getAmountOfSpeed(), mem.getDirection(), ball.getDistance(), ball.getDirection()), p.t);

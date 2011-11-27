@@ -166,16 +166,16 @@ public class Goalie extends Player {
 		}
 		else {
 			//If ball is in catchable area, catch it
-			System.out.println("catchable");
+			//System.out.println("catchable");
 			if (!ballCaught) {
-				catchball(getMem().getBall().getDirection());
+				catchball(getMem().getDirection() + getMem().getBall().getDirection());
 				Thread.sleep(100);
-				ballCaught = true;	
+				ballCaught = true;
 			}
-			
-			//kickToPlayer(closestPlayer());
+			System.out.println("kickable");
 			getAction().kickToPoint(ball, ridBallPoint);
 			Thread.sleep(100);	
+			ballCaught = false;
 		}
 	} //end method
 	
@@ -358,7 +358,7 @@ public class Goalie extends Player {
 			try {
 				receiveInput();
 			} catch (InterruptedException e) {
-				System.out.println("Interrupt error at Player.run");
+				System.out.println("Interrupt error at Goalie.run");
 				e.printStackTrace();
 			}
 			//System.out.println(getTime());

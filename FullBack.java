@@ -1,3 +1,5 @@
+import java.net.UnknownHostException;
+
 /** @file FullBack.java
 * Class file for FullBack class
 * @author Joel Tanzi
@@ -11,5 +13,49 @@
 */
 public class FullBack extends Player{
 
-	//TODO
+	/**
+	 * 
+	 */
+	public FullBack() {
+		super();
+	}
+
+	/**
+	 * @param rc
+	 * @param m
+	 * @param i
+	 * @param p
+	 * @param time
+	 */
+	public FullBack(RoboClient rc, Memory m, ObjInfo i, Parser p, int time) {
+		super(rc, m, i, p, time);
+	}
+
+	/**
+	 * @param team
+	 */
+	public FullBack(String team) {
+		super(team);
+	}
+
+	public boolean inFullBackZone(){
+		if (getMem().getPosition().x < -10) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public void runDefense() throws UnknownHostException, InterruptedException {
+		if (!inFullBackZone()) {
+			getAction().goHome();
+		}
+		
+		getAction().FullBack_findBall();
+	}
+	
+	public void run() {
+		//TODO
+	}
 }

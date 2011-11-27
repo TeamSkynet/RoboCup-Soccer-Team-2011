@@ -24,12 +24,10 @@ public class Game {
 		Player p3 = new Player();
 		Player p4 = new Player();
 		Player p5 = new Player();
-		Player p6 = new Player();
-		Player p7 = new Player();
-		Player p8 = new Player();
+		FullBack p6 = new FullBack();
+		FullBack p7 = new FullBack();
+		FullBack p8 = new FullBack();
 		Goalie g9 = new Goalie();
-		Player p10 = new Player();
-		Player p11 = new Player();
 		
 
 		p1.initPlayer(-5, -25);
