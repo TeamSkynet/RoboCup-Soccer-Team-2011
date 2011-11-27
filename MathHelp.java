@@ -10,14 +10,7 @@
  */
 
 
-/**
- * @class MathHelp
- * 
- * This contains all the equations and calculators needed for various methods
- * 
- * @author granthays
- *
- */
+
 public class MathHelp {
 
 	/**

@@ -80,8 +80,8 @@ public class Action {
 	public void gotoPoint(Polar go) {
 		
 		try {
-			if((go.t - mem.getDirection()) > 5.0 || (go.t - mem.getDirection()) < -5.0) {
-				rc.turn(getTurn(go));
+			if((go.t > 5.0) || (go.t < -5.0)) {
+				rc.turn(go.t * (1 + (5*mem.getAmountOfSpeed())));
 			}
 			rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
 		
@@ -109,8 +109,27 @@ public class Action {
 	* direction of the position.
 	*/
 	public void gotoPoint(Pos p) {
-		if((Math.abs(p.x - mem.getPosition().x) >= 1.0) && (Math.abs(p.y - mem.getPosition().y) >= 1.0)) {
+		/*
+		if((Math.abs(p.x - mem.getPosition().x) >= 0.1) && (Math.abs(p.y - mem.getPosition().y) >= 0.1)) {
 			gotoPoint(mem.getAbsPolar(p));
+			mem.getPosition().print("Position: ");
+		*/
+		Polar go = mem.getAbsPolar(p);
+		if(go.r >= 0.1) {
+			try {
+				if((go.t - mem.getDirection()) > 5.0 || (go.t - mem.getDirection()) < -5.0) {
+					rc.turn((go.t - mem.getDirection()) * (1 + (5*mem.getAmountOfSpeed())));
+				}
+				rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
+			
+				
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -173,6 +192,8 @@ public class Action {
 	*/
 	private void interceptBall(ObjBall ball) throws UnknownHostException, InterruptedException {
 		Polar p = m.getNextBallPoint(ball);
+		//m.getNextBallPoint(ball).print("GetNextBall Polar: ");
+		//m.getPos(m.getNextBallPoint(ball)).print("GetNextBall Pos: ");
 		if(stayInBounds())
 			gotoPoint(p);
 	}
@@ -283,7 +304,7 @@ public class Action {
 			ObjGoal goal = mem.getOppGoal();
 			
 			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
-					kickToPoint(ball, new Polar(20.0, (goal.getDirection() - ball.getDirection())));
+					kickToPoint(ball, new Polar(10.0, (goal.getDirection() - ball.getDirection())));
 				
 			}
 			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {
