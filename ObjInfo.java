@@ -196,7 +196,7 @@ class ObjFlag extends ObjInfo {
 	 * 
 	 * @return The type of flag depending on it's location:
 	 * 				"b" - outer boundary
-	 * 				"g" - goal post
+	 * 				"f" - goal post
 	 * 				"p" - penalty box
 	 * 				"c" - center of field
 	 * 				"l" - border line

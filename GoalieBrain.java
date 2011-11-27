@@ -123,7 +123,7 @@ public class GoalieBrain extends Thread {
 			if(g.getMem().timeCheck(g.getTime())) {
 				g.setTime(g.getMemTime());
 				g.followBall();
-				//g.getAction().gotoPoint(p);
+				//f.getAction().gotoPoint(p);
 			
 			}
 			

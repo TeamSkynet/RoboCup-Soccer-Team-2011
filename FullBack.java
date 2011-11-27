@@ -56,6 +56,14 @@ public class FullBack extends Player{
 	}
 	
 	public void run() {
-		//TODO
-	}
+		while(true) {
+			try {
+				receiveInput();
+			} catch (InterruptedException e) {
+				System.out.println("Interrupt error in FullBack.run");
+				e.printStackTrace();
+			}
+			//System.out.println(getTime());
+		}
+	}	
 }
