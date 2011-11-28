@@ -11,25 +11,48 @@ import java.net.UnknownHostException;
  * The brain serves as a place to store the Player modes, marked players for
  * various functions, and a set of strategies for player actions.
  */
-public class Brain extends Thread {
+public class FullBackBrain extends Thread {
 
-	private Mode currentMode = new Mode();
+	private Mode currentMode = new Mode();	
+	private Action actions = new Action();
 	private String marked_team;
 	private String marked_unum;
-	public Player p;
+	public FullBack f;
 	public Memory m;
 	
-
 	/**
 	 * Default constructor
 	 */
-	public Brain() {
-		
+	public FullBackBrain() {
+		super();
+	}
+	
+	public FullBackBrain(FullBack f) {
+		this.f = f;
+		start();
+	}
+	
+	/**
+	 * @return the actions
+	 */
+	public Action getActions() {
+		return actions;
 	}
 
-	public Brain(Player p) {
-		this.p = p;
-		start();
+	/**
+	 * @param actions the actions to set
+	 */
+	public void setActions(Action actions) {
+		this.actions = actions;
+	}
+
+	/**
+	 * Constructor
+	 * @param currentMode
+	 */
+	public FullBackBrain(Mode currentMode) {
+		super();
+		this.currentMode = currentMode;
 	}
 	
 	/**
@@ -80,10 +103,17 @@ public class Brain extends Thread {
 	public void setMarked_unum(String marked_unum) {
 		this.marked_unum = marked_unum;
 	}
-	
-	public void run() {
 
-		while(true) {
+	/**
+	 * The Brain thread run method. It instructs the FullBack in soccer behaviors
+	 * 
+	 * @post Player will act accordingly during match. 
+	 */
+	public void run() {
+		
+		//Pos p = new Pos(-49, -6);
+
+		while (true) {
 
 			try {
 				Thread.sleep(100);
@@ -92,14 +122,11 @@ public class Brain extends Thread {
 				e1.printStackTrace();
 			}
 
-			if(p.getMem().timeCheck(p.getTime())) {
-				p.setTime(p.getMem().ObjMem.getTime());
-
+			if(f.getMem().timeCheck(f.getTime())) {
+				f.setTime(f.getMemTime());
+				
 				try {
-					
-					p.getAction().findBall();
-					
-					/*if (m.side == "l"){
+					if (m.side == "l"){
 						if (m.playMode == "free_kick_l") {
 							//TODO
 						} else if (m.playMode == "kick_in_l"){
@@ -109,9 +136,9 @@ public class Brain extends Thread {
 						} else if (m.playMode == "goal_kick_l"){
 							//TODO
 						} else if (m.playMode == "goal_l"){
-							p.getAction().goHome();
+							f.getAction().goHome();
 						}else {  //playmode is "playon"
-							p.getAction().findBall();
+							f.runDefense();
 						} //end if
 					} else {
 						if (m.playMode == "free_kick_r") {
@@ -123,34 +150,20 @@ public class Brain extends Thread {
 						} else if (m.playMode == "goal_kick_r"){
 							//TODO
 						} else if (m.playMode == "goal_r"){
-							p.getAction().goHome();
+							f.getAction().goHome();
 						}else {  //playmode is "playon"
-							p.getAction().findBall();
+							f.runDefense();
 						} //end if
-					} //end else  */
+					}
 
-					/*
-						if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
-							p.move(p.getHome().x, p.getHome().y);
-						}
-						else if(p.getMem().playMode.compareTo("kick_off_l") == 0) {
-					 */
-					//p.getAction().findBall();
-					/*
-						}
-						else if(p.getMem().playMode.compareTo("play_on") == 0) {
-							p.getAction().findBall();
-						}
-					 */
-
-				} catch (InterruptedException e) {
-					System.out.println("Interrupt Error in Brain.run");
-					e.printStackTrace();
 				} catch (UnknownHostException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
-			}
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}			
+			}		
 		}
 	}
 }
