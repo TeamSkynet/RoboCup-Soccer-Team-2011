@@ -159,7 +159,7 @@ public class Parser {
 			}
 			
 			// - Goal -
-			else if(splitName[0].compareTo("f") == 0) {
+			else if(splitName[0].compareTo("g") == 0) {
 				ObjGoal newGoal = new ObjGoal();
 				seeGoalParse(splitName, splitInfo, newGoal);
 				seeArray.add(newGoal);
@@ -230,8 +230,8 @@ public class Parser {
 			newFlag.setY_pos(splitName[3]);
 		}
 		// Goal post flags
-		else if(splitName[1].compareTo("f") == 0) {
-			newFlag.setFlagType("f");
+		else if(splitName[1].compareTo("g") == 0) {
+			newFlag.setFlagType("g");
 			newFlag.setX_pos(splitName[2]);
 			newFlag.setY_pos(splitName[3]);
 		}
