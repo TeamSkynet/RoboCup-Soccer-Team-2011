@@ -157,25 +157,48 @@ public class Goalie extends Player {
 	 * @post The ball has been caught by the goalie, or the goalie has missed the ball.
 	 */
 	public void defendGoal(ObjBall ball) throws UnknownHostException, InterruptedException {
-		Pos ridBallPoint = new Pos(0,0);
+		//Pos ridBallPoint = new Pos(0,0);
 		
 		//Move to catchable range of ball
-		if (!catchable()) {
+		if (ball.getDistance() > 1.0) {
 			getAction().gotoPoint(mh.getNextBallPoint(ball));
-			Thread.sleep(100);
+			//Thread.sleep(100);
 		}
 		else {
-			//If ball is in catchable area, catch it
-			//System.out.println("catchable");
-			if (!ballCaught) {
-				catchball(getMem().getDirection() + getMem().getBall().getDirection());
-				Thread.sleep(100);
-				ballCaught = true;
+			if((getMem().side.compareTo("l") == 0) && ((getMem().playMode.compareTo("goalie catch ball_l") == 0) || (getMem().playMode.compareTo("free_kick_l") == 0))) {
+				Thread.sleep(500);
+				turn(-getMem().getDirection());
+				Thread.sleep(200);
+				kick(100, 0);
+				Thread.sleep(100);	
 			}
-			System.out.println("kickable");
+			else if((getMem().side.compareTo("r") == 0) && ((getMem().playMode.compareTo("goalie catch ball_r") == 0) || (getMem().playMode.compareTo("free_kick_r") == 0))) {
+				Thread.sleep(500);
+				turn(-getMem().getDirection());
+				Thread.sleep(200);
+				kick(100, 0);
+				Thread.sleep(100);
+			}
+			else {
+				catchball(getMem().getBall().getDirection());
+				
+				
+			}
+			
+			
+			/*
+			//If ball is in catchable area, catch it
+			System.out.println("catchable");
+			if (!ballCaught) {
+				catchball(getMem().getBall().getDirection());
+				Thread.sleep(100);
+				ballCaught = true;	
+			}
+			
+			//kickToPlayer(closestPlayer());
 			getAction().kickToPoint(ball, ridBallPoint);
 			Thread.sleep(100);	
-			ballCaught = false;
+			*/
 		}
 	} //end method
 	
@@ -358,11 +381,24 @@ public class Goalie extends Player {
 			try {
 				receiveInput();
 			} catch (InterruptedException e) {
-				System.out.println("Interrupt error at Goalie.run");
+				System.out.println("Interrupt error at Player.run");
 				e.printStackTrace();
 			}
-			//System.out.println(getTime());
+			/*
+			if(getMem().current != null) {
+				Pos pt = mh.vSub(getMem().current, getMem().home);
+				
+				if(mh.mag(pt) > 0.5) {
+					getMem().isHome = false;
+				}
+				else
+					getMem().isHome = true;
+			}
+			else 
+				System.out.println("Current is null");
+				*/
 		}
+		
 	}	
 	
 	

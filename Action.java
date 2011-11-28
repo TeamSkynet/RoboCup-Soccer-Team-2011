@@ -103,7 +103,7 @@ public class Action {
 		if(go.r >= 0.5) {
 			try {
 				
-				rc.dash(2 * m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()), (go.t - mem.getDirection()));
+				rc.dash(Math.min(100, 2 * m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
 			
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
@@ -234,7 +234,6 @@ public class Action {
 			rc.turn(30);
 	}
 
-	
 	/**
 	* This method goes to the position that the ball will be in at time t+1 and kicks
 	* it if it is within 0.5 distance.
@@ -247,11 +246,15 @@ public class Action {
 	*/
 	private void interceptBall(ObjBall ball) throws UnknownHostException, InterruptedException {
 		Polar p = m.getNextBallPoint(ball);
+		/*
 		Pos p2 = m.getPos(p);
 		if((Math.abs(p2.x) >= 52.5) || (Math.abs(p2.y) >= 36))
 			return;
 		else
+		*/
+		if(stayInBounds()) {
 			gotoPoint(p);
+		}
 	}
 	
 	/**
@@ -324,7 +327,6 @@ public class Action {
 	 * 
 	 */
 	public void kickToPoint(ObjBall ball, Polar p) {
-		
 		System.out.println("in kickToPoint");
 		if(ball.getDistance() <= 0.7) {
 			try {
@@ -344,7 +346,9 @@ public class Action {
 	 * @param p the Pos of the coordinate to kick the ball to
 	 */
 	public void kickToPoint(ObjBall ball, Pos p) {
-		kickToPoint(ball, m.getPolar(p));
+		Pos  pt = m.vSub(p, mem.getPosition());
+		Polar go = m.getPolar(pt);
+		kickToPoint(ball, go);
 	}
 	
 	/**
