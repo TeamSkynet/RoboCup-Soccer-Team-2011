@@ -156,9 +156,7 @@ import java.io.*;
 				p.initParse(receive(), m);	
 			} catch(Exception ex) {
 				System.out.println(ex);
-			}
-	
-	
+			}	
 		}
 		
 		/**
@@ -248,4 +246,5 @@ import java.io.*;
 		public void say(String message)throws UnknownHostException{
 			send("(say \"" + message + "\")");		
 		}
+
 }//end of class	

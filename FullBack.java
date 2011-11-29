@@ -1,3 +1,5 @@
+import java.net.DatagramSocket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 
 /** @file FullBack.java
@@ -38,6 +40,75 @@ public class FullBack extends Player{
 		super(team);
 	}
 
+	 /**
+	 * Initializes the Player with the RoboCup server as a goalie.
+	 * @pre A RoboCup server is available.
+	 * @post The Player has been initialized to the correct team as a goalie.
+	 */
+	public void initFullBack(double x, double y) throws SocketException, UnknownHostException {
+
+		rc.dsock = new DatagramSocket();
+		rc.init(getParser(), getMem());
+		try {
+			move(x,y);
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		@SuppressWarnings("unused")
+		FullBackBrain b = new FullBackBrain(this);
+	}
+	
+	/**
+	 * Returns the closest player to the FullBack on the same team.
+	 * @post The closest player to the FullBack has been determined.
+	 * @return ObjPlayer
+	 * @throws InterruptedException 
+	 * @throws UnknownHostException 
+	 */
+	public ObjPlayer closestPlayer() throws UnknownHostException, InterruptedException {
+		ObjPlayer closestPlayer = new ObjPlayer();
+		double distance = 0;
+
+		//Loop through arraylist of ObjPlayers
+		for (int i = 0; i < getMem().getPlayers().size(); ++i) {
+
+			if (!getMem().getPlayers().isEmpty()) {  
+				if (distance == 0 && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
+					distance = getMem().getPlayers().get(i).getDistance();
+				}
+				else {
+
+					//Test if this player is closer than the previous one
+					if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+						closestPlayer = getMem().getPlayers().get(i);
+					}
+				}
+			}
+			else {  //No players in Fullback's sight, so turn to another point to check again
+				turn(30);
+				
+				if (!getMem().getPlayers().isEmpty()) {  
+					if (distance == 0 && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
+						distance = getMem().getPlayers().get(i).getDistance();
+					}
+					else {
+						//Test if this player is closer than the previous one
+						if (distance > getMem().getPlayers().get(i).getDistance() && getMem().getPlayers().get(i).getTeam() == rc.getTeam()) {
+							distance = getMem().getPlayers().get(i).getDistance();
+							closestPlayer = getMem().getPlayers().get(i);
+						}
+					}
+				}
+				
+			}
+		}		
+		return closestPlayer;
+	}
+	
 	public boolean inFullBackZone(){
 		if (getMem().getPosition().x < -10) {
 			return true;
@@ -46,6 +117,7 @@ public class FullBack extends Player{
 			return false;
 		}
 	}
+
 	
 	public void runDefense() throws UnknownHostException, InterruptedException {
 		if (!inFullBackZone()) {

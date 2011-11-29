@@ -200,9 +200,9 @@ public class MathHelp {
 	 * @param opponent An ObjPlayer object representing the opponent to track
 	 * @return A Polar coordinate with the predicted position of the opponent at time t+1
 	 */
-	public Polar getNextOpponentPoint(ObjPlayer opponent) {
-		Pos po = getPos(new Polar(opponent.getDistance(), opponent.getDirection()));
-		Pos po2 = getPos(new Polar(opponent.getDistChng(), opponent.getDirChng()));
+	public Polar getNextPlayerPoint(ObjPlayer player) {
+		Pos po = getPos(new Polar(player.getDistance(), player.getDirection()));
+		Pos po2 = getPos(new Polar(player.getDistChng(), player.getDirChng()));
 		
 		return (getPolar(vAdd(po,po2)));
 	}

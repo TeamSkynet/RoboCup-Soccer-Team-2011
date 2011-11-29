@@ -105,9 +105,9 @@ public class FullBackBrain extends Thread {
 	}
 
 	/**
-	 * The Brain thread run method. It instructs the FullBack in soccer behaviors
+	 * The FullBackBrain thread run method. It instructs the FullBack in soccer behaviors
 	 * 
-	 * @post Player will act accordingly during match. 
+	 * @post FullBack will act accordingly during match. 
 	 */
 	public void run() {
 		
@@ -126,6 +126,16 @@ public class FullBackBrain extends Thread {
 				f.setTime(f.getMemTime());
 				
 				try {
+					f.runDefense();
+				} catch (UnknownHostException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				/*try {
 					if (m.side == "l"){
 						if (m.playMode == "free_kick_l") {
 							//TODO
@@ -162,7 +172,7 @@ public class FullBackBrain extends Thread {
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}			
+				}*/			
 			}		
 		}
 	}

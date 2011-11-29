@@ -103,9 +103,9 @@ public class GoalieBrain extends Thread {
 	}
 
 	/**
-	 * The Brain thread run method. It updates the Memory for the Player
+	 * The Brain thread run method. It causes the Goalie to exhibit soccer behaviors.
 	 * 
-	 * @post Memory will continuously update 
+	 * @post Goalie will perform Goalie functions during match.
 	 */
 	public void run() {
 		
@@ -122,9 +122,7 @@ public class GoalieBrain extends Thread {
 			//System.out.println("Brain");
 			if(g.getMem().timeCheck(g.getTime())) {
 				g.setTime(g.getMemTime());
-				g.followBall();
-				//f.getAction().gotoPoint(p);
-			
+				g.followBall();			
 			}
 			
 		}

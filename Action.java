@@ -201,7 +201,65 @@ public class Action {
 		else
 			rc.turn(30);
 	}
-		
+	
+	/**
+	 * Returns the closest player to the FullBack on the same team.
+	 * @post The closest player to the FullBack has been determined.
+	 * @return ObjPlayer
+	 * @throws InterruptedException 
+	 * @throws UnknownHostException 
+	 */
+	public ObjPlayer closestPlayer() throws UnknownHostException, InterruptedException {
+		ObjPlayer closestPlayer = new ObjPlayer();
+		double distance = 0;
+
+		//Loop through arraylist of ObjPlayers
+		for (int i = 0; i < mem.getPlayers().size(); ++i) {
+
+			if (!mem.getPlayers().isEmpty()) {  
+				if (distance == 0 && mem.getPlayers().get(i).getTeam() == rc.getTeam()) {
+					distance = mem.getPlayers().get(i).getDistance();
+				}
+				else {
+
+					//Test if this player is closer than the previous one
+					if (distance > mem.getPlayers().get(i).getDistance() && mem.getPlayers().get(i).getTeam() == rc.getTeam()) {
+						distance = mem.getPlayers().get(i).getDistance();
+						closestPlayer = mem.getPlayers().get(i);
+					}
+				}
+			}
+			else {  //No players in Fullback's sight, so turn to another point to check again
+				rc.turn(30);
+				
+				if (!mem.getPlayers().isEmpty()) {  
+					if (distance == 0 && mem.getPlayers().get(i).getTeam() == rc.getTeam()) {
+						distance = mem.getPlayers().get(i).getDistance();
+					}
+					else {
+						//Test if this player is closer than the previous one
+						if (distance > mem.getPlayers().get(i).getDistance() && mem.getPlayers().get(i).getTeam() == rc.getTeam()) {
+							distance = mem.getPlayers().get(i).getDistance();
+							closestPlayer = mem.getPlayers().get(i);
+						}
+					}
+				}				
+			}
+		}		
+		return closestPlayer;
+	}
+	
+	/*
+	 * Passes the ball to the nearest Forward (currently Player).
+	 * @param ball An ObjBall for the ball in play.
+	 * @param fwd The player to pass the ball to.
+	 * @pre The FullBack has control of the ball.
+	 * @post The ball has been kicked to the forward.
+	 */
+	public void passToForward(ObjBall ball, ObjPlayer fwd) {
+		kickToPoint(ball, m.getNextPlayerPoint(fwd));
+	}
+	
 	/**
 	* A method to find the ball on the field for FullBacks. If it's not in view, the FullBack turns
 	* until he finds it. If the ball is out of kickable range, he dashes to get to it. If the ball
@@ -211,7 +269,7 @@ public class Action {
 	* @throws InterruptedException
 	*/
 	public void FullBack_findBall() throws UnknownHostException, InterruptedException {
-		Pos origin = new Pos(0,0);
+		//Pos origin = new Pos(0,0);
 		
 		if(mem.isObjVisible("ball")) {
 			ObjBall ball = mem.getBall();
@@ -227,7 +285,8 @@ public class Action {
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
-				kickToPoint(ball, origin);
+				//kickToPoint(ball, origin);
+				passToForward(ball, closestPlayer());
 			}			
 		}
 		else

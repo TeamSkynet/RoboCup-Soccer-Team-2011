@@ -295,7 +295,7 @@ public class Player extends Thread {
 			Thread.sleep(100);
 		}*/
 		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
-		a.gotoPoint(getMem().m.getNextOpponentPoint(closestOpponent()));
+		a.gotoPoint(getMem().m.getNextPlayerPoint(closestOpponent()));
 		
 		/*if (m.isObjVisible("player")) {
 			markOpponent(m.getPlayer().getTeam(), Integer.toString(m.getPlayer().getuNum()));

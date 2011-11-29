@@ -45,13 +45,13 @@ public class Game {
 		p5.initPlayer(-15, 0);
 		Thread.sleep(100);
 
-		p6.initPlayer(-30, -25);
+		p6.initFullBack(-30, -25);
 		Thread.sleep(100);
 
-		p7.initPlayer(-30, 0);
+		p7.initFullBack(-30, 0);
 		Thread.sleep(100);
 
-		p8.initPlayer(-30, 25);
+		p8.initFullBack(-30, 25);
 		Thread.sleep(100);
 
 		g9.initGoalie(-40, 0);
