@@ -135,7 +135,20 @@ public class FullBack extends Player{
 				System.out.println("Interrupt error in FullBack.run");
 				e.printStackTrace();
 			}
-			//System.out.println(getTime());
+			
+			if(getMem().current != null) {
+				Pos pt = mh.vSub(getMem().current, getMem().home);
+				
+				if(mh.mag(pt) > 0.5) {
+					getMem().isHome = false;
+				}
+				else
+					getMem().isHome = true;
+			}
+			else 
+				System.out.println("Current is null");
+			
+		
 		}
 	}	
 }
