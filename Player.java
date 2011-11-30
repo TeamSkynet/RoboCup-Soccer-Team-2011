@@ -264,6 +264,25 @@ public class Player extends Thread {
 		rc.turn_neck(moment);
 	}
 	
+	/*
+	 * Instructs the player to prepare to receive a pass from another teammate.
+	 * @param ball The ball in play.
+	 * @param p The player to receive the ball from.
+	 * @pre Playmode is play_on, ball is being passed to player.
+	 * @post The player has possession of the ball.
+	 */
+	public void recievePass(ObjBall ball, ObjPlayer p) throws UnknownHostException, InterruptedException {
+		
+		//Turn toward direction ball is coming from
+		turn(p.getDirection());
+		Thread.sleep(100);
+		
+		//Halt ball to allow for dribbling
+		if (ball.getDistance() < 0.5) {
+			kick(5, 0);
+		}
+	}
+	
 	 /**
 	 * Causes Player to say the given message.  It has a limitation of 512 characters by default.
 	 * @param message The string to be spoken by the player. 

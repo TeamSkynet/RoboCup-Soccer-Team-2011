@@ -134,10 +134,6 @@ import java.io.*;
 	
 		}
 	
-		public void initTrainer() throws UnknownHostException {
-			send("(init (version " + VERSION + "))");
-		}
-		
 		public void changePlayMode(String playmode) throws UnknownHostException {
 			send("(change mode " + playmode + ")");
 		}

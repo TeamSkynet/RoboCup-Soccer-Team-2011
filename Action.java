@@ -194,6 +194,9 @@ public class Action {
 				dribbleToGoal(ball);
 			}
 			
+			//Receive pass if hear call from other player
+			//TODO
+			
 		}
 		else
 			rc.turn(30);
@@ -253,8 +256,14 @@ public class Action {
 	 * @pre The FullBack has control of the ball.
 	 * @post The ball has been kicked to the forward.
 	 */
-	public void passToForward(ObjBall ball, ObjPlayer fwd) {
-		kickToPoint(ball, m.getNextPlayerPoint(fwd));
+	public void passBall(ObjBall ball, ObjPlayer p) {
+		try {
+			rc.say("Over to you " + p.getuNum());
+		} catch (UnknownHostException e) {
+			System.out.println("UnknownHostException in say, in passToForward");
+			e.printStackTrace();
+		}
+		kickToPoint(ball, m.getNextPlayerPoint(p));
 	}
 	
 	/**
@@ -283,7 +292,7 @@ public class Action {
 			}
 			else if(ball.getDistance() <= 0.7)  {
 				//kickToPoint(ball, origin);
-				passToForward(ball, closestPlayer());
+				passBall(ball, closestPlayer());
 			}			
 		}
 		else
