@@ -384,7 +384,7 @@ public class Goalie extends Player {
 				System.out.println("Interrupt error at Player.run");
 				e.printStackTrace();
 			}
-			
+			/*
 			if(getMem().current != null) {
 				Pos pt = mh.vSub(getMem().current, getMem().home);
 				
@@ -396,7 +396,7 @@ public class Goalie extends Player {
 			}
 			else 
 				System.out.println("Current is null");
-				
+			*/
 		}
 		
 	}	
