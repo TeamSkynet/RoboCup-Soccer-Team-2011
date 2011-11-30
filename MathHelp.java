@@ -223,7 +223,7 @@ public class MathHelp {
 		if(ball_r > 0.7)
 			ball_r = 0.7;
 		
-		double ep = (1 - 0.25 * ((ball_t/180) + (ball_r/0.7)));
+		double ep = (1 - 0.25 * (((ball_t - vel_t)/180) + (ball_r/0.7)));
 		return(Math.min(((p.r - vel_r) * ep), 100));
 	}
 	

@@ -82,6 +82,7 @@ public class Action {
 		try {
 			if((go.t > 5.0) || (go.t < -5.0)) {
 				rc.turn(go.t * (1 + (5*mem.getAmountOfSpeed())));
+				System.out.println("Gotopoint polar");
 			}
 			rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
 		
@@ -129,16 +130,12 @@ public class Action {
 	* direction of the position.
 	*/
 	public void gotoPoint(Pos p) {
-		/*
-		if((Math.abs(p.x - mem.getPosition().x) >= 0.1) && (Math.abs(p.y - mem.getPosition().y) >= 0.1)) {
-			gotoPoint(mem.getAbsPolar(p));
-			mem.getPosition().print("Position: ");
-		*/
+		
 		Polar go = mem.getAbsPolar(p);
-		if(go.r >= 0.1) {
+		if(go.r >= 0.3) {
 			try {
 				if((go.t - mem.getDirection()) > 5.0 || (go.t - mem.getDirection()) < -5.0) {
-					rc.turn((go.t - mem.getDirection()) * (1 + (5*mem.getAmountOfSpeed())));
+					rc.turn(go.t * (1 + (5*mem.getAmountOfSpeed())));
 				}
 				rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
 			
@@ -183,7 +180,7 @@ public class Action {
 		if(mem.isObjVisible("ball")) {
 			ObjBall ball = mem.getBall();
 			if((ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
-				rc.turn(ball.getDirection());
+				rc.turn(ball.getDirection() * (1 + (5*mem.getAmountOfSpeed())));
 				Thread.sleep(100);
 			}
 			
@@ -312,7 +309,14 @@ public class Action {
 		else
 		*/
 		if(stayInBounds()) {
-			gotoPoint(p);
+			//gotoPoint(p);
+			try {
+				rc.dash(m.getDashPower(m.getPos(p), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 	}
 	
@@ -405,8 +409,8 @@ public class Action {
 	 * @param p the Pos of the coordinate to kick the ball to
 	 */
 	public void kickToPoint(ObjBall ball, Pos p) {
-		Pos  pt = m.vSub(p, mem.getPosition());
-		Polar go = m.getPolar(pt);
+		//Pos  pt = m.vSub(p, mem.getPosition());
+		Polar go = mem.getAbsPolar(p);
 		kickToPoint(ball, go);
 	}
 	
@@ -424,7 +428,7 @@ public class Action {
 			ObjGoal goal = mem.getOppGoal();
 			
 			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
-					kickToPoint(ball, new Polar(10.0, (goal.getDirection() - ball.getDirection())));
+					kickToPoint(ball, new Polar(15.0, (goal.getDirection() - ball.getDirection())));
 				
 			}
 			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {
@@ -432,7 +436,7 @@ public class Action {
 			}
 			else if(goal == null) {
 				try {
-					rc.kick(10.0, mem.getNullGoalAngle());
+					rc.kick(15.0, mem.getNullGoalAngle());
 				} catch (UnknownHostException e) {
 					System.out.println("Error in Action.dribbleToGoal() at null goal turn");
 					e.printStackTrace();

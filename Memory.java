@@ -260,6 +260,12 @@ public class Memory {
 		return players;
 	}
 	
+	public void getPlayerArrays() {
+		for(int i = 0; i < ObjMem.getSize(); i++) {
+			
+		}
+	}
+	
 	
 	/**
 	 * This gets the closest line in your sight
@@ -336,7 +342,7 @@ public class Memory {
 	Polar getAbsPolar(Pos pt) {
 		Pos p = (m.vSub(pt, getPosition()));
 		double r = Math.sqrt(Math.pow(p.x, 2) + Math.pow(p.y, 2));
-		double t = Math.toDegrees(Math.atan2(p.y, p.x));
+		double t = (Math.toDegrees(Math.atan2(p.y, p.x)) - getDirection());
 		Polar n = new Polar(r, t);
 		//n.print("AbsPolar: ");
 		return(n);
@@ -554,7 +560,8 @@ public class Memory {
 	public Pos home;
 	public Pos current = new Pos();
 	public boolean isHome = true;
-	
+	public ArrayList<ObjPlayer> teammates = new ArrayList<ObjPlayer>();
+	public ArrayList<ObjPlayer> opponents = new ArrayList<ObjPlayer>();
 	/**
 	* The memory that stores all parsed ObjInfo
 	*/
