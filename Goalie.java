@@ -40,6 +40,9 @@ public class Goalie extends Player {
 		try {
 			move(x,y);
 			Thread.sleep(100);
+			if(getMem().side.compareTo("r") == 0) {
+				turn(180);
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

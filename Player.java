@@ -29,6 +29,7 @@ public class Player extends Thread {
 	private int time = 0;
 	public MathHelp mh = new MathHelp();
 	public boolean wait = true;
+	public String position = "left";
 	
 	public Player() {
 		
@@ -168,8 +169,8 @@ public class Player extends Thread {
 	 * @pre A RoboCup server is available.
 	 * @post The Player has been initialized to the correct team.
 	 */
-	public void initPlayer(double x, double y) throws SocketException, UnknownHostException {
-		
+	public void initPlayer(double x, double y, String pos) throws SocketException, UnknownHostException {
+		position = pos;
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
 		getMem().home = new Pos(x, y);
@@ -179,6 +180,34 @@ public class Player extends Thread {
 			move(x, y);
 			Thread.sleep(100);
 			if(getMem().side == "r") {
+				turn(180);
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		@SuppressWarnings("unused")
+		
+		
+		Brain b = new Brain(this);
+	}
+	
+	
+	/**
+	 * Initializes the Player with the RoboCup server.
+	 * @pre A RoboCup server is available.
+	 * @post The Player has been initialized to the correct team.
+	 */
+	public void initPlayer(double x, double y) throws SocketException, UnknownHostException {
+		rc.dsock = new DatagramSocket();
+		rc.init(getParser(), getMem());
+		getMem().home = new Pos(x, y);
+		
+		
+		try {
+			move(x, y);
+			Thread.sleep(100);
+			if(getMem().side.compareTo("r") == 0) {
 				turn(180);
 			}
 		} catch (InterruptedException e) {
