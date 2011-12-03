@@ -179,7 +179,7 @@ public class Player extends Thread {
 		try {
 			move(x, y);
 			Thread.sleep(100);
-			if(getMem().side == "r") {
+			if(getMem().side.compareTo("r") == 0) {
 				turn(180);
 			}
 		} catch (InterruptedException e) {
@@ -408,7 +408,7 @@ public class Player extends Thread {
 			
 			try {
 				receiveInput();
-				System.out.println(getMem().playMode);
+				//System.out.println(getMem().playMode);
 				//System.out.println(getMem().side);
 			} catch (InterruptedException e) {
 				System.out.println("Interrupt error at Player.run");

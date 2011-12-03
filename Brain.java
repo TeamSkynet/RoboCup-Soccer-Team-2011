@@ -106,9 +106,9 @@ public class Brain extends Thread {
 							p.move(p.getHome().x, p.getHome().y);
 						}
 						else if(p.getMem().playMode.compareTo("kick_off_l") == 0) {
-
-							p.getAction().findBall();
-
+							if (p.position.compareTo("center_fwd") == 0) {
+								p.getAction().kickOff();
+							}
 						}
 						else if(p.getMem().playMode.compareTo("play_on") == 0) {
 							p.getAction().findBall();
@@ -125,7 +125,9 @@ public class Brain extends Thread {
 							p.move(p.getHome().x, p.getHome().y);
 						}
 						else if(p.getMem().playMode.compareTo("kick_off_r") == 0) {
-							p.getAction().findBall();
+							if (p.position.compareTo("center_fwd") == 0) {
+								p.getAction().kickOff();
+							}
 						}
 						else if(p.getMem().playMode.compareTo("play_on") == 0) {
 							p.getAction().findBall();

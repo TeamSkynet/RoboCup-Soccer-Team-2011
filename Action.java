@@ -202,6 +202,24 @@ public class Action {
 			rc.turn(30);
 	}
 	
+	/*/
+	 * Defines kickoff behavior
+	 */
+	public void kickOff() throws UnknownHostException, InterruptedException {
+		ObjBall ball = mem.getBall();
+		if((ball.getDirection() > 5.0 || ball.getDirection() < -5.0)) {
+			rc.turn(ball.getDirection() * (1 + (5  *mem.getAmountOfSpeed())));
+			Thread.sleep(100);
+		}
+		interceptBall(ball);
+		Thread.sleep(100);
+		
+		if(ball.getDistance() <= 0.7)  {
+			kickToGoal(ball);
+		}
+		
+	}
+	
 	/**
 	 * Returns the closest player to the FullBack on the same team.
 	 * @post The closest player to the FullBack has been determined.

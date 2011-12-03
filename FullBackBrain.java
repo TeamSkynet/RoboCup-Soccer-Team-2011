@@ -133,46 +133,7 @@ public class FullBackBrain extends Thread {
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
-				
-				/*try {
-					if (m.side == "l"){
-						if (m.playMode == "free_kick_l") {
-							//TODO
-						} else if (m.playMode == "kick_in_l"){
-							//TODO
-						} else if (m.playMode == "corner_kick_l"){
-							//TODO
-						} else if (m.playMode == "goal_kick_l"){
-							//TODO
-						} else if (m.playMode == "goal_l"){
-							f.getAction().goHome();
-						}else {  //playmode is "playon"
-							f.runDefense();
-						} //end if
-					} else {
-						if (m.playMode == "free_kick_r") {
-							//TODO
-						} else if (m.playMode == "kick_in_r"){
-							//TODO
-						} else if (m.playMode == "corner_kick_r"){
-							//TODO
-						} else if (m.playMode == "goal_kick_r"){
-							//TODO
-						} else if (m.playMode == "goal_r_"){
-							f.getAction().goHome();
-						} else {  //playmode is "playon"
-							f.runDefense();
-						} //end if
-					}
-
-				} catch (UnknownHostException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}*/			
+				}			
 			}		
 		}
 	}
