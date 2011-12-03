@@ -97,51 +97,43 @@ public class Brain extends Thread {
 
 				try {
 					
-					p.getAction().findBall();
+					//p.getAction().findBall();
 					
-					/*if (m.side == "l"){
-						if (m.playMode == "free_kick_l") {
-							//TODO
-						} else if (m.playMode == "kick_in_l"){
-							//TODO
-						} else if (m.playMode == "corner_kick_l"){
-							//TODO
-						} else if (m.playMode == "goal_kick_l"){
-							//TODO
-						} else if (m.playMode == "goal_l"){
-							p.getAction().goHome();
-						}else {  //playmode is "playon"
-							p.getAction().findBall();
-						} //end if
-					} else {
-						if (m.playMode == "free_kick_r") {
-							//TODO
-						} else if (m.playMode == "kick_in_r"){
-							//TODO
-						} else if (m.playMode == "corner_kick_r"){
-							//TODO
-						} else if (m.playMode == "goal_kick_r"){
-							//TODO
-						} else if (m.playMode == "goal_r"){
-							p.getAction().goHome();
-						}else {  //playmode is "playon"
-							p.getAction().findBall();
-						} //end if
-					} //end else  */
+					//Defining playmode behaviors for left side team
+					if (p.getMem().side.compareTo("l") == 0) {
 
-					/*
 						if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
 							p.move(p.getHome().x, p.getHome().y);
 						}
 						else if(p.getMem().playMode.compareTo("kick_off_l") == 0) {
-					 */
-					//p.getAction().findBall();
-					/*
+
+							p.getAction().findBall();
+
 						}
 						else if(p.getMem().playMode.compareTo("play_on") == 0) {
 							p.getAction().findBall();
 						}
-					 */
+						else if (p.getMem().playMode.compareTo("free_kick_r") == 0) {
+							p.getAction().goHome();
+						}
+					}
+					
+					//Defining playmode behaviors for left side team
+					if (p.getMem().side.compareTo("r") == 0) {
+
+						if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
+							p.move(p.getHome().x, p.getHome().y);
+						}
+						else if(p.getMem().playMode.compareTo("kick_off_r") == 0) {
+							p.getAction().findBall();
+						}
+						else if(p.getMem().playMode.compareTo("play_on") == 0) {
+							p.getAction().findBall();
+						}
+						else if (p.getMem().playMode.compareTo("free_kick_l") == 0) {
+							p.getAction().goHome();
+						}
+					}
 
 				} catch (InterruptedException e) {
 					System.out.println("Interrupt Error in Brain.run");

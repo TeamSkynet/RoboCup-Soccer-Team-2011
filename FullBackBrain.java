@@ -159,7 +159,7 @@ public class FullBackBrain extends Thread {
 							//TODO
 						} else if (m.playMode == "goal_kick_r"){
 							//TODO
-						} else if (m.playMode == "goal_r"){
+						} else if (m.playMode == "goal_r_"){
 							f.getAction().goHome();
 						} else {  //playmode is "playon"
 							f.runDefense();

@@ -379,6 +379,8 @@ public class Player extends Thread {
 			
 			try {
 				receiveInput();
+				System.out.println(getMem().playMode);
+				//System.out.println(getMem().side);
 			} catch (InterruptedException e) {
 				System.out.println("Interrupt error at Player.run");
 				e.printStackTrace();
