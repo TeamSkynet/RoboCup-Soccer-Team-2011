@@ -113,6 +113,12 @@ public class Memory {
 		return null;
 	}
 	
+	public Pos getBallPos(ObjBall b) {
+		Pos pt = m.vAdd(getPosition(), m.getPos(b.getDistance(), b.getDirection() + getDirection()));
+		//pt.print("Ball Pos: ");
+		return(pt);
+	}
+	
 	/**
 	* The Flag Getter
 	*

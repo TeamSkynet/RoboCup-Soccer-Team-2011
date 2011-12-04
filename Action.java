@@ -104,7 +104,7 @@ public class Action {
 		if(go.r >= 0.5) {
 			try {
 				
-				rc.dash(Math.min(100, m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
+				rc.dash((m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), go.t);
 			
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
@@ -132,9 +132,9 @@ public class Action {
 	public void gotoPoint(Pos p) {
 		
 		Polar go = mem.getAbsPolar(p);
-		if(go.r >= 0.3) {
+		if(go.r >= 0.5) {
 			try {
-				if((go.t - mem.getDirection()) > 5.0 || (go.t - mem.getDirection()) < -5.0) {
+				if((go.t) > 5.0 || (go.t) < -5.0) {
 					rc.turn(go.t * (1 + (5*mem.getAmountOfSpeed())));
 				}
 				rc.dash(m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina()));
@@ -184,10 +184,12 @@ public class Action {
 				Thread.sleep(100);
 			}
 			
-			if((ball.getDistance() > 15) && (mem.isHome == false)) {
-				goHome();
+			Pos ballPos = mem.getBallPos(ball);
+			
+			if((ballPos.x > 52) || (ballPos.x < -20) || (ballPos.y > (mem.home.y + 6.4)) || (ballPos.y < (mem.home.y - 6.4))) {
+				gotoSidePoint(new Pos(mem.getBallPos(ball).x, mem.home.y));
 			}
-			else if((ball.getDistance() <= 15.0) && (ball.getDistance() > 0.7)){
+			else if((ballPos.x <= 52) && (ballPos.x >= -20) && (ballPos.y <= (mem.home.y + 6.4)) && (ballPos.y >= (mem.home.y - 6.4)) && (ball.getDistance() > 0.7)){
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
@@ -293,7 +295,7 @@ public class Action {
 	* @throws InterruptedException
 	*/
 	public void FullBack_findBall() throws UnknownHostException, InterruptedException {
-		Pos origin = new Pos(0,0);
+		//Pos origin = new Pos(0,0);
 		//System.out.println("in FullBack_findBall");
 		
 		if(mem.isObjVisible("ball")) {
@@ -310,8 +312,8 @@ public class Action {
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
-				kickToPoint(ball, origin);
-				//passBall(ball, closestPlayer());
+				//kickToPoint(ball, origin);
+				passBall(ball, closestPlayer());
 			}			
 		}
 		else
@@ -398,7 +400,7 @@ public class Action {
 		}
 		else {
 			try {
-				rc.kick(100, mem.getDirection());
+				rc.kick(100, mem.getNullGoalAngle());
 			} catch (UnknownHostException e) {
 				System.out.println("Error at action.kickToGoal() turn");
 				e.printStackTrace();

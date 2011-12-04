@@ -408,8 +408,6 @@ public class Player extends Thread {
 			
 			try {
 				receiveInput();
-				//System.out.println(getMem().playMode);
-				//System.out.println(getMem().side);
 			} catch (InterruptedException e) {
 				System.out.println("Interrupt error at Player.run");
 				e.printStackTrace();
@@ -418,7 +416,7 @@ public class Player extends Thread {
 			if(getMem().current != null) {
 				Pos pt = mh.vSub(getMem().current, getMem().home);
 				
-				if(mh.mag(pt) > 0.5) {
+				if((Math.abs(pt.x) > 0.5) ||(Math.abs(pt.y) > 0.5)) {
 					getMem().isHome = false;
 				}
 				else

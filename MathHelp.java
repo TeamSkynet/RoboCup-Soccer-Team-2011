@@ -164,15 +164,35 @@ public class MathHelp {
 	 * @return The power needed to accelerate the player to the desired location
 	 */
 	public double getDashPower(Pos p, double vel_r, double vel_t, double effort, double stamina) {
+		/*
+		Polar pt = getPolar(p);
+		double v = getPos(vel_r, vel_t-pt.t).x;
+		double power = (Math.min(1.05, pt.r) - v)/(0.006*effort);
 		
-		if(mag(p) > 20)
-			return(50);
-		else {
+		Polar vel = new Polar(vel_r, vel_t);
+		
+		getPos(vel).print("Velocity Pos: ");
+		vel.print("Velocity Polar: ");
+		p.print("Go to Pos: ");
+		pt.print("Go to Polar: ");
+		System.out.println("Power: " + power);
+		
+		
+		return(Math.min(100,power));
+		*/
+		
+		
+		//if(mag(p) > 20)
+			//return(80);
+		//else {
 			Pos v = getPos(vel_r, vel_t);
 			Pos a = vSub(p, v);
 			double power = mag(a) / (0.06 * effort);
-			return(Math.min(edp(effort, stamina), power));
-		}
+			return(Math.min(100, power));
+			//double power = mag(a) / (0.06 * effort);
+			//return(Math.min(edp(effort, stamina), power));
+		//}
+		
 	}
 	
 	
