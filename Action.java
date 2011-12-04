@@ -463,7 +463,7 @@ public class Action {
 			ObjGoal goal = mem.getOppGoal();
 			
 			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
-					kickToPoint(ball, new Polar(15.0, (goal.getDirection() - ball.getDirection())));
+					kickToPoint(ball, new Polar(5.0, (goal.getDirection() - ball.getDirection())));
 				
 			}
 			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {

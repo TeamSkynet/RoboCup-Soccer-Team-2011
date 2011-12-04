@@ -222,11 +222,11 @@ public class MathHelp {
 	public double getKickPower(Polar p, double vel_r, double vel_t, double ball_r, double ball_t) {
 		double r = 1/0.94;
 		double n = (Math.log(((p.r*(r-1))/0.05)+1)/Math.log(r));
-		System.out.println("n: " + n);
+		//System.out.println("n: " + n);
 		double s = 0.05/Math.pow(0.94, n);
-		System.out.println("s: " + s);
+		//System.out.println("s: " + s);
 		double ep = s/(0.035 * (1 - ( 0.25 * ((Math.abs(ball_t-vel_t)/180) + (ball_r/0.7)))));
-		System.out.println("ep: " + ep);
+		//System.out.println("ep: " + ep);
 		return(Math.min(ep, 100));
 	}
 	
