@@ -113,12 +113,6 @@ public class Memory {
 		return null;
 	}
 	
-	public Pos getBallPos(ObjBall b) {
-		Pos pt = m.vAdd(getPosition(), m.getPos(b.getDistance(), b.getDirection() - getDirection()));
-		//pt.print("Ball Pos: ");
-		return(pt);
-	}
-	
 	/**
 	* The Flag Getter
 	*
@@ -217,17 +211,6 @@ public class Memory {
 		return null;
 	}
 	
-	public ObjPlayer getPlayer(int uNum) {
-		for(int i = 0; i < ObjMem.getSize(); i++) {
-			if(getObj(i).getObjName().compareTo("player") == 0) {
-				ObjPlayer p1 = (ObjPlayer) getObj(i);
-				if(p1.getuNum() == uNum);
-					return (ObjPlayer) getObj(i);
-			}
-		}
-		return null;
-	}
-	
 	/**
 	* The Line getter
 	* This will get the ObjLine of the first line you see.
@@ -277,35 +260,10 @@ public class Memory {
 		return players;
 	}
 	
-	public void updatePlayerArrays() {
-		ObjPlayer p = new ObjPlayer();
-		ArrayList<ObjPlayer> te = new ArrayList<ObjPlayer>();
-		ArrayList<ObjPlayer> op = new ArrayList<ObjPlayer>();
-		double temin = 100;
-		double opmin = 100;
-		ObjPlayer teminpl = new ObjPlayer();
-		ObjPlayer opminpl = new ObjPlayer();
+	public void getPlayerArrays() {
 		for(int i = 0; i < ObjMem.getSize(); i++) {
-			if(getObj(i).getObjName().compareTo("player") == 0) {
-				p = (ObjPlayer) getObj(i);
-				if(p.getTeam().compareTo(team) == 0)
-					te.add(p);
-					if(p.getDistance() < temin) {
-						teminpl = p;
-						temin = p.getDistance();
-					}
-				else
-					op.add(p);
-					if(p.getDistance() < opmin) {
-						opminpl = p;
-						opmin = p.getDistance();
-					}
-			}
+			
 		}
-		teammates = te;
-		opponents = op;
-		closestTeammate = teminpl;
-		closestOpponent = opminpl;
 	}
 	
 	
@@ -386,6 +344,7 @@ public class Memory {
 		double r = Math.sqrt(Math.pow(p.x, 2) + Math.pow(p.y, 2));
 		double t = (Math.toDegrees(Math.atan2(p.y, p.x)) - getDirection());
 		Polar n = new Polar(r, t);
+		//n.print("AbsPolar: ");
 		return(n);
 	}
 	
@@ -603,13 +562,6 @@ public class Memory {
 	public boolean isHome = true;
 	public ArrayList<ObjPlayer> teammates = new ArrayList<ObjPlayer>();
 	public ArrayList<ObjPlayer> opponents = new ArrayList<ObjPlayer>();
-	public ObjPlayer closestTeammate = new ObjPlayer();
-	public ObjPlayer closestOpponent = new ObjPlayer();
-	//public HearMessage msg = new HearMessage();
-	public boolean getPass = false;
-	public double getPassDir;
-	public String team;
-	public boolean kicked = false;
 	/**
 	* The memory that stores all parsed ObjInfo
 	*/
