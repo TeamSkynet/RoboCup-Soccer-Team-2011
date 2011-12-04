@@ -578,7 +578,7 @@ public class Memory {
 	public boolean isHome = true;
 	public ArrayList<ObjPlayer> teammates = new ArrayList<ObjPlayer>();
 	public ArrayList<ObjPlayer> opponents = new ArrayList<ObjPlayer>();
-	public HearMessage msg = new HearMessage();
+	//public HearMessage msg = new HearMessage();
 	public boolean getPass = false;
 	/**
 	* The memory that stores all parsed ObjInfo
