@@ -104,7 +104,7 @@ public class Action {
 		if(go.r >= 0.5) {
 			try {
 				
-				rc.dash(Math.min(100, 2 * m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
+				rc.dash(Math.min(100, m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
 			
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
@@ -456,7 +456,7 @@ public class Action {
 			ObjGoal goal = mem.getOppGoal();
 			
 			if((goal != null) && ((goal.getDistance() - 18) > 1.0)) {
-					kickToPoint(ball, new Polar(15.0, (goal.getDirection() - ball.getDirection())));
+					kickToPoint(ball, new Polar(5.0, (goal.getDirection() - ball.getDirection())));
 				
 			}
 			else if((goal != null) && ((goal.getDistance() - 18) <= 1.0)) {
