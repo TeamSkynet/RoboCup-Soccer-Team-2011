@@ -136,6 +136,10 @@ public class FullBack extends Player{
 		return closestPlayer;
 	}
 	
+	/*
+	 * Checks to see if the FullBack is on his own side of the field.
+	 * @return boolean true if he is, false if he is not.
+	 */
 	public boolean inFullBackZone(){
 		if (getMem().getPosition().x < -10) {
 			return true;
@@ -145,7 +149,10 @@ public class FullBack extends Player{
 		}
 	}
 
-	
+	/*
+	 * Defines Fullback defensive behavior.
+	 * @pre Playmode is play_on.
+	 */
 	public void runDefense() throws UnknownHostException, InterruptedException {
 		if (!inFullBackZone()) {
 			getAction().goHome();
@@ -154,6 +161,9 @@ public class FullBack extends Player{
 		getAction().FullBack_findBall();
 	}
 	
+	/*
+	 * Defines ongoing FullBack soccer behaviors for his own thread.
+	 */
 	public void run() {
 		while(true) {
 			try {
@@ -173,9 +183,7 @@ public class FullBack extends Player{
 					getMem().isHome = true;
 			}
 			else 
-				System.out.println("Current is null");
-			
-		
+				System.out.println("Current is null");		
 		}
 	}	
 }

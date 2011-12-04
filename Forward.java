@@ -5,7 +5,7 @@
 * @version 1.0 
 */
 
-/** @class Forward
+/** @class Forward (currently unused)
 * The Forward class inherits from the Player class.  The Forward is a specialized
 * type of Player that focuses on offensive behaviors such as scoring and ball interception.
 */

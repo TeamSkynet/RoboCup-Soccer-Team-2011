@@ -1,3 +1,5 @@
+import java.net.UnknownHostException;
+
 
 
 /**
@@ -109,8 +111,9 @@ public class GoalieBrain extends Thread {
 	 */
 	public void run() {
 		
-		//Pos p = new Pos(-49, -6);
-
+		Pos uppergoalkick = new Pos(-47.36, -8.74);
+		Pos lowergoalkick = new Pos(-47.36, 8.74);
+		
 		while (true) {
 
 			try {
@@ -119,13 +122,81 @@ public class GoalieBrain extends Thread {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			//System.out.println("Brain");
+
 			if(g.getMem().timeCheck(g.getTime())) {
 				g.setTime(g.getMemTime());
-				g.followBall();			
+				g.followBall();
+				
+				/*
+				//Defining playmode behaviors for left side team
+				if (g.getMem().side.compareTo("l") == 0) {				
+					
+					if(g.getMem().playMode.compareTo("play_on") == 0) {
+						g.followBall();
+					}
+					else if (g.getMem().playMode.compareTo("goal_kick_l") == 0){
+						Polar upper = g.getMem().getAbsPolar(g.getMem().getFlagPos("fplt"));
+						try {
+							g.turn(g.getAction().getTurn(upper));
+						} catch (UnknownHostException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						if (g.getMem().isObjVisible("ball")) {
+							g.getAction().gotoPoint(uppergoalkick);
+							try {
+								g.kick(60, 0);
+							} catch (UnknownHostException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+						else {
+							g.getAction().gotoPoint(lowergoalkick);
+							try {
+								g.kick(60, 0);
+							} catch (UnknownHostException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					*/}					
+				}	
+				 // end if
+				
+				//Defining playmode behaviors for right side team
+				/*if (p.getMem().side.compareTo("r") == 0) {
+
+					if((p.getMem().playMode.compareTo("before_kick_off") == 0) && p.getTime() > 0) {
+						p.move(p.getHome().x, p.getHome().y);
+					}
+					else if(p.getMem().playMode.compareTo("play_on") == 0) {
+						p.getAction().findBall();
+					}
+					else if(p.getMem().playMode.compareTo("kick_off_r") == 0) {
+						if (p.position.compareTo("center_fwd") == 0) {
+							p.getAction().kickOff();
+						}
+					}
+					else if (p.getMem().playMode.compareTo("goal_kick_r") == 0){
+						p.getAction().goHome();
+					}						
+					else if (p.getMem().playMode.compareTo("free_kick_l") == 0) {
+						p.getAction().goHome();
+					}
+				} //end if*/
 			}
 			
-		}
+		
 	}
-}
+
 

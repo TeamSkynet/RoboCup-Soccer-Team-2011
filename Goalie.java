@@ -317,7 +317,7 @@ public class Goalie extends Player {
 	}
 
 	/**
-	 * Causes goalie to kick the ball to a specific player.
+	 * Causes goalie to kick the ball to a specific player.  (Currently unused.)
 	 * @pre A player is in sight of the goalie.
 	 * @post The goalie has kicked the ball to the player passed to the function.
 	 * @param player An ObjPlayer representing the player to receive the ball.
@@ -332,7 +332,7 @@ public class Goalie extends Player {
 	}
 	
 	/**
-	 * Causes the goalie to kick the ball out of bounds
+	 * Causes the goalie to kick the ball out of bounds (Currently unused.)
 	 * @pre Goalie has control of the ball
 	 * @post Ball has been kicked out of bounds
 	 */
@@ -378,7 +378,11 @@ public class Goalie extends Player {
 		}
 	}
 	
-	//Run method for Goalie's individual thread
+	/*
+	 * Causes Goalie to receive constant server input during gameplay.
+	 * @pre RoboCup server is active
+	 * @post Goalie will receive server input messages.
+	 */
 	public void run() {
 		while(true) {
 			try {

@@ -82,6 +82,11 @@ public class Brain extends Thread {
 		this.marked_unum = marked_unum;
 	}
 	
+	/*
+	 * Defines Player soccer behaviors.
+	 * @pre RoboCup server is active.
+	 * @post Player will exhibit soccer behaviors.
+	 */
 	public void run() {
 		
 		ObjBall ball = p.getMem().getBall();
@@ -125,18 +130,18 @@ public class Brain extends Thread {
 							}
 						}
 						else if (p.getMem().playMode.compareTo("corner_kick_l") == 0){
-							while (!p.getMem().isObjVisible("ball")) {
+							/*while (!p.getMem().isObjVisible("ball")) {
 								p.turn(15);
-							}
+							}*/
 
-							ballPos = mh.getPos(ball.getDistance(), p.getDirection() + ball.getDirection());
+							//ballPos = mh.getPos(ball.getDistance(), p.getDirection() + ball.getDirection());
 							
-							if (ballPos.y < 0){
+							/*if (ballPos.y < 0){
 								if (p.position.compareTo("far_left_fwd") == 0){
 									p.getAction().gotoPoint(uppercorner);
-									if (!p.getMem().isObjVisible("ball")){
-										p.turn(15);
-									}
+									Polar k = p.getMem().getAbsPolar(p.getMem().getFlagPos("fplb"));
+									p.getAction().getTurn(k);
+									Thread.sleep(500);
 									p.getAction().kickToPoint(ball, uppercornerkickpoint);
 								}
 								else {
@@ -157,9 +162,9 @@ public class Brain extends Thread {
 							else {
 								if (p.position.compareTo("far_right_fwd") == 0){
 									p.getAction().gotoPoint(lowercorner);
-									if (!p.getMem().isObjVisible("ball")){
-										p.turn(15);
-									}
+									Polar k = p.getMem().getAbsPolar(p.getMem().getFlagPos("fplb"));
+									p.getAction().getTurn(k);
+									Thread.sleep(500);
 									p.getAction().kickToPoint(ball, lowercornerkickpoint);
 								}
 								else {
@@ -176,7 +181,7 @@ public class Brain extends Thread {
 										p.getAction().gotoPoint(cornerkickreceive4);
 									}
 								}
-							}
+							}*/
 						}
 						else if (p.getMem().playMode.compareTo("goal_kick_l") == 0){
 							p.getAction().goHome();
