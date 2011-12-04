@@ -293,7 +293,7 @@ public class Action {
 	* @throws InterruptedException
 	*/
 	public void FullBack_findBall() throws UnknownHostException, InterruptedException {
-		//Pos origin = new Pos(0,0);
+		Pos origin = new Pos(0,0);
 		//System.out.println("in FullBack_findBall");
 		
 		if(mem.isObjVisible("ball")) {
@@ -310,8 +310,8 @@ public class Action {
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
-				//kickToPoint(ball, origin);
-				passBall(ball, closestPlayer());
+				kickToPoint(ball, origin);
+				//passBall(ball, closestPlayer());
 			}			
 		}
 		else
