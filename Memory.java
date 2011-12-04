@@ -277,10 +277,35 @@ public class Memory {
 		return players;
 	}
 	
-	public void getPlayerArrays() {
+	public void updatePlayerArrays() {
+		ObjPlayer p = new ObjPlayer();
+		ArrayList<ObjPlayer> te = new ArrayList<ObjPlayer>();
+		ArrayList<ObjPlayer> op = new ArrayList<ObjPlayer>();
+		double temin = 100;
+		double opmin = 100;
+		ObjPlayer teminpl = new ObjPlayer();
+		ObjPlayer opminpl = new ObjPlayer();
 		for(int i = 0; i < ObjMem.getSize(); i++) {
-			
+			if(getObj(i).getObjName().compareTo("player") == 0) {
+				p = (ObjPlayer) getObj(i);
+				if(p.getTeam().compareTo(team) == 0)
+					te.add(p);
+					if(p.getDistance() < temin) {
+						teminpl = p;
+						temin = p.getDistance();
+					}
+				else
+					op.add(p);
+					if(p.getDistance() < opmin) {
+						opminpl = p;
+						opmin = p.getDistance();
+					}
+			}
 		}
+		teammates = te;
+		opponents = op;
+		closestTeammate = teminpl;
+		closestOpponent = opminpl;
 	}
 	
 	
@@ -578,8 +603,13 @@ public class Memory {
 	public boolean isHome = true;
 	public ArrayList<ObjPlayer> teammates = new ArrayList<ObjPlayer>();
 	public ArrayList<ObjPlayer> opponents = new ArrayList<ObjPlayer>();
+	public ObjPlayer closestTeammate = new ObjPlayer();
+	public ObjPlayer closestOpponent = new ObjPlayer();
 	//public HearMessage msg = new HearMessage();
 	public boolean getPass = false;
+	public double getPassDir;
+	public String team;
+	public boolean kicked = false;
 	/**
 	* The memory that stores all parsed ObjInfo
 	*/

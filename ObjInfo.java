@@ -8,9 +8,7 @@
  * @version 1
  */
 
-import java.net.*;
-import java.util.*;
-import java.io.*;
+
 
 /**
  * @class ObjInfo
@@ -196,7 +194,7 @@ class ObjFlag extends ObjInfo {
 	 * 
 	 * @return The type of flag depending on it's location:
 	 * 				"b" - outer boundary
-	 * 				"f" - goal post
+	 * 				"g" - goal post
 	 * 				"p" - penalty box
 	 * 				"c" - center of field
 	 * 				"l" - border line
@@ -382,6 +380,15 @@ class ObjPlayer extends ObjInfo {
 	 */
 	public void setBodyDir(double bodyDir) {
 		this.bodyDir = bodyDir;
+	}
+	
+	public void print(String message) {
+		System.out.println(message);
+		System.out.println("Team: " + team);
+		System.out.println("Uniform: " + uNum);
+		System.out.println("Distance: " + getDistance());
+		System.out.println("Direction: " + getDirection());
+		System.out.println("");
 	}
 
 	private String team;

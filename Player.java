@@ -407,7 +407,7 @@ public class Player extends Thread {
 			
 			
 			try {
-				//Thread.sleep(100);
+				Thread.sleep(100);
 				receiveInput();
 				//System.out.println(getMem().playMode);
 				//System.out.println(getMem().side);
@@ -428,6 +428,7 @@ public class Player extends Thread {
 			else 
 				System.out.println("Current is null");
 			
+			//getMem().updatePlayerArrays();
 		}
 
 	}
