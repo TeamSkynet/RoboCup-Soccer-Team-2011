@@ -49,6 +49,7 @@ public class FullBack extends Player{
 
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
+		getMem().home = new Pos(x, y);
 		try {
 			move(x,y);
 			Thread.sleep(100);
@@ -71,6 +72,7 @@ public class FullBack extends Player{
 		position = pos;
 		rc.dsock = new DatagramSocket();
 		rc.init(getParser(), getMem());
+		getMem().home = new Pos(x, y);
 		try {
 			move(x,y);
 			Thread.sleep(100);

@@ -276,12 +276,12 @@ public class Action {
 	 */
 	public void passBall(ObjBall ball, ObjPlayer p) {
 		try {
-			rc.say("Over to you " + p.getuNum());
+			rc.say("pass" + p.getuNum());
 		} catch (UnknownHostException e) {
 			System.out.println("UnknownHostException in say, in passToForward");
 			e.printStackTrace();
 		}
-		kickToPoint(ball, m.getNextPlayerPoint(p));
+		kickToPoint(ball, m.getNextPlayerPoint(p));		
 	}
 	
 	/**
@@ -294,6 +294,7 @@ public class Action {
 	*/
 	public void FullBack_findBall() throws UnknownHostException, InterruptedException {
 		//Pos origin = new Pos(0,0);
+		//System.out.println("in FullBack_findBall");
 		
 		if(mem.isObjVisible("ball")) {
 			ObjBall ball = mem.getBall();

@@ -110,11 +110,9 @@ public class FullBackBrain extends Thread {
 	 * @post FullBack will act accordingly during match. 
 	 */
 	public void run() {
-		
-		//Pos p = new Pos(-49, -6);
 
 		while (true) {
-
+			//System.out.println("in FullBackBrain");
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e1) {
@@ -124,7 +122,7 @@ public class FullBackBrain extends Thread {
 
 			if(f.getMem().timeCheck(f.getTime())) {
 				f.setTime(f.getMemTime());
-				
+
 				try {
 					f.runDefense();
 				} catch (UnknownHostException e) {

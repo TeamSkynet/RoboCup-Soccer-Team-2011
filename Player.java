@@ -333,7 +333,7 @@ public class Player extends Thread {
 	
 	/*
 	 * Follows opposing players on defense
-	 * 
+	 * (Currently unused)
 	 */
 	public void runDefense() throws UnknownHostException, InterruptedException {
 		//b.setDefensive();
@@ -342,7 +342,7 @@ public class Player extends Thread {
 			turn(15);
 			Thread.sleep(100);
 		}*/
-		System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
+		//System.out.println("Closest Opponent: " + closestOpponent().getTeam() + " " + closestOpponent().getuNum());
 		a.gotoPoint(getMem().m.getNextPlayerPoint(closestOpponent()));
 		
 		/*if (m.isObjVisible("player")) {
