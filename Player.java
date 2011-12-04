@@ -407,6 +407,7 @@ public class Player extends Thread {
 			
 			
 			try {
+				Thread.sleep(100);
 				receiveInput();
 				//System.out.println(getMem().playMode);
 				//System.out.println(getMem().side);

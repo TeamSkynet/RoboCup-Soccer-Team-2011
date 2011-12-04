@@ -104,7 +104,7 @@ public class Action {
 		if(go.r >= 0.5) {
 			try {
 				
-				rc.dash(Math.min(100, 2 * m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
+				rc.dash(Math.min(100, m.getDashPower(m.getPos(go), mem.getAmountOfSpeed(), mem.getDirection(), mem.getEffort(), mem.getStamina())), (go.t - mem.getDirection()));
 			
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
@@ -184,10 +184,10 @@ public class Action {
 				Thread.sleep(100);
 			}
 			
-			if((ball.getDistance() > 15) && (mem.isHome == false)) {
+			if((((mem.getBallPos(ball).x > mem.home.x + 15) || (mem.getBallPos(ball).x < mem.home.x - 15) || (mem.getBallPos(ball).y) > mem.home.y + 15) || ((mem.getBallPos(ball).y) < mem.home.y - 15)) && (mem.isHome == false)) {
 				goHome();
 			}
-			else if((ball.getDistance() <= 15.0) && (ball.getDistance() > 0.7)){
+			else if((((mem.getBallPos(ball).x <= mem.home.x + 15) && (mem.getBallPos(ball).x >= mem.home.x - 15) && (mem.getBallPos(ball).y) <= mem.home.y + 15) && ((mem.getBallPos(ball).y) >= mem.home.y - 15)) && (ball.getDistance() > 0.7)) {
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
@@ -357,6 +357,13 @@ public class Action {
 	 * @return True if the player is able to play, false if he is not
 	 */
 	private boolean stayInBounds() {
+		if((Math.abs(mem.getPosition().x) >= 52) || (Math.abs(mem.getPosition().y) >= 33.5))
+			return false;
+		else
+			return true;
+			
+		}
+		/*
 		if(mem.side.compareTo("l") == 0) {
 			if((mem.getPlayMode().compareTo("play_on") != 0) && (mem.getPlayMode().compareTo("kick_off_l") != 0)) {
 				return false;
@@ -371,7 +378,7 @@ public class Action {
 			else
 				return true;
 		}
-		
+		*/
 	}
 	
 	
