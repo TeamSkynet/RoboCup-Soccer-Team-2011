@@ -362,7 +362,7 @@ public class Action {
 		else
 			return true;
 			
-		}
+		
 		/*
 		if(mem.side.compareTo("l") == 0) {
 			if((mem.getPlayMode().compareTo("play_on") != 0) && (mem.getPlayMode().compareTo("kick_off_l") != 0)) {
