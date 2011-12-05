@@ -6,600 +6,641 @@
     \subitem {dribbleToGoal}, \hyperpage{8}
     \subitem {findBall}, \hyperpage{9}
     \subitem {FullBack\_\discretionary {-}{}{}findBall}, \hyperpage{9}
-    \subitem {goHome}, \hyperpage{9}
+    \subitem {getTurn}, \hyperpage{9}
+    \subitem {goHome}, \hyperpage{10}
     \subitem {gotoPoint}, \hyperpage{10}
-    \subitem {kickToPoint}, \hyperpage{10, 11}
-    \subitem {setMem}, \hyperpage{11}
-  \item {Action.java}, \hyperpage{73}
+    \subitem {gotoSidePoint}, \hyperpage{11}
+    \subitem {kickToPoint}, \hyperpage{11}
+    \subitem {passBall}, \hyperpage{11}
+    \subitem {setMem}, \hyperpage{12}
+  \item {Action.java}, \hyperpage{77}
   \item {addInfo}
-    \subitem {ObjMemory}, \hyperpage{49}
+    \subitem {ObjMemory}, \hyperpage{51}
 
   \indexspace
 
   \item {ballInGoalzone}
-    \subitem {Goalie}, \hyperpage{21}
+    \subitem {Goalie}, \hyperpage{22}
   \item {Brain}, \hyperpage{12}
-    \subitem {Brain}, \hyperpage{12}
-    \subitem {getCurrentMode}, \hyperpage{12}
-    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{12}
-    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{12}
+    \subitem {Brain}, \hyperpage{13}
+    \subitem {getCurrentMode}, \hyperpage{13}
+    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{13}
+    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{13}
     \subitem {setDefensive}, \hyperpage{13}
     \subitem {setMarked\_\discretionary {-}{}{}team}, \hyperpage{13}
-    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{13}
-    \subitem {setOffensive}, \hyperpage{13}
-  \item {Brain.java}, \hyperpage{73}
+    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{14}
+    \subitem {setOffensive}, \hyperpage{14}
+  \item {Brain.java}, \hyperpage{77}
 
   \indexspace
 
   \item {catchable}
-    \subitem {Goalie}, \hyperpage{21}
+    \subitem {Goalie}, \hyperpage{22}
   \item {catchball}
-    \subitem {Goalie}, \hyperpage{21}
-    \subitem {RoboClient}, \hyperpage{66}
+    \subitem {Goalie}, \hyperpage{22}
+    \subitem {RoboClient}, \hyperpage{68}
   \item {closestOpponent}
-    \subitem {Player}, \hyperpage{57}
+    \subitem {Player}, \hyperpage{58}
   \item {closestPlayer}
     \subitem {Action}, \hyperpage{8}
-    \subitem {FullBack}, \hyperpage{16}
-    \subitem {Goalie}, \hyperpage{21}
+    \subitem {FullBack}, \hyperpage{17}
+    \subitem {Goalie}, \hyperpage{22}
 
   \indexspace
 
   \item {dash}
-    \subitem {Player}, \hyperpage{57, 58}
-    \subitem {RoboClient}, \hyperpage{66, 67}
+    \subitem {Player}, \hyperpage{58, 59}
+    \subitem {RoboClient}, \hyperpage{69}
   \item {defendGoal}
-    \subitem {Goalie}, \hyperpage{22}
+    \subitem {Goalie}, \hyperpage{23}
   \item {dribbleToGoal}
     \subitem {Action}, \hyperpage{8}
 
   \indexspace
 
   \item {edp}
-    \subitem {MathHelp}, \hyperpage{27}
+    \subitem {MathHelp}, \hyperpage{28}
 
   \indexspace
 
-  \item {Field}, \hyperpage{13}
-    \subitem {Field}, \hyperpage{14}
-  \item {Field.java}, \hyperpage{74}
+  \item {Field}, \hyperpage{14}
+    \subitem {Field}, \hyperpage{15}
+  \item {Field.java}, \hyperpage{78}
   \item {findBall}
     \subitem {Action}, \hyperpage{9}
   \item {followBall}
-    \subitem {Goalie}, \hyperpage{22}
-  \item {Forward}, \hyperpage{14}
-  \item {Forward.java}, \hyperpage{74}
+    \subitem {Goalie}, \hyperpage{23}
+  \item {Forward}, \hyperpage{15}
+  \item {Forward.java}, \hyperpage{78}
   \item {FullBack}, \hyperpage{15}
-    \subitem {closestPlayer}, \hyperpage{16}
-    \subitem {FullBack}, \hyperpage{15}
-    \subitem {initFullBack}, \hyperpage{16}
-  \item {FullBack.java}, \hyperpage{74}
+    \subitem {closestPlayer}, \hyperpage{17}
+    \subitem {FullBack}, \hyperpage{16}
+    \subitem {initFullBack}, \hyperpage{17}
+    \subitem {runDefense}, \hyperpage{17}
+  \item {FullBack.java}, \hyperpage{78}
   \item {FullBack\_\discretionary {-}{}{}findBall}
     \subitem {Action}, \hyperpage{9}
-  \item {FullBackBrain}, \hyperpage{17}
-    \subitem {FullBackBrain}, \hyperpage{17}
-    \subitem {getActions}, \hyperpage{18}
-    \subitem {getCurrentMode}, \hyperpage{18}
-    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{18}
-    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{18}
-    \subitem {run}, \hyperpage{18}
-    \subitem {setActions}, \hyperpage{18}
-    \subitem {setDefensive}, \hyperpage{18}
-    \subitem {setMarked\_\discretionary {-}{}{}team}, \hyperpage{18}
-    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{19}
-    \subitem {setOffensive}, \hyperpage{19}
+  \item {FullBackBrain}, \hyperpage{18}
+    \subitem {FullBackBrain}, \hyperpage{18}
+    \subitem {getActions}, \hyperpage{19}
+    \subitem {getCurrentMode}, \hyperpage{19}
+    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{19}
+    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{19}
+    \subitem {run}, \hyperpage{19}
+    \subitem {setActions}, \hyperpage{19}
+    \subitem {setDefensive}, \hyperpage{19}
+    \subitem {setMarked\_\discretionary {-}{}{}team}, \hyperpage{19}
+    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{20}
+    \subitem {setOffensive}, \hyperpage{20}
 
   \indexspace
 
-  \item {Game}, \hyperpage{19}
-  \item {Game.java}, \hyperpage{75}
+  \item {Game}, \hyperpage{20}
+  \item {Game.java}, \hyperpage{79}
+  \item {getAbsPolar}
+    \subitem {Memory}, \hyperpage{35}
   \item {getActions}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{25}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{26}
   \item {getAmountOfSpeed}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{35}
   \item {getBall}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{35}
+  \item {getBallPos}
+    \subitem {Memory}, \hyperpage{35}
   \item {getBodyDir}
-    \subitem {ObjPlayer}, \hyperpage{52}
+    \subitem {ObjPlayer}, \hyperpage{53}
   \item {getBtwBallAndGoal}
-    \subitem {Goalie}, \hyperpage{22}
+    \subitem {Goalie}, \hyperpage{23}
   \item {getClosestBoundary}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{35}
   \item {getClosestFlag}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{36}
   \item {getClosestLine}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{36}
   \item {getClosestPenaltyFlag}
-    \subitem {Memory}, \hyperpage{34}
+    \subitem {Memory}, \hyperpage{36}
   \item {getCurrentMode}
-    \subitem {Brain}, \hyperpage{12}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{25}
+    \subitem {Brain}, \hyperpage{13}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{26}
   \item {getDashPower}
-    \subitem {MathHelp}, \hyperpage{27}
+    \subitem {MathHelp}, \hyperpage{28}
   \item {getDirChng}
-    \subitem {ObjInfo}, \hyperpage{46}
+    \subitem {ObjInfo}, \hyperpage{48}
   \item {getDirection}
-    \subitem {Memory}, \hyperpage{35}
-    \subitem {ObjInfo}, \hyperpage{46}
-    \subitem {Player}, \hyperpage{58}
+    \subitem {Memory}, \hyperpage{36}
+    \subitem {ObjInfo}, \hyperpage{48}
+    \subitem {Player}, \hyperpage{59}
   \item {getDirectionOfSpeed}
-    \subitem {Memory}, \hyperpage{35}
+    \subitem {Memory}, \hyperpage{36}
   \item {getDistance}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{48}
   \item {getDistChng}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{48}
   \item {getEffort}
-    \subitem {Memory}, \hyperpage{35}
+    \subitem {Memory}, \hyperpage{36}
   \item {getFlag}
-    \subitem {Memory}, \hyperpage{35}
+    \subitem {Memory}, \hyperpage{37}
   \item {getFlagName}
-    \subitem {ObjFlag}, \hyperpage{43}
+    \subitem {ObjFlag}, \hyperpage{45}
   \item {getFlagPos}
-    \subitem {Memory}, \hyperpage{35}
+    \subitem {Memory}, \hyperpage{37}
   \item {getFlagType}
-    \subitem {ObjFlag}, \hyperpage{43}
+    \subitem {ObjFlag}, \hyperpage{45}
   \item {getHeadDir}
-    \subitem {ObjPlayer}, \hyperpage{52}
+    \subitem {ObjPlayer}, \hyperpage{53}
   \item {getHeadDirection}
-    \subitem {Memory}, \hyperpage{36}
+    \subitem {Memory}, \hyperpage{37}
+  \item {getHome}
+    \subitem {Player}, \hyperpage{59}
   \item {getKickPower}
-    \subitem {MathHelp}, \hyperpage{28}
+    \subitem {MathHelp}, \hyperpage{29}
   \item {getLine}
-    \subitem {Memory}, \hyperpage{36}
+    \subitem {Memory}, \hyperpage{37}
   \item {getMarked\_\discretionary {-}{}{}team}
-    \subitem {Brain}, \hyperpage{12}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{25}
+    \subitem {Brain}, \hyperpage{13}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{26}
   \item {getMarked\_\discretionary {-}{}{}unum}
-    \subitem {Brain}, \hyperpage{12}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{25}
+    \subitem {Brain}, \hyperpage{13}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{26}
   \item {getMem}
-    \subitem {Player}, \hyperpage{58}
+    \subitem {Player}, \hyperpage{59}
+  \item {getMemTime}
+    \subitem {Player}, \hyperpage{60}
   \item {getModename}
-    \subitem {Mode}, \hyperpage{42}
+    \subitem {Mode}, \hyperpage{43}
   \item {getNextBallPoint}
-    \subitem {MathHelp}, \hyperpage{28}
+    \subitem {MathHelp}, \hyperpage{29}
   \item {getNextPlayerPoint}
-    \subitem {MathHelp}, \hyperpage{29}
+    \subitem {MathHelp}, \hyperpage{30}
   \item {getNullGoalAngle}
-    \subitem {Memory}, \hyperpage{36}
+    \subitem {Memory}, \hyperpage{37}
   \item {getObj}
-    \subitem {Memory}, \hyperpage{36}
-    \subitem {ObjMemory}, \hyperpage{50}
+    \subitem {Memory}, \hyperpage{38}
+    \subitem {ObjMemory}, \hyperpage{51}
   \item {getObjInfo}
-    \subitem {Player}, \hyperpage{58}
+    \subitem {Player}, \hyperpage{60}
   \item {getObjMemorySize}
-    \subitem {Memory}, \hyperpage{37}
+    \subitem {Memory}, \hyperpage{38}
   \item {getObjName}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{48}
   \item {getOppGoal}
-    \subitem {Memory}, \hyperpage{37}
+    \subitem {Memory}, \hyperpage{38}
   \item {getOppGoalPos}
-    \subitem {Memory}, \hyperpage{37}
+    \subitem {Memory}, \hyperpage{39}
   \item {getOwnGoal}
-    \subitem {Memory}, \hyperpage{37}
+    \subitem {Memory}, \hyperpage{39}
   \item {getOwnGoalPos}
-    \subitem {Memory}, \hyperpage{38}
+    \subitem {Memory}, \hyperpage{39}
   \item {getParser}
-    \subitem {Player}, \hyperpage{58}
+    \subitem {Player}, \hyperpage{60}
   \item {getPlayer}
-    \subitem {Memory}, \hyperpage{38}
+    \subitem {Memory}, \hyperpage{39}
   \item {getPlayers}
-    \subitem {Memory}, \hyperpage{38}
+    \subitem {Memory}, \hyperpage{39}
   \item {getPlayMode}
-    \subitem {Memory}, \hyperpage{38}
+    \subitem {Memory}, \hyperpage{40}
   \item {getPolar}
-    \subitem {MathHelp}, \hyperpage{29}
+    \subitem {MathHelp}, \hyperpage{30}
   \item {getPos}
-    \subitem {MathHelp}, \hyperpage{29, 30}
+    \subitem {MathHelp}, \hyperpage{30, 31}
   \item {getPosition}
-    \subitem {Memory}, \hyperpage{38}
-    \subitem {Player}, \hyperpage{59}
+    \subitem {Memory}, \hyperpage{40}
+    \subitem {Player}, \hyperpage{60}
   \item {getRecovery}
-    \subitem {Memory}, \hyperpage{39}
+    \subitem {Memory}, \hyperpage{40}
   \item {getRoboClient}
-    \subitem {Player}, \hyperpage{59}
+    \subitem {Player}, \hyperpage{60}
   \item {getSide}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{48}
   \item {getSize}
-    \subitem {ObjMemory}, \hyperpage{50}
+    \subitem {ObjMemory}, \hyperpage{52}
   \item {getStamina}
-    \subitem {Memory}, \hyperpage{39}
+    \subitem {Memory}, \hyperpage{40}
   \item {getTeam}
-    \subitem {ObjPlayer}, \hyperpage{52}
-    \subitem {RoboClient}, \hyperpage{67}
+    \subitem {ObjPlayer}, \hyperpage{53}
+    \subitem {RoboClient}, \hyperpage{69}
   \item {getTime}
-    \subitem {ObjMemory}, \hyperpage{50}
-    \subitem {Player}, \hyperpage{59}
-    \subitem {SenseMemory}, \hyperpage{72}
+    \subitem {ObjMemory}, \hyperpage{52}
+    \subitem {Player}, \hyperpage{60}
+    \subitem {SenseMemory}, \hyperpage{74}
   \item {getTimeinmode}
-    \subitem {Mode}, \hyperpage{42}
-  \item {getuNum}
-    \subitem {ObjPlayer}, \hyperpage{52}
-  \item {getX\_\discretionary {-}{}{}pos}
-    \subitem {ObjFlag}, \hyperpage{44}
-  \item {getY\_\discretionary {-}{}{}pos}
-    \subitem {ObjFlag}, \hyperpage{44}
-  \item {getYard}
-    \subitem {ObjFlag}, \hyperpage{44}
-  \item {Goalie}, \hyperpage{19}
-    \subitem {ballInGoalzone}, \hyperpage{21}
-    \subitem {catchable}, \hyperpage{21}
-    \subitem {catchball}, \hyperpage{21}
-    \subitem {closestPlayer}, \hyperpage{21}
-    \subitem {defendGoal}, \hyperpage{22}
-    \subitem {followBall}, \hyperpage{22}
-    \subitem {getBtwBallAndGoal}, \hyperpage{22}
-    \subitem {initGoalie}, \hyperpage{23}
-    \subitem {kickBallOutOfBounds}, \hyperpage{23}
-    \subitem {kickToPlayer}, \hyperpage{23}
-    \subitem {positionGoalie}, \hyperpage{24}
-  \item {Goalie.java}, \hyperpage{75}
-  \item {GoalieBrain}, \hyperpage{24}
-    \subitem {getActions}, \hyperpage{25}
-    \subitem {getCurrentMode}, \hyperpage{25}
-    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{25}
-    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{25}
-    \subitem {GoalieBrain}, \hyperpage{25}
-    \subitem {run}, \hyperpage{25}
-    \subitem {setActions}, \hyperpage{26}
-    \subitem {setDefensive}, \hyperpage{26}
-    \subitem {setMarked\_\discretionary {-}{}{}team}, \hyperpage{26}
-    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{26}
-    \subitem {setOffensive}, \hyperpage{26}
-  \item {goHome}
+    \subitem {Mode}, \hyperpage{43}
+  \item {getTurn}
     \subitem {Action}, \hyperpage{9}
+  \item {getuNum}
+    \subitem {ObjPlayer}, \hyperpage{53}
+  \item {getX\_\discretionary {-}{}{}pos}
+    \subitem {ObjFlag}, \hyperpage{45}
+  \item {getY\_\discretionary {-}{}{}pos}
+    \subitem {ObjFlag}, \hyperpage{45}
+  \item {getYard}
+    \subitem {ObjFlag}, \hyperpage{45}
+  \item {Goalie}, \hyperpage{20}
+    \subitem {ballInGoalzone}, \hyperpage{22}
+    \subitem {catchable}, \hyperpage{22}
+    \subitem {catchball}, \hyperpage{22}
+    \subitem {closestPlayer}, \hyperpage{22}
+    \subitem {defendGoal}, \hyperpage{23}
+    \subitem {followBall}, \hyperpage{23}
+    \subitem {getBtwBallAndGoal}, \hyperpage{23}
+    \subitem {initGoalie}, \hyperpage{24}
+    \subitem {kickBallOutOfBounds}, \hyperpage{24}
+    \subitem {kickToPlayer}, \hyperpage{24}
+    \subitem {positionGoalie}, \hyperpage{25}
+  \item {Goalie.java}, \hyperpage{79}
+  \item {GoalieBrain}, \hyperpage{25}
+    \subitem {getActions}, \hyperpage{26}
+    \subitem {getCurrentMode}, \hyperpage{26}
+    \subitem {getMarked\_\discretionary {-}{}{}team}, \hyperpage{26}
+    \subitem {getMarked\_\discretionary {-}{}{}unum}, \hyperpage{26}
+    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {run}, \hyperpage{26}
+    \subitem {setActions}, \hyperpage{27}
+    \subitem {setDefensive}, \hyperpage{27}
+    \subitem {setMarked\_\discretionary {-}{}{}team}, \hyperpage{27}
+    \subitem {setMarked\_\discretionary {-}{}{}unum}, \hyperpage{27}
+    \subitem {setOffensive}, \hyperpage{27}
+  \item {goHome}
+    \subitem {Action}, \hyperpage{10}
   \item {gotoPoint}
     \subitem {Action}, \hyperpage{10}
+  \item {gotoSidePoint}
+    \subitem {Action}, \hyperpage{11}
 
   \indexspace
 
   \item {init}
-    \subitem {RoboClient}, \hyperpage{67}
+    \subitem {RoboClient}, \hyperpage{70}
   \item {initFullBack}
-    \subitem {FullBack}, \hyperpage{16}
+    \subitem {FullBack}, \hyperpage{17}
   \item {initGoalie}
-    \subitem {Goalie}, \hyperpage{23}
-    \subitem {RoboClient}, \hyperpage{68}
+    \subitem {Goalie}, \hyperpage{24}
+    \subitem {RoboClient}, \hyperpage{70}
   \item {initParse}
-    \subitem {Parser}, \hyperpage{54}
-  \item {initPlayer}
-    \subitem {Player}, \hyperpage{59}
-  \item {input}
     \subitem {Parser}, \hyperpage{55}
+  \item {initPlayer}
+    \subitem {Player}, \hyperpage{60, 61}
+  \item {input}
+    \subitem {Parser}, \hyperpage{56}
   \item {isGoalie}
-    \subitem {ObjPlayer}, \hyperpage{52}
+    \subitem {ObjPlayer}, \hyperpage{54}
   \item {isObjVisible}
-    \subitem {Memory}, \hyperpage{39}
+    \subitem {Memory}, \hyperpage{40}
 
   \indexspace
 
   \item {kick}
-    \subitem {Player}, \hyperpage{60}
-    \subitem {RoboClient}, \hyperpage{68}
+    \subitem {Player}, \hyperpage{61}
+    \subitem {RoboClient}, \hyperpage{70}
   \item {kickBallOutOfBounds}
-    \subitem {Goalie}, \hyperpage{23}
+    \subitem {Goalie}, \hyperpage{24}
   \item {kickToPlayer}
-    \subitem {Goalie}, \hyperpage{23}
+    \subitem {Goalie}, \hyperpage{24}
   \item {kickToPoint}
-    \subitem {Action}, \hyperpage{10, 11}
+    \subitem {Action}, \hyperpage{11}
 
   \indexspace
 
   \item {mag}
-    \subitem {MathHelp}, \hyperpage{30}
-  \item {MathHelp}, \hyperpage{26}
-    \subitem {edp}, \hyperpage{27}
-    \subitem {getDashPower}, \hyperpage{27}
-    \subitem {getKickPower}, \hyperpage{28}
-    \subitem {getNextBallPoint}, \hyperpage{28}
-    \subitem {getNextPlayerPoint}, \hyperpage{29}
-    \subitem {getPolar}, \hyperpage{29}
-    \subitem {getPos}, \hyperpage{29, 30}
-    \subitem {mag}, \hyperpage{30}
-    \subitem {norm}, \hyperpage{30}
-    \subitem {vAdd}, \hyperpage{31}
-    \subitem {vDiv}, \hyperpage{31}
-    \subitem {vMul}, \hyperpage{31}
-    \subitem {vSub}, \hyperpage{32}
-  \item {MathHelp.java}, \hyperpage{76}
-  \item {Memory}, \hyperpage{32}
-    \subitem {getAmountOfSpeed}, \hyperpage{34}
-    \subitem {getBall}, \hyperpage{34}
-    \subitem {getClosestBoundary}, \hyperpage{34}
-    \subitem {getClosestFlag}, \hyperpage{34}
-    \subitem {getClosestLine}, \hyperpage{34}
-    \subitem {getClosestPenaltyFlag}, \hyperpage{34}
-    \subitem {getDirection}, \hyperpage{35}
-    \subitem {getDirectionOfSpeed}, \hyperpage{35}
-    \subitem {getEffort}, \hyperpage{35}
-    \subitem {getFlag}, \hyperpage{35}
-    \subitem {getFlagPos}, \hyperpage{35}
-    \subitem {getHeadDirection}, \hyperpage{36}
-    \subitem {getLine}, \hyperpage{36}
-    \subitem {getNullGoalAngle}, \hyperpage{36}
-    \subitem {getObj}, \hyperpage{36}
-    \subitem {getObjMemorySize}, \hyperpage{37}
-    \subitem {getOppGoal}, \hyperpage{37}
-    \subitem {getOppGoalPos}, \hyperpage{37}
-    \subitem {getOwnGoal}, \hyperpage{37}
-    \subitem {getOwnGoalPos}, \hyperpage{38}
-    \subitem {getPlayer}, \hyperpage{38}
-    \subitem {getPlayers}, \hyperpage{38}
-    \subitem {getPlayMode}, \hyperpage{38}
-    \subitem {getPosition}, \hyperpage{38}
-    \subitem {getRecovery}, \hyperpage{39}
-    \subitem {getStamina}, \hyperpage{39}
-    \subitem {isObjVisible}, \hyperpage{39}
-    \subitem {Memory}, \hyperpage{33}
-    \subitem {ObjMem}, \hyperpage{40}
-    \subitem {oppGoal}, \hyperpage{40}
-    \subitem {oppSide}, \hyperpage{40}
-    \subitem {playMode}, \hyperpage{40}
-    \subitem {SenMem}, \hyperpage{40}
-    \subitem {setField}, \hyperpage{39}
-    \subitem {setLocation}, \hyperpage{39}
-    \subitem {side}, \hyperpage{41}
-    \subitem {timeCheck}, \hyperpage{40}
-    \subitem {uNum}, \hyperpage{41}
-  \item {Memory.java}, \hyperpage{76}
-  \item {Mode}, \hyperpage{41}
-    \subitem {getModename}, \hyperpage{42}
-    \subitem {getTimeinmode}, \hyperpage{42}
-    \subitem {Mode}, \hyperpage{41}
-    \subitem {setModename}, \hyperpage{42}
-    \subitem {setTimeinmode}, \hyperpage{42}
-  \item {Mode.java}, \hyperpage{76}
+    \subitem {MathHelp}, \hyperpage{31}
+  \item {markOpponent}
+    \subitem {Player}, \hyperpage{61}
+  \item {MathHelp}, \hyperpage{27}
+    \subitem {edp}, \hyperpage{28}
+    \subitem {getDashPower}, \hyperpage{28}
+    \subitem {getKickPower}, \hyperpage{29}
+    \subitem {getNextBallPoint}, \hyperpage{29}
+    \subitem {getNextPlayerPoint}, \hyperpage{30}
+    \subitem {getPolar}, \hyperpage{30}
+    \subitem {getPos}, \hyperpage{30, 31}
+    \subitem {mag}, \hyperpage{31}
+    \subitem {norm}, \hyperpage{31}
+    \subitem {vAdd}, \hyperpage{32}
+    \subitem {vDiv}, \hyperpage{32}
+    \subitem {vMul}, \hyperpage{32}
+    \subitem {vSub}, \hyperpage{33}
+  \item {MathHelp.java}, \hyperpage{80}
+  \item {Memory}, \hyperpage{33}
+    \subitem {getAbsPolar}, \hyperpage{35}
+    \subitem {getAmountOfSpeed}, \hyperpage{35}
+    \subitem {getBall}, \hyperpage{35}
+    \subitem {getBallPos}, \hyperpage{35}
+    \subitem {getClosestBoundary}, \hyperpage{35}
+    \subitem {getClosestFlag}, \hyperpage{36}
+    \subitem {getClosestLine}, \hyperpage{36}
+    \subitem {getClosestPenaltyFlag}, \hyperpage{36}
+    \subitem {getDirection}, \hyperpage{36}
+    \subitem {getDirectionOfSpeed}, \hyperpage{36}
+    \subitem {getEffort}, \hyperpage{36}
+    \subitem {getFlag}, \hyperpage{37}
+    \subitem {getFlagPos}, \hyperpage{37}
+    \subitem {getHeadDirection}, \hyperpage{37}
+    \subitem {getLine}, \hyperpage{37}
+    \subitem {getNullGoalAngle}, \hyperpage{37}
+    \subitem {getObj}, \hyperpage{38}
+    \subitem {getObjMemorySize}, \hyperpage{38}
+    \subitem {getOppGoal}, \hyperpage{38}
+    \subitem {getOppGoalPos}, \hyperpage{39}
+    \subitem {getOwnGoal}, \hyperpage{39}
+    \subitem {getOwnGoalPos}, \hyperpage{39}
+    \subitem {getPlayer}, \hyperpage{39}
+    \subitem {getPlayers}, \hyperpage{39}
+    \subitem {getPlayMode}, \hyperpage{40}
+    \subitem {getPosition}, \hyperpage{40}
+    \subitem {getRecovery}, \hyperpage{40}
+    \subitem {getStamina}, \hyperpage{40}
+    \subitem {isObjVisible}, \hyperpage{40}
+    \subitem {Memory}, \hyperpage{34}
+    \subitem {ObjMem}, \hyperpage{42}
+    \subitem {oppGoal}, \hyperpage{42}
+    \subitem {oppSide}, \hyperpage{42}
+    \subitem {playMode}, \hyperpage{42}
+    \subitem {SenMem}, \hyperpage{42}
+    \subitem {setCurrent}, \hyperpage{40}
+    \subitem {setField}, \hyperpage{40}
+    \subitem {setLocation}, \hyperpage{41}
+    \subitem {side}, \hyperpage{42}
+    \subitem {timeCheck}, \hyperpage{41}
+    \subitem {uNum}, \hyperpage{42}
+  \item {Memory.java}, \hyperpage{80}
+  \item {Mode}, \hyperpage{42}
+    \subitem {getModename}, \hyperpage{43}
+    \subitem {getTimeinmode}, \hyperpage{43}
+    \subitem {Mode}, \hyperpage{43}
+    \subitem {setModename}, \hyperpage{43}
+    \subitem {setTimeinmode}, \hyperpage{43}
+  \item {Mode.java}, \hyperpage{80}
   \item {move}
-    \subitem {Player}, \hyperpage{60}
-    \subitem {RoboClient}, \hyperpage{68}
+    \subitem {Player}, \hyperpage{62}
+    \subitem {RoboClient}, \hyperpage{71}
 
   \indexspace
 
   \item {norm}
-    \subitem {MathHelp}, \hyperpage{30}
+    \subitem {MathHelp}, \hyperpage{31}
 
   \indexspace
 
-  \item {ObjBall}, \hyperpage{42}
-  \item {ObjFlag}, \hyperpage{43}
-    \subitem {getFlagName}, \hyperpage{43}
-    \subitem {getFlagType}, \hyperpage{43}
-    \subitem {getX\_\discretionary {-}{}{}pos}, \hyperpage{44}
-    \subitem {getY\_\discretionary {-}{}{}pos}, \hyperpage{44}
-    \subitem {getYard}, \hyperpage{44}
-    \subitem {ObjFlag}, \hyperpage{43}
-    \subitem {setFlagName}, \hyperpage{44}
-    \subitem {setFlagType}, \hyperpage{44}
-    \subitem {setX\_\discretionary {-}{}{}pos}, \hyperpage{44}
-    \subitem {setY\_\discretionary {-}{}{}pos}, \hyperpage{44}
-    \subitem {setYard}, \hyperpage{45}
-  \item {ObjGoal}, \hyperpage{45}
-  \item {ObjInfo}, \hyperpage{45}
-    \subitem {getDirChng}, \hyperpage{46}
-    \subitem {getDirection}, \hyperpage{46}
-    \subitem {getDistance}, \hyperpage{47}
-    \subitem {getDistChng}, \hyperpage{47}
-    \subitem {getObjName}, \hyperpage{47}
-    \subitem {getSide}, \hyperpage{47}
-    \subitem {ObjInfo}, \hyperpage{46}
-    \subitem {setDirChng}, \hyperpage{47}
-    \subitem {setDirection}, \hyperpage{47}
-    \subitem {setDistance}, \hyperpage{47}
-    \subitem {setDistChng}, \hyperpage{47}
-    \subitem {setObjName}, \hyperpage{48}
-    \subitem {setSide}, \hyperpage{48}
-  \item {ObjInfo.java}, \hyperpage{77}
-  \item {ObjLine}, \hyperpage{48}
+  \item {ObjBall}, \hyperpage{44}
+  \item {ObjFlag}, \hyperpage{44}
+    \subitem {getFlagName}, \hyperpage{45}
+    \subitem {getFlagType}, \hyperpage{45}
+    \subitem {getX\_\discretionary {-}{}{}pos}, \hyperpage{45}
+    \subitem {getY\_\discretionary {-}{}{}pos}, \hyperpage{45}
+    \subitem {getYard}, \hyperpage{45}
+    \subitem {ObjFlag}, \hyperpage{45}
+    \subitem {setFlagName}, \hyperpage{46}
+    \subitem {setFlagType}, \hyperpage{46}
+    \subitem {setX\_\discretionary {-}{}{}pos}, \hyperpage{46}
+    \subitem {setY\_\discretionary {-}{}{}pos}, \hyperpage{46}
+    \subitem {setYard}, \hyperpage{46}
+  \item {ObjGoal}, \hyperpage{46}
+  \item {ObjInfo}, \hyperpage{47}
+    \subitem {getDirChng}, \hyperpage{48}
+    \subitem {getDirection}, \hyperpage{48}
+    \subitem {getDistance}, \hyperpage{48}
+    \subitem {getDistChng}, \hyperpage{48}
+    \subitem {getObjName}, \hyperpage{48}
+    \subitem {getSide}, \hyperpage{48}
+    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {setDirChng}, \hyperpage{49}
+    \subitem {setDirection}, \hyperpage{49}
+    \subitem {setDistance}, \hyperpage{49}
+    \subitem {setDistChng}, \hyperpage{49}
+    \subitem {setObjName}, \hyperpage{49}
+    \subitem {setSide}, \hyperpage{49}
+  \item {ObjInfo.java}, \hyperpage{81}
+  \item {ObjLine}, \hyperpage{49}
   \item {ObjMem}
-    \subitem {Memory}, \hyperpage{40}
-  \item {ObjMemory}, \hyperpage{48}
-    \subitem {addInfo}, \hyperpage{49}
-    \subitem {getObj}, \hyperpage{50}
-    \subitem {getSize}, \hyperpage{50}
-    \subitem {getTime}, \hyperpage{50}
-    \subitem {ObjMemory}, \hyperpage{49}
-    \subitem {setTime}, \hyperpage{51}
-  \item {ObjMemory.java}, \hyperpage{77}
-  \item {ObjPlayer}, \hyperpage{51}
-    \subitem {getBodyDir}, \hyperpage{52}
-    \subitem {getHeadDir}, \hyperpage{52}
-    \subitem {getTeam}, \hyperpage{52}
-    \subitem {getuNum}, \hyperpage{52}
-    \subitem {isGoalie}, \hyperpage{52}
-    \subitem {setBodyDir}, \hyperpage{52}
-    \subitem {setGoalie}, \hyperpage{53}
-    \subitem {setHeadDir}, \hyperpage{53}
-    \subitem {setTeam}, \hyperpage{53}
-    \subitem {setuNum}, \hyperpage{53}
+    \subitem {Memory}, \hyperpage{42}
+  \item {ObjMemory}, \hyperpage{50}
+    \subitem {addInfo}, \hyperpage{51}
+    \subitem {getObj}, \hyperpage{51}
+    \subitem {getSize}, \hyperpage{52}
+    \subitem {getTime}, \hyperpage{52}
+    \subitem {ObjMemory}, \hyperpage{50}
+    \subitem {setTime}, \hyperpage{52}
+  \item {ObjMemory.java}, \hyperpage{81}
+  \item {ObjPlayer}, \hyperpage{52}
+    \subitem {getBodyDir}, \hyperpage{53}
+    \subitem {getHeadDir}, \hyperpage{53}
+    \subitem {getTeam}, \hyperpage{53}
+    \subitem {getuNum}, \hyperpage{53}
+    \subitem {isGoalie}, \hyperpage{54}
+    \subitem {setBodyDir}, \hyperpage{54}
+    \subitem {setGoalie}, \hyperpage{54}
+    \subitem {setHeadDir}, \hyperpage{54}
+    \subitem {setTeam}, \hyperpage{54}
+    \subitem {setuNum}, \hyperpage{54}
   \item {oppGoal}
-    \subitem {Memory}, \hyperpage{40}
+    \subitem {Memory}, \hyperpage{42}
   \item {oppSide}
-    \subitem {Memory}, \hyperpage{40}
+    \subitem {Memory}, \hyperpage{42}
 
   \indexspace
 
   \item {Parse}
-    \subitem {Parser}, \hyperpage{54}
-  \item {Parser}, \hyperpage{53}
-    \subitem {initParse}, \hyperpage{54}
-    \subitem {input}, \hyperpage{55}
-    \subitem {Parse}, \hyperpage{54}
-    \subitem {Parser}, \hyperpage{54}
-  \item {Parser.java}, \hyperpage{78}
-  \item {Player}, \hyperpage{55}
-    \subitem {closestOpponent}, \hyperpage{57}
-    \subitem {dash}, \hyperpage{57, 58}
-    \subitem {getDirection}, \hyperpage{58}
-    \subitem {getMem}, \hyperpage{58}
-    \subitem {getObjInfo}, \hyperpage{58}
-    \subitem {getParser}, \hyperpage{58}
-    \subitem {getPosition}, \hyperpage{59}
-    \subitem {getRoboClient}, \hyperpage{59}
-    \subitem {getTime}, \hyperpage{59}
-    \subitem {initPlayer}, \hyperpage{59}
-    \subitem {kick}, \hyperpage{60}
-    \subitem {move}, \hyperpage{60}
-    \subitem {Player}, \hyperpage{57}
-    \subitem {receiveInput}, \hyperpage{61}
-    \subitem {say}, \hyperpage{61}
-    \subitem {setMem}, \hyperpage{61}
-    \subitem {setObjInfo}, \hyperpage{61}
-    \subitem {setParser}, \hyperpage{61}
-    \subitem {setRoboclient}, \hyperpage{62}
-    \subitem {setTime}, \hyperpage{62}
-    \subitem {turn}, \hyperpage{62}
-  \item {Player.java}, \hyperpage{78}
+    \subitem {Parser}, \hyperpage{55}
+  \item {Parser}, \hyperpage{54}
+    \subitem {initParse}, \hyperpage{55}
+    \subitem {input}, \hyperpage{56}
+    \subitem {Parse}, \hyperpage{55}
+    \subitem {Parser}, \hyperpage{55}
+  \item {Parser.java}, \hyperpage{82}
+  \item {passBall}
+    \subitem {Action}, \hyperpage{11}
+  \item {Player}, \hyperpage{56}
+    \subitem {closestOpponent}, \hyperpage{58}
+    \subitem {dash}, \hyperpage{58, 59}
+    \subitem {getDirection}, \hyperpage{59}
+    \subitem {getHome}, \hyperpage{59}
+    \subitem {getMem}, \hyperpage{59}
+    \subitem {getMemTime}, \hyperpage{60}
+    \subitem {getObjInfo}, \hyperpage{60}
+    \subitem {getParser}, \hyperpage{60}
+    \subitem {getPosition}, \hyperpage{60}
+    \subitem {getRoboClient}, \hyperpage{60}
+    \subitem {getTime}, \hyperpage{60}
+    \subitem {initPlayer}, \hyperpage{60, 61}
+    \subitem {kick}, \hyperpage{61}
+    \subitem {markOpponent}, \hyperpage{61}
+    \subitem {move}, \hyperpage{62}
+    \subitem {Player}, \hyperpage{58}
+    \subitem {receiveInput}, \hyperpage{62}
+    \subitem {recievePass}, \hyperpage{62}
+    \subitem {runDefense}, \hyperpage{63}
+    \subitem {say}, \hyperpage{63}
+    \subitem {setHome}, \hyperpage{63}
+    \subitem {setMem}, \hyperpage{63}
+    \subitem {setObjInfo}, \hyperpage{63}
+    \subitem {setParser}, \hyperpage{64}
+    \subitem {setRoboclient}, \hyperpage{64}
+    \subitem {setTime}, \hyperpage{64}
+    \subitem {turn}, \hyperpage{64}
+    \subitem {turn\_\discretionary {-}{}{}neck}, \hyperpage{64}
+  \item {Player.java}, \hyperpage{82}
   \item {playMode}
-    \subitem {Memory}, \hyperpage{40}
-  \item {Polar}, \hyperpage{62}
-    \subitem {Polar}, \hyperpage{63}
-  \item {Pos}, \hyperpage{64}
-    \subitem {Pos}, \hyperpage{64, 65}
-  \item {Pos.java}, \hyperpage{79}
+    \subitem {Memory}, \hyperpage{42}
+  \item {Polar}, \hyperpage{65}
+    \subitem {Polar}, \hyperpage{65}
+  \item {Pos}, \hyperpage{66}
+    \subitem {Pos}, \hyperpage{66, 67}
+  \item {Pos.java}, \hyperpage{83}
   \item {positionGoalie}
-    \subitem {Goalie}, \hyperpage{24}
+    \subitem {Goalie}, \hyperpage{25}
 
   \indexspace
 
   \item {receive}
-    \subitem {RoboClient}, \hyperpage{69}
+    \subitem {RoboClient}, \hyperpage{71}
   \item {receiveInput}
-    \subitem {Player}, \hyperpage{61}
-  \item {RoboClient}, \hyperpage{65}
-    \subitem {catchball}, \hyperpage{66}
-    \subitem {dash}, \hyperpage{66, 67}
-    \subitem {getTeam}, \hyperpage{67}
-    \subitem {init}, \hyperpage{67}
-    \subitem {initGoalie}, \hyperpage{68}
-    \subitem {kick}, \hyperpage{68}
-    \subitem {move}, \hyperpage{68}
-    \subitem {receive}, \hyperpage{69}
-    \subitem {RoboClient}, \hyperpage{66}
-    \subitem {say}, \hyperpage{69}
-    \subitem {send}, \hyperpage{70}
-    \subitem {setTeam}, \hyperpage{70}
-    \subitem {turn}, \hyperpage{70}
-  \item {RoboClient.java}, \hyperpage{79}
+    \subitem {Player}, \hyperpage{62}
+  \item {recievePass}
+    \subitem {Player}, \hyperpage{62}
+  \item {RoboClient}, \hyperpage{67}
+    \subitem {catchball}, \hyperpage{68}
+    \subitem {dash}, \hyperpage{69}
+    \subitem {getTeam}, \hyperpage{69}
+    \subitem {init}, \hyperpage{70}
+    \subitem {initGoalie}, \hyperpage{70}
+    \subitem {kick}, \hyperpage{70}
+    \subitem {move}, \hyperpage{71}
+    \subitem {receive}, \hyperpage{71}
+    \subitem {RoboClient}, \hyperpage{68}
+    \subitem {say}, \hyperpage{71}
+    \subitem {send}, \hyperpage{72}
+    \subitem {setTeam}, \hyperpage{72}
+    \subitem {turn}, \hyperpage{72}
+  \item {RoboClient.java}, \hyperpage{83}
   \item {run}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{25}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{26}
+  \item {runDefense}
+    \subitem {FullBack}, \hyperpage{17}
+    \subitem {Player}, \hyperpage{63}
 
   \indexspace
 
   \item {say}
-    \subitem {Player}, \hyperpage{61}
-    \subitem {RoboClient}, \hyperpage{69}
+    \subitem {Player}, \hyperpage{63}
+    \subitem {RoboClient}, \hyperpage{71}
   \item {send}
-    \subitem {RoboClient}, \hyperpage{70}
+    \subitem {RoboClient}, \hyperpage{72}
   \item {SenMem}
-    \subitem {Memory}, \hyperpage{40}
-  \item {SenseMemory}, \hyperpage{71}
-    \subitem {getTime}, \hyperpage{72}
-    \subitem {SenseMemory}, \hyperpage{71, 72}
-    \subitem {setTime}, \hyperpage{72}
-  \item {SenseMemory.java}, \hyperpage{80}
+    \subitem {Memory}, \hyperpage{42}
+  \item {SenseMemory}, \hyperpage{73}
+    \subitem {getTime}, \hyperpage{74}
+    \subitem {SenseMemory}, \hyperpage{74}
+    \subitem {setTime}, \hyperpage{74}
+  \item {SenseMemory.java}, \hyperpage{84}
   \item {setActions}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{27}
   \item {setBodyDir}
-    \subitem {ObjPlayer}, \hyperpage{52}
+    \subitem {ObjPlayer}, \hyperpage{54}
+  \item {setCurrent}
+    \subitem {Memory}, \hyperpage{40}
   \item {setDefensive}
     \subitem {Brain}, \hyperpage{13}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{27}
   \item {setDirChng}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setDirection}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setDistance}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setDistChng}
-    \subitem {ObjInfo}, \hyperpage{47}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setField}
-    \subitem {Memory}, \hyperpage{39}
+    \subitem {Memory}, \hyperpage{40}
   \item {setFlagName}
-    \subitem {ObjFlag}, \hyperpage{44}
+    \subitem {ObjFlag}, \hyperpage{46}
   \item {setFlagType}
-    \subitem {ObjFlag}, \hyperpage{44}
+    \subitem {ObjFlag}, \hyperpage{46}
   \item {setGoalie}
-    \subitem {ObjPlayer}, \hyperpage{53}
+    \subitem {ObjPlayer}, \hyperpage{54}
   \item {setHeadDir}
-    \subitem {ObjPlayer}, \hyperpage{53}
+    \subitem {ObjPlayer}, \hyperpage{54}
+  \item {setHome}
+    \subitem {Player}, \hyperpage{63}
   \item {setLocation}
-    \subitem {Memory}, \hyperpage{39}
+    \subitem {Memory}, \hyperpage{41}
   \item {setMarked\_\discretionary {-}{}{}team}
     \subitem {Brain}, \hyperpage{13}
-    \subitem {FullBackBrain}, \hyperpage{18}
-    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {FullBackBrain}, \hyperpage{19}
+    \subitem {GoalieBrain}, \hyperpage{27}
   \item {setMarked\_\discretionary {-}{}{}unum}
-    \subitem {Brain}, \hyperpage{13}
-    \subitem {FullBackBrain}, \hyperpage{19}
-    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {Brain}, \hyperpage{14}
+    \subitem {FullBackBrain}, \hyperpage{20}
+    \subitem {GoalieBrain}, \hyperpage{27}
   \item {setMem}
-    \subitem {Action}, \hyperpage{11}
-    \subitem {Player}, \hyperpage{61}
+    \subitem {Action}, \hyperpage{12}
+    \subitem {Player}, \hyperpage{63}
   \item {setModename}
-    \subitem {Mode}, \hyperpage{42}
+    \subitem {Mode}, \hyperpage{43}
   \item {setObjInfo}
-    \subitem {Player}, \hyperpage{61}
+    \subitem {Player}, \hyperpage{63}
   \item {setObjName}
-    \subitem {ObjInfo}, \hyperpage{48}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setOffensive}
-    \subitem {Brain}, \hyperpage{13}
-    \subitem {FullBackBrain}, \hyperpage{19}
-    \subitem {GoalieBrain}, \hyperpage{26}
+    \subitem {Brain}, \hyperpage{14}
+    \subitem {FullBackBrain}, \hyperpage{20}
+    \subitem {GoalieBrain}, \hyperpage{27}
   \item {setParser}
-    \subitem {Player}, \hyperpage{61}
+    \subitem {Player}, \hyperpage{64}
   \item {setRoboclient}
-    \subitem {Player}, \hyperpage{62}
+    \subitem {Player}, \hyperpage{64}
   \item {setSide}
-    \subitem {ObjInfo}, \hyperpage{48}
+    \subitem {ObjInfo}, \hyperpage{49}
   \item {setTeam}
-    \subitem {ObjPlayer}, \hyperpage{53}
-    \subitem {RoboClient}, \hyperpage{70}
+    \subitem {ObjPlayer}, \hyperpage{54}
+    \subitem {RoboClient}, \hyperpage{72}
   \item {setTime}
-    \subitem {ObjMemory}, \hyperpage{51}
-    \subitem {Player}, \hyperpage{62}
-    \subitem {SenseMemory}, \hyperpage{72}
+    \subitem {ObjMemory}, \hyperpage{52}
+    \subitem {Player}, \hyperpage{64}
+    \subitem {SenseMemory}, \hyperpage{74}
   \item {setTimeinmode}
-    \subitem {Mode}, \hyperpage{42}
+    \subitem {Mode}, \hyperpage{43}
   \item {setuNum}
-    \subitem {ObjPlayer}, \hyperpage{53}
+    \subitem {ObjPlayer}, \hyperpage{54}
   \item {setX\_\discretionary {-}{}{}pos}
-    \subitem {ObjFlag}, \hyperpage{44}
+    \subitem {ObjFlag}, \hyperpage{46}
   \item {setY\_\discretionary {-}{}{}pos}
-    \subitem {ObjFlag}, \hyperpage{44}
+    \subitem {ObjFlag}, \hyperpage{46}
   \item {setYard}
-    \subitem {ObjFlag}, \hyperpage{45}
+    \subitem {ObjFlag}, \hyperpage{46}
   \item {side}
-    \subitem {Memory}, \hyperpage{41}
+    \subitem {Memory}, \hyperpage{42}
 
   \indexspace
 
   \item {timeCheck}
-    \subitem {Memory}, \hyperpage{40}
+    \subitem {Memory}, \hyperpage{41}
   \item {turn}
-    \subitem {Player}, \hyperpage{62}
-    \subitem {RoboClient}, \hyperpage{70}
+    \subitem {Player}, \hyperpage{64}
+    \subitem {RoboClient}, \hyperpage{72}
+  \item {turn\_\discretionary {-}{}{}neck}
+    \subitem {Player}, \hyperpage{64}
 
   \indexspace
 
   \item {uNum}
-    \subitem {Memory}, \hyperpage{41}
+    \subitem {Memory}, \hyperpage{42}
 
   \indexspace
 
   \item {vAdd}
-    \subitem {MathHelp}, \hyperpage{31}
-  \item {vDiv}
-    \subitem {MathHelp}, \hyperpage{31}
-  \item {vMul}
-    \subitem {MathHelp}, \hyperpage{31}
-  \item {vSub}
     \subitem {MathHelp}, \hyperpage{32}
+  \item {vDiv}
+    \subitem {MathHelp}, \hyperpage{32}
+  \item {vMul}
+    \subitem {MathHelp}, \hyperpage{32}
+  \item {vSub}
+    \subitem {MathHelp}, \hyperpage{33}
 
 \end{theindex}

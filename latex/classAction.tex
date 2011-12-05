@@ -11,17 +11,11 @@
 \item 
 void \hyperlink{classAction_a4f775977b788d1379b9f6c45bb37c01f}{setMem} (\hyperlink{classMemory}{Memory} mem)
 \item 
-\hypertarget{classAction_ad68c5200162e4023fb88488e340ea454}{
-double {\bfseries getTurn} (\hyperlink{classPolar}{Polar} go)}
-\label{classAction_ad68c5200162e4023fb88488e340ea454}
-
+double \hyperlink{classAction_ad68c5200162e4023fb88488e340ea454}{getTurn} (\hyperlink{classPolar}{Polar} go)
 \item 
 void \hyperlink{classAction_a6b7099c20c56fc3dd72ce4c8ba4f3870}{gotoPoint} (\hyperlink{classPolar}{Polar} go)
 \item 
-\hypertarget{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}{
-void {\bfseries gotoSidePoint} (\hyperlink{classPos}{Pos} p)}
-\label{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}
-
+void \hyperlink{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}{gotoSidePoint} (\hyperlink{classPos}{Pos} p)
 \item 
 void \hyperlink{classAction_a5f7eb7be5b6b18854936367833044a6e}{gotoPoint} (\hyperlink{classPos}{Pos} p)
 \item 
@@ -36,10 +30,7 @@ void {\bfseries kickOff} ()  throws UnknownHostException, InterruptedException }
 \item 
 \hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classAction_a63d035f7132842d9720b88247d525112}{closestPlayer} ()  throws UnknownHostException, InterruptedException 
 \item 
-\hypertarget{classAction_a55e146013466e96013a196d9bd787410}{
-void {\bfseries passBall} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classObjPlayer}{ObjPlayer} p)}
-\label{classAction_a55e146013466e96013a196d9bd787410}
-
+void \hyperlink{classAction_a55e146013466e96013a196d9bd787410}{passBall} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classObjPlayer}{ObjPlayer} p)
 \item 
 void \hyperlink{classAction_a9e883bc90ec59c4eeb5b0b3dd022b33a}{FullBack\_\-findBall} ()  throws UnknownHostException, InterruptedException 
 \item 
@@ -200,6 +191,25 @@ A method to find the ball on the field for FullBacks. If it's not in view, the \
 {\em InterruptedException} & \\
 \hline
 \end{DoxyExceptions}
+\hypertarget{classAction_ad68c5200162e4023fb88488e340ea454}{
+\index{Action@{Action}!getTurn@{getTurn}}
+\index{getTurn@{getTurn}!Action@{Action}}
+\subsubsection[{getTurn}]{\setlength{\rightskip}{0pt plus 5cm}double Action::getTurn (
+\begin{DoxyParamCaption}
+\item[{{\bf Polar}}]{go}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_ad68c5200162e4023fb88488e340ea454}
+Gets the actual angle of a turn
+
+
+\begin{DoxyParams}{Parameters}
+{\em go} & polar of angle to turn to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the double of the correct turn moment 
+\end{DoxyReturn}
 \hypertarget{classAction_abf9085a62947a12cc2e154396177ec90}{
 \index{Action@{Action}!goHome@{goHome}}
 \index{goHome@{goHome}!Action@{Action}}
@@ -264,6 +274,25 @@ The player must have a valid position on the field passed in
 \begin{DoxyPostcond}{Postcondition}
 If the player is not facing the direction of the final position, s/he will first turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. 
 \end{DoxyPostcond}
+\hypertarget{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}{
+\index{Action@{Action}!gotoSidePoint@{gotoSidePoint}}
+\index{gotoSidePoint@{gotoSidePoint}!Action@{Action}}
+\subsubsection[{gotoSidePoint}]{\setlength{\rightskip}{0pt plus 5cm}void Action::gotoSidePoint (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}
+A method to dash sideways or backwards
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the cartesian point to go to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+player dashes sideways or backwards while facing forward 
+\end{DoxyPostcond}
 \hypertarget{classAction_ad7308d47f6303c20834dda533d4fe793}{
 \index{Action@{Action}!kickToPoint@{kickToPoint}}
 \index{kickToPoint@{kickToPoint}!Action@{Action}}
@@ -306,6 +335,29 @@ A \hyperlink{classPos}{Pos} wrapper for the kickToPoint
 {\em p} & the \hyperlink{classPos}{Pos} of the coordinate to kick the ball to \\
 \hline
 \end{DoxyParams}
+\hypertarget{classAction_a55e146013466e96013a196d9bd787410}{
+\index{Action@{Action}!passBall@{passBall}}
+\index{passBall@{passBall}!Action@{Action}}
+\subsubsection[{passBall}]{\setlength{\rightskip}{0pt plus 5cm}void Action::passBall (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball, }
+\item[{{\bf ObjPlayer}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a55e146013466e96013a196d9bd787410}
+Passes the ball to the nearest \hyperlink{classForward}{Forward} (currently \hyperlink{classPlayer}{Player}). 
+\begin{DoxyParams}{Parameters}
+{\em ball} & An \hyperlink{classObjBall}{ObjBall} for the ball in play. \\
+\hline
+{\em fwd} & The player to pass the ball to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The \hyperlink{classFullBack}{FullBack} has control of the ball. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball has been kicked to the forward. 
+\end{DoxyPostcond}
 \hypertarget{classAction_a4f775977b788d1379b9f6c45bb37c01f}{
 \index{Action@{Action}!setMem@{setMem}}
 \index{setMem@{setMem}!Action@{Action}}

@@ -17,10 +17,7 @@ boolean \hyperlink{classMemory_a3229c1214b10c55d92bfea56231c463e}{isObjVisible} 
 \item 
 \hyperlink{classObjBall}{ObjBall} \hyperlink{classMemory_a22a84014b7be5f41133a2b9dc1239d77}{getBall} ()
 \item 
-\hypertarget{classMemory_a96efccb45ccabb805f763051d00a3435}{
-\hyperlink{classPos}{Pos} {\bfseries getBallPos} (\hyperlink{classObjBall}{ObjBall} b)}
-\label{classMemory_a96efccb45ccabb805f763051d00a3435}
-
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_a96efccb45ccabb805f763051d00a3435}{getBallPos} (\hyperlink{classObjBall}{ObjBall} b)
 \item 
 \hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_afb25c0954e27945a3710e6c7aa517061}{getFlag} (String name)
 \item 
@@ -49,6 +46,8 @@ void {\bfseries getPlayerArrays} ()}
 \item 
 double \hyperlink{classMemory_a51dd1c10ac4f0c6f70a40a7c302c9b10}{getDirection} ()
 \item 
+\hyperlink{classPolar}{Polar} \hyperlink{classMemory_a1a1d4ac309db69fbe854e13508a8205a}{getAbsPolar} (\hyperlink{classPos}{Pos} pt)
+\item 
 void \hyperlink{classMemory_a0f334995214212333a179c89662f53e1}{setLocation} (double x, double y)
 \item 
 \hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_a1813a252e55fd6d40821c8878caa25ca}{getClosestFlag} ()
@@ -61,10 +60,7 @@ void \hyperlink{classMemory_a0f334995214212333a179c89662f53e1}{setLocation} (dou
 \item 
 \hyperlink{classPos}{Pos} \hyperlink{classMemory_ada2d3753c0323c6bc2a546792b8a58b2}{getPosition} ()
 \item 
-\hypertarget{classMemory_a007baac0372d437de2f592fc5244e4e5}{
-void {\bfseries setCurrent} ()}
-\label{classMemory_a007baac0372d437de2f592fc5244e4e5}
-
+void \hyperlink{classMemory_a007baac0372d437de2f592fc5244e4e5}{setCurrent} ()
 \item 
 double \hyperlink{classMemory_a7a98332fa2d82e5108108c1240bf0afa}{getNullGoalAngle} ()
 \item 
@@ -134,14 +130,6 @@ int \hyperlink{classMemory_a62572ea10a84193a66c33ecd43c252f7}{uNum}
 \item 
 \hyperlink{classPos}{Pos} \hyperlink{classMemory_afb4aa82077de0c1642e4d3dbf0619615}{oppGoal}
 \end{DoxyCompactItemize}
-\subsection*{Package Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{classMemory_a1a1d4ac309db69fbe854e13508a8205a}{
-\hyperlink{classPolar}{Polar} {\bfseries getAbsPolar} (\hyperlink{classPos}{Pos} pt)}
-\label{classMemory_a1a1d4ac309db69fbe854e13508a8205a}
-
-\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -159,6 +147,23 @@ The default constructor for the \hyperlink{classMemory}{Memory}.
 This creates new, empty ArrayList for the \hyperlink{classObjMemory}{ObjMemory} and \hyperlink{classSenseMemory}{SenseMemory}, initiates the time at 0 for both, and creates an \hyperlink{classObjMemory}{ObjMemory} and \hyperlink{classSenseMemory}{SenseMemory} with the new ArrayLists and time as parameters. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMemory_a1a1d4ac309db69fbe854e13508a8205a}{
+\index{Memory@{Memory}!getAbsPolar@{getAbsPolar}}
+\index{getAbsPolar@{getAbsPolar}!Memory@{Memory}}
+\subsubsection[{getAbsPolar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Polar} Memory::getAbsPolar (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{pt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a1a1d4ac309db69fbe854e13508a8205a}
+A method to convert a cartesian coordinate to polar with the global angle 
+\begin{DoxyParams}{Parameters}
+{\em pt} & the cartesian coordinate to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a polar with the global angle 
+\end{DoxyReturn}
 \hypertarget{classMemory_a6d95389ac90eb7682ddf8c9128118f48}{
 \index{Memory@{Memory}!getAmountOfSpeed@{getAmountOfSpeed}}
 \index{getAmountOfSpeed@{getAmountOfSpeed}!Memory@{Memory}}
@@ -187,6 +192,25 @@ If the ball is in the \hyperlink{classMemory}{Memory}, it will be returned. Othe
 \end{DoxyPostcond}
 \begin{DoxyReturn}{Returns}
 \hyperlink{classObjBall}{ObjBall} containing the ball 
+\end{DoxyReturn}
+\hypertarget{classMemory_a96efccb45ccabb805f763051d00a3435}{
+\index{Memory@{Memory}!getBallPos@{getBallPos}}
+\index{getBallPos@{getBallPos}!Memory@{Memory}}
+\subsubsection[{getBallPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Memory::getBallPos (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a96efccb45ccabb805f763051d00a3435}
+Gets the cartesian coordiantes of the ball
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & the ball \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cartesian coordiantes of the ball 
 \end{DoxyReturn}
 \hypertarget{classMemory_af018362439405ab0d4aee31d8f8ca971}{
 \index{Memory@{Memory}!getClosestBoundary@{getClosestBoundary}}
@@ -553,7 +577,16 @@ Is this \hyperlink{classObjInfo}{ObjInfo} visible?
 \begin{DoxyReturn}{Returns}
 true if the ball is in the \hyperlink{classObjMemory}{ObjMemory}, false if it is not or if the the \hyperlink{classObjMemory}{ObjMemory} is empty 
 \end{DoxyReturn}
-\hypertarget{classMemory_a074cc68eab666eb5c8b2b63c8e2065de}{
+\hypertarget{classMemory_a007baac0372d437de2f592fc5244e4e5}{
+\index{Memory@{Memory}!setCurrent@{setCurrent}}
+\index{setCurrent@{setCurrent}!Memory@{Memory}}
+\subsubsection[{setCurrent}]{\setlength{\rightskip}{0pt plus 5cm}void Memory::setCurrent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a007baac0372d437de2f592fc5244e4e5}
+Sets the current position of the player \hypertarget{classMemory_a074cc68eab666eb5c8b2b63c8e2065de}{
 \index{Memory@{Memory}!setField@{setField}}
 \index{setField@{setField}!Memory@{Memory}}
 \subsubsection[{setField}]{\setlength{\rightskip}{0pt plus 5cm}void Memory::setField (

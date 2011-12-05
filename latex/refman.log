@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.18)  4 DEC 2011 23:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.18)  5 DEC 2011 00:02
 entering extended mode
  %&-line parsing enabled.
 **refman.tex
@@ -988,118 +988,141 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 [7]
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 93.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 93.
+(Font)              scaled to size 8.99994pt on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 84.
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
-(Font)              using `OT1/pcr/m/n' instead on input line 93.
+(Font)              using `OT1/pcr/m/n' instead on input line 84.
 
 LaTeX Font Info:    Font shape `OT1/phv/bc/it' in size <10> not available
-(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 103.
-
+(Font)              Font shape `OT1/phv/bc/sl' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 103.
+(Font)              scaled to size 8.99994pt on input line 94.
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 108--113
+Overfull \hbox (21.88861pt too wide) in alignment at lines 99--104
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 113
+Underfull \vbox (badness 10000) detected at line 104
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 139--144
+Overfull \hbox (21.89388pt too wide) in alignment at lines 130--135
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 144
+Underfull \vbox (badness 10000) detected at line 135
  []
 
 [8]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 157--160
+Overfull \hbox (21.88861pt too wide) in alignment at lines 148--151
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 160
+Underfull \vbox (badness 10000) detected at line 151
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 179--184
+Overfull \hbox (21.89388pt too wide) in alignment at lines 170--175
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 184
+Underfull \vbox (badness 10000) detected at line 175
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 197--202
+Overfull \hbox (21.89388pt too wide) in alignment at lines 188--193
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 202
+Underfull \vbox (badness 10000) detected at line 193
  []
 
 [9]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 235--238
+Overfull \hbox (21.88861pt too wide) in alignment at lines 206--209
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 238
+Underfull \vbox (badness 10000) detected at line 209
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 257--260
+Overfull \hbox (21.88861pt too wide) in alignment at lines 245--248
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 260
+Underfull \vbox (badness 10000) detected at line 248
  []
 
 
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
- [10]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 280--285
+Overfull \hbox (21.88861pt too wide) in alignment at lines 267--270
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 285
+Underfull \vbox (badness 10000) detected at line 270
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 303--308
+Overfull \vbox (9.26962pt too high) has occurred while \output is active []
+
+
+[10]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 289--292
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 308
+Underfull \vbox (badness 10000) detected at line 292
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 319--322
+Overfull \hbox (21.88861pt too wide) in alignment at lines 309--314
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 322
+Underfull \vbox (badness 10000) detected at line 314
  []
 
-) (./classBrain.tex
-Underfull \vbox (badness 1939) has occurred while \output is active []
 
- [11]
-[12]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 332--337
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 337
+ []
+
+[11]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 349--354
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 354
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 371--374
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 374
+ []
+
+) (./classBrain.tex [12] [13]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 125--128
  [] [] 
  []
@@ -1117,7 +1140,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 139--142
 Underfull \vbox (badness 10000) detected at line 142
  []
 
-) (./classField.tex [13]
+) (./classField.tex [14]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 39--42
  [] [] 
  []
@@ -1126,43 +1149,44 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 39--42
 Underfull \vbox (badness 10000) detected at line 42
  []
 
-) (./classForward.tex <classForward.pdf, id=2072, 501.875pt x 590.44589pt>
+) (./classForward.tex <classForward.pdf, id=2156, 501.875pt x 590.44589pt>
 File: classForward.pdf Graphic file (type pdf)
 
-<use classForward.pdf> [14 <./classForward.pdf>]) (./classFullBack.tex
-<classFullBack.pdf, id=2088, 501.875pt x 581.88394pt>
+<use classForward.pdf>) (./classFullBack.tex
+<classFullBack.pdf, id=2162, 501.875pt x 581.88394pt>
 File: classFullBack.pdf Graphic file (type pdf)
  <use classFullBack.pdf>
-Overfull \hbox (21.88861pt too wide) in alignment at lines 59--70
+[15 <./classForward.pdf>]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 56--67
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 70
+Underfull \vbox (badness 10000) detected at line 67
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 78--81
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 81
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./classFullBack.pdf>]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 81--84
+ [16 <./classFullBack.pdf>]
+Overfull \hbox (21.89388pt too wide) in alignment at lines 101--106
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 84
+Underfull \vbox (badness 10000) detected at line 106
  []
 
-
-Overfull \hbox (21.89388pt too wide) in alignment at lines 104--109
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 109
- []
-
-[16]) (./classFullBackBrain.tex
+[17]) (./classFullBackBrain.tex
 Overfull \hbox (21.88861pt too wide) in alignment at lines 72--75
  [] [] 
  []
@@ -1172,9 +1196,10 @@ Underfull \vbox (badness 10000) detected at line 75
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (19.36032pt too high) has occurred while \output is active []
 
- [17]
+
+[18]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 151--154
  [] [] 
  []
@@ -1183,7 +1208,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 151--154
 Underfull \vbox (badness 10000) detected at line 154
  []
 
-[18]
+[19]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 174--177
  [] [] 
  []
@@ -1202,10 +1227,10 @@ Underfull \vbox (badness 10000) detected at line 191
  []
 
 ) (./classGame.tex) (./classGoalie.tex
-<classGoalie.pdf, id=2187, 501.875pt x 704.38156pt>
+<classGoalie.pdf, id=2274, 501.875pt x 704.38156pt>
 File: classGoalie.pdf Graphic file (type pdf)
  <use classGoalie.pdf>
-[19] [20 <./classGoalie.pdf>]
+[20] [21 <./classGoalie.pdf>]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 85--88
  [] [] 
  []
@@ -1214,7 +1239,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 85--88
 Underfull \vbox (badness 10000) detected at line 88
  []
 
-[21]
+[22]
 Overfull \hbox (21.89388pt too wide) in alignment at lines 147--152
  [] [] 
  []
@@ -1241,7 +1266,7 @@ Overfull \hbox (21.89388pt too wide) in alignment at lines 168--173
 Underfull \vbox (badness 10000) detected at line 173
  []
 
-[22]
+[23]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 202--205
  [] [] 
  []
@@ -1250,7 +1275,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 202--205
 Underfull \vbox (badness 10000) detected at line 205
  []
 
-[23]
+[24]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 259--262
  [] [] 
  []
@@ -1277,7 +1302,7 @@ Overfull \hbox (21.89388pt too wide) in alignment at lines 278--281
 Underfull \vbox (badness 10000) detected at line 281
  []
 
-) (./classGoalieBrain.tex [24]
+) (./classGoalieBrain.tex [25]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 72--75
  [] [] 
  []
@@ -1286,7 +1311,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 72--75
 Underfull \vbox (badness 10000) detected at line 75
  []
 
-[25]
+[26]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 151--154
  [] [] 
  []
@@ -1313,7 +1338,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 188--191
 Underfull \vbox (badness 10000) detected at line 191
  []
 
-) (./classMathHelp.tex [26]
+) (./classMathHelp.tex [27]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 58--63
  [] [] 
  []
@@ -1334,7 +1359,7 @@ Underfull \vbox (badness 10000) detected at line 90
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [28]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 110--121
  [] [] 
  []
@@ -1364,7 +1389,7 @@ Underfull \vbox (badness 10000) detected at line 171
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
+ [29]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 185--188
  [] [] 
  []
@@ -1391,7 +1416,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 226--231
 Underfull \vbox (badness 10000) detected at line 231
  []
 
-[29]
+[30]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 249--252
  [] [] 
  []
@@ -1430,7 +1455,7 @@ Underfull \vbox (badness 10000) detected at line 308
 
 Underfull \vbox (badness 2617) has occurred while \output is active []
 
- [30]
+ [31]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 323--328
  [] [] 
  []
@@ -1469,7 +1494,7 @@ Underfull \vbox (badness 10000) detected at line 390
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [32]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 407--412
  [] [] 
  []
@@ -1478,68 +1503,87 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 407--412
 Underfull \vbox (badness 10000) detected at line 412
  []
 
-) (./classMemory.tex [32] [33] [34] [35]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 313--316
+) (./classMemory.tex [33] [34]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 160--163
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 316
+Underfull \vbox (badness 10000) detected at line 163
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 371--374
+Overfull \hbox (21.88861pt too wide) in alignment at lines 208--211
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 374
+Underfull \vbox (badness 10000) detected at line 211
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-[37] [38]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 549--552
+ [35]
+[36]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 337--340
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 552
+Underfull \vbox (badness 10000) detected at line 340
  []
 
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 568--571
+[37]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 395--398
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 571
+Underfull \vbox (badness 10000) detected at line 398
  []
 
-
-Underfull \vbox (badness 1888) has occurred while \output is active []
-
- [39]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 591--596
+[38] [39]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 573--576
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 596
+Underfull \vbox (badness 10000) detected at line 576
  []
 
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 609--612
+[40]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 601--604
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 612
+Underfull \vbox (badness 10000) detected at line 604
  []
 
-[40]) (./classMode.tex
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 624--629
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 629
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 642--645
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 645
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41])
+(./classMode.tex [42]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 35--40
  [] [] 
  []
@@ -1549,9 +1593,6 @@ Underfull \vbox (badness 10000) detected at line 40
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 78--81
  [] [] 
  []
@@ -1569,21 +1610,25 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 92--95
 Underfull \vbox (badness 10000) detected at line 95
  []
 
-) (./classObjBall.tex <classObjBall.pdf, id=2707, 501.875pt x 658.19902pt>
+) (./classObjBall.tex <classObjBall.pdf, id=2797, 501.875pt x 658.19902pt>
 File: classObjBall.pdf Graphic file (type pdf)
 
-<use classObjBall.pdf> [42 <./classObjBall.pdf>]) (./classObjFlag.tex
-<classObjFlag.pdf, id=2722, 501.875pt x 617.68768pt>
-File: classObjFlag.pdf Graphic file (type pdf)
- <use classObjFlag.pdf>
-[43 <./classObjFlag.pdf>] [44]) (./classObjGoal.tex
-<classObjGoal.pdf, id=2760, 501.875pt x 608.33272pt>
-File: classObjGoal.pdf Graphic file (type pdf)
- <use classObjGoal.pdf>)
-(./classObjInfo.tex <classObjInfo.pdf, id=2763, 501.875pt x 104.28963pt>
-File: classObjInfo.pdf Graphic file (type pdf)
+<use classObjBall.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use classObjInfo.pdf> [45 <./classObjGoal.pdf> <./classObjInfo.pdf>]
+ [43])
+(./classObjFlag.tex <classObjFlag.pdf, id=2808, 501.875pt x 617.68768pt>
+File: classObjFlag.pdf Graphic file (type pdf)
+
+<use classObjFlag.pdf> [44 <./classObjBall.pdf> <./classObjFlag.pdf>] [45])
+(./classObjGoal.tex <classObjGoal.pdf, id=2852, 501.875pt x 608.33272pt>
+File: classObjGoal.pdf Graphic file (type pdf)
+
+<use classObjGoal.pdf> [46 <./classObjGoal.pdf>]) (./classObjInfo.tex
+<classObjInfo.pdf, id=2864, 501.875pt x 104.28963pt>
+File: classObjInfo.pdf Graphic file (type pdf)
+ <use classObjInfo.pdf>
+[47 <./classObjInfo.pdf>]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 71--74
  [] [] 
  []
@@ -1592,14 +1637,10 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 71--74
 Underfull \vbox (badness 10000) detected at line 74
  []
 
-
-Underfull \vbox (badness 2253) has occurred while \output is active []
-
- [46]
-[47]) (./classObjLine.tex <classObjLine.pdf, id=2823, 501.875pt x 627.34375pt>
+[48]) (./classObjLine.tex <classObjLine.pdf, id=2914, 501.875pt x 627.34375pt>
 File: classObjLine.pdf Graphic file (type pdf)
 
-<use classObjLine.pdf>) (./classObjMemory.tex [48 <./classObjLine.pdf>]
+<use classObjLine.pdf> [49 <./classObjLine.pdf>]) (./classObjMemory.tex
 Overfull \hbox (21.88861pt too wide) in alignment at lines 62--67
  [] [] 
  []
@@ -1609,6 +1650,10 @@ Underfull \vbox (badness 10000) detected at line 67
  []
 
 
+Overfull \vbox (16.58115pt too high) has occurred while \output is active []
+
+
+[50]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 89--92
  [] [] 
  []
@@ -1617,7 +1662,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 89--92
 Underfull \vbox (badness 10000) detected at line 92
  []
 
-[49]
+
 Overfull \hbox (21.88861pt too wide) in alignment at lines 111--114
  [] [] 
  []
@@ -1626,7 +1671,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 111--114
 Underfull \vbox (badness 10000) detected at line 114
  []
 
-
+[51]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 133--136
  [] [] 
  []
@@ -1635,7 +1680,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 133--136
 Underfull \vbox (badness 10000) detected at line 136
  []
 
-[50]
+
 Overfull \hbox (21.88861pt too wide) in alignment at lines 173--176
  [] [] 
  []
@@ -1644,11 +1689,11 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 173--176
 Underfull \vbox (badness 10000) detected at line 176
  []
 
-) (./classObjPlayer.tex <classObjPlayer.pdf, id=2891, 501.875pt x 521.42802pt>
+) (./classObjPlayer.tex <classObjPlayer.pdf, id=2982, 501.875pt x 521.42802pt>
 File: classObjPlayer.pdf Graphic file (type pdf)
 
-<use classObjPlayer.pdf> [51 <./classObjPlayer.pdf>] [52]) (./classParser.tex
-[53]
+<use classObjPlayer.pdf> [52 <./classObjPlayer.pdf>] [53]) (./classParser.tex
+[54]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 50--55
  [] [] 
  []
@@ -1666,194 +1711,211 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 75--80
 Underfull \vbox (badness 10000) detected at line 80
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54])
-(./classPlayer.tex <classPlayer.pdf, id=2958, 501.875pt x 193.96466pt>
+[55]) (./classPlayer.tex <classPlayer.pdf, id=3049, 501.875pt x 193.96466pt>
 File: classPlayer.pdf Graphic file (type pdf)
 
-<use classPlayer.pdf> [55 <./classPlayer.pdf>]
-Overfull \hbox (1.00662pt too wide) in paragraph at lines 144--145
+<use classPlayer.pdf> [56 <./classPlayer.pdf>]
+Overfull \hbox (2.71774pt too wide) in paragraph at lines 77--79
+[]\T1/ptm/m/n/10 void [][]turn_-neck[][] (dou-ble mo-ment) throws Un-known-Hos-
+tEx-cep-tion, In-ter-rupt-edEx-
+ []
+
+
+Overfull \hbox (1.00662pt too wide) in paragraph at lines 123--124
 \T1/ptm/m/n/10 The [][]Player[][] class de-fines all ob-jects and meth-ods used
  for the [][]Player[][] within the RoboCup
  []
 
-[56]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 161--174
+[57]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 140--153
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 174
+Underfull \vbox (badness 10000) detected at line 153
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 197--202
+Overfull \hbox (21.89388pt too wide) in alignment at lines 176--181
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 202
- []
-
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 213--216
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 216
- []
-
-
-Overfull \hbox (21.89388pt too wide) in alignment at lines 218--221
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 221
+Underfull \vbox (badness 10000) detected at line 181
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 239--244
+ [58]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 192--195
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 244
+Underfull \vbox (badness 10000) detected at line 195
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 246--249
+Overfull \hbox (21.89388pt too wide) in alignment at lines 197--200
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 249
+Underfull \vbox (badness 10000) detected at line 200
  []
 
-[58] [59]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 381--386
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 218--223
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 386
+Underfull \vbox (badness 10000) detected at line 223
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 388--391
+Overfull \hbox (21.89388pt too wide) in alignment at lines 225--228
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 391
+Underfull \vbox (badness 10000) detected at line 228
  []
 
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 409--414
+[59] [60]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 384--389
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 414
+Underfull \vbox (badness 10000) detected at line 389
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 416--419
+Overfull \hbox (21.89388pt too wide) in alignment at lines 391--394
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 419
- []
-
-[60]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 451--454
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 454
- []
-
-
-Overfull \hbox (21.89388pt too wide) in alignment at lines 456--459
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 459
- []
-
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 476--479
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 479
- []
-
-
-Overfull \hbox (21.88861pt too wide) in alignment at lines 490--493
- [] [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 493
+Underfull \vbox (badness 10000) detected at line 394
  []
 
 [61]
-Overfull \hbox (21.88861pt too wide) in alignment at lines 504--507
+Overfull \hbox (21.88861pt too wide) in alignment at lines 422--427
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 507
+Underfull \vbox (badness 10000) detected at line 427
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 518--521
+Overfull \hbox (21.89388pt too wide) in alignment at lines 429--432
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 521
+Underfull \vbox (badness 10000) detected at line 432
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 532--535
+Overfull \hbox (21.88861pt too wide) in alignment at lines 465--470
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 535
+Underfull \vbox (badness 10000) detected at line 470
  []
 
 
-Overfull \hbox (21.88861pt too wide) in alignment at lines 546--549
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 500--503
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 549
+Underfull \vbox (badness 10000) detected at line 503
  []
 
 
-Overfull \hbox (21.89388pt too wide) in alignment at lines 551--554
+Overfull \hbox (21.89388pt too wide) in alignment at lines 505--508
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 554
+Underfull \vbox (badness 10000) detected at line 508
  []
 
-) (./classPolar.tex [62]
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 534--537
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 537
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Overfull \hbox (21.88861pt too wide) in alignment at lines 548--551
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 551
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 562--565
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 565
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 576--579
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 579
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 590--593
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 593
+ []
+
+
+Overfull \hbox (21.88861pt too wide) in alignment at lines 604--607
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+
+Overfull \hbox (21.89388pt too wide) in alignment at lines 609--612
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 612
+ []
+
+[64]) (./classPolar.tex [65]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 79--84
  [] [] 
  []
@@ -1862,11 +1924,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 79--84
 Underfull \vbox (badness 10000) detected at line 84
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [63])
-(./classPos.tex
+) (./classPos.tex [66]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 78--85
  [] [] 
  []
@@ -1876,9 +1934,6 @@ Underfull \vbox (badness 10000) detected at line 85
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 101--106
  [] [] 
  []
@@ -1887,7 +1942,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 101--106
 Underfull \vbox (badness 10000) detected at line 106
  []
 
-) (./classRoboClient.tex [65]
+) (./classRoboClient.tex [67]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 80--83
  [] [] 
  []
@@ -1914,7 +1969,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 111--114
 Underfull \vbox (badness 10000) detected at line 114
  []
 
-
+[68]
 Overfull \hbox (21.89388pt too wide) in alignment at lines 122--125
  [] [] 
  []
@@ -1923,7 +1978,7 @@ Overfull \hbox (21.89388pt too wide) in alignment at lines 122--125
 Underfull \vbox (badness 10000) detected at line 125
  []
 
-[66]
+
 Overfull \hbox (21.88861pt too wide) in alignment at lines 136--139
  [] [] 
  []
@@ -1941,7 +1996,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 160--165
 Underfull \vbox (badness 10000) detected at line 165
  []
 
-[67]
+[69]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 214--217
  [] [] 
  []
@@ -1960,9 +2015,9 @@ Underfull \vbox (badness 10000) detected at line 243
  []
 
 
-Underfull \vbox (badness 7558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
+ [70]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 264--269
  [] [] 
  []
@@ -1971,7 +2026,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 264--269
 Underfull \vbox (badness 10000) detected at line 269
  []
 
-
+[71]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 307--310
  [] [] 
  []
@@ -1981,9 +2036,6 @@ Underfull \vbox (badness 10000) detected at line 310
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [69]
 Overfull \hbox (21.89388pt too wide) in alignment at lines 318--321
  [] [] 
  []
@@ -2011,6 +2063,9 @@ Underfull \vbox (badness 10000) detected at line 358
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 369--372
  [] [] 
  []
@@ -2019,11 +2074,7 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 369--372
 Underfull \vbox (badness 10000) detected at line 372
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [70])
-(./classSenseMemory.tex [71]
+) (./classSenseMemory.tex [73]
 Overfull \hbox (21.88861pt too wide) in alignment at lines 83--86
  [] [] 
  []
@@ -2050,31 +2101,37 @@ Overfull \hbox (21.88861pt too wide) in alignment at lines 129--132
 Underfull \vbox (badness 10000) detected at line 132
  []
 
-) [72]
+
+Overfull \vbox (0.57623pt too high) has occurred while \output is active []
+
+
+[74]) [75] [76
+
+]
 Chapter 5.
-(./Action_8java.tex) (./Brain_8java.tex) (./Field_8java.tex [73
+(./Action_8java.tex) (./Brain_8java.tex) (./Field_8java.tex [77])
+(./Forward_8java.tex) (./FullBack_8java.tex [78]) (./Game_8java.tex)
+(./Goalie_8java.tex) (./MathHelp_8java.tex [79]) (./Memory_8java.tex)
+(./Mode_8java.tex [80]) (./ObjInfo_8java.tex) (./ObjMemory_8java.tex [81])
+(./Parser_8java.tex) (./Player_8java.tex [82]) (./Pos_8java.tex)
+(./RoboClient_8java.tex [83]) (./SenseMemory_8java.tex) (./refman.ind [84]
+[85
 
-])
-(./Forward_8java.tex) (./FullBack_8java.tex [74]) (./Game_8java.tex)
-(./Goalie_8java.tex) (./MathHelp_8java.tex [75]) (./Memory_8java.tex)
-(./Mode_8java.tex [76]) (./ObjInfo_8java.tex) (./ObjMemory_8java.tex [77])
-(./Parser_8java.tex) (./Player_8java.tex [78]) (./Pos_8java.tex)
-(./RoboClient_8java.tex [79]) (./SenseMemory_8java.tex) (./refman.ind [80]
-[81
+] [86] [87] [88] [89] [90] [91
 
-] [82] [83] [84] [85] [86]) (./refman.aux)
+]) (./refman.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 11175 strings out of 495061
- 174984 string characters out of 1182620
+ 11219 strings out of 495061
+ 175774 string characters out of 1182620
  237951 words of memory out of 3000000
- 13134 multiletter control sequences out of 15000+50000
+ 13154 multiletter control sequences out of 15000+50000
  54677 words of font info for 72 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 41i,12n,58p,661b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,58p,661b,569s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/cou
@@ -2083,9 +2140,9 @@ rier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8ac.pfb>
 mf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on refman.pdf (96 pages, 805652 bytes).
+Output written on refman.pdf (101 pages, 830387 bytes).
 PDF statistics:
- 4038 PDF objects out of 4296 (max. 8388607)
- 921 named destinations out of 1000 (max. 500000)
- 2763 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4185 PDF objects out of 4296 (max. 8388607)
+ 945 named destinations out of 1000 (max. 500000)
+ 2875 words of extra memory for PDF output out of 10000 (max. 10000000)
 
