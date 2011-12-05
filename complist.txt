@@ -14,7 +14,6 @@ ObjInfo.java
 ObjMemory.java
 Parser.java
 Player.java
-PlayerTest.java
 Polar.java
 Pos.java
 RoboClient.java
