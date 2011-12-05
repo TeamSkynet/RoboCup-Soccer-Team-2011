@@ -64,10 +64,16 @@ public class Player extends Thread {
 		this.a = a;
 	}
 	
+	/**
+	 * Sets the home coordinates of the player
+	 */
 	public void setHome(Pos home) {
 		getMem().home = home;
 	}
 	
+	/**
+	 * @return the home coordinates of the player
+	 */
 	public Pos getHome() {
 		return getMem().home;
 	}
@@ -129,6 +135,9 @@ public class Player extends Thread {
 		this.p = p;
 	}
 	
+	/**
+	 * @return the time in the ObjMemory
+	 */
 	public int getMemTime() {
 		return getMem().ObjMem.getTime();
 	}
@@ -289,11 +298,14 @@ public class Player extends Thread {
 		rc.turn(moment);
 	}
 	
+	/**
+	 * Turns the neck of the player
+	 */
 	public void turn_neck(double moment) throws UnknownHostException, InterruptedException {
 		rc.turn_neck(moment);
 	}
 	
-	/*
+	/**
 	 * Instructs the player to prepare to receive a pass from another teammate.
 	 * @param ball The ball in play.
 	 * @param p The player to receive the ball from.
@@ -323,7 +335,7 @@ public class Player extends Thread {
 		rc.say(message);
 	}
 	
-	/*
+	/**
 	 * Marks opposing players for defense
 	 */
 	public void markOpponent(String team, String number) {
@@ -331,7 +343,7 @@ public class Player extends Thread {
 		//b.setMarked_unum(number);
 	}
 	
-	/*
+	/**
 	 * Follows opposing players on defense
 	 * (Currently unused)
 	 */

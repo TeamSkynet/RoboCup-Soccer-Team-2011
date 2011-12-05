@@ -169,15 +169,6 @@ public class MathHelp {
 		double v = mag(getPos(vel_r, vel_t-pt.t));
 		double power = (Math.min(1.05, pt.r) - v)/(0.006*effort);
 		
-		/*
-		Polar vel = new Polar(vel_r, vel_t);
-		getPos(vel).print("Velocity Pos: ");
-		vel.print("Velocity Polar: ");
-		p.print("Go to Pos: ");
-		pt.print("Go to Polar: ");
-		System.out.println("Power: " + power);
-		*/
-		
 		return(Math.min(100,power));
 		
 		

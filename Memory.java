@@ -113,6 +113,12 @@ public class Memory {
 		return null;
 	}
 	
+	/**
+	 * Gets the cartesian coordiantes of the ball
+	 * 
+	 * @param b the ball
+	 * @return the cartesian coordiantes of the ball
+	 */
 	public Pos getBallPos(ObjBall b) {
 		Pos pt = m.vAdd(getPosition(), m.getPos(b.getDistance(), b.getDirection() + getDirection()));
 		//pt.print("Ball Pos: ");
@@ -345,7 +351,12 @@ public class Memory {
 		return(0.0);
 	}
 	
-	Polar getAbsPolar(Pos pt) {
+	/**
+	 * A method to convert a cartesian coordinate to polar with the global angle
+	 * @param pt the cartesian coordinate to convert
+	 * @return a polar with the global angle
+	 */
+	public Polar getAbsPolar(Pos pt) {
 		Pos p = (m.vSub(pt, getPosition()));
 		double r = Math.sqrt(Math.pow(p.x, 2) + Math.pow(p.y, 2));
 		double t = (Math.toDegrees(Math.atan2(p.y, p.x)) - getDirection());
@@ -486,6 +497,9 @@ public class Memory {
 		
 	}
 	
+	/**
+	 * Sets the current position of the player
+	 */
 	public void setCurrent() {
 		current = getPosition();
 	}

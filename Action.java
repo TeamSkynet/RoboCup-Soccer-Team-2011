@@ -54,7 +54,13 @@ public class Action {
 		this.mem = mem;
 	}
 	
-
+	/**
+	 * Gets the actual angle of a turn 
+	 * 
+	 * @param go polar of angle to turn to
+	 * 
+	 * @return the double of the correct turn moment
+	 */
 	public double getTurn(Polar go) {
 		double angle = go.t - mem.getDirection();
 		if(angle > 180)
@@ -98,7 +104,12 @@ public class Action {
 		
 	}
 	
-	
+	/**
+	 * A method to dash sideways or backwards
+	 * 
+	 * @param p the cartesian point to go to
+	 * @post player dashes sideways or backwards while facing forward
+	 */
 	public void gotoSidePoint(Pos p) {
 		Polar go = mem.getAbsPolar(p);
 		//go.print("gotoSidePoint: ");
@@ -270,7 +281,7 @@ public class Action {
 		return closestPlayer;
 	}
 	
-	/*
+	/**
 	 * Passes the ball to the nearest Forward (currently Player).
 	 * @param ball An ObjBall for the ball in play.
 	 * @param fwd The player to pass the ball to.
