@@ -186,6 +186,9 @@ public class Brain extends Thread {
 						else if (p.getMem().playMode.compareTo("goal_kick_l") == 0){
 							p.getAction().goHome();
 						}
+						else if (p.getMem().playMode.compareTo("goal_kick_r") == 0){
+							p.getAction().goHome();
+						}
 						else if (p.getMem().playMode.compareTo("free_kick_r") == 0) {
 							p.getAction().goHome();
 						}

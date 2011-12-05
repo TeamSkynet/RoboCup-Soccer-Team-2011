@@ -69,17 +69,21 @@ Inheritance diagram for Goalie:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#adbbe2cef0b3231f21dd257d1c208c773">initGoalie</a> ()  throws SocketException, UnknownHostException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61f0e1513d23a5bfd8b06b4f64485f14"></a><!-- doxytag: member="Goalie::Goalie" ref="a61f0e1513d23a5bfd8b06b4f64485f14" args="(String team)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>Goalie</b> (String team)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#ad20be55693ae031a73e703960ae96db3">initGoalie</a> (double x, double y)  throws SocketException, UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#aa31abfeafaa76d73433c75661e9ee214">catchball</a> (double d)  throws UnknownHostException</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a6fa9af8f62836e180e56a51f9bc126dc">followBall</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#aeedb27a3d7123889aa35b122cd9f8e6a">ballInGoalzone</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#aff96bcc0763bcb7ca922beae5f6f7f6f">catchable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a3d00b5dcb6db3925a8eeaf667a2f1650">defendGoal</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball)  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a6b24e53882b2d38ca452c263eb9c58cd">positionGoalie</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball)  throws InterruptedException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#aacefd54603f62188922344f027a60b65">getBtwBallAndGoal</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjPlayer.html">ObjPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a1377353efede128a3367bde1e8b4137a">closestPlayer</a> ()  throws UnknownHostException, InterruptedException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#acef3607fe805cab95fe5c51319b6d858">kickToPlayer</a> (<a class="el" href="classObjPlayer.html">ObjPlayer</a> player)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a4fc1cb6aef2b752d6eaf198b33355ba3">kickBallOutOfBounds</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoalie.html#a4746e13da625b6794aab143d8c3bf12f">run</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4746e13da625b6794aab143d8c3bf12f"></a><!-- doxytag: member="Goalie::run" ref="a4746e13da625b6794aab143d8c3bf12f" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30191095e1d0cfb3309d7776d2f1b91d"></a><!-- doxytag: member="Goalie::ballTurn" ref="a30191095e1d0cfb3309d7776d2f1b91d" args="" -->
@@ -264,15 +268,26 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>ballCaught</b> = f
 
 </div>
 </div>
-<a class="anchor" id="adbbe2cef0b3231f21dd257d1c208c773"></a><!-- doxytag: member="Goalie::initGoalie" ref="adbbe2cef0b3231f21dd257d1c208c773" args="()" -->
+<a class="anchor" id="ad20be55693ae031a73e703960ae96db3"></a><!-- doxytag: member="Goalie::initGoalie" ref="ad20be55693ae031a73e703960ae96db3" args="(double x, double y)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Goalie::initGoalie </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>  throws SocketException, UnknownHostException <code> [inline]</code></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throws SocketException, UnknownHostException <code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -296,7 +311,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>ballCaught</b> = f
       </table>
 </div>
 <div class="memdoc">
-<p>Causes the goalie to kick the ball out of bounds </p>
+<p>Causes the goalie to kick the ball out of bounds (Currently unused.) </p>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="classGoalie.html">Goalie</a> has control of the ball </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>Ball has been kicked out of bounds </dd></dl>
 
@@ -316,7 +331,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>ballCaught</b> = f
       </table>
 </div>
 <div class="memdoc">
-<p>Causes goalie to kick the ball to a specific player. </p>
+<p>Causes goalie to kick the ball to a specific player. (Currently unused.) </p>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>A player is in sight of the goalie. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The goalie has kicked the ball to the player passed to the function. </dd></dl>
 <dl><dt><b>Parameters:</b></dt><dd>
@@ -328,23 +343,35 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>ballCaught</b> = f
 
 </div>
 </div>
-<a class="anchor" id="a4746e13da625b6794aab143d8c3bf12f"></a><!-- doxytag: member="Goalie::run" ref="a4746e13da625b6794aab143d8c3bf12f" args="()" -->
+<a class="anchor" id="a6b24e53882b2d38ca452c263eb9c58cd"></a><!-- doxytag: member="Goalie::positionGoalie" ref="a6b24e53882b2d38ca452c263eb9c58cd" args="(ObjBall ball)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Goalie::run </td>
+          <td class="memname">void Goalie::positionGoalie </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramtype"><a class="el" href="classObjBall.html">ObjBall</a>&#160;</td>
+          <td class="paramname"><em>ball</em></td><td>)</td>
+          <td>  throws InterruptedException <code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The <a class="el" href="classPlayer.html">Player</a> thread run method. It makes decisions for the player.</p>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="classPlayer.html">Player</a> will act on decisions made. </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classPlayer.html#a499cc0cb1e2fb8bdb8139c8848b367b9">Player</a>.</p>
+<p>Moves goalie to specific points within the goalbox dependent upon where the ball is on the field. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ball</td><td>An <a class="el" href="classObjBall.html">ObjBall</a> representing the ball in play. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InterruptedException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The ball is visible. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The goalie has moved to a strategic position to get between the ball and the goal. </dd></dl>
 
 </div>
 </div>
@@ -366,7 +393,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>ballCaught</b> = f
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Nov 10 2011 22:49:45 by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Dec 4 2011 23:10:29 by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

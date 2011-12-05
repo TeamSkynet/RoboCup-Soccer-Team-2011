@@ -47,6 +47,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <h1>FullBack Class Reference</h1>  </div>
 </div>
@@ -63,10 +65,195 @@ Inheritance diagram for FullBack:</div>
 
 <p><a href="classFullBack-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFullBack.html#acbe24697aec4b8fdf44d3ec60a9fa40d">FullBack</a> (<a class="el" href="classRoboClient.html">RoboClient</a> rc, <a class="el" href="classMemory.html">Memory</a> m, <a class="el" href="classObjInfo.html">ObjInfo</a> i, <a class="el" href="classParser.html">Parser</a> p, int time)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFullBack.html#a7918587f26bf13173e7065187e48e03c">FullBack</a> (String team)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFullBack.html#ac213422fc423c607d56d4b5710d0192e">initFullBack</a> (double x, double y)  throws SocketException, UnknownHostException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFullBack.html#a4b2e2ea2db6684474a63e7c257b9c67a">initFullBack</a> (double x, double y, String pos)  throws SocketException, UnknownHostException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjPlayer.html">ObjPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFullBack.html#afd24e3c5ff7c8b93c77069e9f86cd9ab">closestPlayer</a> ()  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3638f5f61bca69dc81571c1dcbfa46e7"></a><!-- doxytag: member="FullBack::inFullBackZone" ref="a3638f5f61bca69dc81571c1dcbfa46e7" args="()" -->
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>inFullBackZone</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab02ecfe8c92fdb837ed6bf6c7389cfc0"></a><!-- doxytag: member="FullBack::runDefense" ref="ab02ecfe8c92fdb837ed6bf6c7389cfc0" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>runDefense</b> ()  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef6e79bcb91ec2baebd71a601cfe94fc"></a><!-- doxytag: member="FullBack::run" ref="aef6e79bcb91ec2baebd71a601cfe94fc" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classFullBack.html">FullBack</a> class inherits from the <a class="el" href="classPlayer.html">Player</a> class. The <a class="el" href="classFullBack.html">FullBack</a> is a specialized type of <a class="el" href="classPlayer.html">Player</a> that focuses on defensive behaviors such as interfering with opponent scoring. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="acbe24697aec4b8fdf44d3ec60a9fa40d"></a><!-- doxytag: member="FullBack::FullBack" ref="acbe24697aec4b8fdf44d3ec60a9fa40d" args="(RoboClient rc, Memory m, ObjInfo i, Parser p, int time)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FullBack::FullBack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRoboClient.html">RoboClient</a>&#160;</td>
+          <td class="paramname"><em>rc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMemory.html">Memory</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classObjInfo.html">ObjInfo</a>&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classParser.html">Parser</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rc</td><td></td></tr>
+    <tr><td class="paramname">m</td><td></td></tr>
+    <tr><td class="paramname">i</td><td></td></tr>
+    <tr><td class="paramname">p</td><td></td></tr>
+    <tr><td class="paramname">time</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7918587f26bf13173e7065187e48e03c"></a><!-- doxytag: member="FullBack::FullBack" ref="a7918587f26bf13173e7065187e48e03c" args="(String team)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FullBack::FullBack </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>team</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">team</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="afd24e3c5ff7c8b93c77069e9f86cd9ab"></a><!-- doxytag: member="FullBack::closestPlayer" ref="afd24e3c5ff7c8b93c77069e9f86cd9ab" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classObjPlayer.html">ObjPlayer</a> FullBack::closestPlayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throws UnknownHostException, InterruptedException <code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the closest player to the <a class="el" href="classFullBack.html">FullBack</a> on the same team. </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The closest player to the <a class="el" href="classFullBack.html">FullBack</a> has been determined. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classObjPlayer.html">ObjPlayer</a> </dd></dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InterruptedException</td><td></td></tr>
+    <tr><td class="paramname">UnknownHostException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b2e2ea2db6684474a63e7c257b9c67a"></a><!-- doxytag: member="FullBack::initFullBack" ref="a4b2e2ea2db6684474a63e7c257b9c67a" args="(double x, double y, String pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FullBack::initFullBack </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throws SocketException, UnknownHostException <code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the <a class="el" href="classPlayer.html">Player</a> with the RoboCup server as a goalie. </p>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>A RoboCup server is available. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The <a class="el" href="classPlayer.html">Player</a> has been initialized to the correct team as a goalie. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac213422fc423c607d56d4b5710d0192e"></a><!-- doxytag: member="FullBack::initFullBack" ref="ac213422fc423c607d56d4b5710d0192e" args="(double x, double y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FullBack::initFullBack </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throws SocketException, UnknownHostException <code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the <a class="el" href="classPlayer.html">Player</a> with the RoboCup server as a goalie. </p>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>A RoboCup server is available. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The <a class="el" href="classPlayer.html">Player</a> has been initialized to the correct team as a goalie. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="FullBack_8java.html">FullBack.java</a></li>
 </ul>
 </div>
@@ -84,7 +271,7 @@ Inheritance diagram for FullBack:</div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Nov 10 2011 22:49:44 by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Dec 4 2011 23:10:28 by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

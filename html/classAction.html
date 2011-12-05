@@ -62,10 +62,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a4f457ccfc8336b565cadca56b36e0271">Action</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#acfa1602ef29e16a6047cc058ff0a16ac">Action</a> (<a class="el" href="classMemory.html">Memory</a> mem, <a class="el" href="classRoboClient.html">RoboClient</a> rc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a4f775977b788d1379b9f6c45bb37c01f">setMem</a> (<a class="el" href="classMemory.html">Memory</a> mem)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad68c5200162e4023fb88488e340ea454"></a><!-- doxytag: member="Action::getTurn" ref="ad68c5200162e4023fb88488e340ea454" args="(Polar go)" -->
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getTurn</b> (<a class="el" href="classPolar.html">Polar</a> go)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a6b7099c20c56fc3dd72ce4c8ba4f3870">gotoPoint</a> (<a class="el" href="classPolar.html">Polar</a> go)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a653bde47fe3bd4263ed31095e2ee1cfc"></a><!-- doxytag: member="Action::gotoSidePoint" ref="a653bde47fe3bd4263ed31095e2ee1cfc" args="(Pos p)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>gotoSidePoint</b> (<a class="el" href="classPos.html">Pos</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a5f7eb7be5b6b18854936367833044a6e">gotoPoint</a> (<a class="el" href="classPos.html">Pos</a> p)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a8c940169ca11dae38f16a99f9f406dc5">goHome</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#abf9085a62947a12cc2e154396177ec90">goHome</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a49e1c7f1d7f5a4294c93833997603339">findBall</a> ()  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79224f655b7f92fe9a334bf96a01e844"></a><!-- doxytag: member="Action::kickOff" ref="a79224f655b7f92fe9a334bf96a01e844" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>kickOff</b> ()  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjPlayer.html">ObjPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a63d035f7132842d9720b88247d525112">closestPlayer</a> ()  throws UnknownHostException, InterruptedException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55e146013466e96013a196d9bd787410"></a><!-- doxytag: member="Action::passBall" ref="a55e146013466e96013a196d9bd787410" args="(ObjBall ball, ObjPlayer p)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>passBall</b> (<a class="el" href="classObjBall.html">ObjBall</a> ball, <a class="el" href="classObjPlayer.html">ObjPlayer</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a9e883bc90ec59c4eeb5b0b3dd022b33a">FullBack_findBall</a> ()  throws UnknownHostException, InterruptedException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#ad7308d47f6303c20834dda533d4fe793">kickToPoint</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball, <a class="el" href="classPolar.html">Polar</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a639b23a22badac8eb8603bc153daba99">kickToPoint</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball, <a class="el" href="classPos.html">Pos</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAction.html#a87bb8972c15138562c9d05f2a475dda9">dribbleToGoal</a> (<a class="el" href="classObjBall.html">ObjBall</a> ball)</td></tr>
@@ -140,6 +150,32 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>atGoal</b></td></t
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a63d035f7132842d9720b88247d525112"></a><!-- doxytag: member="Action::closestPlayer" ref="a63d035f7132842d9720b88247d525112" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classObjPlayer.html">ObjPlayer</a> Action::closestPlayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throws UnknownHostException, InterruptedException <code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the closest player to the <a class="el" href="classFullBack.html">FullBack</a> on the same team. </p>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The closest player to the <a class="el" href="classFullBack.html">FullBack</a> has been determined. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classObjPlayer.html">ObjPlayer</a> </dd></dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InterruptedException</td><td></td></tr>
+    <tr><td class="paramname">UnknownHostException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a87bb8972c15138562c9d05f2a475dda9"></a><!-- doxytag: member="Action::dribbleToGoal" ref="a87bb8972c15138562c9d05f2a475dda9" args="(ObjBall ball)" -->
 <div class="memitem">
 <div class="memproto">
@@ -190,12 +226,36 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>atGoal</b></td></t
 
 </div>
 </div>
-<a class="anchor" id="a8c940169ca11dae38f16a99f9f406dc5"></a><!-- doxytag: member="Action::goHome" ref="a8c940169ca11dae38f16a99f9f406dc5" args="()" -->
+<a class="anchor" id="a9e883bc90ec59c4eeb5b0b3dd022b33a"></a><!-- doxytag: member="Action::FullBack_findBall" ref="a9e883bc90ec59c4eeb5b0b3dd022b33a" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">boolean Action::goHome </td>
+          <td class="memname">void Action::FullBack_findBall </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throws UnknownHostException, InterruptedException <code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A method to find the ball on the field for FullBacks. If it's not in view, the <a class="el" href="classFullBack.html">FullBack</a> turns until he finds it. If the ball is out of kickable range, he dashes to get to it. If the ball is within 15 distance, he intercepts the ball, and kicks it away.</p>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UnknownHostException</td><td></td></tr>
+    <tr><td class="paramname">InterruptedException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abf9085a62947a12cc2e154396177ec90"></a><!-- doxytag: member="Action::goHome" ref="abf9085a62947a12cc2e154396177ec90" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Action::goHome </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -207,32 +267,6 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>atGoal</b></td></t
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player's home should be set at initialization </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The player will be at his home point</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if the player is in the near vicinity of his home, false if he's not there yet </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6b7099c20c56fc3dd72ce4c8ba4f3870"></a><!-- doxytag: member="Action::gotoPoint" ref="a6b7099c20c56fc3dd72ce4c8ba4f3870" args="(Polar go)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Action::gotoPoint </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classPolar.html">Polar</a>&#160;</td>
-          <td class="paramname"><em>go</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This tells the player to turn and run to a point</p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">go</td><td>The <a class="el" href="classPolar.html">Polar</a> coordinates of the final position, with the player's position as an origin</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player must have a valid position on the field passed in </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>If the player is not facing the direction of the final position, s/he will first turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. </dd></dl>
 
 </div>
 </div>
@@ -259,6 +293,32 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>atGoal</b></td></t
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player must have a valid position on the field passed in</dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>First, the <a class="el" href="classPos.html">Pos</a> will be converted to a <a class="el" href="classPolar.html">Polar</a> coordinateIf the player is not facing the direction of the final position, s/he will turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b7099c20c56fc3dd72ce4c8ba4f3870"></a><!-- doxytag: member="Action::gotoPoint" ref="a6b7099c20c56fc3dd72ce4c8ba4f3870" args="(Polar go)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Action::gotoPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPolar.html">Polar</a>&#160;</td>
+          <td class="paramname"><em>go</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This tells the player to turn and run to a point</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">go</td><td>The <a class="el" href="classPolar.html">Polar</a> coordinates of the final position, with the player's position as an origin</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player must have a valid position on the field passed in </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>If the player is not facing the direction of the final position, s/he will first turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. </dd></dl>
 
 </div>
 </div>
@@ -378,7 +438,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>atGoal</b></td></t
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Nov 10 2011 22:49:42 by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Dec 4 2011 23:10:27 by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

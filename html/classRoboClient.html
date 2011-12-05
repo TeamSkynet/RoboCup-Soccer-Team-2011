@@ -63,15 +63,19 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a4138139e6255c0e81c107b46cfae1857">RoboClient</a> (int port)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a3a96c4220b4fb7986a19384f9c26a860">RoboClient</a> (String team)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a8a009213796938c1212717c9432cf23b">getTeam</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a125104fa1cb8271e0c8e828c965e19ae">getPort</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a2fedd2a243028701cafca425adb358cf">setTeam</a> (String team)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a621d84c943cd26b12726dc2c7f21339f">send</a> (String message)  throws UnknownHostException</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a696aa2acd96325fe2f2abeacd27ba54c">receive</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a2be71da337ba3aae4895b23377a7f95c">init</a> (<a class="el" href="classParser.html">Parser</a> p, <a class="el" href="classMemory.html">Memory</a> m)  throws UnknownHostException </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd1d41a4ba06ce09f31c907345060ee8"></a><!-- doxytag: member="RoboClient::changePlayMode" ref="afd1d41a4ba06ce09f31c907345060ee8" args="(String playmode)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>changePlayMode</b> (String playmode)  throws UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#ab0286a6a63163a3441dae184ac2638a5">initGoalie</a> (<a class="el" href="classParser.html">Parser</a> p, <a class="el" href="classMemory.html">Memory</a> m)  throws UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a5d403310e44e5992d1de9d074006d0ea">dash</a> (double power)  throws Exception </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a6bb560522536e1212a9411ea2e4725e9">dash</a> (double power, double direction)  throws Exception </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#afcf4a68e59dd2df04674ce545c3c3dcc">kick</a> (double power, double dir)  throws UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a41fea7f3f13d507a0e36a0de37a6dcb0">turn</a> (double moment)  throws UnknownHostException</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a880aae7b1d1b58c3e38c8018b4f493"></a><!-- doxytag: member="RoboClient::turn_neck" ref="a6a880aae7b1d1b58c3e38c8018b4f493" args="(double moment)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>turn_neck</b> (double moment)  throws UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a996fcd99e89b7b90ea6782523b5dd912">move</a> (double x, double y)  throws UnknownHostException </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#abf25c0af390567ed370935c1f243491f">catchball</a> (double d)  throws UnknownHostException</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoboClient.html#a90d21c0b0ba92843f3dea1d7d4916ba1">say</a> (String message)  throws UnknownHostException</td></tr>
@@ -193,20 +197,41 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>reply</b></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a125104fa1cb8271e0c8e828c965e19ae"></a><!-- doxytag: member="RoboClient::getPort" ref="a125104fa1cb8271e0c8e828c965e19ae" args="()" -->
+<a class="anchor" id="a6bb560522536e1212a9411ea2e4725e9"></a><!-- doxytag: member="RoboClient::dash" ref="a6bb560522536e1212a9411ea2e4725e9" args="(double power, double direction)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int RoboClient::getPort </td>
+          <td class="memname">void RoboClient::dash </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>power</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throws Exception <code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="return"><dt><b>Returns:</b></dt><dd>the port </dd></dl>
+<p>This function sends the dash command to the server. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">power,:</td><td>a double representing the power of the dash. </td></tr>
+    <tr><td class="paramname">direction,:</td><td>a double representing the direction of the dash </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The RoboCup server is available, client has been initialized. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The player has dashed according to the given power and direction. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>None </dd></dl>
 
 </div>
 </div>
@@ -517,7 +542,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>reply</b></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Nov 10 2011 22:49:49 by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Dec 4 2011 23:10:33 by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

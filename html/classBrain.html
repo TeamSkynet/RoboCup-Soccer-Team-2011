@@ -62,9 +62,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a92daf9737361454abbb5988a89b7ff40">Brain</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a357730d1447734778f5d1aaead94a014"></a><!-- doxytag: member="Brain::Brain" ref="a357730d1447734778f5d1aaead94a014" args="(Player p)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>Brain</b> (<a class="el" href="classPlayer.html">Player</a> p)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAction.html">Action</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a5b1e40ec4334affc3de0b033bb2db2d2">getActions</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a5d8784d54cfe2e33548781a669d4e2c7">setActions</a> (<a class="el" href="classAction.html">Action</a> actions)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a2a5a459748b1c2301bf6bef744ea6e55">Brain</a> (<a class="el" href="classMode.html">Mode</a> currentMode)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMode.html">Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#aa40c476614e4e2ed1d916f57f79434f3">getCurrentMode</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a8202fa27d97f85e7c72b9ee57b5c7871">setDefensive</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#ae5c07b3f9117d3621bf76a76b404e791">setOffensive</a> ()</td></tr>
@@ -72,13 +69,16 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#ae974f3db85a382f13789987d5b06df96">setMarked_team</a> (String marked_team)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a50ef5104a556f9f8d19eb9b9759a0c2a">getMarked_unum</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#aca6efe99d6f3bf59e6795544be98e251">setMarked_unum</a> (String marked_unum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBrain.html#a968c6e3ff8a199c4d5a4fa8b47de8264">run</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a968c6e3ff8a199c4d5a4fa8b47de8264"></a><!-- doxytag: member="Brain::run" ref="a968c6e3ff8a199c4d5a4fa8b47de8264" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bc757e452720382657f4e3396a55a8e"></a><!-- doxytag: member="Brain::p" ref="a9bc757e452720382657f4e3396a55a8e" args="" -->
 <a class="el" href="classPlayer.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><b>p</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bf6c5be9c9e8e7c8d338cbfaf2c5c63"></a><!-- doxytag: member="Brain::m" ref="a7bf6c5be9c9e8e7c8d338cbfaf2c5c63" args="" -->
 <a class="el" href="classMemory.html">Memory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4535f9e42c979f1dd6b5e4e395f7e3dd"></a><!-- doxytag: member="Brain::mh" ref="a4535f9e42c979f1dd6b5e4e395f7e3dd" args="" -->
+<a class="el" href="classMathHelp.html">MathHelp</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mh</b></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The brain serves as a place to store the <a class="el" href="classPlayer.html">Player</a> modes, marked players for various functions, and a set of strategies for player actions. </p>
@@ -100,48 +100,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2a5a459748b1c2301bf6bef744ea6e55"></a><!-- doxytag: member="Brain::Brain" ref="a2a5a459748b1c2301bf6bef744ea6e55" args="(Mode currentMode)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Brain::Brain </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classMode.html">Mode</a>&#160;</td>
-          <td class="paramname"><em>currentMode</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Constructor </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">currentMode</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a5b1e40ec4334affc3de0b033bb2db2d2"></a><!-- doxytag: member="Brain::getActions" ref="a5b1e40ec4334affc3de0b033bb2db2d2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classAction.html">Action</a> Brain::getActions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="return"><dt><b>Returns:</b></dt><dd>the actions </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="aa40c476614e4e2ed1d916f57f79434f3"></a><!-- doxytag: member="Brain::getCurrentMode" ref="aa40c476614e4e2ed1d916f57f79434f3" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -190,47 +149,6 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl class="return"><dt><b>Returns:</b></dt><dd>the marked_unum </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a968c6e3ff8a199c4d5a4fa8b47de8264"></a><!-- doxytag: member="Brain::run" ref="a968c6e3ff8a199c4d5a4fa8b47de8264" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Brain::run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The <a class="el" href="classBrain.html">Brain</a> thread run method. It updates the <a class="el" href="classMemory.html">Memory</a> for the <a class="el" href="classPlayer.html">Player</a></p>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="classMemory.html">Memory</a> will continuously update </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a5d8784d54cfe2e33548781a669d4e2c7"></a><!-- doxytag: member="Brain::setActions" ref="a5d8784d54cfe2e33548781a669d4e2c7" args="(Action actions)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Brain::setActions </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classAction.html">Action</a>&#160;</td>
-          <td class="paramname"><em>actions</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">actions</td><td>the actions to set </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -332,7 +250,7 @@ Public Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Nov 10 2011 22:49:42 by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Dec 4 2011 23:10:27 by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
