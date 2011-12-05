@@ -1,0 +1,339 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Action Class Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{8}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Action}{8}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Action}{8}{subsubsection.4.1.2.2}
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{8}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}closestPlayer}{8}{subsubsection.4.1.3.1}
+\contentsline {subsubsection}{\numberline {4.1.3.2}dribbleToGoal}{9}{subsubsection.4.1.3.2}
+\contentsline {subsubsection}{\numberline {4.1.3.3}findBall}{9}{subsubsection.4.1.3.3}
+\contentsline {subsubsection}{\numberline {4.1.3.4}FullBack\_\discretionary {-}{}{}findBall}{9}{subsubsection.4.1.3.4}
+\contentsline {subsubsection}{\numberline {4.1.3.5}goHome}{9}{subsubsection.4.1.3.5}
+\contentsline {subsubsection}{\numberline {4.1.3.6}gotoPoint}{10}{subsubsection.4.1.3.6}
+\contentsline {subsubsection}{\numberline {4.1.3.7}gotoPoint}{10}{subsubsection.4.1.3.7}
+\contentsline {subsubsection}{\numberline {4.1.3.8}kickToPoint}{11}{subsubsection.4.1.3.8}
+\contentsline {subsubsection}{\numberline {4.1.3.9}kickToPoint}{11}{subsubsection.4.1.3.9}
+\contentsline {subsubsection}{\numberline {4.1.3.10}setMem}{11}{subsubsection.4.1.3.10}
+\contentsline {section}{\numberline {4.2}Brain Class Reference}{12}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{12}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{12}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Brain}{12}{subsubsection.4.2.2.1}
+\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{12}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}getCurrentMode}{12}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}getMarked\_\discretionary {-}{}{}team}{12}{subsubsection.4.2.3.2}
+\contentsline {subsubsection}{\numberline {4.2.3.3}getMarked\_\discretionary {-}{}{}unum}{13}{subsubsection.4.2.3.3}
+\contentsline {subsubsection}{\numberline {4.2.3.4}setDefensive}{13}{subsubsection.4.2.3.4}
+\contentsline {subsubsection}{\numberline {4.2.3.5}setMarked\_\discretionary {-}{}{}team}{13}{subsubsection.4.2.3.5}
+\contentsline {subsubsection}{\numberline {4.2.3.6}setMarked\_\discretionary {-}{}{}unum}{13}{subsubsection.4.2.3.6}
+\contentsline {subsubsection}{\numberline {4.2.3.7}setOffensive}{13}{subsubsection.4.2.3.7}
+\contentsline {section}{\numberline {4.3}Field Class Reference}{13}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{14}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{14}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Field}{14}{subsubsection.4.3.2.1}
+\contentsline {section}{\numberline {4.4}Forward Class Reference}{14}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{14}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}FullBack Class Reference}{15}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{15}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{15}{subsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2.1}FullBack}{15}{subsubsection.4.5.2.1}
+\contentsline {subsubsection}{\numberline {4.5.2.2}FullBack}{16}{subsubsection.4.5.2.2}
+\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{16}{subsection.4.5.3}
+\contentsline {subsubsection}{\numberline {4.5.3.1}closestPlayer}{16}{subsubsection.4.5.3.1}
+\contentsline {subsubsection}{\numberline {4.5.3.2}initFullBack}{16}{subsubsection.4.5.3.2}
+\contentsline {subsubsection}{\numberline {4.5.3.3}initFullBack}{16}{subsubsection.4.5.3.3}
+\contentsline {section}{\numberline {4.6}FullBackBrain Class Reference}{17}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Constructor \& Destructor Documentation}{17}{subsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.1.1}FullBackBrain}{17}{subsubsection.4.6.1.1}
+\contentsline {subsubsection}{\numberline {4.6.1.2}FullBackBrain}{17}{subsubsection.4.6.1.2}
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{18}{subsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2.1}getActions}{18}{subsubsection.4.6.2.1}
+\contentsline {subsubsection}{\numberline {4.6.2.2}getCurrentMode}{18}{subsubsection.4.6.2.2}
+\contentsline {subsubsection}{\numberline {4.6.2.3}getMarked\_\discretionary {-}{}{}team}{18}{subsubsection.4.6.2.3}
+\contentsline {subsubsection}{\numberline {4.6.2.4}getMarked\_\discretionary {-}{}{}unum}{18}{subsubsection.4.6.2.4}
+\contentsline {subsubsection}{\numberline {4.6.2.5}run}{18}{subsubsection.4.6.2.5}
+\contentsline {subsubsection}{\numberline {4.6.2.6}setActions}{18}{subsubsection.4.6.2.6}
+\contentsline {subsubsection}{\numberline {4.6.2.7}setDefensive}{18}{subsubsection.4.6.2.7}
+\contentsline {subsubsection}{\numberline {4.6.2.8}setMarked\_\discretionary {-}{}{}team}{19}{subsubsection.4.6.2.8}
+\contentsline {subsubsection}{\numberline {4.6.2.9}setMarked\_\discretionary {-}{}{}unum}{19}{subsubsection.4.6.2.9}
+\contentsline {subsubsection}{\numberline {4.6.2.10}setOffensive}{19}{subsubsection.4.6.2.10}
+\contentsline {section}{\numberline {4.7}Game Class Reference}{19}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{19}{subsection.4.7.1}
+\contentsline {section}{\numberline {4.8}Goalie Class Reference}{19}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{20}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Member Function Documentation}{21}{subsection.4.8.2}
+\contentsline {subsubsection}{\numberline {4.8.2.1}ballInGoalzone}{21}{subsubsection.4.8.2.1}
+\contentsline {subsubsection}{\numberline {4.8.2.2}catchable}{21}{subsubsection.4.8.2.2}
+\contentsline {subsubsection}{\numberline {4.8.2.3}catchball}{21}{subsubsection.4.8.2.3}
+\contentsline {subsubsection}{\numberline {4.8.2.4}closestPlayer}{22}{subsubsection.4.8.2.4}
+\contentsline {subsubsection}{\numberline {4.8.2.5}defendGoal}{22}{subsubsection.4.8.2.5}
+\contentsline {subsubsection}{\numberline {4.8.2.6}followBall}{22}{subsubsection.4.8.2.6}
+\contentsline {subsubsection}{\numberline {4.8.2.7}getBtwBallAndGoal}{23}{subsubsection.4.8.2.7}
+\contentsline {subsubsection}{\numberline {4.8.2.8}initGoalie}{23}{subsubsection.4.8.2.8}
+\contentsline {subsubsection}{\numberline {4.8.2.9}kickBallOutOfBounds}{23}{subsubsection.4.8.2.9}
+\contentsline {subsubsection}{\numberline {4.8.2.10}kickToPlayer}{23}{subsubsection.4.8.2.10}
+\contentsline {subsubsection}{\numberline {4.8.2.11}positionGoalie}{24}{subsubsection.4.8.2.11}
+\contentsline {section}{\numberline {4.9}GoalieBrain Class Reference}{24}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Constructor \& Destructor Documentation}{25}{subsection.4.9.1}
+\contentsline {subsubsection}{\numberline {4.9.1.1}GoalieBrain}{25}{subsubsection.4.9.1.1}
+\contentsline {subsubsection}{\numberline {4.9.1.2}GoalieBrain}{25}{subsubsection.4.9.1.2}
+\contentsline {subsection}{\numberline {4.9.2}Member Function Documentation}{25}{subsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.2.1}getActions}{25}{subsubsection.4.9.2.1}
+\contentsline {subsubsection}{\numberline {4.9.2.2}getCurrentMode}{25}{subsubsection.4.9.2.2}
+\contentsline {subsubsection}{\numberline {4.9.2.3}getMarked\_\discretionary {-}{}{}team}{25}{subsubsection.4.9.2.3}
+\contentsline {subsubsection}{\numberline {4.9.2.4}getMarked\_\discretionary {-}{}{}unum}{25}{subsubsection.4.9.2.4}
+\contentsline {subsubsection}{\numberline {4.9.2.5}run}{26}{subsubsection.4.9.2.5}
+\contentsline {subsubsection}{\numberline {4.9.2.6}setActions}{26}{subsubsection.4.9.2.6}
+\contentsline {subsubsection}{\numberline {4.9.2.7}setDefensive}{26}{subsubsection.4.9.2.7}
+\contentsline {subsubsection}{\numberline {4.9.2.8}setMarked\_\discretionary {-}{}{}team}{26}{subsubsection.4.9.2.8}
+\contentsline {subsubsection}{\numberline {4.9.2.9}setMarked\_\discretionary {-}{}{}unum}{26}{subsubsection.4.9.2.9}
+\contentsline {subsubsection}{\numberline {4.9.2.10}setOffensive}{26}{subsubsection.4.9.2.10}
+\contentsline {section}{\numberline {4.10}MathHelp Class Reference}{26}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Member Function Documentation}{27}{subsection.4.10.1}
+\contentsline {subsubsection}{\numberline {4.10.1.1}edp}{27}{subsubsection.4.10.1.1}
+\contentsline {subsubsection}{\numberline {4.10.1.2}getDashPower}{27}{subsubsection.4.10.1.2}
+\contentsline {subsubsection}{\numberline {4.10.1.3}getKickPower}{28}{subsubsection.4.10.1.3}
+\contentsline {subsubsection}{\numberline {4.10.1.4}getKickPower}{28}{subsubsection.4.10.1.4}
+\contentsline {subsubsection}{\numberline {4.10.1.5}getNextBallPoint}{28}{subsubsection.4.10.1.5}
+\contentsline {subsubsection}{\numberline {4.10.1.6}getNextPlayerPoint}{29}{subsubsection.4.10.1.6}
+\contentsline {subsubsection}{\numberline {4.10.1.7}getPolar}{29}{subsubsection.4.10.1.7}
+\contentsline {subsubsection}{\numberline {4.10.1.8}getPolar}{29}{subsubsection.4.10.1.8}
+\contentsline {subsubsection}{\numberline {4.10.1.9}getPos}{29}{subsubsection.4.10.1.9}
+\contentsline {subsubsection}{\numberline {4.10.1.10}getPos}{30}{subsubsection.4.10.1.10}
+\contentsline {subsubsection}{\numberline {4.10.1.11}mag}{30}{subsubsection.4.10.1.11}
+\contentsline {subsubsection}{\numberline {4.10.1.12}norm}{30}{subsubsection.4.10.1.12}
+\contentsline {subsubsection}{\numberline {4.10.1.13}norm}{31}{subsubsection.4.10.1.13}
+\contentsline {subsubsection}{\numberline {4.10.1.14}vAdd}{31}{subsubsection.4.10.1.14}
+\contentsline {subsubsection}{\numberline {4.10.1.15}vDiv}{31}{subsubsection.4.10.1.15}
+\contentsline {subsubsection}{\numberline {4.10.1.16}vMul}{31}{subsubsection.4.10.1.16}
+\contentsline {subsubsection}{\numberline {4.10.1.17}vSub}{32}{subsubsection.4.10.1.17}
+\contentsline {section}{\numberline {4.11}Memory Class Reference}{32}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Constructor \& Destructor Documentation}{33}{subsection.4.11.1}
+\contentsline {subsubsection}{\numberline {4.11.1.1}Memory}{33}{subsubsection.4.11.1.1}
+\contentsline {subsection}{\numberline {4.11.2}Member Function Documentation}{34}{subsection.4.11.2}
+\contentsline {subsubsection}{\numberline {4.11.2.1}getAmountOfSpeed}{34}{subsubsection.4.11.2.1}
+\contentsline {subsubsection}{\numberline {4.11.2.2}getBall}{34}{subsubsection.4.11.2.2}
+\contentsline {subsubsection}{\numberline {4.11.2.3}getClosestBoundary}{34}{subsubsection.4.11.2.3}
+\contentsline {subsubsection}{\numberline {4.11.2.4}getClosestFlag}{34}{subsubsection.4.11.2.4}
+\contentsline {subsubsection}{\numberline {4.11.2.5}getClosestLine}{34}{subsubsection.4.11.2.5}
+\contentsline {subsubsection}{\numberline {4.11.2.6}getClosestPenaltyFlag}{35}{subsubsection.4.11.2.6}
+\contentsline {subsubsection}{\numberline {4.11.2.7}getDirection}{35}{subsubsection.4.11.2.7}
+\contentsline {subsubsection}{\numberline {4.11.2.8}getDirectionOfSpeed}{35}{subsubsection.4.11.2.8}
+\contentsline {subsubsection}{\numberline {4.11.2.9}getEffort}{35}{subsubsection.4.11.2.9}
+\contentsline {subsubsection}{\numberline {4.11.2.10}getFlag}{35}{subsubsection.4.11.2.10}
+\contentsline {subsubsection}{\numberline {4.11.2.11}getFlagPos}{36}{subsubsection.4.11.2.11}
+\contentsline {subsubsection}{\numberline {4.11.2.12}getHeadDirection}{36}{subsubsection.4.11.2.12}
+\contentsline {subsubsection}{\numberline {4.11.2.13}getLine}{36}{subsubsection.4.11.2.13}
+\contentsline {subsubsection}{\numberline {4.11.2.14}getNullGoalAngle}{36}{subsubsection.4.11.2.14}
+\contentsline {subsubsection}{\numberline {4.11.2.15}getObj}{36}{subsubsection.4.11.2.15}
+\contentsline {subsubsection}{\numberline {4.11.2.16}getObjMemorySize}{37}{subsubsection.4.11.2.16}
+\contentsline {subsubsection}{\numberline {4.11.2.17}getOppGoal}{37}{subsubsection.4.11.2.17}
+\contentsline {subsubsection}{\numberline {4.11.2.18}getOppGoalPos}{37}{subsubsection.4.11.2.18}
+\contentsline {subsubsection}{\numberline {4.11.2.19}getOwnGoal}{38}{subsubsection.4.11.2.19}
+\contentsline {subsubsection}{\numberline {4.11.2.20}getOwnGoalPos}{38}{subsubsection.4.11.2.20}
+\contentsline {subsubsection}{\numberline {4.11.2.21}getPlayer}{38}{subsubsection.4.11.2.21}
+\contentsline {subsubsection}{\numberline {4.11.2.22}getPlayers}{38}{subsubsection.4.11.2.22}
+\contentsline {subsubsection}{\numberline {4.11.2.23}getPlayMode}{38}{subsubsection.4.11.2.23}
+\contentsline {subsubsection}{\numberline {4.11.2.24}getPosition}{39}{subsubsection.4.11.2.24}
+\contentsline {subsubsection}{\numberline {4.11.2.25}getRecovery}{39}{subsubsection.4.11.2.25}
+\contentsline {subsubsection}{\numberline {4.11.2.26}getStamina}{39}{subsubsection.4.11.2.26}
+\contentsline {subsubsection}{\numberline {4.11.2.27}isObjVisible}{39}{subsubsection.4.11.2.27}
+\contentsline {subsubsection}{\numberline {4.11.2.28}setField}{39}{subsubsection.4.11.2.28}
+\contentsline {subsubsection}{\numberline {4.11.2.29}setLocation}{40}{subsubsection.4.11.2.29}
+\contentsline {subsubsection}{\numberline {4.11.2.30}timeCheck}{40}{subsubsection.4.11.2.30}
+\contentsline {subsection}{\numberline {4.11.3}Member Data Documentation}{40}{subsection.4.11.3}
+\contentsline {subsubsection}{\numberline {4.11.3.1}ObjMem}{40}{subsubsection.4.11.3.1}
+\contentsline {subsubsection}{\numberline {4.11.3.2}oppGoal}{40}{subsubsection.4.11.3.2}
+\contentsline {subsubsection}{\numberline {4.11.3.3}oppSide}{40}{subsubsection.4.11.3.3}
+\contentsline {subsubsection}{\numberline {4.11.3.4}playMode}{40}{subsubsection.4.11.3.4}
+\contentsline {subsubsection}{\numberline {4.11.3.5}SenMem}{41}{subsubsection.4.11.3.5}
+\contentsline {subsubsection}{\numberline {4.11.3.6}side}{41}{subsubsection.4.11.3.6}
+\contentsline {subsubsection}{\numberline {4.11.3.7}uNum}{41}{subsubsection.4.11.3.7}
+\contentsline {section}{\numberline {4.12}Mode Class Reference}{41}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{41}{subsection.4.12.1}
+\contentsline {subsection}{\numberline {4.12.2}Constructor \& Destructor Documentation}{41}{subsection.4.12.2}
+\contentsline {subsubsection}{\numberline {4.12.2.1}Mode}{41}{subsubsection.4.12.2.1}
+\contentsline {subsection}{\numberline {4.12.3}Member Function Documentation}{42}{subsection.4.12.3}
+\contentsline {subsubsection}{\numberline {4.12.3.1}getModename}{42}{subsubsection.4.12.3.1}
+\contentsline {subsubsection}{\numberline {4.12.3.2}getTimeinmode}{42}{subsubsection.4.12.3.2}
+\contentsline {subsubsection}{\numberline {4.12.3.3}setModename}{42}{subsubsection.4.12.3.3}
+\contentsline {subsubsection}{\numberline {4.12.3.4}setTimeinmode}{42}{subsubsection.4.12.3.4}
+\contentsline {section}{\numberline {4.13}ObjBall Class Reference}{42}{section.4.13}
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{42}{subsection.4.13.1}
+\contentsline {section}{\numberline {4.14}ObjFlag Class Reference}{43}{section.4.14}
+\contentsline {subsection}{\numberline {4.14.1}Constructor \& Destructor Documentation}{43}{subsection.4.14.1}
+\contentsline {subsubsection}{\numberline {4.14.1.1}ObjFlag}{43}{subsubsection.4.14.1.1}
+\contentsline {subsection}{\numberline {4.14.2}Member Function Documentation}{43}{subsection.4.14.2}
+\contentsline {subsubsection}{\numberline {4.14.2.1}getFlagName}{43}{subsubsection.4.14.2.1}
+\contentsline {subsubsection}{\numberline {4.14.2.2}getFlagType}{44}{subsubsection.4.14.2.2}
+\contentsline {subsubsection}{\numberline {4.14.2.3}getX\_\discretionary {-}{}{}pos}{44}{subsubsection.4.14.2.3}
+\contentsline {subsubsection}{\numberline {4.14.2.4}getY\_\discretionary {-}{}{}pos}{44}{subsubsection.4.14.2.4}
+\contentsline {subsubsection}{\numberline {4.14.2.5}getYard}{44}{subsubsection.4.14.2.5}
+\contentsline {subsubsection}{\numberline {4.14.2.6}setFlagName}{44}{subsubsection.4.14.2.6}
+\contentsline {subsubsection}{\numberline {4.14.2.7}setFlagType}{44}{subsubsection.4.14.2.7}
+\contentsline {subsubsection}{\numberline {4.14.2.8}setX\_\discretionary {-}{}{}pos}{44}{subsubsection.4.14.2.8}
+\contentsline {subsubsection}{\numberline {4.14.2.9}setY\_\discretionary {-}{}{}pos}{45}{subsubsection.4.14.2.9}
+\contentsline {subsubsection}{\numberline {4.14.2.10}setYard}{45}{subsubsection.4.14.2.10}
+\contentsline {section}{\numberline {4.15}ObjGoal Class Reference}{45}{section.4.15}
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{45}{subsection.4.15.1}
+\contentsline {section}{\numberline {4.16}ObjInfo Class Reference}{45}{section.4.16}
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{46}{subsection.4.16.1}
+\contentsline {subsection}{\numberline {4.16.2}Constructor \& Destructor Documentation}{46}{subsection.4.16.2}
+\contentsline {subsubsection}{\numberline {4.16.2.1}ObjInfo}{46}{subsubsection.4.16.2.1}
+\contentsline {subsubsection}{\numberline {4.16.2.2}ObjInfo}{46}{subsubsection.4.16.2.2}
+\contentsline {subsection}{\numberline {4.16.3}Member Function Documentation}{46}{subsection.4.16.3}
+\contentsline {subsubsection}{\numberline {4.16.3.1}getDirChng}{46}{subsubsection.4.16.3.1}
+\contentsline {subsubsection}{\numberline {4.16.3.2}getDirection}{47}{subsubsection.4.16.3.2}
+\contentsline {subsubsection}{\numberline {4.16.3.3}getDistance}{47}{subsubsection.4.16.3.3}
+\contentsline {subsubsection}{\numberline {4.16.3.4}getDistChng}{47}{subsubsection.4.16.3.4}
+\contentsline {subsubsection}{\numberline {4.16.3.5}getObjName}{47}{subsubsection.4.16.3.5}
+\contentsline {subsubsection}{\numberline {4.16.3.6}getSide}{47}{subsubsection.4.16.3.6}
+\contentsline {subsubsection}{\numberline {4.16.3.7}setDirChng}{47}{subsubsection.4.16.3.7}
+\contentsline {subsubsection}{\numberline {4.16.3.8}setDirection}{47}{subsubsection.4.16.3.8}
+\contentsline {subsubsection}{\numberline {4.16.3.9}setDistance}{47}{subsubsection.4.16.3.9}
+\contentsline {subsubsection}{\numberline {4.16.3.10}setDistChng}{48}{subsubsection.4.16.3.10}
+\contentsline {subsubsection}{\numberline {4.16.3.11}setObjName}{48}{subsubsection.4.16.3.11}
+\contentsline {subsubsection}{\numberline {4.16.3.12}setSide}{48}{subsubsection.4.16.3.12}
+\contentsline {section}{\numberline {4.17}ObjLine Class Reference}{48}{section.4.17}
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{48}{subsection.4.17.1}
+\contentsline {section}{\numberline {4.18}ObjMemory Class Reference}{48}{section.4.18}
+\contentsline {subsection}{\numberline {4.18.1}Detailed Description}{49}{subsection.4.18.1}
+\contentsline {subsection}{\numberline {4.18.2}Constructor \& Destructor Documentation}{49}{subsection.4.18.2}
+\contentsline {subsubsection}{\numberline {4.18.2.1}ObjMemory}{49}{subsubsection.4.18.2.1}
+\contentsline {subsubsection}{\numberline {4.18.2.2}ObjMemory}{49}{subsubsection.4.18.2.2}
+\contentsline {subsection}{\numberline {4.18.3}Member Function Documentation}{49}{subsection.4.18.3}
+\contentsline {subsubsection}{\numberline {4.18.3.1}addInfo}{49}{subsubsection.4.18.3.1}
+\contentsline {subsubsection}{\numberline {4.18.3.2}getObj}{50}{subsubsection.4.18.3.2}
+\contentsline {subsubsection}{\numberline {4.18.3.3}getObj}{50}{subsubsection.4.18.3.3}
+\contentsline {subsubsection}{\numberline {4.18.3.4}getSize}{50}{subsubsection.4.18.3.4}
+\contentsline {subsubsection}{\numberline {4.18.3.5}getTime}{51}{subsubsection.4.18.3.5}
+\contentsline {subsubsection}{\numberline {4.18.3.6}setTime}{51}{subsubsection.4.18.3.6}
+\contentsline {section}{\numberline {4.19}ObjPlayer Class Reference}{51}{section.4.19}
+\contentsline {subsection}{\numberline {4.19.1}Detailed Description}{52}{subsection.4.19.1}
+\contentsline {subsection}{\numberline {4.19.2}Member Function Documentation}{52}{subsection.4.19.2}
+\contentsline {subsubsection}{\numberline {4.19.2.1}getBodyDir}{52}{subsubsection.4.19.2.1}
+\contentsline {subsubsection}{\numberline {4.19.2.2}getHeadDir}{52}{subsubsection.4.19.2.2}
+\contentsline {subsubsection}{\numberline {4.19.2.3}getTeam}{52}{subsubsection.4.19.2.3}
+\contentsline {subsubsection}{\numberline {4.19.2.4}getuNum}{52}{subsubsection.4.19.2.4}
+\contentsline {subsubsection}{\numberline {4.19.2.5}isGoalie}{52}{subsubsection.4.19.2.5}
+\contentsline {subsubsection}{\numberline {4.19.2.6}setBodyDir}{53}{subsubsection.4.19.2.6}
+\contentsline {subsubsection}{\numberline {4.19.2.7}setGoalie}{53}{subsubsection.4.19.2.7}
+\contentsline {subsubsection}{\numberline {4.19.2.8}setHeadDir}{53}{subsubsection.4.19.2.8}
+\contentsline {subsubsection}{\numberline {4.19.2.9}setTeam}{53}{subsubsection.4.19.2.9}
+\contentsline {subsubsection}{\numberline {4.19.2.10}setuNum}{53}{subsubsection.4.19.2.10}
+\contentsline {section}{\numberline {4.20}Parser Class Reference}{53}{section.4.20}
+\contentsline {subsection}{\numberline {4.20.1}Detailed Description}{53}{subsection.4.20.1}
+\contentsline {subsection}{\numberline {4.20.2}Constructor \& Destructor Documentation}{54}{subsection.4.20.2}
+\contentsline {subsubsection}{\numberline {4.20.2.1}Parser}{54}{subsubsection.4.20.2.1}
+\contentsline {subsection}{\numberline {4.20.3}Member Function Documentation}{54}{subsection.4.20.3}
+\contentsline {subsubsection}{\numberline {4.20.3.1}initParse}{54}{subsubsection.4.20.3.1}
+\contentsline {subsubsection}{\numberline {4.20.3.2}Parse}{54}{subsubsection.4.20.3.2}
+\contentsline {subsection}{\numberline {4.20.4}Member Data Documentation}{55}{subsection.4.20.4}
+\contentsline {subsubsection}{\numberline {4.20.4.1}input}{55}{subsubsection.4.20.4.1}
+\contentsline {section}{\numberline {4.21}Player Class Reference}{55}{section.4.21}
+\contentsline {subsection}{\numberline {4.21.1}Detailed Description}{56}{subsection.4.21.1}
+\contentsline {subsection}{\numberline {4.21.2}Constructor \& Destructor Documentation}{57}{subsection.4.21.2}
+\contentsline {subsubsection}{\numberline {4.21.2.1}Player}{57}{subsubsection.4.21.2.1}
+\contentsline {subsection}{\numberline {4.21.3}Member Function Documentation}{57}{subsection.4.21.3}
+\contentsline {subsubsection}{\numberline {4.21.3.1}closestOpponent}{57}{subsubsection.4.21.3.1}
+\contentsline {subsubsection}{\numberline {4.21.3.2}dash}{57}{subsubsection.4.21.3.2}
+\contentsline {subsubsection}{\numberline {4.21.3.3}dash}{58}{subsubsection.4.21.3.3}
+\contentsline {subsubsection}{\numberline {4.21.3.4}getDirection}{58}{subsubsection.4.21.3.4}
+\contentsline {subsubsection}{\numberline {4.21.3.5}getMem}{58}{subsubsection.4.21.3.5}
+\contentsline {subsubsection}{\numberline {4.21.3.6}getObjInfo}{58}{subsubsection.4.21.3.6}
+\contentsline {subsubsection}{\numberline {4.21.3.7}getParser}{59}{subsubsection.4.21.3.7}
+\contentsline {subsubsection}{\numberline {4.21.3.8}getPosition}{59}{subsubsection.4.21.3.8}
+\contentsline {subsubsection}{\numberline {4.21.3.9}getRoboClient}{59}{subsubsection.4.21.3.9}
+\contentsline {subsubsection}{\numberline {4.21.3.10}getTime}{59}{subsubsection.4.21.3.10}
+\contentsline {subsubsection}{\numberline {4.21.3.11}initPlayer}{59}{subsubsection.4.21.3.11}
+\contentsline {subsubsection}{\numberline {4.21.3.12}initPlayer}{59}{subsubsection.4.21.3.12}
+\contentsline {subsubsection}{\numberline {4.21.3.13}kick}{60}{subsubsection.4.21.3.13}
+\contentsline {subsubsection}{\numberline {4.21.3.14}move}{60}{subsubsection.4.21.3.14}
+\contentsline {subsubsection}{\numberline {4.21.3.15}receiveInput}{61}{subsubsection.4.21.3.15}
+\contentsline {subsubsection}{\numberline {4.21.3.16}say}{61}{subsubsection.4.21.3.16}
+\contentsline {subsubsection}{\numberline {4.21.3.17}setMem}{61}{subsubsection.4.21.3.17}
+\contentsline {subsubsection}{\numberline {4.21.3.18}setObjInfo}{61}{subsubsection.4.21.3.18}
+\contentsline {subsubsection}{\numberline {4.21.3.19}setParser}{61}{subsubsection.4.21.3.19}
+\contentsline {subsubsection}{\numberline {4.21.3.20}setRoboclient}{62}{subsubsection.4.21.3.20}
+\contentsline {subsubsection}{\numberline {4.21.3.21}setTime}{62}{subsubsection.4.21.3.21}
+\contentsline {subsubsection}{\numberline {4.21.3.22}turn}{62}{subsubsection.4.21.3.22}
+\contentsline {section}{\numberline {4.22}Polar Class Reference}{62}{section.4.22}
+\contentsline {subsection}{\numberline {4.22.1}Detailed Description}{63}{subsection.4.22.1}
+\contentsline {subsection}{\numberline {4.22.2}Constructor \& Destructor Documentation}{63}{subsection.4.22.2}
+\contentsline {subsubsection}{\numberline {4.22.2.1}Polar}{63}{subsubsection.4.22.2.1}
+\contentsline {subsubsection}{\numberline {4.22.2.2}Polar}{63}{subsubsection.4.22.2.2}
+\contentsline {section}{\numberline {4.23}Pos Class Reference}{64}{section.4.23}
+\contentsline {subsection}{\numberline {4.23.1}Detailed Description}{64}{subsection.4.23.1}
+\contentsline {subsection}{\numberline {4.23.2}Constructor \& Destructor Documentation}{64}{subsection.4.23.2}
+\contentsline {subsubsection}{\numberline {4.23.2.1}Pos}{64}{subsubsection.4.23.2.1}
+\contentsline {subsubsection}{\numberline {4.23.2.2}Pos}{64}{subsubsection.4.23.2.2}
+\contentsline {subsubsection}{\numberline {4.23.2.3}Pos}{65}{subsubsection.4.23.2.3}
+\contentsline {section}{\numberline {4.24}RoboClient Class Reference}{65}{section.4.24}
+\contentsline {subsection}{\numberline {4.24.1}Detailed Description}{66}{subsection.4.24.1}
+\contentsline {subsection}{\numberline {4.24.2}Constructor \& Destructor Documentation}{66}{subsection.4.24.2}
+\contentsline {subsubsection}{\numberline {4.24.2.1}RoboClient}{66}{subsubsection.4.24.2.1}
+\contentsline {subsubsection}{\numberline {4.24.2.2}RoboClient}{66}{subsubsection.4.24.2.2}
+\contentsline {subsection}{\numberline {4.24.3}Member Function Documentation}{66}{subsection.4.24.3}
+\contentsline {subsubsection}{\numberline {4.24.3.1}catchball}{66}{subsubsection.4.24.3.1}
+\contentsline {subsubsection}{\numberline {4.24.3.2}dash}{66}{subsubsection.4.24.3.2}
+\contentsline {subsubsection}{\numberline {4.24.3.3}dash}{67}{subsubsection.4.24.3.3}
+\contentsline {subsubsection}{\numberline {4.24.3.4}getTeam}{67}{subsubsection.4.24.3.4}
+\contentsline {subsubsection}{\numberline {4.24.3.5}init}{67}{subsubsection.4.24.3.5}
+\contentsline {subsubsection}{\numberline {4.24.3.6}initGoalie}{68}{subsubsection.4.24.3.6}
+\contentsline {subsubsection}{\numberline {4.24.3.7}kick}{68}{subsubsection.4.24.3.7}
+\contentsline {subsubsection}{\numberline {4.24.3.8}move}{69}{subsubsection.4.24.3.8}
+\contentsline {subsubsection}{\numberline {4.24.3.9}receive}{69}{subsubsection.4.24.3.9}
+\contentsline {subsubsection}{\numberline {4.24.3.10}say}{69}{subsubsection.4.24.3.10}
+\contentsline {subsubsection}{\numberline {4.24.3.11}send}{70}{subsubsection.4.24.3.11}
+\contentsline {subsubsection}{\numberline {4.24.3.12}setTeam}{70}{subsubsection.4.24.3.12}
+\contentsline {subsubsection}{\numberline {4.24.3.13}turn}{70}{subsubsection.4.24.3.13}
+\contentsline {section}{\numberline {4.25}SenseMemory Class Reference}{71}{section.4.25}
+\contentsline {subsection}{\numberline {4.25.1}Detailed Description}{71}{subsection.4.25.1}
+\contentsline {subsection}{\numberline {4.25.2}Constructor \& Destructor Documentation}{71}{subsection.4.25.2}
+\contentsline {subsubsection}{\numberline {4.25.2.1}SenseMemory}{71}{subsubsection.4.25.2.1}
+\contentsline {subsubsection}{\numberline {4.25.2.2}SenseMemory}{72}{subsubsection.4.25.2.2}
+\contentsline {subsection}{\numberline {4.25.3}Member Function Documentation}{72}{subsection.4.25.3}
+\contentsline {subsubsection}{\numberline {4.25.3.1}getTime}{72}{subsubsection.4.25.3.1}
+\contentsline {subsubsection}{\numberline {4.25.3.2}setTime}{72}{subsubsection.4.25.3.2}
+\contentsline {subsubsection}{\numberline {4.25.3.3}setTime}{72}{subsubsection.4.25.3.3}
+\contentsline {chapter}{\numberline {5}File Documentation}{73}{chapter.5}
+\contentsline {section}{\numberline {5.1}Action.java File Reference}{73}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{73}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Brain.java File Reference}{73}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{73}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Field.java File Reference}{74}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{74}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Forward.java File Reference}{74}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{74}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.5}FullBack.java File Reference}{74}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{75}{subsection.5.5.1}
+\contentsline {section}{\numberline {5.6}Game.java File Reference}{75}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{75}{subsection.5.6.1}
+\contentsline {section}{\numberline {5.7}Goalie.java File Reference}{75}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{75}{subsection.5.7.1}
+\contentsline {section}{\numberline {5.8}MathHelp.java File Reference}{76}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{76}{subsection.5.8.1}
+\contentsline {section}{\numberline {5.9}Memory.java File Reference}{76}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{76}{subsection.5.9.1}
+\contentsline {section}{\numberline {5.10}Mode.java File Reference}{76}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{77}{subsection.5.10.1}
+\contentsline {section}{\numberline {5.11}ObjInfo.java File Reference}{77}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{77}{subsection.5.11.1}
+\contentsline {section}{\numberline {5.12}ObjMemory.java File Reference}{77}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{78}{subsection.5.12.1}
+\contentsline {section}{\numberline {5.13}Parser.java File Reference}{78}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{78}{subsection.5.13.1}
+\contentsline {section}{\numberline {5.14}Player.java File Reference}{78}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{78}{subsection.5.14.1}
+\contentsline {section}{\numberline {5.15}Pos.java File Reference}{79}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{79}{subsection.5.15.1}
+\contentsline {section}{\numberline {5.16}RoboClient.java File Reference}{79}{section.5.16}
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{79}{subsection.5.16.1}
+\contentsline {section}{\numberline {5.17}SenseMemory.java File Reference}{80}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{80}{subsection.5.17.1}

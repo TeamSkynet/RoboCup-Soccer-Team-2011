@@ -1,0 +1,420 @@
+\hypertarget{classMathHelp}{
+\section{MathHelp Class Reference}
+\label{classMathHelp}\index{MathHelp@{MathHelp}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_a8910f58864c8ad7c964f1b9e6241c3a9}{getPos} (double r, double t)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_a975b04bfd9e506dcb62c658cfdda910f}{getPos} (\hyperlink{classPolar}{Polar} p)
+\item 
+\hyperlink{classPolar}{Polar} \hyperlink{classMathHelp_af5becf9a49a27ab7d3c11205c69a6644}{getPolar} (double x, double y)
+\item 
+\hyperlink{classPolar}{Polar} \hyperlink{classMathHelp_ae90724ff785c0e729c48073bfe276dc6}{getPolar} (\hyperlink{classPos}{Pos} p)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_aac941d01d5b7a39092120473e22075bc}{vAdd} (\hyperlink{classPos}{Pos} p1, \hyperlink{classPos}{Pos} p2)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_a681a7f391da9730a01307dc1ac853f81}{vSub} (\hyperlink{classPos}{Pos} p2, \hyperlink{classPos}{Pos} p1)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_aeedf926ba8b78f6731d9a4b6f89d97f3}{vMul} (\hyperlink{classPos}{Pos} p, double n)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_ac00a3269d2dbea54cadfe040d3b2e7da}{vDiv} (\hyperlink{classPos}{Pos} p, double n)
+\item 
+double \hyperlink{classMathHelp_abb0870985eba7de0cfe486a3066499ce}{mag} (\hyperlink{classPos}{Pos} p)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_ae961633e0f2fafcaf2a3baa43bb6037f}{norm} (\hyperlink{classPos}{Pos} p)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMathHelp_ac002b3f94b3fcf1151f2ac811c15b650}{norm} (double dist, \hyperlink{classPos}{Pos} a)
+\item 
+double \hyperlink{classMathHelp_a930ea3f6ff9ea0028675b9b7d5750601}{edp} (double effort, double stamina)
+\item 
+double \hyperlink{classMathHelp_a319c1dda1981fe1db6d62d96eaa05964}{getDashPower} (\hyperlink{classPos}{Pos} p, double vel\_\-r, double vel\_\-t, double effort, double stamina)
+\item 
+\hyperlink{classPolar}{Polar} \hyperlink{classMathHelp_a38ab7929f17e6c0bb42d2fc0e88b991d}{getNextBallPoint} (\hyperlink{classObjBall}{ObjBall} ball)
+\item 
+\hyperlink{classPolar}{Polar} \hyperlink{classMathHelp_a99d4ced5c934a4bd4c54ab6a42b3b5fa}{getNextPlayerPoint} (\hyperlink{classObjPlayer}{ObjPlayer} player)
+\item 
+double \hyperlink{classMathHelp_a744521b97eedbd2876281c4fe0983bfb}{getKickPower} (\hyperlink{classPolar}{Polar} p, double vel\_\-r, double vel\_\-t, double ball\_\-r, double ball\_\-t)
+\item 
+double \hyperlink{classMathHelp_a0ee204fb9de84cc5085d2599782caabd}{getKickPower} (\hyperlink{classPos}{Pos} p, double vel\_\-r, double vel\_\-t, double ball\_\-r, double ball\_\-t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMathHelp_a930ea3f6ff9ea0028675b9b7d5750601}{
+\index{MathHelp@{MathHelp}!edp@{edp}}
+\index{edp@{edp}!MathHelp@{MathHelp}}
+\subsubsection[{edp}]{\setlength{\rightskip}{0pt plus 5cm}double MathHelp::edp (
+\begin{DoxyParamCaption}
+\item[{double}]{effort, }
+\item[{double}]{stamina}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a930ea3f6ff9ea0028675b9b7d5750601}
+The Effective Dash Power
+
+
+\begin{DoxyParams}{Parameters}
+{\em effort} & From the stamina in the \hyperlink{classSenseMemory}{SenseMemory} \\
+\hline
+{\em power} & The Power of the dash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the product of effort x power x dash\_\-power\_\-rate (0.006) 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a319c1dda1981fe1db6d62d96eaa05964}{
+\index{MathHelp@{MathHelp}!getDashPower@{getDashPower}}
+\index{getDashPower@{getDashPower}!MathHelp@{MathHelp}}
+\subsubsection[{getDashPower}]{\setlength{\rightskip}{0pt plus 5cm}double MathHelp::getDashPower (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p, }
+\item[{double}]{vel\_\-r, }
+\item[{double}]{vel\_\-t, }
+\item[{double}]{effort, }
+\item[{double}]{stamina}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a319c1dda1981fe1db6d62d96eaa05964}
+A calculator for power needed to get to a position on the field. This is derived from the Movement Model equations in the Server Manual: section 4.4
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the position to go to \\
+\hline
+{\em vel\_\-r} & the magnitude of the player's velocity \\
+\hline
+{\em vel\_\-t} & the direction of the player's velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The power needed to accelerate the player to the desired location 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a744521b97eedbd2876281c4fe0983bfb}{
+\index{MathHelp@{MathHelp}!getKickPower@{getKickPower}}
+\index{getKickPower@{getKickPower}!MathHelp@{MathHelp}}
+\subsubsection[{getKickPower}]{\setlength{\rightskip}{0pt plus 5cm}double MathHelp::getKickPower (
+\begin{DoxyParamCaption}
+\item[{{\bf Polar}}]{p, }
+\item[{double}]{vel\_\-r, }
+\item[{double}]{vel\_\-t, }
+\item[{double}]{ball\_\-r, }
+\item[{double}]{ball\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a744521b97eedbd2876281c4fe0983bfb}
+Calculates the power needed to kick the ball to a specified place on the field, using the equation from the manual
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A polar coordinate to kick the ball to \\
+\hline
+{\em vel\_\-r} & The magnitude of the player's velocity \\
+\hline
+{\em vel\_\-t} & the direction of the player's velocity \\
+\hline
+{\em ball\_\-r} & the distance of the ball to the player \\
+\hline
+{\em ball\_\-t} & the direction of the ball to the player\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+power of kick 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a0ee204fb9de84cc5085d2599782caabd}{
+\index{MathHelp@{MathHelp}!getKickPower@{getKickPower}}
+\index{getKickPower@{getKickPower}!MathHelp@{MathHelp}}
+\subsubsection[{getKickPower}]{\setlength{\rightskip}{0pt plus 5cm}double MathHelp::getKickPower (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p, }
+\item[{double}]{vel\_\-r, }
+\item[{double}]{vel\_\-t, }
+\item[{double}]{ball\_\-r, }
+\item[{double}]{ball\_\-t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a0ee204fb9de84cc5085d2599782caabd}
+A wrapper of the getKickPower with a \hyperlink{classPos}{Pos} instead of \hyperlink{classPolar}{Polar}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & A polar coordinate to kick the ball to \\
+\hline
+{\em vel\_\-r} & The magnitude of the player's velocity \\
+\hline
+{\em vel\_\-t} & the direction of the player's velocity \\
+\hline
+{\em ball\_\-r} & the distance of the ball to the player \\
+\hline
+{\em ball\_\-t} & the direction of the ball to the player\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+power of kick 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a38ab7929f17e6c0bb42d2fc0e88b991d}{
+\index{MathHelp@{MathHelp}!getNextBallPoint@{getNextBallPoint}}
+\index{getNextBallPoint@{getNextBallPoint}!MathHelp@{MathHelp}}
+\subsubsection[{getNextBallPoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Polar} MathHelp::getNextBallPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a38ab7929f17e6c0bb42d2fc0e88b991d}
+A method to find the ball's next point given it's velocity and position relative to player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPolar}{Polar} coordinate with the theoretical position of the ball at time t+1 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a99d4ced5c934a4bd4c54ab6a42b3b5fa}{
+\index{MathHelp@{MathHelp}!getNextPlayerPoint@{getNextPlayerPoint}}
+\index{getNextPlayerPoint@{getNextPlayerPoint}!MathHelp@{MathHelp}}
+\subsubsection[{getNextPlayerPoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Polar} MathHelp::getNextPlayerPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjPlayer}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a99d4ced5c934a4bd4c54ab6a42b3b5fa}
+A method to find an opponent's next point given his velocity and position relative to the player. 
+\begin{DoxyParams}{Parameters}
+{\em opponent} & An \hyperlink{classObjPlayer}{ObjPlayer} object representing the opponent to track \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPolar}{Polar} coordinate with the predicted position of the opponent at time t+1 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_ae90724ff785c0e729c48073bfe276dc6}{
+\index{MathHelp@{MathHelp}!getPolar@{getPolar}}
+\index{getPolar@{getPolar}!MathHelp@{MathHelp}}
+\subsubsection[{getPolar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Polar} MathHelp::getPolar (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_ae90724ff785c0e729c48073bfe276dc6}
+Cartesian to polar wrapper
+
+This is just a wrapper, so you can pass in a \hyperlink{classPos}{Pos} instead of extracting it's x and y and passing them in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the Cartesian vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classPolar}{Polar} vector converted from the Cartesian vector 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_af5becf9a49a27ab7d3c11205c69a6644}{
+\index{MathHelp@{MathHelp}!getPolar@{getPolar}}
+\index{getPolar@{getPolar}!MathHelp@{MathHelp}}
+\subsubsection[{getPolar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Polar} MathHelp::getPolar (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_af5becf9a49a27ab7d3c11205c69a6644}
+Cartesian to polar converter
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the Cartesian vector \\
+\hline
+{\em y} & the y coordinate of the Cartesian vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classPolar}{Polar} vector converted from the Cartesian vector 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a975b04bfd9e506dcb62c658cfdda910f}{
+\index{MathHelp@{MathHelp}!getPos@{getPos}}
+\index{getPos@{getPos}!MathHelp@{MathHelp}}
+\subsubsection[{getPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::getPos (
+\begin{DoxyParamCaption}
+\item[{{\bf Polar}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a975b04bfd9e506dcb62c658cfdda910f}
+\hyperlink{classPolar}{Polar} to Cartesian wrapper
+
+This allows you to pass a whole polar in, instead of extracting it's r and t variables and passing them in
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The polar coordinates you want to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classPos}{Pos} with the Cartesian version of your \hyperlink{classPolar}{Polar} vector 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a8910f58864c8ad7c964f1b9e6241c3a9}{
+\index{MathHelp@{MathHelp}!getPos@{getPos}}
+\index{getPos@{getPos}!MathHelp@{MathHelp}}
+\subsubsection[{getPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::getPos (
+\begin{DoxyParamCaption}
+\item[{double}]{r, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a8910f58864c8ad7c964f1b9e6241c3a9}
+\hyperlink{classPolar}{Polar} to Cartesian converter
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the length of the \hyperlink{classPolar}{Polar} arm \\
+\hline
+{\em t} & the angle, in degrees, of the arm from the x-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Cartesian \hyperlink{classPos}{Pos} converted from the r and t of a \hyperlink{classPolar}{Polar} vector 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_abb0870985eba7de0cfe486a3066499ce}{
+\index{MathHelp@{MathHelp}!mag@{mag}}
+\index{mag@{mag}!MathHelp@{MathHelp}}
+\subsubsection[{mag}]{\setlength{\rightskip}{0pt plus 5cm}double MathHelp::mag (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_abb0870985eba7de0cfe486a3066499ce}
+Magnitude Calculates the Magnitude of a vector, same as r in a \hyperlink{classPolar}{Polar} vector 
+\begin{DoxyParams}{Parameters}
+{\em p} & the \hyperlink{classPos}{Pos} of the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A double containing the magnitude of the vector 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_ae961633e0f2fafcaf2a3baa43bb6037f}{
+\index{MathHelp@{MathHelp}!norm@{norm}}
+\index{norm@{norm}!MathHelp@{MathHelp}}
+\subsubsection[{norm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::norm (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_ae961633e0f2fafcaf2a3baa43bb6037f}
+A normalizer 
+\begin{DoxyParams}{Parameters}
+{\em p} & the vector to find the normal of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPos}{Pos} of the unit vector of p 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_ac002b3f94b3fcf1151f2ac811c15b650}{
+\index{MathHelp@{MathHelp}!norm@{norm}}
+\index{norm@{norm}!MathHelp@{MathHelp}}
+\subsubsection[{norm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::norm (
+\begin{DoxyParamCaption}
+\item[{double}]{dist, }
+\item[{{\bf Pos}}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_ac002b3f94b3fcf1151f2ac811c15b650}
+A normalizer 
+\begin{DoxyParams}{Parameters}
+{\em dist} & the magnitude of the vector \\
+\hline
+{\em a} & the vector to be normalized \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPos}{Pos} of the unit vector of p 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_aac941d01d5b7a39092120473e22075bc}{
+\index{MathHelp@{MathHelp}!vAdd@{vAdd}}
+\index{vAdd@{vAdd}!MathHelp@{MathHelp}}
+\subsubsection[{vAdd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::vAdd (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p1, }
+\item[{{\bf Pos}}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_aac941d01d5b7a39092120473e22075bc}
+Vector Addition
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first position \\
+\hline
+{\em p2} & second position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New position with the sum of the two arguments 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_ac00a3269d2dbea54cadfe040d3b2e7da}{
+\index{MathHelp@{MathHelp}!vDiv@{vDiv}}
+\index{vDiv@{vDiv}!MathHelp@{MathHelp}}
+\subsubsection[{vDiv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::vDiv (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p, }
+\item[{double}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_ac00a3269d2dbea54cadfe040d3b2e7da}
+Divide vector by scalar 
+\begin{DoxyParams}{Parameters}
+{\em p} & the vector \\
+\hline
+{\em n} & the scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPos}{Pos} vector divided by a scalar value 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_aeedf926ba8b78f6731d9a4b6f89d97f3}{
+\index{MathHelp@{MathHelp}!vMul@{vMul}}
+\index{vMul@{vMul}!MathHelp@{MathHelp}}
+\subsubsection[{vMul}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::vMul (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p, }
+\item[{double}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_aeedf926ba8b78f6731d9a4b6f89d97f3}
+Multiply vector by scalar 
+\begin{DoxyParams}{Parameters}
+{\em p} & the vector \\
+\hline
+{\em n} & the scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classPos}{Pos} vector multiplied by a scalar value 
+\end{DoxyReturn}
+\hypertarget{classMathHelp_a681a7f391da9730a01307dc1ac853f81}{
+\index{MathHelp@{MathHelp}!vSub@{vSub}}
+\index{vSub@{vSub}!MathHelp@{MathHelp}}
+\subsubsection[{vSub}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} MathHelp::vSub (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p2, }
+\item[{{\bf Pos}}]{p1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMathHelp_a681a7f391da9730a01307dc1ac853f81}
+Vector Subtraction
+
+
+\begin{DoxyParams}{Parameters}
+{\em p2} & final position \\
+\hline
+{\em p1} & initial position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new \hyperlink{classPos}{Pos} with the difference between p2 and p1 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MathHelp_8java}{MathHelp.java}\end{DoxyCompactItemize}

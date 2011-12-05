@@ -1,0 +1,159 @@
+\hypertarget{classObjPlayer}{
+\section{ObjPlayer Class Reference}
+\label{classObjPlayer}\index{ObjPlayer@{ObjPlayer}}
+}
+Inheritance diagram for ObjPlayer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObjPlayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classObjPlayer_a52c8a9ee1da012abb60b7379e7763597}{getTeam} ()
+\item 
+void \hyperlink{classObjPlayer_ad1fa8b66e930eed448c800a6b80ee055}{setTeam} (String team)
+\item 
+int \hyperlink{classObjPlayer_a1d763181bd909af9fff3189cf014035f}{getuNum} ()
+\item 
+void \hyperlink{classObjPlayer_ae80af0d4c2cce1f90d0320ec2599c70e}{setuNum} (int uNum)
+\item 
+boolean \hyperlink{classObjPlayer_a74c9503f5232d9341a721b863c851fde}{isGoalie} ()
+\item 
+void \hyperlink{classObjPlayer_ad945cc86f383fed367bdda2b36a3e2ac}{setGoalie} (boolean goalie)
+\item 
+double \hyperlink{classObjPlayer_ad842a68637343da6ae9e5fbd361947a6}{getHeadDir} ()
+\item 
+void \hyperlink{classObjPlayer_a09a92949b4eb26e17ecb181f7d02001d}{setHeadDir} (double headDir)
+\item 
+double \hyperlink{classObjPlayer_a878c43dd285c24ab44fcb0a9b5aa3b62}{getBodyDir} ()
+\item 
+void \hyperlink{classObjPlayer_a002a52bb5e7b1c08e2585c335dc40023}{setBodyDir} (double bodyDir)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+container for player \hyperlink{classObjInfo}{ObjInfo} 
+
+\subsection{Member Function Documentation}
+\hypertarget{classObjPlayer_a878c43dd285c24ab44fcb0a9b5aa3b62}{
+\index{ObjPlayer@{ObjPlayer}!getBodyDir@{getBodyDir}}
+\index{getBodyDir@{getBodyDir}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{getBodyDir}]{\setlength{\rightskip}{0pt plus 5cm}double ObjPlayer::getBodyDir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a878c43dd285c24ab44fcb0a9b5aa3b62}
+A getter for the player's body direction
+
+\begin{DoxyReturn}{Returns}
+a double of the angle, in degrees, of the direction of the player's body relative to your own. The angle is 0 if their bodies are both facing each other. 
+\end{DoxyReturn}
+\hypertarget{classObjPlayer_ad842a68637343da6ae9e5fbd361947a6}{
+\index{ObjPlayer@{ObjPlayer}!getHeadDir@{getHeadDir}}
+\index{getHeadDir@{getHeadDir}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{getHeadDir}]{\setlength{\rightskip}{0pt plus 5cm}double ObjPlayer::getHeadDir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_ad842a68637343da6ae9e5fbd361947a6}
+A getter for the player's head direction
+
+\begin{DoxyReturn}{Returns}
+a double of the angle, in degrees, of the direction of the player's head relative to your own. The angle is 0 if they are both facing each other. 
+\end{DoxyReturn}
+\hypertarget{classObjPlayer_a52c8a9ee1da012abb60b7379e7763597}{
+\index{ObjPlayer@{ObjPlayer}!getTeam@{getTeam}}
+\index{getTeam@{getTeam}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{getTeam}]{\setlength{\rightskip}{0pt plus 5cm}String ObjPlayer::getTeam (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a52c8a9ee1da012abb60b7379e7763597}
+The Team Name getter
+
+\begin{DoxyReturn}{Returns}
+the name of the team the player is on, if they're close enough to see the team 
+\end{DoxyReturn}
+\hypertarget{classObjPlayer_a1d763181bd909af9fff3189cf014035f}{
+\index{ObjPlayer@{ObjPlayer}!getuNum@{getuNum}}
+\index{getuNum@{getuNum}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{getuNum}]{\setlength{\rightskip}{0pt plus 5cm}int ObjPlayer::getuNum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a1d763181bd909af9fff3189cf014035f}
+The Uniform Number getter
+
+\begin{DoxyReturn}{Returns}
+the Uniform Number on the player's shirt, if they're close enough to see it 
+\end{DoxyReturn}
+\hypertarget{classObjPlayer_a74c9503f5232d9341a721b863c851fde}{
+\index{ObjPlayer@{ObjPlayer}!isGoalie@{isGoalie}}
+\index{isGoalie@{isGoalie}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{isGoalie}]{\setlength{\rightskip}{0pt plus 5cm}boolean ObjPlayer::isGoalie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a74c9503f5232d9341a721b863c851fde}
+A check to see if the player is a goalie or field player
+
+\begin{DoxyReturn}{Returns}
+true if the player is the goalie, false if s/he is not 
+\end{DoxyReturn}
+\hypertarget{classObjPlayer_a002a52bb5e7b1c08e2585c335dc40023}{
+\index{ObjPlayer@{ObjPlayer}!setBodyDir@{setBodyDir}}
+\index{setBodyDir@{setBodyDir}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{setBodyDir}]{\setlength{\rightskip}{0pt plus 5cm}void ObjPlayer::setBodyDir (
+\begin{DoxyParamCaption}
+\item[{double}]{bodyDir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a002a52bb5e7b1c08e2585c335dc40023}
+The body direction setter \hypertarget{classObjPlayer_ad945cc86f383fed367bdda2b36a3e2ac}{
+\index{ObjPlayer@{ObjPlayer}!setGoalie@{setGoalie}}
+\index{setGoalie@{setGoalie}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{setGoalie}]{\setlength{\rightskip}{0pt plus 5cm}void ObjPlayer::setGoalie (
+\begin{DoxyParamCaption}
+\item[{boolean}]{goalie}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_ad945cc86f383fed367bdda2b36a3e2ac}
+The goalie check setter \hypertarget{classObjPlayer_a09a92949b4eb26e17ecb181f7d02001d}{
+\index{ObjPlayer@{ObjPlayer}!setHeadDir@{setHeadDir}}
+\index{setHeadDir@{setHeadDir}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{setHeadDir}]{\setlength{\rightskip}{0pt plus 5cm}void ObjPlayer::setHeadDir (
+\begin{DoxyParamCaption}
+\item[{double}]{headDir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_a09a92949b4eb26e17ecb181f7d02001d}
+The head direction setter \hypertarget{classObjPlayer_ad1fa8b66e930eed448c800a6b80ee055}{
+\index{ObjPlayer@{ObjPlayer}!setTeam@{setTeam}}
+\index{setTeam@{setTeam}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{setTeam}]{\setlength{\rightskip}{0pt plus 5cm}void ObjPlayer::setTeam (
+\begin{DoxyParamCaption}
+\item[{String}]{team}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_ad1fa8b66e930eed448c800a6b80ee055}
+The Team Name setter \hypertarget{classObjPlayer_ae80af0d4c2cce1f90d0320ec2599c70e}{
+\index{ObjPlayer@{ObjPlayer}!setuNum@{setuNum}}
+\index{setuNum@{setuNum}!ObjPlayer@{ObjPlayer}}
+\subsubsection[{setuNum}]{\setlength{\rightskip}{0pt plus 5cm}void ObjPlayer::setuNum (
+\begin{DoxyParamCaption}
+\item[{int}]{uNum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjPlayer_ae80af0d4c2cce1f90d0320ec2599c70e}
+The Uniform Number getter 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ObjInfo_8java}{ObjInfo.java}\end{DoxyCompactItemize}

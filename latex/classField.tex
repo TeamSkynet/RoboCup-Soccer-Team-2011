@@ -1,0 +1,53 @@
+\hypertarget{classField}{
+\section{Field Class Reference}
+\label{classField}\index{Field@{Field}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classField_a4623eecd51b10ad51ba23d6c9e2c606a}{Field} (String side)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classField_a3790ce0f52c5d20bd396d58df70ae5a8}{
+ArrayList$<$ \hyperlink{classPos}{Pos} $>$ {\bfseries posList} = new ArrayList$<$\hyperlink{classPos}{Pos}$>$()}
+\label{classField_a3790ce0f52c5d20bd396d58df70ae5a8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This creates an ArrayList that holds all the coordinates for the fixed points on the field. As the orientation of the axes depends on the side of the field the starts on, there are two sets of coordinates, each with opposite signs.
+
+\begin{DoxyAuthor}{Author}
+Grant Hays 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classField_a4623eecd51b10ad51ba23d6c9e2c606a}{
+\index{Field@{Field}!Field@{Field}}
+\index{Field@{Field}!Field@{Field}}
+\subsubsection[{Field}]{\setlength{\rightskip}{0pt plus 5cm}Field::Field (
+\begin{DoxyParamCaption}
+\item[{String}]{side}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classField_a4623eecd51b10ad51ba23d6c9e2c606a}
+\hyperlink{classField}{Field} constructor 
+\begin{DoxyParams}{Parameters}
+{\em side} & The side of the field the player's team starts on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The side needs to be parsed from the server's (init) message and passed as the argument 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A new \hyperlink{classField}{Field} will be created with access to an array list of all the field's fixed points 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Field_8java}{Field.java}\end{DoxyCompactItemize}

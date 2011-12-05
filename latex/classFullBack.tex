@@ -1,0 +1,147 @@
+\hypertarget{classFullBack}{
+\section{FullBack Class Reference}
+\label{classFullBack}\index{FullBack@{FullBack}}
+}
+Inheritance diagram for FullBack:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFullBack}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFullBack_acbe24697aec4b8fdf44d3ec60a9fa40d}{FullBack} (\hyperlink{classRoboClient}{RoboClient} rc, \hyperlink{classMemory}{Memory} m, \hyperlink{classObjInfo}{ObjInfo} i, \hyperlink{classParser}{Parser} p, int time)
+\item 
+\hyperlink{classFullBack_a7918587f26bf13173e7065187e48e03c}{FullBack} (String team)
+\item 
+void \hyperlink{classFullBack_ac213422fc423c607d56d4b5710d0192e}{initFullBack} (double x, double y)  throws SocketException, UnknownHostException 
+\item 
+void \hyperlink{classFullBack_a4b2e2ea2db6684474a63e7c257b9c67a}{initFullBack} (double x, double y, String pos)  throws SocketException, UnknownHostException 
+\item 
+\hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classFullBack_afd24e3c5ff7c8b93c77069e9f86cd9ab}{closestPlayer} ()  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classFullBack_a3638f5f61bca69dc81571c1dcbfa46e7}{
+boolean {\bfseries inFullBackZone} ()}
+\label{classFullBack_a3638f5f61bca69dc81571c1dcbfa46e7}
+
+\item 
+\hypertarget{classFullBack_ab02ecfe8c92fdb837ed6bf6c7389cfc0}{
+void {\bfseries runDefense} ()  throws UnknownHostException, InterruptedException }
+\label{classFullBack_ab02ecfe8c92fdb837ed6bf6c7389cfc0}
+
+\item 
+\hypertarget{classFullBack_aef6e79bcb91ec2baebd71a601cfe94fc}{
+void {\bfseries run} ()}
+\label{classFullBack_aef6e79bcb91ec2baebd71a601cfe94fc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classFullBack}{FullBack} class inherits from the \hyperlink{classPlayer}{Player} class. The \hyperlink{classFullBack}{FullBack} is a specialized type of \hyperlink{classPlayer}{Player} that focuses on defensive behaviors such as interfering with opponent scoring. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFullBack_acbe24697aec4b8fdf44d3ec60a9fa40d}{
+\index{FullBack@{FullBack}!FullBack@{FullBack}}
+\index{FullBack@{FullBack}!FullBack@{FullBack}}
+\subsubsection[{FullBack}]{\setlength{\rightskip}{0pt plus 5cm}FullBack::FullBack (
+\begin{DoxyParamCaption}
+\item[{{\bf RoboClient}}]{rc, }
+\item[{{\bf Memory}}]{m, }
+\item[{{\bf ObjInfo}}]{i, }
+\item[{{\bf Parser}}]{p, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullBack_acbe24697aec4b8fdf44d3ec60a9fa40d}
+
+\begin{DoxyParams}{Parameters}
+{\em rc} & \\
+\hline
+{\em m} & \\
+\hline
+{\em i} & \\
+\hline
+{\em p} & \\
+\hline
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullBack_a7918587f26bf13173e7065187e48e03c}{
+\index{FullBack@{FullBack}!FullBack@{FullBack}}
+\index{FullBack@{FullBack}!FullBack@{FullBack}}
+\subsubsection[{FullBack}]{\setlength{\rightskip}{0pt plus 5cm}FullBack::FullBack (
+\begin{DoxyParamCaption}
+\item[{String}]{team}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullBack_a7918587f26bf13173e7065187e48e03c}
+
+\begin{DoxyParams}{Parameters}
+{\em team} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFullBack_afd24e3c5ff7c8b93c77069e9f86cd9ab}{
+\index{FullBack@{FullBack}!closestPlayer@{closestPlayer}}
+\index{closestPlayer@{closestPlayer}!FullBack@{FullBack}}
+\subsubsection[{closestPlayer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjPlayer} FullBack::closestPlayer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullBack_afd24e3c5ff7c8b93c77069e9f86cd9ab}
+Returns the closest player to the \hyperlink{classFullBack}{FullBack} on the same team. \begin{DoxyPostcond}{Postcondition}
+The closest player to the \hyperlink{classFullBack}{FullBack} has been determined. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjPlayer}{ObjPlayer} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classFullBack_a4b2e2ea2db6684474a63e7c257b9c67a}{
+\index{FullBack@{FullBack}!initFullBack@{initFullBack}}
+\index{initFullBack@{initFullBack}!FullBack@{FullBack}}
+\subsubsection[{initFullBack}]{\setlength{\rightskip}{0pt plus 5cm}void FullBack::initFullBack (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{String}]{pos}
+\end{DoxyParamCaption}
+)  throws SocketException, UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullBack_a4b2e2ea2db6684474a63e7c257b9c67a}
+Initializes the \hyperlink{classPlayer}{Player} with the RoboCup server as a goalie. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been initialized to the correct team as a goalie. 
+\end{DoxyPostcond}
+\hypertarget{classFullBack_ac213422fc423c607d56d4b5710d0192e}{
+\index{FullBack@{FullBack}!initFullBack@{initFullBack}}
+\index{initFullBack@{initFullBack}!FullBack@{FullBack}}
+\subsubsection[{initFullBack}]{\setlength{\rightskip}{0pt plus 5cm}void FullBack::initFullBack (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)  throws SocketException, UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullBack_ac213422fc423c607d56d4b5710d0192e}
+Initializes the \hyperlink{classPlayer}{Player} with the RoboCup server as a goalie. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been initialized to the correct team as a goalie. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FullBack_8java}{FullBack.java}\end{DoxyCompactItemize}

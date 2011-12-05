@@ -1,0 +1,184 @@
+\hypertarget{classObjMemory}{
+\section{ObjMemory Class Reference}
+\label{classObjMemory}\index{ObjMemory@{ObjMemory}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObjMemory_a0536b9096b54697218eecf2f1da3c1b4}{ObjMemory} ()
+\item 
+\hyperlink{classObjMemory_a1868167dda44f86ec490e9e06cfd7bca}{ObjMemory} (ArrayList$<$ \hyperlink{classObjInfo}{ObjInfo} $>$ ObjArray, int t)
+\item 
+void \hyperlink{classObjMemory_a8d90e6f1f96617d419136240cac1055d}{addInfo} (\hyperlink{classObjInfo}{ObjInfo} newInfo)
+\item 
+int \hyperlink{classObjMemory_a6d60d4dbeb76b1acecedd12aa5aa9a7e}{getTime} ()
+\item 
+void \hyperlink{classObjMemory_a51b9a4241e85b64e7de03ceb23fa49c4}{setTime} (int t)
+\item 
+int \hyperlink{classObjMemory_aabec8724e9dcf43c1d74e07da32db6c4}{getSize} ()
+\item 
+\hyperlink{classObjInfo}{ObjInfo} \hyperlink{classObjMemory_a239534ad3fd257bca199db862298f701}{getObj} (int index)
+\item 
+\hyperlink{classObjInfo}{ObjInfo} \hyperlink{classObjMemory_ae4fb653adb8f1f399b4c5abfd824fa7a}{getObj} (String name)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classObjMemory_a7697b1cf169db1b511c22ef743c566c1}{
+ArrayList$<$ \hyperlink{classObjInfo}{ObjInfo} $>$ {\bfseries ObjArray}}
+\label{classObjMemory_a7697b1cf169db1b511c22ef743c566c1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classObjMemory}{ObjMemory} saves all the \hyperlink{classObjInfo}{ObjInfo} (and it's children) objects from a parse into ArrayList along with the time parsed. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classObjMemory_a0536b9096b54697218eecf2f1da3c1b4}{
+\index{ObjMemory@{ObjMemory}!ObjMemory@{ObjMemory}}
+\index{ObjMemory@{ObjMemory}!ObjMemory@{ObjMemory}}
+\subsubsection[{ObjMemory}]{\setlength{\rightskip}{0pt plus 5cm}ObjMemory::ObjMemory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a0536b9096b54697218eecf2f1da3c1b4}
+Default constructor
+
+This initializes the time to 0 \hypertarget{classObjMemory_a1868167dda44f86ec490e9e06cfd7bca}{
+\index{ObjMemory@{ObjMemory}!ObjMemory@{ObjMemory}}
+\index{ObjMemory@{ObjMemory}!ObjMemory@{ObjMemory}}
+\subsubsection[{ObjMemory}]{\setlength{\rightskip}{0pt plus 5cm}ObjMemory::ObjMemory (
+\begin{DoxyParamCaption}
+\item[{ArrayList$<$ {\bf ObjInfo} $>$}]{ObjArray, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a1868167dda44f86ec490e9e06cfd7bca}
+\hyperlink{classObjMemory}{ObjMemory} constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em ObjArray} & the ArrayList containing all the ObjInfos from the server's parsed (see) message \\
+\hline
+{\em t} & the time parsed from the server's (see) message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+This should only be called inside of the parser. It's merely a way to store ObjInfos from the (see) message into the greater \hyperlink{classMemory}{Memory} class 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A new \hyperlink{classObjMemory}{ObjMemory} containing the list of visible ObjInfos and the most recent time will be availbe to add to the \hyperlink{classMemory}{Memory} 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classObjMemory_a8d90e6f1f96617d419136240cac1055d}{
+\index{ObjMemory@{ObjMemory}!addInfo@{addInfo}}
+\index{addInfo@{addInfo}!ObjMemory@{ObjMemory}}
+\subsubsection[{addInfo}]{\setlength{\rightskip}{0pt plus 5cm}void ObjMemory::addInfo (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjInfo}}]{newInfo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a8d90e6f1f96617d419136240cac1055d}
+A method to add new \hyperlink{classObjInfo}{ObjInfo} to the \hyperlink{classObjMemory}{ObjMemory}
+
+
+\begin{DoxyParams}{Parameters}
+{\em newInfo} & the \hyperlink{classObjInfo}{ObjInfo} to add tot he ObjMemory's ArrayList \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+A non-\/null \hyperlink{classObjInfo}{ObjInfo} will be passed into the method 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The newInfo will be added to the ObjArray 
+\end{DoxyPostcond}
+\hypertarget{classObjMemory_a239534ad3fd257bca199db862298f701}{
+\index{ObjMemory@{ObjMemory}!getObj@{getObj}}
+\index{getObj@{getObj}!ObjMemory@{ObjMemory}}
+\subsubsection[{getObj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjInfo} ObjMemory::getObj (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a239534ad3fd257bca199db862298f701}
+An accessor of individual \hyperlink{classObjInfo}{ObjInfo}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the \hyperlink{classObjInfo}{ObjInfo} to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The ObjArray should have at least one \hyperlink{classObjInfo}{ObjInfo} in it 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classObjInfo}{ObjInfo} at the given index will be returned, this is a good way to traverse the ObjInfos visible to you 
+\end{DoxyPostcond}
+\hypertarget{classObjMemory_ae4fb653adb8f1f399b4c5abfd824fa7a}{
+\index{ObjMemory@{ObjMemory}!getObj@{getObj}}
+\index{getObj@{getObj}!ObjMemory@{ObjMemory}}
+\subsubsection[{getObj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjInfo} ObjMemory::getObj (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_ae4fb653adb8f1f399b4c5abfd824fa7a}
+A method to get an \hyperlink{classObjInfo}{ObjInfo} by name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the ObjName of the \hyperlink{classObjInfo}{ObjInfo} searched for (e.g. \char`\"{}ball\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The \hyperlink{classObjInfo}{ObjInfo} should be checked for visibility first, otherwise you run the risk of getting an empty \hyperlink{classObjInfo}{ObjInfo} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The first \hyperlink{classObjInfo}{ObjInfo} with the name will be returned. Remember, this won't return all the ObjInfos of an ObjName, if there are multiple. 
+\end{DoxyPostcond}
+\hypertarget{classObjMemory_aabec8724e9dcf43c1d74e07da32db6c4}{
+\index{ObjMemory@{ObjMemory}!getSize@{getSize}}
+\index{getSize@{getSize}!ObjMemory@{ObjMemory}}
+\subsubsection[{getSize}]{\setlength{\rightskip}{0pt plus 5cm}int ObjMemory::getSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_aabec8724e9dcf43c1d74e07da32db6c4}
+Returns the size of the ObjArray \hypertarget{classObjMemory_a6d60d4dbeb76b1acecedd12aa5aa9a7e}{
+\index{ObjMemory@{ObjMemory}!getTime@{getTime}}
+\index{getTime@{getTime}!ObjMemory@{ObjMemory}}
+\subsubsection[{getTime}]{\setlength{\rightskip}{0pt plus 5cm}int ObjMemory::getTime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a6d60d4dbeb76b1acecedd12aa5aa9a7e}
+A method to access the time the message was parsed, provided by the server's (see) message \hypertarget{classObjMemory_a51b9a4241e85b64e7de03ceb23fa49c4}{
+\index{ObjMemory@{ObjMemory}!setTime@{setTime}}
+\index{setTime@{setTime}!ObjMemory@{ObjMemory}}
+\subsubsection[{setTime}]{\setlength{\rightskip}{0pt plus 5cm}void ObjMemory::setTime (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classObjMemory_a51b9a4241e85b64e7de03ceb23fa49c4}
+The time setter
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the time integer from the server's latest (see) parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+the time will be set and ready to access 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ObjMemory_8java}{ObjMemory.java}\end{DoxyCompactItemize}

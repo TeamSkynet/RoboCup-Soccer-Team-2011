@@ -1,0 +1,111 @@
+\hypertarget{classPos}{
+\section{Pos Class Reference}
+\label{classPos}\index{Pos@{Pos}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPos_aaf021a47707aab8c1694998e9c8b348c}{Pos} ()
+\item 
+\hyperlink{classPos_af8ea76275f120c80f13632807f675861}{Pos} (String name, double x, double y)
+\item 
+\hyperlink{classPos_a817da99f50ff86348b6fba43d8cfce94}{Pos} (double x, double y)
+\item 
+\hypertarget{classPos_aee301f27953e7930dac5373d26da24b5}{
+void {\bfseries print} (String a)}
+\label{classPos_aee301f27953e7930dac5373d26da24b5}
+
+\item 
+\hypertarget{classPos_a5c9bfee9b7ed4d7ed03b756e2bfd9fbd}{
+void {\bfseries print} ()}
+\label{classPos_a5c9bfee9b7ed4d7ed03b756e2bfd9fbd}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPos_aa133a2b2b7579fbb1b56d93655ae66fd}{
+String {\bfseries name}}
+\label{classPos_aa133a2b2b7579fbb1b56d93655ae66fd}
+
+\item 
+\hypertarget{classPos_a05893ff40fd725647e80abb9be6f6f5c}{
+double {\bfseries x}}
+\label{classPos_a05893ff40fd725647e80abb9be6f6f5c}
+
+\item 
+\hypertarget{classPos_aa847265ca29e6803e2cd4ab1d310baa9}{
+double {\bfseries y}}
+\label{classPos_aa847265ca29e6803e2cd4ab1d310baa9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds the information for Cartesian coordinate versions of positions of players and objects 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPos_aaf021a47707aab8c1694998e9c8b348c}{
+\index{Pos@{Pos}!Pos@{Pos}}
+\index{Pos@{Pos}!Pos@{Pos}}
+\subsubsection[{Pos}]{\setlength{\rightskip}{0pt plus 5cm}Pos::Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPos_aaf021a47707aab8c1694998e9c8b348c}
+Default constructor
+
+\begin{DoxyPostcond}{Postcondition}
+initializes x and y to 0 and name to space, so as not to have a pointer error 
+\end{DoxyPostcond}
+\hypertarget{classPos_af8ea76275f120c80f13632807f675861}{
+\index{Pos@{Pos}!Pos@{Pos}}
+\index{Pos@{Pos}!Pos@{Pos}}
+\subsubsection[{Pos}]{\setlength{\rightskip}{0pt plus 5cm}Pos::Pos (
+\begin{DoxyParamCaption}
+\item[{String}]{name, }
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPos_af8ea76275f120c80f13632807f675861}
+Constructor with name
+
+This is a constructor for coordinates that are given a name. It is mostly used for the positions of the flags in the \hyperlink{classField}{Field} class
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name associated with the \hyperlink{classPos}{Pos}, for easier searching \\
+\hline
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPos_a817da99f50ff86348b6fba43d8cfce94}{
+\index{Pos@{Pos}!Pos@{Pos}}
+\index{Pos@{Pos}!Pos@{Pos}}
+\subsubsection[{Pos}]{\setlength{\rightskip}{0pt plus 5cm}Pos::Pos (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPos_a817da99f50ff86348b6fba43d8cfce94}
+Constructor with no name
+
+This is a constructor for positions that aren't given a name. Used for positions that change often.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Pos_8java}{Pos.java}\end{DoxyCompactItemize}

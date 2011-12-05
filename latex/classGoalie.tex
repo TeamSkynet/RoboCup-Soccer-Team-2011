@@ -1,0 +1,292 @@
+\hypertarget{classGoalie}{
+\section{Goalie Class Reference}
+\label{classGoalie}\index{Goalie@{Goalie}}
+}
+Inheritance diagram for Goalie:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGoalie}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGoalie_a61f0e1513d23a5bfd8b06b4f64485f14}{
+{\bfseries Goalie} (String team)}
+\label{classGoalie_a61f0e1513d23a5bfd8b06b4f64485f14}
+
+\item 
+void \hyperlink{classGoalie_ad20be55693ae031a73e703960ae96db3}{initGoalie} (double x, double y)  throws SocketException, UnknownHostException 
+\item 
+void \hyperlink{classGoalie_aa31abfeafaa76d73433c75661e9ee214}{catchball} (double d)  throws UnknownHostException
+\item 
+void \hyperlink{classGoalie_a6fa9af8f62836e180e56a51f9bc126dc}{followBall} ()
+\item 
+boolean \hyperlink{classGoalie_aeedb27a3d7123889aa35b122cd9f8e6a}{ballInGoalzone} (\hyperlink{classObjBall}{ObjBall} ball)
+\item 
+boolean \hyperlink{classGoalie_aff96bcc0763bcb7ca922beae5f6f7f6f}{catchable} ()
+\item 
+void \hyperlink{classGoalie_a3d00b5dcb6db3925a8eeaf667a2f1650}{defendGoal} (\hyperlink{classObjBall}{ObjBall} ball)  throws UnknownHostException, InterruptedException 
+\item 
+void \hyperlink{classGoalie_a6b24e53882b2d38ca452c263eb9c58cd}{positionGoalie} (\hyperlink{classObjBall}{ObjBall} ball)  throws InterruptedException 
+\item 
+void \hyperlink{classGoalie_aacefd54603f62188922344f027a60b65}{getBtwBallAndGoal} (\hyperlink{classObjBall}{ObjBall} ball)
+\item 
+\hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classGoalie_a1377353efede128a3367bde1e8b4137a}{closestPlayer} ()  throws UnknownHostException, InterruptedException 
+\item 
+void \hyperlink{classGoalie_acef3607fe805cab95fe5c51319b6d858}{kickToPlayer} (\hyperlink{classObjPlayer}{ObjPlayer} player)
+\item 
+void \hyperlink{classGoalie_a4fc1cb6aef2b752d6eaf198b33355ba3}{kickBallOutOfBounds} ()
+\item 
+\hypertarget{classGoalie_a4746e13da625b6794aab143d8c3bf12f}{
+void {\bfseries run} ()}
+\label{classGoalie_a4746e13da625b6794aab143d8c3bf12f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGoalie_a30191095e1d0cfb3309d7776d2f1b91d}{
+boolean {\bfseries ballTurn} = false}
+\label{classGoalie_a30191095e1d0cfb3309d7776d2f1b91d}
+
+\item 
+\hypertarget{classGoalie_aa14c124f0012e6bf819efaa138597dbb}{
+\hyperlink{classMathHelp}{MathHelp} {\bfseries mh} = new \hyperlink{classMathHelp}{MathHelp}()}
+\label{classGoalie_aa14c124f0012e6bf819efaa138597dbb}
+
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGoalie_adc308adc44b3cfca5df2cdd7bb212c9e}{
+boolean {\bfseries ballCaught} = false}
+\label{classGoalie_adc308adc44b3cfca5df2cdd7bb212c9e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGoalie}{Goalie} class inherits from the \hyperlink{classPlayer}{Player} class. The \hyperlink{classGoalie}{Goalie} is a specialized type of \hyperlink{classPlayer}{Player} that may catch the ball under certain conditions and defends the goal from the opposing team. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGoalie_aeedb27a3d7123889aa35b122cd9f8e6a}{
+\index{Goalie@{Goalie}!ballInGoalzone@{ballInGoalzone}}
+\index{ballInGoalzone@{ballInGoalzone}!Goalie@{Goalie}}
+\subsubsection[{ballInGoalzone}]{\setlength{\rightskip}{0pt plus 5cm}boolean Goalie::ballInGoalzone (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_aeedb27a3d7123889aa35b122cd9f8e6a}
+A method to determine whether the ball is in the penalty box
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & the \hyperlink{classObjBall}{ObjBall} to follow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+this must be called with an \hyperlink{classObjBall}{ObjBall} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+true if ball is in penalty box, false if it's not 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{classGoalie_aff96bcc0763bcb7ca922beae5f6f7f6f}{
+\index{Goalie@{Goalie}!catchable@{catchable}}
+\index{catchable@{catchable}!Goalie@{Goalie}}
+\subsubsection[{catchable}]{\setlength{\rightskip}{0pt plus 5cm}boolean Goalie::catchable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_aff96bcc0763bcb7ca922beae5f6f7f6f}
+Returns true or false depending on whether the ball is within the catchable range of the goalie. \begin{DoxyPrecond}{Precondition}
+The ball is visible to the goalie 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball is determined to catchable or not. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+boolean True if catchable, false if not. 
+\end{DoxyReturn}
+\hypertarget{classGoalie_aa31abfeafaa76d73433c75661e9ee214}{
+\index{Goalie@{Goalie}!catchball@{catchball}}
+\index{catchball@{catchball}!Goalie@{Goalie}}
+\subsubsection[{catchball}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::catchball (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)  throws UnknownHostException\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_aa31abfeafaa76d73433c75661e9ee214}
+Causes the \hyperlink{classGoalie}{Goalie} to catch the ball. \begin{DoxyPrecond}{Precondition}
+Playmode is play-\/on, ball is within goalkeeper zone and in the catchable area. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classGoalie}{Goalie} has caught the ball. 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_a1377353efede128a3367bde1e8b4137a}{
+\index{Goalie@{Goalie}!closestPlayer@{closestPlayer}}
+\index{closestPlayer@{closestPlayer}!Goalie@{Goalie}}
+\subsubsection[{closestPlayer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjPlayer} Goalie::closestPlayer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_a1377353efede128a3367bde1e8b4137a}
+Returns the closest player to the goalie on the same team. \begin{DoxyPostcond}{Postcondition}
+The closest player to the goalie has been determined. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjPlayer}{ObjPlayer} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classGoalie_a3d00b5dcb6db3925a8eeaf667a2f1650}{
+\index{Goalie@{Goalie}!defendGoal@{defendGoal}}
+\index{defendGoal@{defendGoal}!Goalie@{Goalie}}
+\subsubsection[{defendGoal}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::defendGoal (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_a3d00b5dcb6db3925a8eeaf667a2f1650}
+Causes the goalie to act to intercept the ball as it approaches the goal. 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classObjBall}{ObjBall}} & representing the ball in play. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em UnknownHostException} & \\
+\hline
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+The ball has entered the goal zone. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball has been caught by the goalie, or the goalie has missed the ball. 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_a6fa9af8f62836e180e56a51f9bc126dc}{
+\index{Goalie@{Goalie}!followBall@{followBall}}
+\index{followBall@{followBall}!Goalie@{Goalie}}
+\subsubsection[{followBall}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::followBall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_a6fa9af8f62836e180e56a51f9bc126dc}
+Turns goalie toward the ball \begin{DoxyPostcond}{Postcondition}
+The goalie will turn in the direction of the ball 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_aacefd54603f62188922344f027a60b65}{
+\index{Goalie@{Goalie}!getBtwBallAndGoal@{getBtwBallAndGoal}}
+\index{getBtwBallAndGoal@{getBtwBallAndGoal}!Goalie@{Goalie}}
+\subsubsection[{getBtwBallAndGoal}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::getBtwBallAndGoal (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_aacefd54603f62188922344f027a60b65}
+Moves goalie between the ball and the goal (under construction) 
+\begin{DoxyParams}{Parameters}
+{\em ball} & An \hyperlink{classObjBall}{ObjBall}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Ball is visible to the goalie. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The goalie has moved to a point on the line between the ball and the goal. 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_ad20be55693ae031a73e703960ae96db3}{
+\index{Goalie@{Goalie}!initGoalie@{initGoalie}}
+\index{initGoalie@{initGoalie}!Goalie@{Goalie}}
+\subsubsection[{initGoalie}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::initGoalie (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)  throws SocketException, UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_ad20be55693ae031a73e703960ae96db3}
+Initializes the \hyperlink{classPlayer}{Player} with the RoboCup server as a goalie. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been initialized to the correct team as a goalie. 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_a4fc1cb6aef2b752d6eaf198b33355ba3}{
+\index{Goalie@{Goalie}!kickBallOutOfBounds@{kickBallOutOfBounds}}
+\index{kickBallOutOfBounds@{kickBallOutOfBounds}!Goalie@{Goalie}}
+\subsubsection[{kickBallOutOfBounds}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::kickBallOutOfBounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_a4fc1cb6aef2b752d6eaf198b33355ba3}
+Causes the goalie to kick the ball out of bounds (Currently unused.) \begin{DoxyPrecond}{Precondition}
+\hyperlink{classGoalie}{Goalie} has control of the ball 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Ball has been kicked out of bounds 
+\end{DoxyPostcond}
+\hypertarget{classGoalie_acef3607fe805cab95fe5c51319b6d858}{
+\index{Goalie@{Goalie}!kickToPlayer@{kickToPlayer}}
+\index{kickToPlayer@{kickToPlayer}!Goalie@{Goalie}}
+\subsubsection[{kickToPlayer}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::kickToPlayer (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjPlayer}}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_acef3607fe805cab95fe5c51319b6d858}
+Causes goalie to kick the ball to a specific player. (Currently unused.) \begin{DoxyPrecond}{Precondition}
+A player is in sight of the goalie. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The goalie has kicked the ball to the player passed to the function. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em player} & An \hyperlink{classObjPlayer}{ObjPlayer} representing the player to receive the ball. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGoalie_a6b24e53882b2d38ca452c263eb9c58cd}{
+\index{Goalie@{Goalie}!positionGoalie@{positionGoalie}}
+\index{positionGoalie@{positionGoalie}!Goalie@{Goalie}}
+\subsubsection[{positionGoalie}]{\setlength{\rightskip}{0pt plus 5cm}void Goalie::positionGoalie (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)  throws InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classGoalie_a6b24e53882b2d38ca452c263eb9c58cd}
+Moves goalie to specific points within the goalbox dependent upon where the ball is on the field. 
+\begin{DoxyParams}{Parameters}
+{\em ball} & An \hyperlink{classObjBall}{ObjBall} representing the ball in play. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+The ball is visible. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The goalie has moved to a strategic position to get between the ball and the goal. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Goalie_8java}{Goalie.java}\end{DoxyCompactItemize}

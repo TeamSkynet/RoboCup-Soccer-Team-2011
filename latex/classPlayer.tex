@@ -1,0 +1,565 @@
+\hypertarget{classPlayer}{
+\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+}
+Inheritance diagram for Player:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPlayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlayer_a072996becca020ca2c95b241eee356e3}{
+{\bfseries Player} (String team)}
+\label{classPlayer_a072996becca020ca2c95b241eee356e3}
+
+\item 
+\hyperlink{classPlayer_afe31dd3fe679bcba10385271c37ffd1a}{Player} (\hyperlink{classRoboClient}{RoboClient} rc, \hyperlink{classMemory}{Memory} m, \hyperlink{classObjInfo}{ObjInfo} i, \hyperlink{classParser}{Parser} p, int time)
+\item 
+\hypertarget{classPlayer_aaec2cce8cabaa09250aa111b5a189877}{
+\hyperlink{classAction}{Action} {\bfseries getAction} ()}
+\label{classPlayer_aaec2cce8cabaa09250aa111b5a189877}
+
+\item 
+\hypertarget{classPlayer_ae3515d6fa2bc0f9a5b1f3c754d9010f9}{
+void {\bfseries setAction} (\hyperlink{classAction}{Action} a)}
+\label{classPlayer_ae3515d6fa2bc0f9a5b1f3c754d9010f9}
+
+\item 
+\hypertarget{classPlayer_a37c708420f7230019e80d664533eddc8}{
+void {\bfseries setHome} (\hyperlink{classPos}{Pos} home)}
+\label{classPlayer_a37c708420f7230019e80d664533eddc8}
+
+\item 
+\hypertarget{classPlayer_a90a227e48446e51923377c495b39f008}{
+\hyperlink{classPos}{Pos} {\bfseries getHome} ()}
+\label{classPlayer_a90a227e48446e51923377c495b39f008}
+
+\item 
+\hyperlink{classRoboClient}{RoboClient} \hyperlink{classPlayer_a633389a933930a00f75601ea957caa83}{getRoboClient} ()
+\item 
+void \hyperlink{classPlayer_a70a35e4a1de2cc70d947adffc0e2d580}{setRoboclient} (\hyperlink{classRoboClient}{RoboClient} rc)
+\item 
+\hyperlink{classMemory}{Memory} \hyperlink{classPlayer_ab43d9af06168c486d9fa0539103102a0}{getMem} ()
+\item 
+void \hyperlink{classPlayer_a92bd7c2bbebfc30ec332d6e6b182f9a8}{setMem} (\hyperlink{classMemory}{Memory} m)
+\item 
+\hyperlink{classObjInfo}{ObjInfo} \hyperlink{classPlayer_a6ca7539da0375519ff9f5993b19073f0}{getObjInfo} ()
+\item 
+void \hyperlink{classPlayer_a51bf665263845828767153fb4b418337}{setObjInfo} (\hyperlink{classObjInfo}{ObjInfo} i)
+\item 
+\hyperlink{classParser}{Parser} \hyperlink{classPlayer_a8898fbd58b68f21318bd83a3a4446a1f}{getParser} ()
+\item 
+void \hyperlink{classPlayer_a914ba43cef17a1ce6f210311155925a6}{setParser} (\hyperlink{classParser}{Parser} p)
+\item 
+\hypertarget{classPlayer_a0f037644cf072cb8f24cd98919be4a02}{
+int {\bfseries getMemTime} ()}
+\label{classPlayer_a0f037644cf072cb8f24cd98919be4a02}
+
+\item 
+int \hyperlink{classPlayer_a0405759b5c1c513a387b09739c271743}{getTime} ()
+\item 
+void \hyperlink{classPlayer_afca6d7498e56e2e82ddea7e89395a146}{setTime} (int time)
+\item 
+double \hyperlink{classPlayer_a2ff5bd2585d3d7388dce85576002c668}{getDirection} ()
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classPlayer_ae1947ff6dfb298de4699f9f79ea221cf}{getPosition} ()
+\item 
+void \hyperlink{classPlayer_aa826be330bb3dc6bf7bb8ac04250fe50}{initPlayer} (double x, double y, String pos)  throws SocketException, UnknownHostException 
+\item 
+void \hyperlink{classPlayer_a29c711f9c1d5bb762611f8e0f8c2fd47}{initPlayer} (double x, double y)  throws SocketException, UnknownHostException 
+\item 
+void \hyperlink{classPlayer_a65f067086737b201d4183a1bb258e7ac}{receiveInput} ()  throws InterruptedException  
+\item 
+void \hyperlink{classPlayer_a787e2731a4ca14dcde043bad13633b89}{move} (double x, double y)  throws UnknownHostException, InterruptedException 
+\item 
+void \hyperlink{classPlayer_a515b5502a44f38e8fe8fe65f6601ee8f}{kick} (double power, double dir)  throws UnknownHostException, InterruptedException 
+\item 
+void \hyperlink{classPlayer_ab1823f2a23684dab547f9012c8e26b70}{dash} (double power)  throws Exception 
+\item 
+void \hyperlink{classPlayer_a16dea4b97be4347baf5dd9d973d651cf}{dash} (double power, double direction)  throws Exception 
+\item 
+void \hyperlink{classPlayer_aa1dd6cce198db61386b701b8520b512a}{turn} (double moment)  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classPlayer_a3a1aac767e1da565b42b1fb027e2d848}{
+void {\bfseries turn\_\-neck} (double moment)  throws UnknownHostException, InterruptedException }
+\label{classPlayer_a3a1aac767e1da565b42b1fb027e2d848}
+
+\item 
+\hypertarget{classPlayer_a39c66a7fce40dacf016942aa0f40e831}{
+void {\bfseries recievePass} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classObjPlayer}{ObjPlayer} p)  throws UnknownHostException, InterruptedException }
+\label{classPlayer_a39c66a7fce40dacf016942aa0f40e831}
+
+\item 
+void \hyperlink{classPlayer_a1b324554699cfab5d15fff4ba242e396}{say} (String message)  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classPlayer_ae6228d1bf70424d89e6a587326c86b46}{
+void {\bfseries markOpponent} (String team, String number)}
+\label{classPlayer_ae6228d1bf70424d89e6a587326c86b46}
+
+\item 
+\hypertarget{classPlayer_a399cde63b4187594789bee245f1f01a3}{
+void {\bfseries runDefense} ()  throws UnknownHostException, InterruptedException }
+\label{classPlayer_a399cde63b4187594789bee245f1f01a3}
+
+\item 
+\hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classPlayer_aa94877ea707329aee80c15163c184ef7}{closestOpponent} ()  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classPlayer_a499cc0cb1e2fb8bdb8139c8848b367b9}{
+void {\bfseries run} ()}
+\label{classPlayer_a499cc0cb1e2fb8bdb8139c8848b367b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlayer_a7c430c6135e7adaab49cde397ceb31a4}{
+\hyperlink{classMathHelp}{MathHelp} {\bfseries mh} = new \hyperlink{classMathHelp}{MathHelp}()}
+\label{classPlayer_a7c430c6135e7adaab49cde397ceb31a4}
+
+\item 
+\hypertarget{classPlayer_a5febfb25d5578b52b97e02df2481c6ca}{
+boolean {\bfseries wait} = true}
+\label{classPlayer_a5febfb25d5578b52b97e02df2481c6ca}
+
+\item 
+\hypertarget{classPlayer_af5eb74245ac4311ade5eae02245112af}{
+String {\bfseries position} = \char`\"{}left\char`\"{}}
+\label{classPlayer_af5eb74245ac4311ade5eae02245112af}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlayer_a56dbc9d8a3e1a70f6d9c83b8af3dd49e}{
+\hyperlink{classRoboClient}{RoboClient} {\bfseries rc} = new \hyperlink{classRoboClient}{RoboClient}()}
+\label{classPlayer_a56dbc9d8a3e1a70f6d9c83b8af3dd49e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classPlayer}{Player} class defines all objects and methods used for the \hyperlink{classPlayer}{Player} within the RoboCup match. The \hyperlink{classPlayer}{Player} establishes a connection to the server, initializes itself on the team, and performs all actions related to a RoboCup soccer player such as (but not limited to) kicking, dashing, dribbling, passing and scoring. The \hyperlink{classPlayer}{Player} class has a \hyperlink{classMemory}{Memory} for storing the current RoboCup worldstate. It reacts to stimuli based on strategies provided by the \hyperlink{classBrain}{Brain} (TBD). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlayer_afe31dd3fe679bcba10385271c37ffd1a}{
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player::Player (
+\begin{DoxyParamCaption}
+\item[{{\bf RoboClient}}]{rc, }
+\item[{{\bf Memory}}]{m, }
+\item[{{\bf ObjInfo}}]{i, }
+\item[{{\bf Parser}}]{p, }
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_afe31dd3fe679bcba10385271c37ffd1a}
+
+\begin{DoxyParams}{Parameters}
+{\em rc} & \\
+\hline
+{\em m} & \\
+\hline
+{\em i} & \\
+\hline
+{\em p} & \\
+\hline
+{\em b} & \\
+\hline
+{\em time} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlayer_aa94877ea707329aee80c15163c184ef7}{
+\index{Player@{Player}!closestOpponent@{closestOpponent}}
+\index{closestOpponent@{closestOpponent}!Player@{Player}}
+\subsubsection[{closestOpponent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjPlayer} Player::closestOpponent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_aa94877ea707329aee80c15163c184ef7}
+Returns the closest opponent to the player \begin{DoxyPrecond}{Precondition}
+Players are in sight of the goalie. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The closest opponent to the player has been determined. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjPlayer}{ObjPlayer} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classPlayer_ab1823f2a23684dab547f9012c8e26b70}{
+\index{Player@{Player}!dash@{dash}}
+\index{dash@{dash}!Player@{Player}}
+\subsubsection[{dash}]{\setlength{\rightskip}{0pt plus 5cm}void Player::dash (
+\begin{DoxyParamCaption}
+\item[{double}]{power}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_ab1823f2a23684dab547f9012c8e26b70}
+Causes \hyperlink{classPlayer}{Player} to dash. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The power with which to dash in the form of a decimal value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Play mode is play\_\-on. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has dashed at the given power. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a16dea4b97be4347baf5dd9d973d651cf}{
+\index{Player@{Player}!dash@{dash}}
+\index{dash@{dash}!Player@{Player}}
+\subsubsection[{dash}]{\setlength{\rightskip}{0pt plus 5cm}void Player::dash (
+\begin{DoxyParamCaption}
+\item[{double}]{power, }
+\item[{double}]{direction}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a16dea4b97be4347baf5dd9d973d651cf}
+Causes \hyperlink{classPlayer}{Player} to dash. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The power with which to dash in the form of a decimal value. \\
+\hline
+{\em direction,:} & The direction to dash in. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Play mode is play\_\-on. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has dashed at the given power. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a2ff5bd2585d3d7388dce85576002c668}{
+\index{Player@{Player}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!Player@{Player}}
+\subsubsection[{getDirection}]{\setlength{\rightskip}{0pt plus 5cm}double Player::getDirection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a2ff5bd2585d3d7388dce85576002c668}
+Returns the direction of the player \hypertarget{classPlayer_ab43d9af06168c486d9fa0539103102a0}{
+\index{Player@{Player}!getMem@{getMem}}
+\index{getMem@{getMem}!Player@{Player}}
+\subsubsection[{getMem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory} Player::getMem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_ab43d9af06168c486d9fa0539103102a0}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classMemory}{Memory} for this \hyperlink{classPlayer}{Player}. 
+\end{DoxyReturn}
+\hypertarget{classPlayer_a6ca7539da0375519ff9f5993b19073f0}{
+\index{Player@{Player}!getObjInfo@{getObjInfo}}
+\index{getObjInfo@{getObjInfo}!Player@{Player}}
+\subsubsection[{getObjInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjInfo} Player::getObjInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a6ca7539da0375519ff9f5993b19073f0}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classObjInfo}{ObjInfo} for this \hyperlink{classPlayer}{Player}. 
+\end{DoxyReturn}
+\hypertarget{classPlayer_a8898fbd58b68f21318bd83a3a4446a1f}{
+\index{Player@{Player}!getParser@{getParser}}
+\index{getParser@{getParser}!Player@{Player}}
+\subsubsection[{getParser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parser} Player::getParser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a8898fbd58b68f21318bd83a3a4446a1f}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classParser}{Parser} for this \hyperlink{classPlayer}{Player}. 
+\end{DoxyReturn}
+\hypertarget{classPlayer_ae1947ff6dfb298de4699f9f79ea221cf}{
+\index{Player@{Player}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Player@{Player}}
+\subsubsection[{getPosition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Player::getPosition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_ae1947ff6dfb298de4699f9f79ea221cf}
+Returns the current absolute coordinates of the player. \begin{DoxyReturn}{Returns}
+\hyperlink{classPos}{Pos} 
+\end{DoxyReturn}
+\hypertarget{classPlayer_a633389a933930a00f75601ea957caa83}{
+\index{Player@{Player}!getRoboClient@{getRoboClient}}
+\index{getRoboClient@{getRoboClient}!Player@{Player}}
+\subsubsection[{getRoboClient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RoboClient} Player::getRoboClient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a633389a933930a00f75601ea957caa83}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classRoboClient}{RoboClient} object for this \hyperlink{classPlayer}{Player}. 
+\end{DoxyReturn}
+\hypertarget{classPlayer_a0405759b5c1c513a387b09739c271743}{
+\index{Player@{Player}!getTime@{getTime}}
+\index{getTime@{getTime}!Player@{Player}}
+\subsubsection[{getTime}]{\setlength{\rightskip}{0pt plus 5cm}int Player::getTime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a0405759b5c1c513a387b09739c271743}
+Returns the current player time. \begin{DoxyReturn}{Returns}
+the time 
+\end{DoxyReturn}
+\hypertarget{classPlayer_aa826be330bb3dc6bf7bb8ac04250fe50}{
+\index{Player@{Player}!initPlayer@{initPlayer}}
+\index{initPlayer@{initPlayer}!Player@{Player}}
+\subsubsection[{initPlayer}]{\setlength{\rightskip}{0pt plus 5cm}void Player::initPlayer (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{String}]{pos}
+\end{DoxyParamCaption}
+)  throws SocketException, UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_aa826be330bb3dc6bf7bb8ac04250fe50}
+Initializes the \hyperlink{classPlayer}{Player} with the RoboCup server. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been initialized to the correct team. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a29c711f9c1d5bb762611f8e0f8c2fd47}{
+\index{Player@{Player}!initPlayer@{initPlayer}}
+\index{initPlayer@{initPlayer}!Player@{Player}}
+\subsubsection[{initPlayer}]{\setlength{\rightskip}{0pt plus 5cm}void Player::initPlayer (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)  throws SocketException, UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a29c711f9c1d5bb762611f8e0f8c2fd47}
+Initializes the \hyperlink{classPlayer}{Player} with the RoboCup server. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been initialized to the correct team. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a515b5502a44f38e8fe8fe65f6601ee8f}{
+\index{Player@{Player}!kick@{kick}}
+\index{kick@{kick}!Player@{Player}}
+\subsubsection[{kick}]{\setlength{\rightskip}{0pt plus 5cm}void Player::kick (
+\begin{DoxyParamCaption}
+\item[{double}]{power, }
+\item[{double}]{dir}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a515b5502a44f38e8fe8fe65f6601ee8f}
+Causes \hyperlink{classPlayer}{Player} to kick the ball. 
+\begin{DoxyParams}{Parameters}
+{\em dir} & The direction in which to kick the ball in the form of a decimal value. representing the angle in degrees in relation go the player. \\
+\hline
+{\em power} & The power with which to kick the ball in the form of a decimal value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Playmode is play\_\-on, ball is in kickable range. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball has been kicked in the specified direction and power. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a787e2731a4ca14dcde043bad13633b89}{
+\index{Player@{Player}!move@{move}}
+\index{move@{move}!Player@{Player}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Player::move (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a787e2731a4ca14dcde043bad13633b89}
+Teleports the \hyperlink{classPlayer}{Player} to the specified coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate of the point to move the player to. \\
+\hline
+{\em y} & y-\/coordinate of the point to move the player to. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Playmode is before-\/kickoff, goal-\/scored, free-\/kick. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classPlayer}{Player} has been moved to the correct position. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a65f067086737b201d4183a1bb258e7ac}{
+\index{Player@{Player}!receiveInput@{receiveInput}}
+\index{receiveInput@{receiveInput}!Player@{Player}}
+\subsubsection[{receiveInput}]{\setlength{\rightskip}{0pt plus 5cm}void Player::receiveInput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws InterruptedException  \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a65f067086737b201d4183a1bb258e7ac}
+Receives worldstate data from the RoboCup server. \begin{DoxyPrecond}{Precondition}
+A RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The current worldstate has been stored in the \hyperlink{classMemory}{Memory}. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a1b324554699cfab5d15fff4ba242e396}{
+\index{Player@{Player}!say@{say}}
+\index{say@{say}!Player@{Player}}
+\subsubsection[{say}]{\setlength{\rightskip}{0pt plus 5cm}void Player::say (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a1b324554699cfab5d15fff4ba242e396}
+Causes \hyperlink{classPlayer}{Player} to say the given message. It has a limitation of 512 characters by default. 
+\begin{DoxyParams}{Parameters}
+{\em message} & The string to be spoken by the player. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+None 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has spoken the message. 
+\end{DoxyPostcond}
+\hypertarget{classPlayer_a92bd7c2bbebfc30ec332d6e6b182f9a8}{
+\index{Player@{Player}!setMem@{setMem}}
+\index{setMem@{setMem}!Player@{Player}}
+\subsubsection[{setMem}]{\setlength{\rightskip}{0pt plus 5cm}void Player::setMem (
+\begin{DoxyParamCaption}
+\item[{{\bf Memory}}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a92bd7c2bbebfc30ec332d6e6b182f9a8}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The \hyperlink{classMemory}{Memory} to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_a51bf665263845828767153fb4b418337}{
+\index{Player@{Player}!setObjInfo@{setObjInfo}}
+\index{setObjInfo@{setObjInfo}!Player@{Player}}
+\subsubsection[{setObjInfo}]{\setlength{\rightskip}{0pt plus 5cm}void Player::setObjInfo (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjInfo}}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a51bf665263845828767153fb4b418337}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The \hyperlink{classObjInfo}{ObjInfo} to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_a914ba43cef17a1ce6f210311155925a6}{
+\index{Player@{Player}!setParser@{setParser}}
+\index{setParser@{setParser}!Player@{Player}}
+\subsubsection[{setParser}]{\setlength{\rightskip}{0pt plus 5cm}void Player::setParser (
+\begin{DoxyParamCaption}
+\item[{{\bf Parser}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a914ba43cef17a1ce6f210311155925a6}
+Sets the parser for the player. 
+\begin{DoxyParams}{Parameters}
+{\em p} & The \hyperlink{classParser}{Parser} to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_a70a35e4a1de2cc70d947adffc0e2d580}{
+\index{Player@{Player}!setRoboclient@{setRoboclient}}
+\index{setRoboclient@{setRoboclient}!Player@{Player}}
+\subsubsection[{setRoboclient}]{\setlength{\rightskip}{0pt plus 5cm}void Player::setRoboclient (
+\begin{DoxyParamCaption}
+\item[{{\bf RoboClient}}]{rc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_a70a35e4a1de2cc70d947adffc0e2d580}
+
+\begin{DoxyParams}{Parameters}
+{\em rc} & The \hyperlink{classRoboClient}{RoboClient} to set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_afca6d7498e56e2e82ddea7e89395a146}{
+\index{Player@{Player}!setTime@{setTime}}
+\index{setTime@{setTime}!Player@{Player}}
+\subsubsection[{setTime}]{\setlength{\rightskip}{0pt plus 5cm}void Player::setTime (
+\begin{DoxyParamCaption}
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_afca6d7498e56e2e82ddea7e89395a146}
+Sets the current time for the player. 
+\begin{DoxyParams}{Parameters}
+{\em time} & the time to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlayer_aa1dd6cce198db61386b701b8520b512a}{
+\index{Player@{Player}!turn@{turn}}
+\index{turn@{turn}!Player@{Player}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}void Player::turn (
+\begin{DoxyParamCaption}
+\item[{double}]{moment}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPlayer_aa1dd6cce198db61386b701b8520b512a}
+Causes \hyperlink{classPlayer}{Player} to turn according to a specified turn moment. 
+\begin{DoxyParams}{Parameters}
+{\em moment} & The turn angle in degrees. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPrecond}{Precondition}
+Playmode is play\_\-on, ball is in kickable range. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball has been kicked in the specified direction and power. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Player_8java}{Player.java}\end{DoxyCompactItemize}

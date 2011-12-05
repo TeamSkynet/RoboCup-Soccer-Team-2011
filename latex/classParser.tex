@@ -1,0 +1,99 @@
+\hypertarget{classParser}{
+\section{Parser Class Reference}
+\label{classParser}\index{Parser@{Parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParser_a12234f6cd36b61af4b50c94a179422c1}{Parser} ()
+\item 
+void \hyperlink{classParser_a9fd1e7c4efe939758e068ff86dd7d0ee}{initParse} (String inputPacket, \hyperlink{classMemory}{Memory} mem)
+\item 
+void \hyperlink{classParser_acfa0b687be8aceb35d9e3c1a66308778}{Parse} (String inputPacket, \hyperlink{classMemory}{Memory} InfoMem)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classParser_a7b23ca1da91ad5e2256afef7629901cd}{input}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes in the the messages sent by the parser and parses them into information that can be stored in \hyperlink{classMemory}{Memory} and used by Players. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParser_a12234f6cd36b61af4b50c94a179422c1}{
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}Parser::Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParser_a12234f6cd36b61af4b50c94a179422c1}
+Default constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classParser_a9fd1e7c4efe939758e068ff86dd7d0ee}{
+\index{Parser@{Parser}!initParse@{initParse}}
+\index{initParse@{initParse}!Parser@{Parser}}
+\subsubsection[{initParse}]{\setlength{\rightskip}{0pt plus 5cm}void Parser::initParse (
+\begin{DoxyParamCaption}
+\item[{String}]{inputPacket, }
+\item[{{\bf Memory}}]{mem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParser_a9fd1e7c4efe939758e068ff86dd7d0ee}
+This parses the (init) message, the first message sent by the server, directly after a new \hyperlink{classPlayer}{Player} is initialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputPacket} & The init message from the server \\
+\hline
+{\em mem} & the player's memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+A memory must be created for the information to be stored in, and this must be called directly after an (init) is sent to the server. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Vital information about the \hyperlink{classPlayer}{Player} will be saved, such as the side of the field the player starts on, the Player's uniform number and the play mode, which is \char`\"{}before\_\-kickoff.\char`\"{} 
+\end{DoxyPostcond}
+\hypertarget{classParser_acfa0b687be8aceb35d9e3c1a66308778}{
+\index{Parser@{Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!Parser@{Parser}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}void Parser::Parse (
+\begin{DoxyParamCaption}
+\item[{String}]{inputPacket, }
+\item[{{\bf Memory}}]{InfoMem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classParser_acfa0b687be8aceb35d9e3c1a66308778}
+The actual message Parsing method
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputPacket} & the incoming String message from the server \\
+\hline
+{\em InfoMem} & the \hyperlink{classMemory}{Memory} to store all the information in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+A \hyperlink{classMemory}{Memory} must be created and passed in, along with the message from the server 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The message will be parsed and stored either as SenseInfos from the (sense\_\-body) message, or ObjInfos from the (see) message, or the playMode from the referee (hear) message 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParser_a7b23ca1da91ad5e2256afef7629901cd}{
+\index{Parser@{Parser}!input@{input}}
+\index{input@{input}!Parser@{Parser}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf Parser::input}}}
+\label{classParser_a7b23ca1da91ad5e2256afef7629901cd}
+The String of the incoming message 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Parser_8java}{Parser.java}\end{DoxyCompactItemize}

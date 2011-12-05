@@ -1,0 +1,137 @@
+\hypertarget{classSenseMemory}{
+\section{SenseMemory Class Reference}
+\label{classSenseMemory}\index{SenseMemory@{SenseMemory}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSenseMemory_a32a295ecd345b8986a9b92fda30259bc}{SenseMemory} ()
+\item 
+\hyperlink{classSenseMemory_a8ab50b0370fc3e6abae7328fe62a0fb5}{SenseMemory} (int time)
+\item 
+int \hyperlink{classSenseMemory_ae3fba5ea37bb7cdb373b10688e5282a2}{getTime} ()
+\item 
+void \hyperlink{classSenseMemory_a20727a0f69e39b7b90a73ee4dbe8ce87}{setTime} (int t)
+\item 
+void \hyperlink{classSenseMemory_a5aadc0916b9ce835eaa720809cb0773e}{setTime} (String\mbox{[}$\,$\mbox{]} seeOrSense)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSenseMemory_adf9105fd7f45b604a0d3ff737173fb53}{
+double {\bfseries stamina}}
+\label{classSenseMemory_adf9105fd7f45b604a0d3ff737173fb53}
+
+\item 
+\hypertarget{classSenseMemory_a6fab74f4565d406077213c210c0a032e}{
+double {\bfseries recovery}}
+\label{classSenseMemory_a6fab74f4565d406077213c210c0a032e}
+
+\item 
+\hypertarget{classSenseMemory_a3cc52c14473b7b9b3daa32e8c1b61d11}{
+double {\bfseries effort}}
+\label{classSenseMemory_a3cc52c14473b7b9b3daa32e8c1b61d11}
+
+\item 
+\hypertarget{classSenseMemory_a4192e69b13e8c192098feedb1b6c3a95}{
+double {\bfseries amountOfSpeed}}
+\label{classSenseMemory_a4192e69b13e8c192098feedb1b6c3a95}
+
+\item 
+\hypertarget{classSenseMemory_acdbd88e827afba6390767f9ec7e6dc7a}{
+double {\bfseries directionOfSpeed}}
+\label{classSenseMemory_acdbd88e827afba6390767f9ec7e6dc7a}
+
+\item 
+\hypertarget{classSenseMemory_aaa6b6600070183f9d0768d1cfe0e8c02}{
+double {\bfseries headDirection}}
+\label{classSenseMemory_aaa6b6600070183f9d0768d1cfe0e8c02}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This holds all the usable information parsed from the (sense\_\-body) message sent from the server. It holds information about a Player's stamina, speed, and head direction angle, as well as the time parsed. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSenseMemory_a32a295ecd345b8986a9b92fda30259bc}{
+\index{SenseMemory@{SenseMemory}!SenseMemory@{SenseMemory}}
+\index{SenseMemory@{SenseMemory}!SenseMemory@{SenseMemory}}
+\subsubsection[{SenseMemory}]{\setlength{\rightskip}{0pt plus 5cm}SenseMemory::SenseMemory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classSenseMemory_a32a295ecd345b8986a9b92fda30259bc}
+Default constructor
+
+\begin{DoxyPostcond}{Postcondition}
+initializes time to 0 
+\end{DoxyPostcond}
+\hypertarget{classSenseMemory_a8ab50b0370fc3e6abae7328fe62a0fb5}{
+\index{SenseMemory@{SenseMemory}!SenseMemory@{SenseMemory}}
+\index{SenseMemory@{SenseMemory}!SenseMemory@{SenseMemory}}
+\subsubsection[{SenseMemory}]{\setlength{\rightskip}{0pt plus 5cm}SenseMemory::SenseMemory (
+\begin{DoxyParamCaption}
+\item[{int}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classSenseMemory_a8ab50b0370fc3e6abae7328fe62a0fb5}
+Constructor with time
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time the information was parsed, as told by the server. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+A new \hyperlink{classSenseMemory}{SenseMemory} with updated time 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSenseMemory_ae3fba5ea37bb7cdb373b10688e5282a2}{
+\index{SenseMemory@{SenseMemory}!getTime@{getTime}}
+\index{getTime@{getTime}!SenseMemory@{SenseMemory}}
+\subsubsection[{getTime}]{\setlength{\rightskip}{0pt plus 5cm}int SenseMemory::getTime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classSenseMemory_ae3fba5ea37bb7cdb373b10688e5282a2}
+The time getter \begin{DoxyReturn}{Returns}
+the time that the \hyperlink{classSenseMemory}{SenseMemory} was parsed 
+\end{DoxyReturn}
+\hypertarget{classSenseMemory_a5aadc0916b9ce835eaa720809cb0773e}{
+\index{SenseMemory@{SenseMemory}!setTime@{setTime}}
+\index{setTime@{setTime}!SenseMemory@{SenseMemory}}
+\subsubsection[{setTime}]{\setlength{\rightskip}{0pt plus 5cm}void SenseMemory::setTime (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{seeOrSense}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classSenseMemory_a5aadc0916b9ce835eaa720809cb0773e}
+Time setter from the unparsed message sent by server 
+\begin{DoxyParams}{Parameters}
+{\em seeOrSense} & A String array with the split first argument of a (see) message from the server \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSenseMemory_a20727a0f69e39b7b90a73ee4dbe8ce87}{
+\index{SenseMemory@{SenseMemory}!setTime@{setTime}}
+\index{setTime@{setTime}!SenseMemory@{SenseMemory}}
+\subsubsection[{setTime}]{\setlength{\rightskip}{0pt plus 5cm}void SenseMemory::setTime (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classSenseMemory_a20727a0f69e39b7b90a73ee4dbe8ce87}
+The time setter 
+\begin{DoxyParams}{Parameters}
+{\em t} & the time hat the \hyperlink{classSenseMemory}{SenseMemory} was parsed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SenseMemory_8java}{SenseMemory.java}\end{DoxyCompactItemize}

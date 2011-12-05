@@ -1,0 +1,333 @@
+\hypertarget{classAction}{
+\section{Action Class Reference}
+\label{classAction}\index{Action@{Action}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAction_a4f457ccfc8336b565cadca56b36e0271}{Action} ()
+\item 
+\hyperlink{classAction_acfa1602ef29e16a6047cc058ff0a16ac}{Action} (\hyperlink{classMemory}{Memory} mem, \hyperlink{classRoboClient}{RoboClient} rc)
+\item 
+void \hyperlink{classAction_a4f775977b788d1379b9f6c45bb37c01f}{setMem} (\hyperlink{classMemory}{Memory} mem)
+\item 
+\hypertarget{classAction_ad68c5200162e4023fb88488e340ea454}{
+double {\bfseries getTurn} (\hyperlink{classPolar}{Polar} go)}
+\label{classAction_ad68c5200162e4023fb88488e340ea454}
+
+\item 
+void \hyperlink{classAction_a6b7099c20c56fc3dd72ce4c8ba4f3870}{gotoPoint} (\hyperlink{classPolar}{Polar} go)
+\item 
+\hypertarget{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}{
+void {\bfseries gotoSidePoint} (\hyperlink{classPos}{Pos} p)}
+\label{classAction_a653bde47fe3bd4263ed31095e2ee1cfc}
+
+\item 
+void \hyperlink{classAction_a5f7eb7be5b6b18854936367833044a6e}{gotoPoint} (\hyperlink{classPos}{Pos} p)
+\item 
+void \hyperlink{classAction_abf9085a62947a12cc2e154396177ec90}{goHome} ()
+\item 
+void \hyperlink{classAction_a49e1c7f1d7f5a4294c93833997603339}{findBall} ()  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classAction_a79224f655b7f92fe9a334bf96a01e844}{
+void {\bfseries kickOff} ()  throws UnknownHostException, InterruptedException }
+\label{classAction_a79224f655b7f92fe9a334bf96a01e844}
+
+\item 
+\hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classAction_a63d035f7132842d9720b88247d525112}{closestPlayer} ()  throws UnknownHostException, InterruptedException 
+\item 
+\hypertarget{classAction_a55e146013466e96013a196d9bd787410}{
+void {\bfseries passBall} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classObjPlayer}{ObjPlayer} p)}
+\label{classAction_a55e146013466e96013a196d9bd787410}
+
+\item 
+void \hyperlink{classAction_a9e883bc90ec59c4eeb5b0b3dd022b33a}{FullBack\_\-findBall} ()  throws UnknownHostException, InterruptedException 
+\item 
+void \hyperlink{classAction_ad7308d47f6303c20834dda533d4fe793}{kickToPoint} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classPolar}{Polar} p)
+\item 
+void \hyperlink{classAction_a639b23a22badac8eb8603bc153daba99}{kickToPoint} (\hyperlink{classObjBall}{ObjBall} ball, \hyperlink{classPos}{Pos} p)
+\item 
+void \hyperlink{classAction_a87bb8972c15138562c9d05f2a475dda9}{dribbleToGoal} (\hyperlink{classObjBall}{ObjBall} ball)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classAction_a7a8b88c7cb187a0d532b9f9bd7507e7b}{
+\hyperlink{classMathHelp}{MathHelp} {\bfseries m} = new \hyperlink{classMathHelp}{MathHelp}()}
+\label{classAction_a7a8b88c7cb187a0d532b9f9bd7507e7b}
+
+\item 
+\hypertarget{classAction_a660d99e264008b78e61f230243c5edde}{
+\hyperlink{classMemory}{Memory} {\bfseries mem}}
+\label{classAction_a660d99e264008b78e61f230243c5edde}
+
+\item 
+\hypertarget{classAction_ad62f59e63c17a404d96ead732c8dca9d}{
+\hyperlink{classRoboClient}{RoboClient} {\bfseries rc}}
+\label{classAction_ad62f59e63c17a404d96ead732c8dca9d}
+
+\item 
+\hypertarget{classAction_a46082e1ed9885927142dc31320c8f2f1}{
+\hyperlink{classPolar}{Polar} {\bfseries OppGoal}}
+\label{classAction_a46082e1ed9885927142dc31320c8f2f1}
+
+\item 
+\hypertarget{classAction_ab9062c12826530e380a93d7bbc8829a5}{
+boolean {\bfseries atGoal}}
+\label{classAction_ab9062c12826530e380a93d7bbc8829a5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds basic actions for the player to perform, such as ball searching and intercepting, dashing to points, finding the ball and points and getting their coordinates. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAction_a4f457ccfc8336b565cadca56b36e0271}{
+\index{Action@{Action}!Action@{Action}}
+\index{Action@{Action}!Action@{Action}}
+\subsubsection[{Action}]{\setlength{\rightskip}{0pt plus 5cm}Action::Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a4f457ccfc8336b565cadca56b36e0271}
+Default constructor \hypertarget{classAction_acfa1602ef29e16a6047cc058ff0a16ac}{
+\index{Action@{Action}!Action@{Action}}
+\index{Action@{Action}!Action@{Action}}
+\subsubsection[{Action}]{\setlength{\rightskip}{0pt plus 5cm}Action::Action (
+\begin{DoxyParamCaption}
+\item[{{\bf Memory}}]{mem, }
+\item[{{\bf RoboClient}}]{rc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_acfa1602ef29e16a6047cc058ff0a16ac}
+Constructor with parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em mem} & The \hyperlink{classMemory}{Memory} containing all the parsed information from the server \\
+\hline
+{\em rc} & The \hyperlink{classRoboClient}{RoboClient} that is the player's connection to the server\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Both a full memory and initialized \hyperlink{classRoboClient}{RoboClient} must be passed in to avoid any errors 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A new set of actions will be available for the player to call on 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAction_a63d035f7132842d9720b88247d525112}{
+\index{Action@{Action}!closestPlayer@{closestPlayer}}
+\index{closestPlayer@{closestPlayer}!Action@{Action}}
+\subsubsection[{closestPlayer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjPlayer} Action::closestPlayer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a63d035f7132842d9720b88247d525112}
+Returns the closest player to the \hyperlink{classFullBack}{FullBack} on the same team. \begin{DoxyPostcond}{Postcondition}
+The closest player to the \hyperlink{classFullBack}{FullBack} has been determined. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjPlayer}{ObjPlayer} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em InterruptedException} & \\
+\hline
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classAction_a87bb8972c15138562c9d05f2a475dda9}{
+\index{Action@{Action}!dribbleToGoal@{dribbleToGoal}}
+\index{dribbleToGoal@{dribbleToGoal}!Action@{Action}}
+\subsubsection[{dribbleToGoal}]{\setlength{\rightskip}{0pt plus 5cm}void Action::dribbleToGoal (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a87bb8972c15138562c9d05f2a475dda9}
+This dribbles the ball in the direction of the goal until it's 18 feet outside of the goal, when it kicks the ball with maximum power into the goal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The ball should not be null 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+This will result in a dribble and a shoot 
+\end{DoxyPostcond}
+\hypertarget{classAction_a49e1c7f1d7f5a4294c93833997603339}{
+\index{Action@{Action}!findBall@{findBall}}
+\index{findBall@{findBall}!Action@{Action}}
+\subsubsection[{findBall}]{\setlength{\rightskip}{0pt plus 5cm}void Action::findBall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a49e1c7f1d7f5a4294c93833997603339}
+A method to find the ball on the field. If it's not in view, the player turns until he finds it. If the ball is too far, he dashes to get to it. If the ball is within 20 distance, he intercepts the ball.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em UnknownHostException} & \\
+\hline
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classAction_a9e883bc90ec59c4eeb5b0b3dd022b33a}{
+\index{Action@{Action}!FullBack\_\-findBall@{FullBack\_\-findBall}}
+\index{FullBack\_\-findBall@{FullBack\_\-findBall}!Action@{Action}}
+\subsubsection[{FullBack\_\-findBall}]{\setlength{\rightskip}{0pt plus 5cm}void Action::FullBack\_\-findBall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws UnknownHostException, InterruptedException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a9e883bc90ec59c4eeb5b0b3dd022b33a}
+A method to find the ball on the field for FullBacks. If it's not in view, the \hyperlink{classFullBack}{FullBack} turns until he finds it. If the ball is out of kickable range, he dashes to get to it. If the ball is within 15 distance, he intercepts the ball, and kicks it away.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em UnknownHostException} & \\
+\hline
+{\em InterruptedException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classAction_abf9085a62947a12cc2e154396177ec90}{
+\index{Action@{Action}!goHome@{goHome}}
+\index{goHome@{goHome}!Action@{Action}}
+\subsubsection[{goHome}]{\setlength{\rightskip}{0pt plus 5cm}void Action::goHome (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_abf9085a62947a12cc2e154396177ec90}
+Take the \hyperlink{classPlayer}{Player} back to his home
+
+\begin{DoxyPrecond}{Precondition}
+The player's home should be set at initialization 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player will be at his home point
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+true if the player is in the near vicinity of his home, false if he's not there yet 
+\end{DoxyReturn}
+\hypertarget{classAction_a5f7eb7be5b6b18854936367833044a6e}{
+\index{Action@{Action}!gotoPoint@{gotoPoint}}
+\index{gotoPoint@{gotoPoint}!Action@{Action}}
+\subsubsection[{gotoPoint}]{\setlength{\rightskip}{0pt plus 5cm}void Action::gotoPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a5f7eb7be5b6b18854936367833044a6e}
+A cartesian wrapper for the gotoPoint with \hyperlink{classPolar}{Polar} coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The Cartesian \hyperlink{classPos}{Pos} of position to go to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The player must have a valid position on the field passed in
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+First, the \hyperlink{classPos}{Pos} will be converted to a \hyperlink{classPolar}{Polar} coordinateIf the player is not facing the direction of the final position, s/he will turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. 
+\end{DoxyPostcond}
+\hypertarget{classAction_a6b7099c20c56fc3dd72ce4c8ba4f3870}{
+\index{Action@{Action}!gotoPoint@{gotoPoint}}
+\index{gotoPoint@{gotoPoint}!Action@{Action}}
+\subsubsection[{gotoPoint}]{\setlength{\rightskip}{0pt plus 5cm}void Action::gotoPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf Polar}}]{go}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a6b7099c20c56fc3dd72ce4c8ba4f3870}
+This tells the player to turn and run to a point
+
+
+\begin{DoxyParams}{Parameters}
+{\em go} & The \hyperlink{classPolar}{Polar} coordinates of the final position, with the player's position as an origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The player must have a valid position on the field passed in 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the player is not facing the direction of the final position, s/he will first turn toward it. If the player is approximately facing the position, s/he will dash toward the direction of the position. 
+\end{DoxyPostcond}
+\hypertarget{classAction_ad7308d47f6303c20834dda533d4fe793}{
+\index{Action@{Action}!kickToPoint@{kickToPoint}}
+\index{kickToPoint@{kickToPoint}!Action@{Action}}
+\subsubsection[{kickToPoint}]{\setlength{\rightskip}{0pt plus 5cm}void Action::kickToPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball, }
+\item[{{\bf Polar}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_ad7308d47f6303c20834dda533d4fe793}
+Kicks ball to a certain \hyperlink{classPolar}{Polar} point
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+{\em p} & The \hyperlink{classPolar}{Polar} coordinate to kick the ball to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The ball passed in should not be null and p should be within the field from the player 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The ball will be kicked to the vicinity of the point 
+\end{DoxyPostcond}
+\hypertarget{classAction_a639b23a22badac8eb8603bc153daba99}{
+\index{Action@{Action}!kickToPoint@{kickToPoint}}
+\index{kickToPoint@{kickToPoint}!Action@{Action}}
+\subsubsection[{kickToPoint}]{\setlength{\rightskip}{0pt plus 5cm}void Action::kickToPoint (
+\begin{DoxyParamCaption}
+\item[{{\bf ObjBall}}]{ball, }
+\item[{{\bf Pos}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a639b23a22badac8eb8603bc153daba99}
+A \hyperlink{classPos}{Pos} wrapper for the kickToPoint 
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+{\em p} & the \hyperlink{classPos}{Pos} of the coordinate to kick the ball to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAction_a4f775977b788d1379b9f6c45bb37c01f}{
+\index{Action@{Action}!setMem@{setMem}}
+\index{setMem@{setMem}!Action@{Action}}
+\subsubsection[{setMem}]{\setlength{\rightskip}{0pt plus 5cm}void Action::setMem (
+\begin{DoxyParamCaption}
+\item[{{\bf Memory}}]{mem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classAction_a4f775977b788d1379b9f6c45bb37c01f}
+This sets the \hyperlink{classMemory}{Memory} for the action to use. This is important as the \hyperlink{classMemory}{Memory} is constantly changing, and must be updated at every step. 
+\begin{DoxyParams}{Parameters}
+{\em mem} & The player's \hyperlink{classMemory}{Memory} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The \hyperlink{classMemory}{Memory} should be the most up to date 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The actions that require a \hyperlink{classMemory}{Memory} will be able to pull from it 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Action_8java}{Action.java}\end{DoxyCompactItemize}

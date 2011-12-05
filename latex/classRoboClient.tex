@@ -1,0 +1,386 @@
+\hypertarget{classRoboClient}{
+\section{RoboClient Class Reference}
+\label{classRoboClient}\index{RoboClient@{RoboClient}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRoboClient_a4138139e6255c0e81c107b46cfae1857}{RoboClient} (int port)
+\item 
+\hyperlink{classRoboClient_a3a96c4220b4fb7986a19384f9c26a860}{RoboClient} (String team)
+\item 
+String \hyperlink{classRoboClient_a8a009213796938c1212717c9432cf23b}{getTeam} ()
+\item 
+void \hyperlink{classRoboClient_a2fedd2a243028701cafca425adb358cf}{setTeam} (String team)
+\item 
+void \hyperlink{classRoboClient_a621d84c943cd26b12726dc2c7f21339f}{send} (String message)  throws UnknownHostException
+\item 
+String \hyperlink{classRoboClient_a696aa2acd96325fe2f2abeacd27ba54c}{receive} ()
+\item 
+void \hyperlink{classRoboClient_a2be71da337ba3aae4895b23377a7f95c}{init} (\hyperlink{classParser}{Parser} p, \hyperlink{classMemory}{Memory} m)  throws UnknownHostException 
+\item 
+\hypertarget{classRoboClient_afd1d41a4ba06ce09f31c907345060ee8}{
+void {\bfseries changePlayMode} (String playmode)  throws UnknownHostException }
+\label{classRoboClient_afd1d41a4ba06ce09f31c907345060ee8}
+
+\item 
+void \hyperlink{classRoboClient_ab0286a6a63163a3441dae184ac2638a5}{initGoalie} (\hyperlink{classParser}{Parser} p, \hyperlink{classMemory}{Memory} m)  throws UnknownHostException 
+\item 
+void \hyperlink{classRoboClient_a5d403310e44e5992d1de9d074006d0ea}{dash} (double power)  throws Exception 
+\item 
+void \hyperlink{classRoboClient_a6bb560522536e1212a9411ea2e4725e9}{dash} (double power, double direction)  throws Exception 
+\item 
+void \hyperlink{classRoboClient_afcf4a68e59dd2df04674ce545c3c3dcc}{kick} (double power, double dir)  throws UnknownHostException 
+\item 
+void \hyperlink{classRoboClient_a41fea7f3f13d507a0e36a0de37a6dcb0}{turn} (double moment)  throws UnknownHostException
+\item 
+\hypertarget{classRoboClient_a6a880aae7b1d1b58c3e38c8018b4f493}{
+void {\bfseries turn\_\-neck} (double moment)  throws UnknownHostException }
+\label{classRoboClient_a6a880aae7b1d1b58c3e38c8018b4f493}
+
+\item 
+void \hyperlink{classRoboClient_a996fcd99e89b7b90ea6782523b5dd912}{move} (double x, double y)  throws UnknownHostException 
+\item 
+void \hyperlink{classRoboClient_abf25c0af390567ed370935c1f243491f}{catchball} (double d)  throws UnknownHostException
+\item 
+void \hyperlink{classRoboClient_a90d21c0b0ba92843f3dea1d7d4916ba1}{say} (String message)  throws UnknownHostException
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRoboClient_a506e4f970c6e2220d708158fdbeaa97d}{
+DatagramSocket {\bfseries dsock}}
+\label{classRoboClient_a506e4f970c6e2220d708158fdbeaa97d}
+
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRoboClient_a1eaddadff600eefa448c20a913deea67}{
+String {\bfseries reply}}
+\label{classRoboClient_a1eaddadff600eefa448c20a913deea67}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classRoboClient}{RoboClient} class operates as a client for the RoboCup session. It is mainly designed to be used by the \hyperlink{classPlayer}{Player} class to handle all client-\/server communication. The connection protocol is UDP. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRoboClient_a4138139e6255c0e81c107b46cfae1857}{
+\index{RoboClient@{RoboClient}!RoboClient@{RoboClient}}
+\index{RoboClient@{RoboClient}!RoboClient@{RoboClient}}
+\subsubsection[{RoboClient}]{\setlength{\rightskip}{0pt plus 5cm}RoboClient::RoboClient (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a4138139e6255c0e81c107b46cfae1857}
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoboClient_a3a96c4220b4fb7986a19384f9c26a860}{
+\index{RoboClient@{RoboClient}!RoboClient@{RoboClient}}
+\index{RoboClient@{RoboClient}!RoboClient@{RoboClient}}
+\subsubsection[{RoboClient}]{\setlength{\rightskip}{0pt plus 5cm}RoboClient::RoboClient (
+\begin{DoxyParamCaption}
+\item[{String}]{team}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a3a96c4220b4fb7986a19384f9c26a860}
+
+\begin{DoxyParams}{Parameters}
+{\em team} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRoboClient_abf25c0af390567ed370935c1f243491f}{
+\index{RoboClient@{RoboClient}!catchball@{catchball}}
+\index{catchball@{catchball}!RoboClient@{RoboClient}}
+\subsubsection[{catchball}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::catchball (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)  throws UnknownHostException\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_abf25c0af390567ed370935c1f243491f}
+This function causes the active player to catch the ball. It can only be used by a \hyperlink{classGoalie}{Goalie} type player. 
+\begin{DoxyParams}{Parameters}
+{\em d} & An integer value representing the direction from which to catch the ball. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Playmode is play\_\-on or goal\_\-kick, ball is in catchable area. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has caught the ball. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classRoboClient_a5d403310e44e5992d1de9d074006d0ea}{
+\index{RoboClient@{RoboClient}!dash@{dash}}
+\index{dash@{dash}!RoboClient@{RoboClient}}
+\subsubsection[{dash}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::dash (
+\begin{DoxyParamCaption}
+\item[{double}]{power}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a5d403310e44e5992d1de9d074006d0ea}
+This function sends the dash command to the server. 
+\begin{DoxyParams}{Parameters}
+{\em power,:} & a double representing the power of the dash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is available, client has been initialized. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has dashed according to the given power. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a6bb560522536e1212a9411ea2e4725e9}{
+\index{RoboClient@{RoboClient}!dash@{dash}}
+\index{dash@{dash}!RoboClient@{RoboClient}}
+\subsubsection[{dash}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::dash (
+\begin{DoxyParamCaption}
+\item[{double}]{power, }
+\item[{double}]{direction}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a6bb560522536e1212a9411ea2e4725e9}
+This function sends the dash command to the server. 
+\begin{DoxyParams}{Parameters}
+{\em power,:} & a double representing the power of the dash. \\
+\hline
+{\em direction,:} & a double representing the direction of the dash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is available, client has been initialized. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has dashed according to the given power and direction. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a8a009213796938c1212717c9432cf23b}{
+\index{RoboClient@{RoboClient}!getTeam@{getTeam}}
+\index{getTeam@{getTeam}!RoboClient@{RoboClient}}
+\subsubsection[{getTeam}]{\setlength{\rightskip}{0pt plus 5cm}String RoboClient::getTeam (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a8a009213796938c1212717c9432cf23b}
+\begin{DoxyReturn}{Returns}
+the team 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a2be71da337ba3aae4895b23377a7f95c}{
+\index{RoboClient@{RoboClient}!init@{init}}
+\index{init@{init}!RoboClient@{RoboClient}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::init (
+\begin{DoxyParamCaption}
+\item[{{\bf Parser}}]{p, }
+\item[{{\bf Memory}}]{m}
+\end{DoxyParamCaption}
+)  throws UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a2be71da337ba3aae4895b23377a7f95c}
+This function initializes the client with the RoboCup server. \begin{DoxyPrecond}{Precondition}
+The RoboCup server is hosting connections. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The client has been initialized. 
+\end{DoxyPostcond}
+\hypertarget{classRoboClient_ab0286a6a63163a3441dae184ac2638a5}{
+\index{RoboClient@{RoboClient}!initGoalie@{initGoalie}}
+\index{initGoalie@{initGoalie}!RoboClient@{RoboClient}}
+\subsubsection[{initGoalie}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::initGoalie (
+\begin{DoxyParamCaption}
+\item[{{\bf Parser}}]{p, }
+\item[{{\bf Memory}}]{m}
+\end{DoxyParamCaption}
+)  throws UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_ab0286a6a63163a3441dae184ac2638a5}
+This function initializes the client as a goalie with the RoboCup server. 
+\begin{DoxyParams}{Parameters}
+{\em message,:} & none \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is hosting connections. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The goalie has been initialized. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_afcf4a68e59dd2df04674ce545c3c3dcc}{
+\index{RoboClient@{RoboClient}!kick@{kick}}
+\index{kick@{kick}!RoboClient@{RoboClient}}
+\subsubsection[{kick}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::kick (
+\begin{DoxyParamCaption}
+\item[{double}]{power, }
+\item[{double}]{dir}
+\end{DoxyParamCaption}
+)  throws UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_afcf4a68e59dd2df04674ce545c3c3dcc}
+This function causes the active player to kick. 
+\begin{DoxyParams}{Parameters}
+{\em power,:} & a double representing the power of the kick. \\
+\hline
+{\em dir,:} & a double representing the direction of the kick. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is available, team has been initialized. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has kicked according to the given power and direction. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a996fcd99e89b7b90ea6782523b5dd912}{
+\index{RoboClient@{RoboClient}!move@{move}}
+\index{move@{move}!RoboClient@{RoboClient}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::move (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)  throws UnknownHostException \hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a996fcd99e89b7b90ea6782523b5dd912}
+This function causes the active player to be teleported to a given set of coordinates within the soccer field. 
+\begin{DoxyParams}{Parameters}
+{\em x,:} & an integer value for the x-\/coordinate to move to. \\
+\hline
+{\em y,:} & an integer value for the y-\/coordinate to move to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is available, team has been initialized, kickoff has not yet occurred. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has moved to the given coordinates. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a696aa2acd96325fe2f2abeacd27ba54c}{
+\index{RoboClient@{RoboClient}!receive@{receive}}
+\index{receive@{receive}!RoboClient@{RoboClient}}
+\subsubsection[{receive}]{\setlength{\rightskip}{0pt plus 5cm}String RoboClient::receive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a696aa2acd96325fe2f2abeacd27ba54c}
+This function receives a UDP packet from the RoboCup server, and converts it to a String. \begin{DoxyPrecond}{Precondition}
+The RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The packet from the RoboCup server has been processed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a90d21c0b0ba92843f3dea1d7d4916ba1}{
+\index{RoboClient@{RoboClient}!say@{say}}
+\index{say@{say}!RoboClient@{RoboClient}}
+\subsubsection[{say}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::say (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)  throws UnknownHostException\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a90d21c0b0ba92843f3dea1d7d4916ba1}
+This function causes the active player to speak the given message. 
+\begin{DoxyParams}{Parameters}
+{\em message} & A string representing the message to be spoken by the player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+None 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has spoken the message. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em UnknownHostException} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classRoboClient_a621d84c943cd26b12726dc2c7f21339f}{
+\index{RoboClient@{RoboClient}!send@{send}}
+\index{send@{send}!RoboClient@{RoboClient}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::send (
+\begin{DoxyParamCaption}
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)  throws UnknownHostException\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a621d84c943cd26b12726dc2c7f21339f}
+This function reads in a message string, and sends it to the RoboCup server. It primarily serves as a method to send commands to the server to control server and player actions. 
+\begin{DoxyParams}{Parameters}
+{\em message,:} & A String. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+message is a valid String value, the RoboCup server is available. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The message has been delivered to the RoboCup server. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\hypertarget{classRoboClient_a2fedd2a243028701cafca425adb358cf}{
+\index{RoboClient@{RoboClient}!setTeam@{setTeam}}
+\index{setTeam@{setTeam}!RoboClient@{RoboClient}}
+\subsubsection[{setTeam}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::setTeam (
+\begin{DoxyParamCaption}
+\item[{String}]{team}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a2fedd2a243028701cafca425adb358cf}
+
+\begin{DoxyParams}{Parameters}
+{\em team} & the team to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoboClient_a41fea7f3f13d507a0e36a0de37a6dcb0}{
+\index{RoboClient@{RoboClient}!turn@{turn}}
+\index{turn@{turn}!RoboClient@{RoboClient}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}void RoboClient::turn (
+\begin{DoxyParamCaption}
+\item[{double}]{moment}
+\end{DoxyParamCaption}
+)  throws UnknownHostException\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classRoboClient_a41fea7f3f13d507a0e36a0de37a6dcb0}
+This function causes the active player to turn. 
+\begin{DoxyParams}{Parameters}
+{\em moment,:} & a double representing the turning angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The RoboCup server is available, team has been initialized. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player has turned the given number of degrees from original orientation. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{RoboClient_8java}{RoboClient.java}\end{DoxyCompactItemize}

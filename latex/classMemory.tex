@@ -1,0 +1,664 @@
+\hypertarget{classMemory}{
+\section{Memory Class Reference}
+\label{classMemory}\index{Memory@{Memory}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMemory_a585d7bb6fc6f2237bcebf94a86b7dd99}{Memory} ()
+\item 
+void \hyperlink{classMemory_a074cc68eab666eb5c8b2b63c8e2065de}{setField} (String \hyperlink{classMemory_ac56cee169ca4e880744065f25f306b82}{side})
+\item 
+\hyperlink{classObjInfo}{ObjInfo} \hyperlink{classMemory_a608d5c05e19521c10a7cda5d363a8dc1}{getObj} (int i)
+\item 
+int \hyperlink{classMemory_a43b05e7409d9f1898d5570c38c533489}{getObjMemorySize} ()
+\item 
+boolean \hyperlink{classMemory_a3229c1214b10c55d92bfea56231c463e}{isObjVisible} (String name)
+\item 
+\hyperlink{classObjBall}{ObjBall} \hyperlink{classMemory_a22a84014b7be5f41133a2b9dc1239d77}{getBall} ()
+\item 
+\hypertarget{classMemory_a96efccb45ccabb805f763051d00a3435}{
+\hyperlink{classPos}{Pos} {\bfseries getBallPos} (\hyperlink{classObjBall}{ObjBall} b)}
+\label{classMemory_a96efccb45ccabb805f763051d00a3435}
+
+\item 
+\hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_afb25c0954e27945a3710e6c7aa517061}{getFlag} (String name)
+\item 
+\hyperlink{classObjGoal}{ObjGoal} \hyperlink{classMemory_a17ae657b29be91c6008d77c23e1626fc}{getOppGoal} ()
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_a0e1a6e8f80b1dd3f53d4825e57344c8b}{getOppGoalPos} ()
+\item 
+\hyperlink{classObjGoal}{ObjGoal} \hyperlink{classMemory_a2383a8213623bc69db35001830366e9d}{getOwnGoal} ()
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_ac33b04415ba7a2c6b11701042e2f0309}{getOwnGoalPos} ()
+\item 
+\hyperlink{classObjPlayer}{ObjPlayer} \hyperlink{classMemory_a9962f5f66c44c8c68e29efad2cf06cc8}{getPlayer} ()
+\item 
+\hyperlink{classObjLine}{ObjLine} \hyperlink{classMemory_a1beaea5588dcb18238b35cef6f22d35c}{getLine} ()
+\item 
+boolean \hyperlink{classMemory_a228504f0a8e83eb4875549bcc6c69b7d}{timeCheck} (int t)
+\item 
+ArrayList$<$ \hyperlink{classObjPlayer}{ObjPlayer} $>$ \hyperlink{classMemory_aeb561c441b5219aa0f403296162589cd}{getPlayers} ()
+\item 
+\hypertarget{classMemory_a91beef231ac2a850e50bfdf8688c5297}{
+void {\bfseries getPlayerArrays} ()}
+\label{classMemory_a91beef231ac2a850e50bfdf8688c5297}
+
+\item 
+\hyperlink{classObjLine}{ObjLine} \hyperlink{classMemory_a2daa67912fe6150db6242231b5c7f4a5}{getClosestLine} ()
+\item 
+double \hyperlink{classMemory_a51dd1c10ac4f0c6f70a40a7c302c9b10}{getDirection} ()
+\item 
+void \hyperlink{classMemory_a0f334995214212333a179c89662f53e1}{setLocation} (double x, double y)
+\item 
+\hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_a1813a252e55fd6d40821c8878caa25ca}{getClosestFlag} ()
+\item 
+\hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_af018362439405ab0d4aee31d8f8ca971}{getClosestBoundary} ()
+\item 
+\hyperlink{classObjFlag}{ObjFlag} \hyperlink{classMemory_a6a235443dd8654f5ed8e91298c4d1449}{getClosestPenaltyFlag} ()
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_a2248dbfdb1707931a4687ec056b12043}{getFlagPos} (String flagName)
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_ada2d3753c0323c6bc2a546792b8a58b2}{getPosition} ()
+\item 
+\hypertarget{classMemory_a007baac0372d437de2f592fc5244e4e5}{
+void {\bfseries setCurrent} ()}
+\label{classMemory_a007baac0372d437de2f592fc5244e4e5}
+
+\item 
+double \hyperlink{classMemory_a7a98332fa2d82e5108108c1240bf0afa}{getNullGoalAngle} ()
+\item 
+double \hyperlink{classMemory_a5caea216836d0a6bb068df6f99445e3c}{getStamina} ()
+\item 
+double \hyperlink{classMemory_a4301166648682fac690cd63db626e3c0}{getRecovery} ()
+\item 
+double \hyperlink{classMemory_a46b301f90943f20b72b31feddf679428}{getEffort} ()
+\item 
+double \hyperlink{classMemory_a6d95389ac90eb7682ddf8c9128118f48}{getAmountOfSpeed} ()
+\item 
+double \hyperlink{classMemory_a2ba03f42ed846e378252bb39153d415c}{getDirectionOfSpeed} ()
+\item 
+double \hyperlink{classMemory_a2b153c2ee50f4e2246862f359f1afdc8}{getHeadDirection} ()
+\item 
+String \hyperlink{classMemory_a8509d46b3402d337ebe54625fa8097aa}{getPlayMode} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMemory_afb5e10d7716ba7cb3c3e0a3a4b336a8f}{
+\hyperlink{classMathHelp}{MathHelp} {\bfseries m} = new \hyperlink{classMathHelp}{MathHelp}()}
+\label{classMemory_afb5e10d7716ba7cb3c3e0a3a4b336a8f}
+
+\item 
+\hypertarget{classMemory_ab55dd7b896a2c05e64109215ecb67b45}{
+\hyperlink{classField}{Field} {\bfseries f}}
+\label{classMemory_ab55dd7b896a2c05e64109215ecb67b45}
+
+\item 
+\hypertarget{classMemory_a600689cf6d1edd272c50b71b413bf0b6}{
+\hyperlink{classPos}{Pos} {\bfseries home}}
+\label{classMemory_a600689cf6d1edd272c50b71b413bf0b6}
+
+\item 
+\hypertarget{classMemory_a6bb98a089f2b73c6e35c73d37fcaa91b}{
+\hyperlink{classPos}{Pos} {\bfseries current} = new \hyperlink{classPos}{Pos}()}
+\label{classMemory_a6bb98a089f2b73c6e35c73d37fcaa91b}
+
+\item 
+\hypertarget{classMemory_a3851e9c9410407dec042905dfb3a097e}{
+boolean {\bfseries isHome} = true}
+\label{classMemory_a3851e9c9410407dec042905dfb3a097e}
+
+\item 
+\hypertarget{classMemory_a775861ea1cd61b8d77f5c2c9212d7088}{
+ArrayList$<$ \hyperlink{classObjPlayer}{ObjPlayer} $>$ {\bfseries teammates} = new ArrayList$<$\hyperlink{classObjPlayer}{ObjPlayer}$>$()}
+\label{classMemory_a775861ea1cd61b8d77f5c2c9212d7088}
+
+\item 
+\hypertarget{classMemory_a2f4179e0c17d45dbae6340c753d3d811}{
+ArrayList$<$ \hyperlink{classObjPlayer}{ObjPlayer} $>$ {\bfseries opponents} = new ArrayList$<$\hyperlink{classObjPlayer}{ObjPlayer}$>$()}
+\label{classMemory_a2f4179e0c17d45dbae6340c753d3d811}
+
+\item 
+\hyperlink{classObjMemory}{ObjMemory} \hyperlink{classMemory_a0275565eade385f502f6c132f861f11f}{ObjMem}
+\item 
+\hyperlink{classSenseMemory}{SenseMemory} \hyperlink{classMemory_a5a5e28abf688e0a18930e5dbdbc807b2}{SenMem}
+\item 
+String \hyperlink{classMemory_a96f2cc811ed87dfd6056fccd9c10ca40}{playMode}
+\item 
+String \hyperlink{classMemory_a966a412595e961d93cf7404efda0db9c}{oppSide}
+\item 
+String \hyperlink{classMemory_ac56cee169ca4e880744065f25f306b82}{side}
+\item 
+int \hyperlink{classMemory_a62572ea10a84193a66c33ecd43c252f7}{uNum}
+\item 
+\hyperlink{classPos}{Pos} \hyperlink{classMemory_afb4aa82077de0c1642e4d3dbf0619615}{oppGoal}
+\end{DoxyCompactItemize}
+\subsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classMemory_a1a1d4ac309db69fbe854e13508a8205a}{
+\hyperlink{classPolar}{Polar} {\bfseries getAbsPolar} (\hyperlink{classPos}{Pos} pt)}
+\label{classMemory_a1a1d4ac309db69fbe854e13508a8205a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMemory_a585d7bb6fc6f2237bcebf94a86b7dd99}{
+\index{Memory@{Memory}!Memory@{Memory}}
+\index{Memory@{Memory}!Memory@{Memory}}
+\subsubsection[{Memory}]{\setlength{\rightskip}{0pt plus 5cm}Memory::Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a585d7bb6fc6f2237bcebf94a86b7dd99}
+The default constructor for the \hyperlink{classMemory}{Memory}.
+
+This creates new, empty ArrayList for the \hyperlink{classObjMemory}{ObjMemory} and \hyperlink{classSenseMemory}{SenseMemory}, initiates the time at 0 for both, and creates an \hyperlink{classObjMemory}{ObjMemory} and \hyperlink{classSenseMemory}{SenseMemory} with the new ArrayLists and time as parameters. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classMemory_a6d95389ac90eb7682ddf8c9128118f48}{
+\index{Memory@{Memory}!getAmountOfSpeed@{getAmountOfSpeed}}
+\index{getAmountOfSpeed@{getAmountOfSpeed}!Memory@{Memory}}
+\subsubsection[{getAmountOfSpeed}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getAmountOfSpeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a6d95389ac90eb7682ddf8c9128118f48}
+The getter for the magnitude of the Player's velocity \hypertarget{classMemory_a22a84014b7be5f41133a2b9dc1239d77}{
+\index{Memory@{Memory}!getBall@{getBall}}
+\index{getBall@{getBall}!Memory@{Memory}}
+\subsubsection[{getBall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjBall} Memory::getBall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a22a84014b7be5f41133a2b9dc1239d77}
+The Ball Getter
+
+\begin{DoxyPrecond}{Precondition}
+Make sure you either check visibility first 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the ball is in the \hyperlink{classMemory}{Memory}, it will be returned. Otherwise a Null \hyperlink{classObjBall}{ObjBall} will be sent. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjBall}{ObjBall} containing the ball 
+\end{DoxyReturn}
+\hypertarget{classMemory_af018362439405ab0d4aee31d8f8ca971}{
+\index{Memory@{Memory}!getClosestBoundary@{getClosestBoundary}}
+\index{getClosestBoundary@{getClosestBoundary}!Memory@{Memory}}
+\subsubsection[{getClosestBoundary}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjFlag} Memory::getClosestBoundary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_af018362439405ab0d4aee31d8f8ca971}
+Finds \hyperlink{classObjFlag}{ObjFlag} of the closest boundary flag in players sight.
+
+\begin{DoxyReturn}{Returns}
+closest boundary 
+\end{DoxyReturn}
+\hypertarget{classMemory_a1813a252e55fd6d40821c8878caa25ca}{
+\index{Memory@{Memory}!getClosestFlag@{getClosestFlag}}
+\index{getClosestFlag@{getClosestFlag}!Memory@{Memory}}
+\subsubsection[{getClosestFlag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjFlag} Memory::getClosestFlag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a1813a252e55fd6d40821c8878caa25ca}
+Finds the closest flag in your sight
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjFlag}{ObjFlag} containing closest flag 
+\end{DoxyReturn}
+\hypertarget{classMemory_a2daa67912fe6150db6242231b5c7f4a5}{
+\index{Memory@{Memory}!getClosestLine@{getClosestLine}}
+\index{getClosestLine@{getClosestLine}!Memory@{Memory}}
+\subsubsection[{getClosestLine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjLine} Memory::getClosestLine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a2daa67912fe6150db6242231b5c7f4a5}
+This gets the closest line in your sight
+
+\begin{DoxyReturn}{Returns}
+line 
+\end{DoxyReturn}
+\hypertarget{classMemory_a6a235443dd8654f5ed8e91298c4d1449}{
+\index{Memory@{Memory}!getClosestPenaltyFlag@{getClosestPenaltyFlag}}
+\index{getClosestPenaltyFlag@{getClosestPenaltyFlag}!Memory@{Memory}}
+\subsubsection[{getClosestPenaltyFlag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjFlag} Memory::getClosestPenaltyFlag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a6a235443dd8654f5ed8e91298c4d1449}
+Finds \hyperlink{classObjFlag}{ObjFlag} of the closest penalty box flag in players sight.
+
+\begin{DoxyReturn}{Returns}
+closest penalty box flag 
+\end{DoxyReturn}
+\hypertarget{classMemory_a51dd1c10ac4f0c6f70a40a7c302c9b10}{
+\index{Memory@{Memory}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!Memory@{Memory}}
+\subsubsection[{getDirection}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getDirection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a51dd1c10ac4f0c6f70a40a7c302c9b10}
+Calculates the direction your facing from the closest line in your vision. The direction returned from a line is the angle made by your line of sight and the point that it crosses the line. This will will allow the facing direction to be calculated with some arithmetic.
+
+\begin{DoxyReturn}{Returns}
+the absolute direction you're facing 
+\end{DoxyReturn}
+\hypertarget{classMemory_a2ba03f42ed846e378252bb39153d415c}{
+\index{Memory@{Memory}!getDirectionOfSpeed@{getDirectionOfSpeed}}
+\index{getDirectionOfSpeed@{getDirectionOfSpeed}!Memory@{Memory}}
+\subsubsection[{getDirectionOfSpeed}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getDirectionOfSpeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a2ba03f42ed846e378252bb39153d415c}
+The getter for the direction of the Player's velocity \hypertarget{classMemory_a46b301f90943f20b72b31feddf679428}{
+\index{Memory@{Memory}!getEffort@{getEffort}}
+\index{getEffort@{getEffort}!Memory@{Memory}}
+\subsubsection[{getEffort}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getEffort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a46b301f90943f20b72b31feddf679428}
+The getter for the Player's stamina effort \hypertarget{classMemory_afb25c0954e27945a3710e6c7aa517061}{
+\index{Memory@{Memory}!getFlag@{getFlag}}
+\index{getFlag@{getFlag}!Memory@{Memory}}
+\subsubsection[{getFlag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjFlag} Memory::getFlag (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_afb25c0954e27945a3710e6c7aa517061}
+The Flag Getter
+
+If you're looking for a specific flag, this is you're guy. You need to pass in the FlagName (i.e. flb30) into it, and out pops the \hyperlink{classObjFlag}{ObjFlag} with that FlagName attached to it.
+
+\begin{DoxyPrecond}{Precondition}
+Make sure you either check visibility first 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the flag is in the \hyperlink{classMemory}{Memory}, it will be returned. Otherwise a Null \hyperlink{classObjFlag}{ObjFlag} will be sent. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjFlag}{ObjFlag} containing the flag with specified name 
+\end{DoxyReturn}
+\hypertarget{classMemory_a2248dbfdb1707931a4687ec056b12043}{
+\index{Memory@{Memory}!getFlagPos@{getFlagPos}}
+\index{getFlagPos@{getFlagPos}!Memory@{Memory}}
+\subsubsection[{getFlagPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Memory::getFlagPos (
+\begin{DoxyParamCaption}
+\item[{String}]{flagName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a2248dbfdb1707931a4687ec056b12043}
+Returns the \hyperlink{classPos}{Pos} of the coordinate of any flag on the field by name
+
+
+\begin{DoxyParams}{Parameters}
+{\em flagName} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPos}{Pos} with coordinate of flag 
+\end{DoxyReturn}
+\hypertarget{classMemory_a2b153c2ee50f4e2246862f359f1afdc8}{
+\index{Memory@{Memory}!getHeadDirection@{getHeadDirection}}
+\index{getHeadDirection@{getHeadDirection}!Memory@{Memory}}
+\subsubsection[{getHeadDirection}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getHeadDirection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a2b153c2ee50f4e2246862f359f1afdc8}
+The getter for the angle of the Player's head relative to the orientation of the Player's positive y-\/axis (up-\/field) \hypertarget{classMemory_a1beaea5588dcb18238b35cef6f22d35c}{
+\index{Memory@{Memory}!getLine@{getLine}}
+\index{getLine@{getLine}!Memory@{Memory}}
+\subsubsection[{getLine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjLine} Memory::getLine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a1beaea5588dcb18238b35cef6f22d35c}
+The Line getter This will get the \hyperlink{classObjLine}{ObjLine} of the first line you see.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjLine}{ObjLine} 
+\end{DoxyReturn}
+\hypertarget{classMemory_a7a98332fa2d82e5108108c1240bf0afa}{
+\index{Memory@{Memory}!getNullGoalAngle@{getNullGoalAngle}}
+\index{getNullGoalAngle@{getNullGoalAngle}!Memory@{Memory}}
+\subsubsection[{getNullGoalAngle}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getNullGoalAngle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a7a98332fa2d82e5108108c1240bf0afa}
+Calculates the angle of goal you're trying to score on when the goal is not in your sight. This is allows the player to kick or dribble to the goal, even when it's information isn't available.
+
+\begin{DoxyReturn}{Returns}
+double containing the angle of the goal 
+\end{DoxyReturn}
+\hypertarget{classMemory_a608d5c05e19521c10a7cda5d363a8dc1}{
+\index{Memory@{Memory}!getObj@{getObj}}
+\index{getObj@{getObj}!Memory@{Memory}}
+\subsubsection[{getObj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjInfo} Memory::getObj (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a608d5c05e19521c10a7cda5d363a8dc1}
+The \hyperlink{classObjInfo}{ObjInfo} getter
+
+This fetches the \hyperlink{classObjInfo}{ObjInfo} at index i of the ArrayList ObjArray in \hyperlink{classObjMemory}{ObjMemory}, and returns it as an \hyperlink{classObjInfo}{ObjInfo}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & the index number of the location of the desired \hyperlink{classObjInfo}{ObjInfo} in ObjArray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+An index needs to be supplied when calling this 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A basic \hyperlink{classObjInfo}{ObjInfo} will be given. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjInfo}{ObjInfo} the \hyperlink{classObjInfo}{ObjInfo} at location i of the ObjArray 
+\end{DoxyReturn}
+\hypertarget{classMemory_a43b05e7409d9f1898d5570c38c533489}{
+\index{Memory@{Memory}!getObjMemorySize@{getObjMemorySize}}
+\index{getObjMemorySize@{getObjMemorySize}!Memory@{Memory}}
+\subsubsection[{getObjMemorySize}]{\setlength{\rightskip}{0pt plus 5cm}int Memory::getObjMemorySize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a43b05e7409d9f1898d5570c38c533489}
+The \hyperlink{classObjMemory}{ObjMemory} size
+
+A getter to quickly retrieve the number of \hyperlink{classObjInfo}{ObjInfo} in \hyperlink{classObjMemory}{ObjMemory}
+
+\begin{DoxyReturn}{Returns}
+size of \hyperlink{classObjMemory}{ObjMemory} 
+\end{DoxyReturn}
+\hypertarget{classMemory_a17ae657b29be91c6008d77c23e1626fc}{
+\index{Memory@{Memory}!getOppGoal@{getOppGoal}}
+\index{getOppGoal@{getOppGoal}!Memory@{Memory}}
+\subsubsection[{getOppGoal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjGoal} Memory::getOppGoal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a17ae657b29be91c6008d77c23e1626fc}
+The Goal Opponent Getter
+
+This will get the Opponent's \hyperlink{classObjGoal}{ObjGoal} if it's in your field of vision.
+
+\begin{DoxyPostcond}{Postcondition}
+If you're facing the opponenet's goal, an \hyperlink{classObjGoal}{ObjGoal} with it's information will be returned. Otherwise a null \hyperlink{classObjGoal}{ObjGoal} will be sent 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjGoal}{ObjGoal} containing the goal if it's in your vision, null if not 
+\end{DoxyReturn}
+\hypertarget{classMemory_a0e1a6e8f80b1dd3f53d4825e57344c8b}{
+\index{Memory@{Memory}!getOppGoalPos@{getOppGoalPos}}
+\index{getOppGoalPos@{getOppGoalPos}!Memory@{Memory}}
+\subsubsection[{getOppGoalPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Memory::getOppGoalPos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a0e1a6e8f80b1dd3f53d4825e57344c8b}
+This returns the \hyperlink{classPos}{Pos} with the coordinate to the goal you're trying to score on.
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classPos}{Pos} in the \hyperlink{classField}{Field} of your oppenent's goal 
+\end{DoxyReturn}
+\hypertarget{classMemory_a2383a8213623bc69db35001830366e9d}{
+\index{Memory@{Memory}!getOwnGoal@{getOwnGoal}}
+\index{getOwnGoal@{getOwnGoal}!Memory@{Memory}}
+\subsubsection[{getOwnGoal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjGoal} Memory::getOwnGoal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a2383a8213623bc69db35001830366e9d}
+The Goal Own Getter
+
+This will get your own \hyperlink{classObjGoal}{ObjGoal} if it's in your field of vision.
+
+\begin{DoxyPostcond}{Postcondition}
+If you're facing your goal, an \hyperlink{classObjGoal}{ObjGoal} with it's information will be returned. Otherwise a null \hyperlink{classObjGoal}{ObjGoal} will be sent 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjGoal}{ObjGoal} containing the goal if it's in your vision, null if not 
+\end{DoxyReturn}
+\hypertarget{classMemory_ac33b04415ba7a2c6b11701042e2f0309}{
+\index{Memory@{Memory}!getOwnGoalPos@{getOwnGoalPos}}
+\index{getOwnGoalPos@{getOwnGoalPos}!Memory@{Memory}}
+\subsubsection[{getOwnGoalPos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Memory::getOwnGoalPos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_ac33b04415ba7a2c6b11701042e2f0309}
+This returns the \hyperlink{classPos}{Pos} with the coordinate to the goal you're trying to guard.
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classPos}{Pos} in the \hyperlink{classField}{Field} of your goal 
+\end{DoxyReturn}
+\hypertarget{classMemory_a9962f5f66c44c8c68e29efad2cf06cc8}{
+\index{Memory@{Memory}!getPlayer@{getPlayer}}
+\index{getPlayer@{getPlayer}!Memory@{Memory}}
+\subsubsection[{getPlayer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjPlayer} Memory::getPlayer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a9962f5f66c44c8c68e29efad2cf06cc8}
+The \hyperlink{classPlayer}{Player} Getter
+
+This will get the \hyperlink{classObjPlayer}{ObjPlayer} of the first player you see.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classObjPlayer}{ObjPlayer} 
+\end{DoxyReturn}
+\hypertarget{classMemory_aeb561c441b5219aa0f403296162589cd}{
+\index{Memory@{Memory}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!Memory@{Memory}}
+\subsubsection[{getPlayers}]{\setlength{\rightskip}{0pt plus 5cm}ArrayList$<${\bf ObjPlayer}$>$ Memory::getPlayers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_aeb561c441b5219aa0f403296162589cd}
+Gets an ArrayList with all of the Players in your sight
+
+\begin{DoxyReturn}{Returns}
+players 
+\end{DoxyReturn}
+\hypertarget{classMemory_a8509d46b3402d337ebe54625fa8097aa}{
+\index{Memory@{Memory}!getPlayMode@{getPlayMode}}
+\index{getPlayMode@{getPlayMode}!Memory@{Memory}}
+\subsubsection[{getPlayMode}]{\setlength{\rightskip}{0pt plus 5cm}String Memory::getPlayMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a8509d46b3402d337ebe54625fa8097aa}
+The getter for the game's current play mode \hypertarget{classMemory_ada2d3753c0323c6bc2a546792b8a58b2}{
+\index{Memory@{Memory}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Memory@{Memory}}
+\subsubsection[{getPosition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} Memory::getPosition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_ada2d3753c0323c6bc2a546792b8a58b2}
+This finds the absolute position of a player using vector arithmetic and trigonometry and the closest flag to the player and the facing direction found from the closest line.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPos}{Pos} containing the coordinate on the field of the player's absolute position 
+\end{DoxyReturn}
+\hypertarget{classMemory_a4301166648682fac690cd63db626e3c0}{
+\index{Memory@{Memory}!getRecovery@{getRecovery}}
+\index{getRecovery@{getRecovery}!Memory@{Memory}}
+\subsubsection[{getRecovery}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getRecovery (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a4301166648682fac690cd63db626e3c0}
+The getter for the Player's stamina recovery \hypertarget{classMemory_a5caea216836d0a6bb068df6f99445e3c}{
+\index{Memory@{Memory}!getStamina@{getStamina}}
+\index{getStamina@{getStamina}!Memory@{Memory}}
+\subsubsection[{getStamina}]{\setlength{\rightskip}{0pt plus 5cm}double Memory::getStamina (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a5caea216836d0a6bb068df6f99445e3c}
+The getter for the Player's stamina \hypertarget{classMemory_a3229c1214b10c55d92bfea56231c463e}{
+\index{Memory@{Memory}!isObjVisible@{isObjVisible}}
+\index{isObjVisible@{isObjVisible}!Memory@{Memory}}
+\subsubsection[{isObjVisible}]{\setlength{\rightskip}{0pt plus 5cm}boolean Memory::isObjVisible (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a3229c1214b10c55d92bfea56231c463e}
+Is this \hyperlink{classObjInfo}{ObjInfo} visible?
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the ObjName of the \hyperlink{classObjInfo}{ObjInfo} we're detecting visibility of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ball is in the \hyperlink{classObjMemory}{ObjMemory}, false if it is not or if the the \hyperlink{classObjMemory}{ObjMemory} is empty 
+\end{DoxyReturn}
+\hypertarget{classMemory_a074cc68eab666eb5c8b2b63c8e2065de}{
+\index{Memory@{Memory}!setField@{setField}}
+\index{setField@{setField}!Memory@{Memory}}
+\subsubsection[{setField}]{\setlength{\rightskip}{0pt plus 5cm}void Memory::setField (
+\begin{DoxyParamCaption}
+\item[{String}]{side}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a074cc68eab666eb5c8b2b63c8e2065de}
+This sets the orientation of the \hyperlink{classField}{Field} positions depending on side the player starts on.
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The side String should not be null 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \hyperlink{classField}{Field} orientation will be set 
+\end{DoxyPostcond}
+\hypertarget{classMemory_a0f334995214212333a179c89662f53e1}{
+\index{Memory@{Memory}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!Memory@{Memory}}
+\subsubsection[{setLocation}]{\setlength{\rightskip}{0pt plus 5cm}void Memory::setLocation (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a0f334995214212333a179c89662f53e1}
+Sets the \hyperlink{classPos}{Pos} of the originating point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMemory_a228504f0a8e83eb4875549bcc6c69b7d}{
+\index{Memory@{Memory}!timeCheck@{timeCheck}}
+\index{timeCheck@{timeCheck}!Memory@{Memory}}
+\subsubsection[{timeCheck}]{\setlength{\rightskip}{0pt plus 5cm}boolean Memory::timeCheck (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classMemory_a228504f0a8e83eb4875549bcc6c69b7d}
+This will test a players local time against the ObjMemory's time. This can be used to ensure that more than one action will not be attempted during a single simulation step.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & the Player's local time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+A player's local time must be initialized and passed in 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The player's local time needs to be set to the Memory's time after a true is returned. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+true if the newly parsed Memory's time is greater than the players local time. False if the memory time is $<$= the local time. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMemory_a0275565eade385f502f6c132f861f11f}{
+\index{Memory@{Memory}!ObjMem@{ObjMem}}
+\index{ObjMem@{ObjMem}!Memory@{Memory}}
+\subsubsection[{ObjMem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ObjMemory} {\bf Memory::ObjMem}}}
+\label{classMemory_a0275565eade385f502f6c132f861f11f}
+The memory that stores all parsed \hyperlink{classObjInfo}{ObjInfo} \hypertarget{classMemory_afb4aa82077de0c1642e4d3dbf0619615}{
+\index{Memory@{Memory}!oppGoal@{oppGoal}}
+\index{oppGoal@{oppGoal}!Memory@{Memory}}
+\subsubsection[{oppGoal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pos} {\bf Memory::oppGoal}}}
+\label{classMemory_afb4aa82077de0c1642e4d3dbf0619615}
+The \hyperlink{classPos}{Pos} of the coordinates of the opponents goal \hypertarget{classMemory_a966a412595e961d93cf7404efda0db9c}{
+\index{Memory@{Memory}!oppSide@{oppSide}}
+\index{oppSide@{oppSide}!Memory@{Memory}}
+\subsubsection[{oppSide}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf Memory::oppSide}}}
+\label{classMemory_a966a412595e961d93cf7404efda0db9c}
+The string of the opponents side \hypertarget{classMemory_a96f2cc811ed87dfd6056fccd9c10ca40}{
+\index{Memory@{Memory}!playMode@{playMode}}
+\index{playMode@{playMode}!Memory@{Memory}}
+\subsubsection[{playMode}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf Memory::playMode}}}
+\label{classMemory_a96f2cc811ed87dfd6056fccd9c10ca40}
+The play mode as told by the referee \hypertarget{classMemory_a5a5e28abf688e0a18930e5dbdbc807b2}{
+\index{Memory@{Memory}!SenMem@{SenMem}}
+\index{SenMem@{SenMem}!Memory@{Memory}}
+\subsubsection[{SenMem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SenseMemory} {\bf Memory::SenMem}}}
+\label{classMemory_a5a5e28abf688e0a18930e5dbdbc807b2}
+The memory that stores all parsed SenseInfo \hypertarget{classMemory_ac56cee169ca4e880744065f25f306b82}{
+\index{Memory@{Memory}!side@{side}}
+\index{side@{side}!Memory@{Memory}}
+\subsubsection[{side}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf Memory::side}}}
+\label{classMemory_ac56cee169ca4e880744065f25f306b82}
+The String of the player's side \hypertarget{classMemory_a62572ea10a84193a66c33ecd43c252f7}{
+\index{Memory@{Memory}!uNum@{uNum}}
+\index{uNum@{uNum}!Memory@{Memory}}
+\subsubsection[{uNum}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Memory::uNum}}}
+\label{classMemory_a62572ea10a84193a66c33ecd43c252f7}
+The player's uniform number 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Memory_8java}{Memory.java}\end{DoxyCompactItemize}
