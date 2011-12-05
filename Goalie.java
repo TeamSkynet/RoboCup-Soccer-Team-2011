@@ -406,8 +406,7 @@ public class Goalie extends Player {
 			*/
 		}
 		
-	}	
-	
+	}		
 	
 	public boolean ballTurn = false;
 	public MathHelp mh = new MathHelp();

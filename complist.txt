@@ -3,8 +3,10 @@ Brain.java
 Field.java
 Forward.java
 FullBack.java
+FullBackBrain.java
 Game.java
 Goalie.java
+GoalieBrain.java
 MathHelp.java
 Memory.java
 Mode.java
@@ -17,6 +19,3 @@ Polar.java
 Pos.java
 RoboClient.java
 SenseMemory.java
-TestAction.java
-TestDefensive.java
-TestSay.java

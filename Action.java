@@ -54,6 +54,7 @@ public class Action {
 		this.mem = mem;
 	}
 	
+
 	public double getTurn(Polar go) {
 		double angle = go.t - mem.getDirection();
 		if(angle > 180)
