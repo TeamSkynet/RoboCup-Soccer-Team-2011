@@ -317,15 +317,17 @@ public class Action {
 				Thread.sleep(100);
 			}
 			
-			if((ball.getDistance() > 15) && (mem.isHome == false)) {
+			Pos ballPos = mem.getBallPos(ball);
+
+			
+			if((ballPos.x < -52) || (ballPos.x > -20) || (ballPos.y > (mem.home.y + 11.34)) || (ballPos.y < (mem.home.y - 11.34))) {
 				goHome();
 			}
-			else if((ball.getDistance() <= 15.0) && (ball.getDistance() > 0.7)){
+			else if((ballPos.x >= -52) && (ballPos.x <= -20) && (ballPos.y <= (mem.home.y + 11.34)) && (ballPos.y >= (mem.home.y - 11.34)) && (ball.getDistance() > 0.7)){
 				interceptBall(ball);
 			}
 			else if(ball.getDistance() <= 0.7)  {
-				//kickToPoint(ball, origin);
-				passBall(ball, closestPlayer());
+				kickToPoint(ball, new Pos(0, 0));
 			}			
 		}
 		else
