@@ -27,6 +27,7 @@ public class Player extends Thread {
 	private Parser p = new Parser();
 	private Action a = new Action(m, rc);
 	private int time = 0;
+	private int serverTime = 0;
 	public MathHelp mh = new MathHelp();
 	public boolean wait = true;
 	public String position = "left";
@@ -418,25 +419,30 @@ public class Player extends Thread {
 		while (true) {
 			
 			
-			try {
-				receiveInput();
-			} catch (InterruptedException e) {
-				System.out.println("Interrupt error at Player.run");
-				e.printStackTrace();
-			}
 			
-			if(getMem().current != null) {
-				Pos pt = mh.vSub(getMem().current, getMem().home);
+			if(getMem().timeCheck(serverTime))
 				
-				if((Math.abs(pt.x) > 0.5) ||(Math.abs(pt.y) > 0.5)) {
-					getMem().isHome = false;
+				serverTime = getMem().ObjMem.getTime();
+				try {
+					receiveInput();
+					
+				} catch (InterruptedException e) {
+					System.out.println("Interrupt error at Player.run");
+					e.printStackTrace();
 				}
-				else
-					getMem().isHome = true;
-			}
-			else 
-				System.out.println("Current is null");
-			
+				
+				if(getMem().current != null) {
+					Pos pt = mh.vSub(getMem().current, getMem().home);
+					
+					if((Math.abs(pt.x) > 0.5) ||(Math.abs(pt.y) > 0.5)) {
+						getMem().isHome = false;
+					}
+					else
+						getMem().isHome = true;
+				}
+				else 
+					System.out.println("Current is null");
+				
 		}
 
 	}
